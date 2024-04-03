@@ -1,5 +1,6 @@
 package com.dev_team.dashboard.menu;
 
+import com.dev_team.utilidades.Main_Colores;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.GradientPaint;
@@ -11,7 +12,6 @@ import java.awt.event.MouseEvent;
 import javaswingdev.GoogleMaterialDesignIcon;
 import javaswingdev.GoogleMaterialIcon;
 import javaswingdev.GradientType;
-import com.dev_team.dashboard.utility.SystemColor;
 import javax.swing.JButton;
 import javax.swing.border.EmptyBorder;
 import org.jdesktop.animation.timing.Animator;
@@ -19,7 +19,7 @@ import org.jdesktop.animation.timing.TimingTargetAdapter;
 
 public class Item extends JButton {
 
-    private final Color mainColor = SystemColor.MAIN_COLOR_2;
+    private final Color mainColor = Main_Colores.MAIN_COLOR_2;
     private final int index;
     private Animator animator;
     private GoogleMaterialDesignIcon icon;
@@ -113,7 +113,7 @@ public class Item extends JButton {
             if (isSelected()) {
                 Graphics2D g2 = (Graphics2D) g.create();
                 g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                g2.setPaint(new GradientPaint(0, 3, SystemColor.MAIN_COLOR_1, 3, getHeight() - 6, SystemColor.MAIN_COLOR_2));
+                g2.setPaint(new GradientPaint(0, 3, Main_Colores.MAIN_COLOR_1, 3, getHeight() - 6, Main_Colores.MAIN_COLOR_2));
                 g2.fillRect(0, 3, 3, getHeight() - 6);
                 g2.dispose();
             }
@@ -123,7 +123,7 @@ public class Item extends JButton {
     public void setGoogleIcon(GoogleMaterialDesignIcon icon) {
         if (icon != null) {
             this.icon = icon;
-            setIcon(new GoogleMaterialIcon(icon, GradientType.HORIZONTAL, SystemColor.MAIN_COLOR_1, SystemColor.MAIN_COLOR_2, 19).toIcon());
+            setIcon(new GoogleMaterialIcon(icon, GradientType.HORIZONTAL, Main_Colores.MAIN_COLOR_1, Main_Colores.MAIN_COLOR_2, 19).toIcon());
         }
     }
 
