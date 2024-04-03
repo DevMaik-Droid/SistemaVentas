@@ -36,7 +36,21 @@
             <artifactId>jcalendar</artifactId>
             <version>1.4</version>
         </dependency>
-        
+        <dependency>
+            <groupId>com.dev_team.timing</groupId>
+            <artifactId>timing-library</artifactId>
+            <version>0.55</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dev_team.miglayout</groupId>
+            <artifactId>miglayout-library</artifactId>
+            <version>4.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.dev_team.icon-font</groupId>
+            <artifactId>iconfont-library</artifactId>
+            <version>1.1.0</version>
+        </dependency>
     </dependencies>
     
 </project>
