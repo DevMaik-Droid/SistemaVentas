@@ -3,11 +3,11 @@ package com.dev_team.dashboard.menu;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.RenderingHints;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.geom.AffineTransform;
@@ -39,12 +39,17 @@ public class MenuItem extends JPanel {
     }
 
     private void init(ModelMenuItem item) {
+        //Personalizar menu
         setOpaque(false);
         setForeground(new Color(170, 170, 170));
         setLayout(new MigLayout("wrap,fillx,inset 0", "[fill]", "[fill,35!]" + (hasSubMenu ? "0[fill,30!]" : "")));
         Item menu = new Item(true, 0);
         menu.setGoogleIcon(item.getIcon());
         menu.setText("  " + item.getMenuName());
+        menu.setBorderPainted(false);
+        menu.setForeground(new Color(51, 51, 51));
+        menu.setFont(new Font("Roboto", 1, 15));
+        
         menu.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -54,7 +59,7 @@ public class MenuItem extends JPanel {
             @Override
             public void mouseExited(MouseEvent e) {
                 if (!menu.isSelected()) {
-                    setForeground(new Color(170, 170, 170));
+                    setForeground(new Color(51, 51, 51));
                 }
             }
         });
@@ -146,6 +151,7 @@ public class MenuItem extends JPanel {
             if (item.isMainMenu()) {
                 item.setSelected(true);
                 setForeground(item.getMainColor());
+                
             }
             if (item.getIndex() == index) {
                 item.setSelected(true);

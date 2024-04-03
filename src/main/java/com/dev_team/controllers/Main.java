@@ -1,5 +1,6 @@
 package com.dev_team.controllers;
 
+import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.vistas.FrmMenu;
 
 public class Main {
@@ -15,8 +16,8 @@ public class Main {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
 
         }
-        FrmMenu menu = new FrmMenu();
-        menu.setVisible(true);
+        Vista_Dashboard dashboard = new Vista_Dashboard();
+        dashboard.setVisible(true);
         
     }
 

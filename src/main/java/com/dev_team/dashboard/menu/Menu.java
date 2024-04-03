@@ -99,8 +99,7 @@ public class Menu extends JPanel {
 
     public void setSelectedIndex(int index, int indexSubMenu) {
         for (Component com : panelMenu.getComponents()) {
-            if (com instanceof MenuItem) {
-                MenuItem item = (MenuItem) com;
+            if (com instanceof MenuItem item) {
                 if (item.getIndex() == index) {
                     item.setSelectedIndex(indexSubMenu);
                     runEvent(index, indexSubMenu);
@@ -112,8 +111,7 @@ public class Menu extends JPanel {
 
     public void clearSelected() {
         for (Component com : panelMenu.getComponents()) {
-            if (com instanceof MenuItem) {
-                MenuItem item = (MenuItem) com;
+            if (com instanceof MenuItem item) {
                 item.clearSelected();
             }
         }
