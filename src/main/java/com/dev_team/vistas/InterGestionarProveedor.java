@@ -163,6 +163,8 @@ public class InterGestionarProveedor extends javax.swing.JInternalFrame {
         jPanel3.add(txt_emailP, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, 170, -1));
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 870, 100));
+
+        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
         getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

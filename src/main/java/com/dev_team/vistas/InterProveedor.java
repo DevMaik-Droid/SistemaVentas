@@ -84,8 +84,8 @@ public class InterProveedor extends javax.swing.JInternalFrame {
         txt_direccionP.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(txt_direccionP, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 139, 170, -1));
 
-        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondo3.jpg"))); // NOI18N
-        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 280));
+        jLabel_wallpaper.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabel_wallpaper, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 270));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
