@@ -1,23 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package com.dev_team.views;
 
 import com.dev_team.utilidades.Gradient;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Color;
 
-/**
- *
- * @author DevMaik
- */
-public class V_RegistrarUsuario extends Gradient {
+
+public class V_RegistrarProveedor extends Gradient {
 
     /**
      * Creates new form V_RegistrarUsuario
      */
-    public V_RegistrarUsuario() {
+    public V_RegistrarProveedor() {
         super(Main_Colores.C_600,Main_Colores.C_500,Main_Colores.C_400);
         initComponents();
         
@@ -165,8 +158,8 @@ public class V_RegistrarUsuario extends Gradient {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 460, 130, -1));
 
         jLabel13.setFont(new java.awt.Font("Questrian", 0, 18)); // NOI18N
-        jLabel13.setText("REGISTRAR USUARIO");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 200, 40));
+        jLabel13.setText("REGISTRAR PROVEEDOR");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 240, 40));
 
         jDateChooser1.setDateFormatString("dd - MMM - YYYY");
         jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 240, -1));

@@ -40,7 +40,7 @@ public class Menu extends JPanel {
         addTitle("ADMINISTRACION");
         addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PEOPLE, "Usuarios", "Registrar", "Gestionar"));
         addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.BORDER_INNER, "Proveedor", "Registrar", "Gestionar"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DVR, "Forms", "Basic Elements", "Advanced Elements", "SEditors", "Wizard"));
+        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DVR, "Productos", "Computadora", "Laptop", "Accesorios", "Componentes","Gestionar Productos"));
         addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PIE_CHART_OUTLINED, "Charts", "Apex", "Flot", "Peity", "Sparkline"));
         addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.VIEW_LIST, "Table", "Basic Tables", "Data Table"));
         addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.INSERT_EMOTICON, "Icons", "Feather Icons", "Flag Icons", "Mdi Icons"));

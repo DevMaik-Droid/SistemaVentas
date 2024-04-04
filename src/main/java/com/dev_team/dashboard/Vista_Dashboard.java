@@ -1,8 +1,12 @@
 package com.dev_team.dashboard;
 
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.views.V_GestionarProveedores;
 import com.dev_team.views.V_GestionarUsuario;
-import com.dev_team.vistas.V_RegistrarUsuario;
+import com.dev_team.views.V_RegistrarComputadora;
+import com.dev_team.views.V_RegistrarLaptop;
+import com.dev_team.views.V_RegistrarProveedor;
+import com.dev_team.views.V_RegistrarUsuario;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
@@ -35,6 +39,14 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(new V_RegistrarUsuario());
             } else if (index == 4 && indexSubMenu == 2) {
                 showForm(new V_GestionarUsuario());
+            } else if (index == 5 && indexSubMenu == 1) {
+                showForm(new V_RegistrarProveedor());
+            } else if (index == 5 && indexSubMenu == 2) {
+                showForm(new V_GestionarProveedores());
+            } else if (index == 6 && indexSubMenu == 1) {
+                showForm(new V_RegistrarComputadora());
+            } else if (index == 6 && indexSubMenu == 2) {
+                showForm(new V_RegistrarLaptop());
             } 
             else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
