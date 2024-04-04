@@ -89,7 +89,7 @@ public class V_RegistrarUsuario extends Gradient {
 
         jLabel3.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
-        jLabel3.setText("Fecha naciemiento:");
+        jLabel3.setText("Fecha nacimiento:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
 
         jTextField6.setBorder(null);

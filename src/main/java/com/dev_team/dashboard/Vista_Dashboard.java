@@ -1,6 +1,7 @@
 package com.dev_team.dashboard;
 
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.views.V_GestionarUsuario;
 import com.dev_team.vistas.V_RegistrarUsuario;
 import java.awt.Color;
 import java.awt.Component;
@@ -32,7 +33,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(new Form_Empty(0 + " " + 0));
             } else if (index == 4 && indexSubMenu == 1) {
                 showForm(new V_RegistrarUsuario());
-            } else {
+            } else if (index == 4 && indexSubMenu == 2) {
+                showForm(new V_GestionarUsuario());
+            } 
+            else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });

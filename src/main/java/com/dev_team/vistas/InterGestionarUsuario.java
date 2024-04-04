@@ -17,11 +17,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-
-/**
- *
- * @author GRUPO CARIJ - © ING.FELIX FLORES CHAMBI
- */
 public class InterGestionarUsuario extends javax.swing.JInternalFrame {
 
     private Long idUsuario = 0L;
