@@ -1,139 +1,113 @@
 package com.dev_team.dashboard;
 
-import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.vistas.V_RegistrarUsuario;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 public class Vista_Dashboard extends javax.swing.JFrame {
-    
+
     private static Vista_Dashboard main;
     Point posicion;
     Point posicionInicial; // Variable para almacenar la posición inicial al iniciar el arrastre
-    
+
     public Vista_Dashboard() {
         initComponents();
         init();
-        
-        lb_barra.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent m) {
-                // Almacenar la posición inicial del ratón dentro de la ventana
-                posicion = m.getPoint();
-                SwingUtilities.convertPointToScreen(posicion, lb_barra);
-                // Almacenar la posición inicial de la ventana
-                posicionInicial = getLocation();
-            }
-            
-            @Override
-            public void mouseDragged(MouseEvent m) {
-                // Calcular la nueva posición de la ventana en función del movimiento del ratón y la posición inicial de la ventana
-                int x = posicionInicial.x + m.getXOnScreen() - posicion.x;
-                int y = posicionInicial.y + m.getYOnScreen() - posicion.y;
-                setLocation(x, y);
-            }
-        });
-        
-        
-        
+
     }
-    
+
     private void init() {
         main = this;
-        
+
         menu.addEvent((int index, int indexSubMenu) -> {
             if (index == 0 && indexSubMenu == 0) {
-                
+
                 showForm(new Form_Empty(0 + " " + 0));
-            }else if(index == 4 && indexSubMenu == 1){
+            } else if (index == 4 && indexSubMenu == 1) {
                 showForm(new V_RegistrarUsuario());
-            } 
-            
-            else {
+            } else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });
         menu.setSelectedIndex(0, 0);
     }
-    
+
     public void showForm(Component com) {
         body.removeAll();
         body.add(com);
         body.repaint();
         body.revalidate();
     }
-    
+
     public static Vista_Dashboard getMain() {
         return main;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        background = new javax.swing.JPanel();
+        panel_title = new javax.swing.JPanel();
+        panel_title_1 = new javax.swing.JPanel();
         lb_barra = new javax.swing.JLabel();
-        panelMenu = new javax.swing.JPanel();
-        menu = new com.dev_team.dashboard.menu.Menu();
-        jPanel1 = new javax.swing.JPanel();
-        body = new javax.swing.JPanel();
+        panel_acciones = new javax.swing.JPanel();
+        maximizar = new javax.swing.JLabel();
         lb_cerrar = new javax.swing.JLabel();
+        body = new javax.swing.JPanel();
+        panelMenu = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        lb_nombre = new javax.swing.JLabel();
+        lb_apellido = new javax.swing.JLabel();
+        menu = new com.dev_team.dashboard.menu.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        setSize(new java.awt.Dimension(1280, 650));
 
-        background.setBackground(new java.awt.Color(245, 245, 245));
+        panel_title.setPreferredSize(new java.awt.Dimension(100, 30));
+        panel_title.setLayout(new javax.swing.BoxLayout(panel_title, javax.swing.BoxLayout.LINE_AXIS));
 
-        lb_barra.setBackground(Main_Colores.C_900);
-        lb_barra.setFont(new java.awt.Font("Lucida Sans", 0, 18)); // NOI18N
+        panel_title_1.setLayout(new java.awt.BorderLayout());
+
+        lb_barra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lb_barra.setText("           Dashboard - Bienvenido Miguel");
+        lb_barra.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         lb_barra.setOpaque(true);
+        lb_barra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseDragged(java.awt.event.MouseEvent evt) {
+                lb_barraMouseDragged(evt);
+            }
+        });
+        lb_barra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                lb_barraMousePressed(evt);
+            }
+        });
+        panel_title_1.add(lb_barra, java.awt.BorderLayout.CENTER);
 
-        panelMenu.setBackground(new java.awt.Color(255, 255, 255));
+        panel_title.add(panel_title_1);
 
-        menu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        panel_acciones.setPreferredSize(new java.awt.Dimension(70, 30));
+        panel_acciones.setRequestFocusEnabled(false);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 179, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout panelMenuLayout = new javax.swing.GroupLayout(panelMenu);
-        panelMenu.setLayout(panelMenuLayout);
-        panelMenuLayout.setHorizontalGroup(
-            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelMenuLayout.createSequentialGroup()
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(panelMenuLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelMenuLayout.setVerticalGroup(
-            panelMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelMenuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(menu, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52))
-        );
-
-        body.setOpaque(false);
-        body.setLayout(new java.awt.BorderLayout());
+        maximizar.setBackground(new java.awt.Color(153, 0, 255));
+        maximizar.setForeground(new java.awt.Color(255, 255, 255));
+        maximizar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        maximizar.setText("[--]");
+        maximizar.setOpaque(true);
+        maximizar.setPreferredSize(new java.awt.Dimension(35, 16));
+        maximizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                maximizarMouseClicked(evt);
+            }
+        });
 
         lb_cerrar.setBackground(new java.awt.Color(255, 51, 51));
         lb_cerrar.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -142,11 +116,6 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         lb_cerrar.setText("X");
         lb_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_cerrar.setOpaque(true);
-        lb_cerrar.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseDragged(java.awt.event.MouseEvent evt) {
-                lb_cerrarMouseDragged(evt);
-            }
-        });
         lb_cerrar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_cerrarMouseClicked(evt);
@@ -159,54 +128,67 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
-        background.setLayout(backgroundLayout);
-        backgroundLayout.setHorizontalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(backgroundLayout.createSequentialGroup()
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(panelMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(body, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(backgroundLayout.createSequentialGroup()
-                        .addComponent(lb_barra, javax.swing.GroupLayout.PREFERRED_SIZE, 1296, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        javax.swing.GroupLayout panel_accionesLayout = new javax.swing.GroupLayout(panel_acciones);
+        panel_acciones.setLayout(panel_accionesLayout);
+        panel_accionesLayout.setHorizontalGroup(
+            panel_accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_accionesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(maximizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        backgroundLayout.setVerticalGroup(
-            backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lb_barra, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelMenu, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
-                        .addComponent(body, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())))
+        panel_accionesLayout.setVerticalGroup(
+            panel_accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panel_accionesLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lb_cerrar))
+            .addComponent(maximizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        panel_title.add(panel_acciones);
+
+        getContentPane().add(panel_title, java.awt.BorderLayout.PAGE_START);
+
+        body.setOpaque(false);
+        body.setPreferredSize(new java.awt.Dimension(1280, 600));
+        body.setLayout(new java.awt.BorderLayout());
+        getContentPane().add(body, java.awt.BorderLayout.CENTER);
+
+        panelMenu.setBackground(new java.awt.Color(255, 255, 255));
+        panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.PAGE_AXIS));
+
+        jPanel1.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setMaximumSize(new java.awt.Dimension(250, 200));
+        jPanel1.setPreferredSize(new java.awt.Dimension(200, 150));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel2.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel2.setOpaque(true);
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 57));
+
+        lb_nombre.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
+        lb_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_nombre.setText("Miguel Angel");
+        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 30, 110, -1));
+
+        lb_apellido.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
+        lb_apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_apellido.setText("Quispe Gutierrez");
+        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, -1));
+
+        panelMenu.add(jPanel1);
+
+        menu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        menu.setPreferredSize(new java.awt.Dimension(150, 460));
+        panelMenu.add(menu);
+
+        getContentPane().add(panelMenu, java.awt.BorderLayout.WEST);
 
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void lb_cerrarMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseDragged
-        
-    }//GEN-LAST:event_lb_cerrarMouseDragged
 
     private void lb_cerrarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseEntered
         lb_cerrar.setBackground(Color.red);
@@ -220,28 +202,63 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         lb_cerrar.setBackground(Color.white);
         lb_cerrar.setForeground(new Color(73, 181, 172));
         lb_barra.setBackground(Color.white);
-        lb_barra.setText("Login");
+        lb_barra.setText("\t Dashboard - Bienvenido Miguel Angel");
         lb_barra.setForeground(new Color(33, 45, 62));
     }//GEN-LAST:event_lb_cerrarMouseExited
 
     private void lb_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseClicked
-        
+
         int c = JOptionPane.showConfirmDialog(null, "Estas seguro de cerrar?");
         if (c == 0) {
             System.exit(0);
         }
-        
+
     }//GEN-LAST:event_lb_cerrarMouseClicked
 
-    
+    int antes;
+    boolean bandera = false;
+    private void maximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizarMouseClicked
+
+        if (!bandera) {
+            antes = this.getExtendedState();
+            setExtendedState(JFrame.MAXIMIZED_BOTH);
+            bandera = true;
+        } else {
+            setExtendedState(antes);
+            bandera = false;
+        }
+
+    }//GEN-LAST:event_maximizarMouseClicked
+
+    private void lb_barraMouseDragged(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_barraMouseDragged
+        // Calcular la nueva posición de la ventana en función del movimiento del ratón y la posición inicial de la ventana
+        int x = posicionInicial.x + evt.getXOnScreen() - posicion.x;
+        int y = posicionInicial.y + evt.getYOnScreen() - posicion.y;
+        setLocation(x, y);
+    }//GEN-LAST:event_lb_barraMouseDragged
+
+    private void lb_barraMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_barraMousePressed
+        // Almacenar la posición inicial del ratón dentro de la ventana
+        posicion = evt.getPoint();
+        SwingUtilities.convertPointToScreen(posicion, lb_barra);
+        // Almacenar la posición inicial de la ventana
+        posicionInicial = getLocation();
+    }//GEN-LAST:event_lb_barraMousePressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel background;
     private javax.swing.JPanel body;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lb_apellido;
     private javax.swing.JLabel lb_barra;
     private javax.swing.JLabel lb_cerrar;
+    private javax.swing.JLabel lb_nombre;
+    private javax.swing.JLabel maximizar;
     private com.dev_team.dashboard.menu.Menu menu;
     private javax.swing.JPanel panelMenu;
+    private javax.swing.JPanel panel_acciones;
+    private javax.swing.JPanel panel_title;
+    private javax.swing.JPanel panel_title_1;
     // End of variables declaration//GEN-END:variables
 }
