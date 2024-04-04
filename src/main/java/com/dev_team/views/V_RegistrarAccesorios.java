@@ -5,12 +5,12 @@ import com.dev_team.utilidades.Main_Colores;
 import java.awt.Color;
 
 
-public class V_RegistrarComputadora extends Gradient {
+public class V_RegistrarAccesorios extends Gradient {
 
     /**
      * Creates new form V_RegistrarUsuario
      */
-    public V_RegistrarComputadora() {
+    public V_RegistrarAccesorios() {
         super(Main_Colores.C_600,Main_Colores.C_500,Main_Colores.C_400);
         initComponents();
         
@@ -27,27 +27,27 @@ public class V_RegistrarComputadora extends Gradient {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
         btn_buscar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
-        jComboBox6 = new javax.swing.JComboBox<>();
+        cbx_modeloA = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbx_materialA = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
-        jComboBox7 = new javax.swing.JComboBox<>();
+        cbx_marcaA = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox8 = new javax.swing.JComboBox<>();
+        cbx_conectividadA = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        cbx_versionA = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jTextField1 = new javax.swing.JTextField();
+        cbx_compatibilidadA = new javax.swing.JComboBox<>();
+        tf_nombreA = new javax.swing.JTextField();
         btn_registrar = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
@@ -60,11 +60,6 @@ public class V_RegistrarComputadora extends Gradient {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Foto");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 100, 190, 20));
-
-        jLabel6.setFont(new java.awt.Font("Lucida Console", 0, 15)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Caracteristicas:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 180, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
@@ -82,10 +77,10 @@ public class V_RegistrarComputadora extends Gradient {
 
         jLabel13.setFont(new java.awt.Font("Questrian", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("REGISTRAR COMPUTADORA");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 360, 50));
+        jLabel13.setText("REGISTRAR ACCESORIOS");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 320, 50));
 
-        jPanel1.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 30));
+        jPanel1.add(cbx_modeloA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 200, 30));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
@@ -100,74 +95,79 @@ public class V_RegistrarComputadora extends Gradient {
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Ram:");
+        jLabel9.setText("Material:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 200, -1, -1));
 
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        cbx_materialA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                cbx_materialAActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 230, 30));
+        jPanel1.add(cbx_materialA, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 230, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Marca:");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, -1, -1));
 
-        jPanel1.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 200, 30));
+        jPanel1.add(cbx_marcaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("Pantalla:");
+        jLabel5.setText("Conectividad:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
 
-        jPanel1.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 200, 30));
+        jPanel1.add(cbx_conectividadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 200, 30));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("Procesador:");
+        jLabel12.setText("Version:");
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, -1, -1));
 
-        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+        cbx_versionA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox4ActionPerformed(evt);
+                cbx_versionAActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 230, 30));
+        jPanel1.add(cbx_versionA, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 230, 30));
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Disco:");
+        jLabel11.setText("Compatibilidad:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, -1, -1));
 
-        jPanel1.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 230, 30));
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 210, 30));
+        jPanel1.add(cbx_compatibilidadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 230, 30));
+        jPanel1.add(tf_nombreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 210, 30));
 
         btn_registrar.setText("REGISTRAR");
         jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 190, 50));
 
+        jLabel8.setFont(new java.awt.Font("Lucida Console", 0, 15)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Caracteristicas:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 180, -1));
+
         add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void cbx_materialAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_materialAActionPerformed
 
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_cbx_materialAActionPerformed
 
-    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    private void cbx_versionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_versionAActionPerformed
 
-    }//GEN-LAST:event_jComboBox4ActionPerformed
+    }//GEN-LAST:event_cbx_versionAActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_registrar;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> cbx_compatibilidadA;
+    private javax.swing.JComboBox<String> cbx_conectividadA;
+    private javax.swing.JComboBox<String> cbx_marcaA;
+    private javax.swing.JComboBox<String> cbx_materialA;
+    private javax.swing.JComboBox<String> cbx_modeloA;
+    private javax.swing.JComboBox<String> cbx_versionA;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -176,12 +176,12 @@ public class V_RegistrarComputadora extends Gradient {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField tf_nombreA;
     // End of variables declaration//GEN-END:variables
 }
