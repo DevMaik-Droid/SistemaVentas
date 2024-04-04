@@ -3,6 +3,7 @@ package com.dev_team.vistas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
@@ -189,7 +190,7 @@ public class FrmLogin extends javax.swing.JFrame {
         lb_cerrar.setForeground(new java.awt.Color(73, 181, 172));
         lb_cerrar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_cerrar.setText("x");
-        lb_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        lb_cerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_cerrar.setOpaque(true);
         lb_cerrar.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -287,8 +288,8 @@ public class FrmLogin extends javax.swing.JFrame {
 
     /**
      * metodo Iniciar Sesion
-    
-    private void Login() {
+     */
+    /*private void Login() {
         if (!txt_usuario.getText().isEmpty() && !txt_password.getText().isEmpty()) {
             Service_Usuario controlUsuario = new Service_Usuario();
             Usuario usuario = new Usuario();
@@ -305,5 +306,5 @@ public class FrmLogin extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Ingrese sus credenciales");
         }
-    } */
+    }*/
 }

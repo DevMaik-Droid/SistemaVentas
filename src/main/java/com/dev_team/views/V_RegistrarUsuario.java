@@ -170,7 +170,7 @@ public class V_RegistrarUsuario extends Gradient {
 
         jLabel13.setFont(new java.awt.Font("Questrian", 0, 18)); // NOI18N
         jLabel13.setText("REGISTRAR USUARIO");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 180, 40));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 10, 200, 40));
 
         jDateChooser1.setDateFormatString("dd - MMM - YYYY");
         jPanel1.add(jDateChooser1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, 240, -1));
