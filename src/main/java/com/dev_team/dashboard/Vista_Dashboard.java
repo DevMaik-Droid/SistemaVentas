@@ -1,11 +1,10 @@
 package com.dev_team.dashboard;
 
+import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.vistas.V_RegistrarUsuario;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -19,6 +18,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     public Vista_Dashboard() {
         initComponents();
         init();
+        setResizable(true);
+        setSize(1280,700);
 
     }
 
@@ -76,8 +77,11 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
         panel_title_1.setLayout(new java.awt.BorderLayout());
 
+        lb_barra.setBackground(Main_Colores.C_900
+        );
         lb_barra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        lb_barra.setText("           Dashboard - Bienvenido Miguel");
+        lb_barra.setForeground(new java.awt.Color(255, 255, 255));
+        lb_barra.setText("\t Dashboard - Bienvenido Miguel");
         lb_barra.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         lb_barra.setOpaque(true);
         lb_barra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -151,8 +155,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
         getContentPane().add(panel_title, java.awt.BorderLayout.PAGE_START);
 
-        body.setOpaque(false);
-        body.setPreferredSize(new java.awt.Dimension(1280, 600));
+        body.setBackground(new java.awt.Color(204, 204, 204));
+        body.setPreferredSize(new java.awt.Dimension(1000, 600));
         body.setLayout(new java.awt.BorderLayout());
         getContentPane().add(body, java.awt.BorderLayout.CENTER);
 
@@ -201,9 +205,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     private void lb_cerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseExited
         lb_cerrar.setBackground(Color.white);
         lb_cerrar.setForeground(new Color(73, 181, 172));
-        lb_barra.setBackground(Color.white);
+        
+        lb_barra.setBackground(Main_Colores.C_900);
         lb_barra.setText("\t Dashboard - Bienvenido Miguel Angel");
-        lb_barra.setForeground(new Color(33, 45, 62));
+        lb_barra.setForeground(Color.WHITE);
     }//GEN-LAST:event_lb_cerrarMouseExited
 
     private void lb_cerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseClicked
