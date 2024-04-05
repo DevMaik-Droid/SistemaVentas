@@ -29,23 +29,23 @@ public class V_RegistrarComponentes extends Gradient {
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        ta_descripcionC = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
-        btn_buscar = new javax.swing.JButton();
+        btn_buscarC = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         cbx_marcaC = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
-        jComboBox3 = new javax.swing.JComboBox<>();
+        cbx_tipoC = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
         cbx_modeloC = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
         cbx_capacidadC = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
-        jComboBox5 = new javax.swing.JComboBox<>();
+        cbx_velocidadC = new javax.swing.JComboBox<>();
         tf_nombreC = new javax.swing.JTextField();
-        btn_registrar = new javax.swing.JButton();
+        btn_registrarC = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
@@ -61,13 +61,13 @@ public class V_RegistrarComponentes extends Gradient {
 
         jLabel6.setFont(new java.awt.Font("Lucida Console", 0, 15)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("Caracteristicas:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 180, -1));
+        jLabel6.setText("Descripcion:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 140, -1));
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setBorder(null);
-        jScrollPane1.setViewportView(jTextArea1);
+        ta_descripcionC.setColumns(20);
+        ta_descripcionC.setRows(5);
+        ta_descripcionC.setBorder(null);
+        jScrollPane1.setViewportView(ta_descripcionC);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 460, 580, 90));
 
@@ -75,8 +75,8 @@ public class V_RegistrarComponentes extends Gradient {
         jLabel10.setOpaque(true);
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 130, 191, 196));
 
-        btn_buscar.setText("Buscar");
-        jPanel1.add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 130, -1));
+        btn_buscarC.setText("Buscar");
+        jPanel1.add(btn_buscarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 350, 130, -1));
 
         jLabel13.setFont(new java.awt.Font("Questrian", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,12 +101,12 @@ public class V_RegistrarComponentes extends Gradient {
         jLabel9.setText("Tipo:");
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, -1, -1));
 
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        cbx_tipoC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                cbx_tipoCActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 200, 30));
+        jPanel1.add(cbx_tipoC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 340, 200, 30));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -132,11 +132,11 @@ public class V_RegistrarComponentes extends Gradient {
         jLabel11.setText("Velocidad:");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 260, -1, -1));
 
-        jPanel1.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 230, 30));
+        jPanel1.add(cbx_velocidadC, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 280, 230, 30));
         jPanel1.add(tf_nombreC, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 210, 30));
 
-        btn_registrar.setText("REGISTRAR");
-        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 190, 50));
+        btn_registrarC.setText("REGISTRAR");
+        jPanel1.add(btn_registrarC, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 570, 190, 50));
 
         add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
@@ -145,19 +145,19 @@ public class V_RegistrarComponentes extends Gradient {
 
     }//GEN-LAST:event_cbx_capacidadCActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void cbx_tipoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_tipoCActionPerformed
 
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_cbx_tipoCActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_buscar;
-    private javax.swing.JButton btn_registrar;
+    private javax.swing.JButton btn_buscarC;
+    private javax.swing.JButton btn_registrarC;
     private javax.swing.JComboBox<String> cbx_capacidadC;
     private javax.swing.JComboBox<String> cbx_marcaC;
     private javax.swing.JComboBox<String> cbx_modeloC;
-    private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> cbx_tipoC;
+    private javax.swing.JComboBox<String> cbx_velocidadC;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -170,7 +170,7 @@ public class V_RegistrarComponentes extends Gradient {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextArea ta_descripcionC;
     private javax.swing.JTextField tf_nombreC;
     // End of variables declaration//GEN-END:variables
 }

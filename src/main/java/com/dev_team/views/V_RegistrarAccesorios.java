@@ -144,7 +144,7 @@ public class V_RegistrarAccesorios extends Gradient {
 
         jLabel8.setFont(new java.awt.Font("Lucida Console", 0, 15)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Caracteristicas:");
+        jLabel8.setText("Descripcion:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 180, -1));
 
         add(jPanel1);
