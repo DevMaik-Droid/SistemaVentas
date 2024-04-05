@@ -103,7 +103,7 @@ public class CtrlGestionarProducto extends InterGestionarProducto implements Act
                         producto.setIdCategoria(obtenerIdCategoriaCombo);
                         producto.setEstado(1);
 
-                        if (controlProducto.actualizar(producto, idProducto)) {
+                        if (controlProducto.actualizar(producto, "")) {
                             JOptionPane.showMessageDialog(null, "Registro Actualizado");
                             this.CargarTablaProductos();
                             this.jComboBox_iva.setSelectedItem("Seleccione iva:");
@@ -180,11 +180,12 @@ public class CtrlGestionarProducto extends InterGestionarProducto implements Act
     int porcentajeIva = 0;
     double IVA = 0;
 
-    private void CargarTablaProductos() {
+    public void CargarTablaProductos() {
         Connection con = Conexion.conectar();
         DefaultTableModel model = new DefaultTableModel();
-        String sql = "select p.idProducto,p.producto,p.cantidad,p.precio,pp.nombre,p.porcentajeIva,c.categoria,p.estado from tb_producto p,tb_categoria c ,tb_proveedor pp \n"
-                + "WHERE p.idCategoria = c.idCategoria and p.idProveedor = pp.idProveedor;";
+        String sql = """
+                     select p.idProducto,p.producto,p.cantidad,p.precio,pp.nombre,p.porcentajeIva,c.categoria,p.estado from tb_producto p,tb_categoria c ,tb_proveedor pp 
+                     WHERE p.idCategoria = c.idCategoria and p.idProveedor = pp.idProveedor;""";
         Statement st;
         try {
             st = con.createStatement();

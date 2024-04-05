@@ -9,12 +9,12 @@ import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
-public class FrmLogin extends javax.swing.JFrame {
+public class V_Login extends javax.swing.JFrame {
 
     Point posicion;
     Point posicionInicial; // Variable para almacenar la posición inicial al iniciar el arrastre
 
-    public FrmLogin() {
+    public V_Login() {
         initComponents();
         this.setResizable(false);
         this.setLocationRelativeTo(null);

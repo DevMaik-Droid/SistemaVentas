@@ -33,4 +33,22 @@ public class Gradient extends JPanel{
         g2d.fillRect(0, 0, getWidth(), getHeight());
     }
     
+    
+    /* Porciacaso
+        private Icon recuperarImagen(byte[] bytes_image) {
+        try {
+            InputStream inputStream = new ByteArrayInputStream(bytes_image);
+            byte[] buffer = new byte[inputStream.available()];
+            inputStream.read(buffer);
+            ImageIcon img_icon = new ImageIcon(buffer);
+            Image imagen = img_icon.getImage().getScaledInstance(lb_foto.getWidth(), lb_foto.getHeight(), Image.SCALE_DEFAULT);
+            Icon icon = new ImageIcon(imagen);
+            return icon;
+        } catch (IOException ex) {
+            Logger.getLogger(D_AdmUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+    }
+
+    */
 }

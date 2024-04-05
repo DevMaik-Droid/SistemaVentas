@@ -1,6 +1,5 @@
 package com.dev_team.vistas;
 
-import static com.dev_team.vistas.FrmMenu.jDesktopPane_menu;
 import java.awt.Dimension;
 import javax.swing.JTextField;
 
@@ -88,7 +87,7 @@ public class InterGraficas extends javax.swing.JInternalFrame {
         fecha_fin = ((JTextField) jDateChooser_fecha_fin.getDateEditor().getUiComponent()).getText();
         
         InterGraficaVentas interGraficaVentas = new InterGraficaVentas();
-        jDesktopPane_menu.add(interGraficaVentas);
+     
         interGraficaVentas.setVisible(true);
         
     }//GEN-LAST:event_jButton_GuardarActionPerformed

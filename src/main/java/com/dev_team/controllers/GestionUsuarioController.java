@@ -25,7 +25,7 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         GenerarTabla();
     }
 
-    private void GenerarTabla() {
+    public final void GenerarTabla() {
         Service_Usuario serv_usuario = new Service_Usuario();
         
         List<Usuario> lista_usuario = (List<Usuario>) serv_usuario.listar();

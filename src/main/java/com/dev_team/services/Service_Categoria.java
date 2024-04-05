@@ -71,7 +71,7 @@ public class Service_Categoria implements I_Service {
      * **************************************************
      */
     @Override
-    public boolean actualizar(Object objeto, Long idCategoria) {
+    public boolean actualizar(Object objeto, String idCategoria) {
         boolean respuesta = false;
         Categoria ct = (Categoria) objeto;
         Connection cn = Conexion.conectar();

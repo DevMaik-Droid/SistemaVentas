@@ -25,5 +25,6 @@ public class Usuario {
     private String observaciones;
     
     private byte[] bytes_image;
+    private Boolean nueva_imagen;
 
 }

@@ -54,12 +54,11 @@ public class Service_Proveedor implements I_Service{
         return respuesta;
     }
 
-    /**
-     * **************************************************
-     * metodo para actualizar un proveedor
-     * **************************************************
-     */
-    public boolean actualizar(Object objeto, Long idProveedor) {
+
+     // metodo para actualizar un proveedor
+   
+    @Override
+    public boolean actualizar(Object objeto, String idProveedor) {
         boolean respuesta = false;
         Connection cn = Conexion.conectar();
         Proveedor pr = (Proveedor) objeto;

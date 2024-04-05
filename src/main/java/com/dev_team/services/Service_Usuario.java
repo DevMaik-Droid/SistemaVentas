@@ -97,33 +97,8 @@ public class Service_Usuario implements I_Service {
         return respuesta;
     }
 
-    /**
-     * **************************************************
-     * metodo para actualizar un usuario
-     * **************************************************
-     */
-    public boolean actualizar(Usuario objeto, Long idUsuario) {
-        boolean respuesta = false;
-        Connection cn = Conexion.conectar();
-        try {
 
-            PreparedStatement consulta = cn.prepareStatement("update tb_usuario set nombre=?, apellido = ?, usuario = ?, password= ?, telefono = ?, estado = ? where idUsuario ='" + idUsuario + "'");
-            consulta.setString(1, objeto.getNombre());
-            consulta.setString(2, objeto.getApellido());
-            consulta.setString(3, objeto.getUsuario());
-            consulta.setString(4, objeto.getPassword());
-            consulta.setString(5, objeto.getTelefono());
-            consulta.setInt(6, objeto.getEstado());
 
-            if (consulta.executeUpdate() > 0) {
-                respuesta = true;
-            }
-            cn.close();
-        } catch (SQLException e) {
-            System.out.println("Error al actualizar usuario: " + e);
-        }
-        return respuesta;
-    }
 
     /**
      * **************************************************
@@ -148,9 +123,35 @@ public class Service_Usuario implements I_Service {
         return respuesta;
     }
 
+    
+    // Metodo para actulizar el registro
     @Override
-    public boolean actualizar(Object objeto, Long L) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public boolean actualizar(Object objeto, String clave) {
+       boolean respuesta = false;
+       Usuario usuario = (Usuario) objeto;
+        Connection cn = Conexion.conectar();
+        String sql = String.format("update %s set nombre=?, apellido = ?,fecha_nacimiento = ?, telefono = ?, direccion = ?, usuario = ?, contrasenia= ?, foto = ?, estado = ? where clave ='" + clave + "'", TABLA);
+        try {
+
+            PreparedStatement consulta = cn.prepareStatement(sql);
+            consulta.setString(1, usuario.getNombre());
+            consulta.setString(2, usuario.getApellido());
+            consulta.setDate(3, new Date(usuario.getFechaNacimiento().getTime()));
+            consulta.setString(4, usuario.getTelefono());
+            consulta.setString(5, usuario.getDireccion());
+            consulta.setString(6, usuario.getUsuario());
+            consulta.setString(7, usuario.getPassword());
+            consulta.setBinaryStream(8, usuario.getFoto());
+            consulta.setInt(9, usuario.getEstado());
+
+            if (consulta.executeUpdate() > 0) {
+                respuesta = true;
+            }
+            cn.close();
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar usuario: " + e);
+        }
+        return respuesta;
     }
 
     @Override
