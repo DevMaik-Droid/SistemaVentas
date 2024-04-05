@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package com.dev_team.views;
 
 import com.dev_team.utilidades.Main_Colores;
@@ -132,7 +128,7 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
         getContentPane().add(cbx_compatibilidadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 340, 230, 30));
         getContentPane().add(tf_nombreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 210, 30));
 
-        btn_buscar1.setText("Buscar");
+        btn_buscar1.setText("Editar");
         getContentPane().add(btn_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 130, -1));
 
         pack();
