@@ -65,6 +65,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         return new ImageIcon(img);
     }
 
+
     private void iniciarCbxEstado(int estado) {
         switch (estado) {
             case 0 ->

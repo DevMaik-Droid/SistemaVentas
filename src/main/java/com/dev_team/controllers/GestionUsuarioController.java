@@ -27,7 +27,7 @@ public class GestionUsuarioController extends V_GestionarUsuario {
 
     public final void GenerarTabla() {
         Service_Usuario serv_usuario = new Service_Usuario();
-        
+
         List<Usuario> lista_usuario = (List<Usuario>) serv_usuario.listar();
 
         Object[] columnas = {"Clave", "Apellido", "Nombre", "Telefono", "Direccion", "Estado"};
@@ -43,27 +43,32 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             elementos[3] = us.getTelefono();
             elementos[4] = us.getDireccion();
             elementos[5] = us.getEstado();
-            
+
             model.addRow(elementos);
         }
 
         tabla_usuarios.setModel(model);
         
-        tabla_usuarios.addMouseListener(new MouseAdapter(){
-        
+        tabla_usuarios.setDefaultEditor(Object.class, null);
+        tabla_usuarios.addMouseListener(new MouseAdapter() {
+
             @Override
             public void mouseClicked(MouseEvent e) {
-                int fila = tabla_usuarios.rowAtPoint(e.getPoint());
-                int columna = 0;
 
-                if (fila > -1) {
-                    String clave = tabla_usuarios.getValueAt(fila, columna).toString();
-                    Usuario us = lista_usuario.stream().filter(persona -> persona.getClave().equals(clave)).findFirst().get();
-                    D_AdmUsuario dialog_usuario = new D_AdmUsuario(null,true,us);
-                    dialog_usuario.setVisible(true);
+                if (e.getClickCount() == 2) {
+                    int fila = tabla_usuarios.rowAtPoint(e.getPoint());
+                    int columna = 0;
+
+                    if (fila > -1) {
+                        String clave = tabla_usuarios.getValueAt(fila, columna).toString();
+                        Usuario us = lista_usuario.stream().filter(persona -> persona.getClave().equals(clave)).findFirst().get();
+                        D_AdmUsuario dialog_usuario = new D_AdmUsuario(null, true, us);
+                        dialog_usuario.setVisible(true);
+                    }
                 }
+
             }
-        
+
         });
 
     }
