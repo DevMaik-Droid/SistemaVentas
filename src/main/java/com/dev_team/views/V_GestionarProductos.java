@@ -26,12 +26,10 @@ public class V_GestionarProductos extends Gradient {
         PanelTop = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        cbx_filtrar = new javax.swing.JComboBox<>();
-        tf_nombre = new javax.swing.JTextField();
-        btn_buscar = new javax.swing.JButton();
+        cbx_filtrarGP = new javax.swing.JComboBox<>();
+        tf_nombreGP = new javax.swing.JTextField();
+        btn_buscarGP = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
         PanelMid = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -49,21 +47,17 @@ public class V_GestionarProductos extends Gradient {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Filtrar:");
 
-        tf_nombre.addActionListener(new java.awt.event.ActionListener() {
+        tf_nombreGP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_nombreActionPerformed(evt);
+                tf_nombreGPActionPerformed(evt);
             }
         });
 
-        btn_buscar.setText("BUSCAR");
+        btn_buscarGP.setText("BUSCAR");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("GESTION DE PRODUCTOS");
-
-        jButton1.setText("ACTUALIZAR");
-
-        jButton2.setText("ELIMINAR");
 
         javax.swing.GroupLayout PanelTopLayout = new javax.swing.GroupLayout(PanelTop);
         PanelTop.setLayout(PanelTopLayout);
@@ -75,20 +69,16 @@ public class V_GestionarProductos extends Gradient {
                     .addGroup(PanelTopLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_nombreGP, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn_buscarGP, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(15, 15, 15))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(76, 76, 76)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbx_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 559, Short.MAX_VALUE)
-                .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(99, 99, 99))
+                    .addComponent(cbx_filtrarGP, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(769, Short.MAX_VALUE))
         );
         PanelTopLayout.setVerticalGroup(
             PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,17 +90,13 @@ public class V_GestionarProductos extends Gradient {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_buscar)))
+                            .addComponent(tf_nombreGP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_buscarGP)))
                     .addGroup(PanelTopLayout.createSequentialGroup()
                         .addGap(0, 10, Short.MAX_VALUE)
-                        .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbx_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))))
+                        .addComponent(cbx_filtrarGP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(33, 33, 33))
         );
 
@@ -140,23 +126,21 @@ public class V_GestionarProductos extends Gradient {
         add(PanelMid, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreActionPerformed
+    private void tf_nombreGPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreGPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombreActionPerformed
+    }//GEN-LAST:event_tf_nombreGPActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelMid;
     private javax.swing.JPanel PanelTop;
-    private javax.swing.JButton btn_buscar;
-    private javax.swing.JComboBox<String> cbx_filtrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_buscarGP;
+    private javax.swing.JComboBox<String> cbx_filtrarGP;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombreGP;
     // End of variables declaration//GEN-END:variables
 }

@@ -26,11 +26,9 @@ public class V_GestionarUsuario extends Gradient {
         PanelTop = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        cbx_filtrar = new javax.swing.JComboBox<>();
-        tf_nombre = new javax.swing.JTextField();
-        btn_buscar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        cbx_filtrarGU = new javax.swing.JComboBox<>();
+        tf_nombreGU = new javax.swing.JTextField();
+        btn_buscarGU = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -49,17 +47,13 @@ public class V_GestionarUsuario extends Gradient {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Filtrar:");
 
-        tf_nombre.addActionListener(new java.awt.event.ActionListener() {
+        tf_nombreGU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_nombreActionPerformed(evt);
+                tf_nombreGUActionPerformed(evt);
             }
         });
 
-        btn_buscar.setText("BUSCAR");
-
-        jButton1.setText("ACTUALIZAR");
-
-        jButton2.setText("ELIMINAR");
+        btn_buscarGU.setText("BUSCAR");
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -75,19 +69,15 @@ public class V_GestionarUsuario extends Gradient {
                     .addGroup(PanelTopLayout.createSequentialGroup()
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_nombreGU, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btn_buscarGU, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(129, 129, 129)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbx_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 184, Short.MAX_VALUE)
-                .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 113, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(55, 55, 55))
+                    .addComponent(cbx_filtrarGU, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(352, Short.MAX_VALUE))
         );
         PanelTopLayout.setVerticalGroup(
             PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,15 +85,13 @@ public class V_GestionarUsuario extends Gradient {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbx_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_buscar)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2))
+                    .addComponent(cbx_filtrarGU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_nombreGU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_buscarGU)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27))
         );
 
@@ -131,23 +119,21 @@ public class V_GestionarUsuario extends Gradient {
         add(PanelMid, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_nombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreActionPerformed
+    private void tf_nombreGUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreGUActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombreActionPerformed
+    }//GEN-LAST:event_tf_nombreGUActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelMid;
     private javax.swing.JPanel PanelTop;
-    private javax.swing.JButton btn_buscar;
-    private javax.swing.JComboBox<String> cbx_filtrar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_buscarGU;
+    private javax.swing.JComboBox<String> cbx_filtrarGU;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField tf_nombre;
+    private javax.swing.JTextField tf_nombreGU;
     // End of variables declaration//GEN-END:variables
 }

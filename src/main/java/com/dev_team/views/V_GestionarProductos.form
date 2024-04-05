@@ -40,9 +40,9 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel2" min="-2" pref="62" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tf_nombre" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="tf_nombreGP" min="-2" pref="164" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="btn_buscar" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btn_buscarGP" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel3" min="-2" pref="280" max="-2" attributes="0"/>
@@ -50,14 +50,9 @@
                   <EmptySpace min="-2" pref="76" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabel1" alignment="0" min="-2" pref="61" max="-2" attributes="0"/>
-                      <Component id="cbx_filtrar" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
+                      <Component id="cbx_filtrarGP" alignment="0" min="-2" pref="227" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="559" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jButton1" pref="111" max="32767" attributes="0"/>
-                      <Component id="jButton2" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                  <EmptySpace pref="769" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -71,21 +66,15 @@
                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
                               <Component id="jLabel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="tf_nombre" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="btn_buscar" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="tf_nombreGP" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btn_buscarGP" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="0" pref="10" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel1" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
-                              <Component id="jButton1" alignment="3" min="-2" pref="24" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="jLabel1" min="-2" pref="25" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="cbx_filtrar" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="cbx_filtrarGP" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -116,7 +105,7 @@
             <Property name="text" type="java.lang.String" value="Filtrar:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="cbx_filtrar">
+        <Component class="javax.swing.JComboBox" name="cbx_filtrarGP">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>
@@ -126,12 +115,12 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tf_nombre">
+        <Component class="javax.swing.JTextField" name="tf_nombreGP">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_nombreActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_nombreGPActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_buscar">
+        <Component class="javax.swing.JButton" name="btn_buscarGP">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUSCAR"/>
           </Properties>
@@ -145,16 +134,6 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="GESTION DE PRODUCTOS"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ACTUALIZAR"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ELIMINAR"/>
           </Properties>
         </Component>
       </SubComponents>
