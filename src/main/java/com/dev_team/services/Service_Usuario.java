@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -16,6 +17,8 @@ public class Service_Usuario implements I_Service {
     
     
     //Registrar Usuario
+    private final static String TABLA = "tb_usuario";
+    
     @Override
     public boolean crear(Object objeto) {
         boolean respuesta = false;
@@ -152,6 +155,36 @@ public class Service_Usuario implements I_Service {
 
     @Override
     public List<?> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Usuario> lista_usuarios = null;
+        try(Connection cn = Conexion.conectar()){
+            
+            String sql = String.format("SELECT * FROM %s", TABLA);
+            PreparedStatement pst = cn.prepareStatement(sql);
+            ResultSet rst = pst.executeQuery();
+            lista_usuarios = new ArrayList<>();
+            
+            while(rst.next()){
+                Usuario us = new Usuario();
+                us.setIdUsuario(rst.getLong("idUsuario"));
+                us.setNombre(rst.getString("nombre"));
+                us.setApellido(rst.getString("apellido"));
+                us.setCi(rst.getString("ci"));
+                us.setFechaNacimiento(rst.getDate("fecha_nacimiento"));
+                us.setTelefono(rst.getString("telefono"));
+                us.setDireccion(rst.getString("direccion"));
+                us.setUsuario(rst.getString("usuario"));
+                us.setPassword(rst.getString("contrasenia"));
+                us.setBytes_image(rst.getBytes("foto"));
+                us.setClave(rst.getString("clave"));
+                us.setEstado(rst.getInt("estado"));
+                us.setObservaciones(rst.getString("observaciones"));
+                lista_usuarios.add(us);
+            }
+            cn.close();
+        }catch(SQLException e){
+            
+        }
+       
+        return lista_usuarios;
     }
 }

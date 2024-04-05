@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class Usuario {
 
     //Atributos
-    private int idUsuario; 
+    private Long idUsuario; 
     private String nombre;
     private String apellido;
     private String ci;
@@ -23,5 +23,7 @@ public class Usuario {
     private InputStream foto;
     private int estado;
     private String observaciones;
+    
+    private byte[] bytes_image;
 
 }

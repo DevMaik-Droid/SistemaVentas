@@ -1,8 +1,8 @@
 package com.dev_team.views;
 
+
 import com.dev_team.utilidades.Gradient;
 import com.dev_team.utilidades.Main_Colores;
-import java.awt.Color;
 
 public class V_GestionarUsuario extends Gradient {
 
@@ -12,12 +12,8 @@ public class V_GestionarUsuario extends Gradient {
     public V_GestionarUsuario() {
         super(Main_Colores.C_600, Main_Colores.C_500, Main_Colores.C_400);
         initComponents();
-
     }
 
-    private void iniciarComponentes() {
-
-    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -32,7 +28,7 @@ public class V_GestionarUsuario extends Gradient {
         jLabel3 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabla_usuarios = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new java.awt.BorderLayout());
@@ -100,7 +96,7 @@ public class V_GestionarUsuario extends Gradient {
         PanelMid.setOpaque(false);
         PanelMid.setLayout(new javax.swing.BoxLayout(PanelMid, javax.swing.BoxLayout.LINE_AXIS));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -111,8 +107,8 @@ public class V_GestionarUsuario extends Gradient {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jTable1.setOpaque(false);
-        jScrollPane2.setViewportView(jTable1);
+        tabla_usuarios.setOpaque(false);
+        jScrollPane2.setViewportView(tabla_usuarios);
 
         PanelMid.add(jScrollPane2);
 
@@ -133,7 +129,7 @@ public class V_GestionarUsuario extends Gradient {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    protected javax.swing.JTable tabla_usuarios;
     private javax.swing.JTextField tf_nombreGU;
     // End of variables declaration//GEN-END:variables
 }

@@ -230,7 +230,7 @@
         </Constraint>
       </Constraints>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel13">
+    <Component class="javax.swing.JLabel" name="lb_foto">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -279,8 +279,10 @@
     <Component class="javax.swing.JComboBox" name="cbx_estado">
       <Properties>
         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-          <StringArray count="1">
-            <StringItem index="0" value=" "/>
+          <StringArray count="3">
+            <StringItem index="0" value="Activo"/>
+            <StringItem index="1" value="Ausente"/>
+            <StringItem index="2" value="Inactivo"/>
           </StringArray>
         </Property>
       </Properties>
@@ -289,7 +291,7 @@
       </AuxValues>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="50" y="400" width="130" height="-1"/>
+          <AbsoluteConstraints x="50" y="400" width="160" height="-1"/>
         </Constraint>
       </Constraints>
     </Component>

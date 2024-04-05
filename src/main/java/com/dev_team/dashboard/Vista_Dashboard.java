@@ -1,5 +1,6 @@
 package com.dev_team.dashboard;
 
+import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.views.V_GestionarProductos;
@@ -40,11 +41,15 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
                 showForm(new Form_Empty(0 + " " + 0));
             } else if (index == 4 && indexSubMenu == 1) {
+                
                 V_RegistrarUsuario usr = new UsuarioController();
                 showForm(usr);
                 
             } else if (index == 4 && indexSubMenu == 2) {
-                showForm(new V_GestionarUsuario());
+                
+                V_GestionarUsuario gestionarUsuario = new GestionUsuarioController();
+                showForm(gestionarUsuario);
+                
             } else if (index == 5 && indexSubMenu == 1) {
                 showForm(new V_RegistrarProveedor());
             } else if (index == 5 && indexSubMenu == 2) {
