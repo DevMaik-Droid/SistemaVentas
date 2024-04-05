@@ -10,7 +10,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -25,8 +24,8 @@ public class UsuarioController extends V_RegistrarUsuario {
 
     public UsuarioController() {
         btn_registrar.addActionListener(e -> {
-            //registrarUsuario();
-            generarClave();
+            registrarUsuario();
+            
         });
         btn_buscarFoto.addActionListener(e -> {
             seleccionarImagen();
@@ -52,11 +51,16 @@ public class UsuarioController extends V_RegistrarUsuario {
                     usuario.setPassword(pf_confPassword.getText());
                     usuario.setClave(generarClave());
                     usuario.setFoto(input_image);
-                    usuario.setEstado(0);
+                    usuario.setEstado(1);
                     usuario.setObservaciones(ta_observaciones.getText());
                     
                     
-                    service_Usuario.guardar(usuario);
+                    if(service_Usuario.crear(usuario)){
+                        JOptionPane.showMessageDialog(null, "Usuario Registrado");
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Error al registrar.");
+                    }
+                    
                 } else {
                     JOptionPane.showMessageDialog(null, "Las contraseñas no coinciden");
                 }
