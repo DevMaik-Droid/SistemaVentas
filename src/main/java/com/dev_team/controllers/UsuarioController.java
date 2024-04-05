@@ -25,14 +25,7 @@ public class UsuarioController extends V_RegistrarUsuario {
     public UsuarioController() {
         btn_registrar.addActionListener(e -> {
             registrarUsuario();
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-            
->>>>>>> d05452a99d505c02302ac7eac326ac8878363517
-=======
-            
->>>>>>> d05452a99d505c02302ac7eac326ac8878363517
+
         });
         btn_buscarFoto.addActionListener(e -> {
             seleccionarImagen();
