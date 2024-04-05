@@ -8,7 +8,7 @@ public class Conexion {
 
     
     
-    private static final String DATA_BASE = "bd_sistemas_ventas";
+    private static final String DATA_BASE = "bd_sistema_ventas";
     private static final String HOST = "localhost";
     private static final String USER= "root";
     private static final String PASSWORD = "";
@@ -20,9 +20,10 @@ public class Conexion {
     public static Connection conectar()   {
         
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");   
-            cn = DriverManager
-                    .getConnection("jdbc:mysql://".concat(HOST).concat(":"+PUERTO+"/").concat(DATA_BASE+"?useSSL=true"), USER, PASSWORD);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String url = String.format("jdbc:mysql://%s:%s/%s?useSSL=true", HOST, PUERTO, DATA_BASE);
+           
+            cn = DriverManager.getConnection(url, USER, PASSWORD);
             
         } catch (SQLException |ClassNotFoundException e) {
             System.out.println("Error en la conexion local " + e);

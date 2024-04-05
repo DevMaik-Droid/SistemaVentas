@@ -3,31 +3,40 @@ package com.dev_team.services;
 import com.dev_team.models.Usuario;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.List;
 import javax.swing.JOptionPane;
 
+public class Service_Usuario implements I_Service {
 
-public class Service_Usuario {
-    /**
-     * **************************************************
-     * metodo para guardar un nuevo usuario
-     * **************************************************
-     */
-    public boolean guardar(Usuario objeto) {
+    
+    
+    //Registrar Usuario
+    @Override
+    public boolean crear(Object objeto) {
         boolean respuesta = false;
+        Usuario usuario = (Usuario) objeto;
         Connection cn = Conexion.conectar();
         try {
-            PreparedStatement consulta = cn.prepareStatement("insert into tb_usuario values(?,?,?,?,?,?,?)");
+            PreparedStatement consulta = cn.prepareStatement("insert into tb_usuario values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
             consulta.setInt(1, 0);//id
-            consulta.setString(2, objeto.getNombre());
-            consulta.setString(3, objeto.getApellido());
-            consulta.setString(4, objeto.getUsuario());
-            consulta.setString(5, objeto.getPassword());
-            consulta.setString(6, objeto.getTelefono());
-            consulta.setInt(7, objeto.getEstado());
+            consulta.setString(2, usuario.getNombre());
+            consulta.setString(3, usuario.getApellido());
+            consulta.setString(4, usuario.getCi());
+            consulta.setDate(5, new Date(usuario.getFechaNacimiento().getTime()));
+            consulta.setString(6, usuario.getTelefono());
+            consulta.setString(7, usuario.getDireccion());
+            consulta.setString(8, usuario.getUsuario());
+            consulta.setString(9, usuario.getPassword());
+            consulta.setBinaryStream(10, usuario.getFoto());
+            consulta.setString(11, usuario.getClave());
+            consulta.setInt(12, usuario.getEstado());
+            consulta.setString(13, usuario.getObservaciones());
+            
             if (consulta.executeUpdate() > 0) {
                 respuesta = true;
             }
@@ -37,6 +46,8 @@ public class Service_Usuario {
         }
         return respuesta;
     }
+
+
 
     /**
      * ********************************************************************
@@ -82,7 +93,7 @@ public class Service_Usuario {
         }
         return respuesta;
     }
-    
+
     /**
      * **************************************************
      * metodo para actualizar un usuario
@@ -132,5 +143,15 @@ public class Service_Usuario {
             System.out.println("Error al eliminar usuario: " + e);
         }
         return respuesta;
+    }
+
+    @Override
+    public boolean actualizar(Object objeto, Long L) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<?> listar() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

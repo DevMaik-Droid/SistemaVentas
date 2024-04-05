@@ -412,9 +412,7 @@ public class FrmMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem_cerrar_sesionActionPerformed
 
     private void jMenuItem_nuevo_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_nuevo_usuarioActionPerformed
-        InterUsuario interUsuario = new InterUsuario();
-        jDesktopPane_menu.add(interUsuario);
-        interUsuario.setVisible(true);
+       
     }//GEN-LAST:event_jMenuItem_nuevo_usuarioActionPerformed
 
     private void jMenuItem_gestionar_usuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_gestionar_usuarioActionPerformed
