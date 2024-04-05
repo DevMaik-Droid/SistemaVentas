@@ -48,7 +48,7 @@ public class V_RegistrarUsuario extends Gradient {
         ta_observaciones = new javax.swing.JTextArea();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jTextField10 = new javax.swing.JTextField();
+        tf_usuario = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         pf_password = new javax.swing.JPasswordField();
         btn_registrar = new javax.swing.JButton();
@@ -129,8 +129,8 @@ public class V_RegistrarUsuario extends Gradient {
         jLabel8.setText("Usuario:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 110, -1));
 
-        jTextField10.setBorder(null);
-        jPanel1.add(jTextField10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 190, 30));
+        tf_usuario.setBorder(null);
+        jPanel1.add(tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 360, 190, 30));
 
         jLabel9.setFont(new java.awt.Font("Lucida Console", 0, 15)); // NOI18N
         jLabel9.setForeground(Main_Colores.C_100);
@@ -207,7 +207,6 @@ public class V_RegistrarUsuario extends Gradient {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    protected javax.swing.JTextField jTextField10;
     protected javax.swing.JLabel lb_foto;
     protected javax.swing.JPasswordField pf_confPassword;
     protected javax.swing.JPasswordField pf_password;
@@ -217,5 +216,6 @@ public class V_RegistrarUsuario extends Gradient {
     protected javax.swing.JTextField tf_direccion;
     protected javax.swing.JTextField tf_nombre;
     protected javax.swing.JTextField tf_telefono;
+    protected javax.swing.JTextField tf_usuario;
     // End of variables declaration//GEN-END:variables
 }

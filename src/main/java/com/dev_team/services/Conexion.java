@@ -8,11 +8,11 @@ public class Conexion {
 
     
     
-    private static final String DATA_BASE = "railway";
-    private static final String HOST = "monorail.proxy.rlwy.net";
+    private static final String DATA_BASE = "bd_sistemas_ventas";
+    private static final String HOST = "localhost";
     private static final String USER= "root";
-    private static final String PASSWORD = "PDqlVzjzmePvufvFtFuTQGgDoVgmosrB";
-    private static final String PUERTO = "22993";
+    private static final String PASSWORD = "";
+    private static final String PUERTO = "3306";
     
     private static Connection cn;
     
