@@ -21,7 +21,7 @@ public class Usuario {
     private String password;
     private String clave;
     private InputStream foto;
-    private int estado;
+    private String estado;
     private String observaciones;
     
     private byte[] bytes_image;

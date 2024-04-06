@@ -5,7 +5,6 @@
 package com.dev_team.utilidades;
 
 import java.awt.Component;
-import javax.swing.DefaultListCellRenderer;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import javax.swing.JTable;
@@ -25,9 +24,11 @@ public class Table_Header_P implements TableCellRenderer{
         if( value instanceof String){
             componente = new JLabel(value.toString());
             ((JLabel)componente).setHorizontalAlignment(SwingConstants.CENTER);
+            componente.setSize(100, 50);
         }
         
         // Personzalitar todo
+        
         
         
         return componente;

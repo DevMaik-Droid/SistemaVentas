@@ -51,7 +51,7 @@ public class UsuarioController extends V_RegistrarUsuario {
                     usuario.setPassword(pf_confPassword.getText());
                     usuario.setClave(generarClave());
                     usuario.setFoto(input_image);
-                    usuario.setEstado(1);
+                    usuario.setEstado("Activo");
                     usuario.setObservaciones(ta_observaciones.getText());
                     if(service_Usuario.crear(usuario)){
                         JOptionPane.showMessageDialog(null, "Usuario Registrado");

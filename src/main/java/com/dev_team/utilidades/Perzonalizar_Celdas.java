@@ -6,44 +6,59 @@ package com.dev_team.utilidades;
 
 import java.awt.Color;
 import java.awt.Component;
+
 import java.awt.Font;
 import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JComponent;
-import javax.swing.JOptionPane;
+import javax.swing.JLabel;
+
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
-import javax.swing.table.DefaultTableCellRenderer;
+
+
+import org.jdesktop.swingx.renderer.DefaultTableRenderer;
 
 /**
  *
  * @author DevMaik
  */
-public class Perzonalizar_Celdas extends DefaultTableCellRenderer {
+public class Perzonalizar_Celdas extends DefaultTableRenderer {
 
-    private final Font normal = new Font("Arial", Font.BOLD, 15);
- 
-
+    
+    
+    private Font font_sustom = new Font("Verdana",Font.PLAIN,14);
     public Perzonalizar_Celdas() {
-        setOpaque(true);
-        setFont(normal);
-        setHorizontalAlignment(SwingConstants.CENTER); // Centrar el texto dentro de las celdas
-        
+        super();
+
     }
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-        
-        Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column); 
-        if (row == 0) {
-            ((JComponent) c).setBorder(BorderFactory.createMatteBorder(1, 0, 0, 0, Color.BLACK));
-        } else {
-            ((JComponent) c).setBorder(BorderFactory.createEmptyBorder(1, 0, 0, 0));
-        }
-        c.setFont(normal);
-        return c;
-    }
 
-    
+        JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+        label.setFont(font_sustom);
+        
+        if (column != 1 && column != 2) {
+            label.setHorizontalAlignment(JLabel.CENTER);
+        } else {
+            label.setHorizontalAlignment(JLabel.LEADING);
+        }
+        
+        if (value instanceof String) {
+            String dato = String.valueOf(value);
+            switch (dato) {
+                case "Activo" ->
+                    label.setBackground(new Color(153, 255, 153)); // Verde claro para "Activo"
+                case "Inactivo" ->
+                    label.setBackground(new Color(255, 153, 153)); // Rojo claro para "Inactivo"
+                case "Ausente" ->
+                    label.setBackground(new Color(255, 255, 153)); // Rojo claro para "Inactivo"
+                default ->
+                    label.setBackground(table.getBackground()); // Fondo por defecto de la tabla
+            }
+        }
+        label.setBorder(BorderFactory.createEmptyBorder());
+        return label;
+
+    }
 
 }

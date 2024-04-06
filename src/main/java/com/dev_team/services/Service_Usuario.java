@@ -37,7 +37,7 @@ public class Service_Usuario implements I_Service {
             consulta.setString(9, usuario.getPassword());
             consulta.setBinaryStream(10, usuario.getFoto());
             consulta.setString(11, usuario.getClave());
-            consulta.setInt(12, usuario.getEstado());
+            consulta.setString(12, usuario.getEstado());
             consulta.setString(13, usuario.getObservaciones());
             
             if (consulta.executeUpdate() > 0) {
@@ -142,7 +142,7 @@ public class Service_Usuario implements I_Service {
             consulta.setString(6, usuario.getUsuario());
             consulta.setString(7, usuario.getPassword());
             consulta.setBinaryStream(8, usuario.getFoto());
-            consulta.setInt(9, usuario.getEstado());
+            consulta.setString(9, usuario.getEstado());
 
             if (consulta.executeUpdate() > 0) {
                 respuesta = true;
@@ -177,7 +177,7 @@ public class Service_Usuario implements I_Service {
                 us.setPassword(rst.getString("contrasenia"));
                 us.setBytes_image(rst.getBytes("foto"));
                 us.setClave(rst.getString("clave"));
-                us.setEstado(rst.getInt("estado"));
+                us.setEstado(rst.getString("estado"));
                 us.setObservaciones(rst.getString("observaciones"));
                 lista_usuarios.add(us);
             }

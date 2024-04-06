@@ -75,7 +75,7 @@ public class V_GestionarUsuario extends Gradient {
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbx_filtrarGU, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(352, Short.MAX_VALUE))
+                .addContainerGap(368, Short.MAX_VALUE))
         );
         PanelTopLayout.setVerticalGroup(
             PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,22 +96,38 @@ public class V_GestionarUsuario extends Gradient {
         add(PanelTop, java.awt.BorderLayout.NORTH);
 
         PanelMid.setOpaque(false);
-        PanelMid.setLayout(new javax.swing.BoxLayout(PanelMid, javax.swing.BoxLayout.LINE_AXIS));
 
+        tabla_usuarios.setBackground(new java.awt.Color(255, 255, 255));
+        tabla_usuarios.setForeground(new java.awt.Color(51, 51, 51));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"rtdfg", "dfgdfg", "dfgdfg", "dfgdfg"},
+                {"dfgdf", "dfgdfg", "dfgdfg", "dfgdfgdf"},
+                {"eeeeee", "sssss", "dfgsss", "dfgdfg"},
+                {"dfgdfg", "dfgdf", "dfgdf", "dfgdf"}
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabla_usuarios.setColumnControlVisible(true);
         jScrollPane1.setViewportView(tabla_usuarios);
 
-        PanelMid.add(jScrollPane1);
+        javax.swing.GroupLayout PanelMidLayout = new javax.swing.GroupLayout(PanelMid);
+        PanelMid.setLayout(PanelMidLayout);
+        PanelMidLayout.setHorizontalGroup(
+            PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMidLayout.createSequentialGroup()
+                .addContainerGap(50, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(54, Short.MAX_VALUE))
+        );
+        PanelMidLayout.setVerticalGroup(
+            PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelMidLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 50, Short.MAX_VALUE))
+        );
 
         add(PanelMid, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents

@@ -6,15 +6,14 @@ import com.dev_team.services.Service_Usuario;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
+
 import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -53,7 +52,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         tf_telefono.setText(us.getTelefono());
         tf_direccion.setText(us.getDireccion());
         lb_foto.setIcon(rec(us.getBytes_image()));
-        iniciarCbxEstado(us.getEstado());
+        cbx_estado.setSelectedItem(us.getEstado());
 
     }
 
@@ -64,20 +63,6 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         return new ImageIcon(img);
     }
 
-
-    private void iniciarCbxEstado(int estado) {
-        switch (estado) {
-            case 0 ->
-                cbx_estado.setSelectedItem("Inactivo");
-            case 1 ->
-                cbx_estado.setSelectedItem("Activo");
-            case 2 ->
-                cbx_estado.setSelectedItem("Ausente");
-
-            default ->
-                System.out.println("Error");
-        }
-    }
 
     private void actualizarUsuario() {
 
@@ -103,15 +88,8 @@ public class D_AdmUsuario extends javax.swing.JDialog {
 
                     usuario.setFoto(input_image);
 
-                    switch (cbx_estado.getSelectedItem().toString()) {
-                        case "Activo" ->
-                            usuario.setEstado(1);
-                        case "Inactivo" ->
-                            usuario.setEstado(0);
-                        case "Ausente" ->
-                            usuario.setEstado(2);
-                    }
-
+                    usuario.setEstado(cbx_estado.getSelectedItem().toString());
+                    
                     if (service_Usuario.actualizar(usuario, tf_clave.getText())) {
                         JOptionPane.showMessageDialog(null, "Usuario Actualizado");
                     } else {
