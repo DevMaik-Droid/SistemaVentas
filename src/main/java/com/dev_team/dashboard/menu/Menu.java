@@ -1,5 +1,6 @@
 package com.dev_team.dashboard.menu;
 
+import com.dev_team.utilidades.Main_Colores;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -89,8 +90,8 @@ public class Menu extends JPanel {
         JLabel label = new JLabel(title);
         label.setBorder(new EmptyBorder(15, 20, 5, 5));
         label.setFont(label.getFont().deriveFont(Font.BOLD));
-        label.setForeground(Color.WHITE); // Cambia el color del texto a blanco
-        label.setBackground(new Color(0, 51, 102)); // Cambia el color de fondo a azul oscuro
+        label.setForeground(Main_Colores.C_200); // Cambia el color del texto a blanco
+        label.setBackground(Main_Colores.Fondo); // Cambia el color de fondo a azul oscuro
         label.setOpaque(true); // Establece la opacidad para que el color de fondo sea visible
         panelMenu.add(label);
     }

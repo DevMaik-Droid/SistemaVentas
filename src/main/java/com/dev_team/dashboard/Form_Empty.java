@@ -1,10 +1,14 @@
 package com.dev_team.dashboard;
 
+import com.dev_team.utilidades.Main_Colores;
+
 public class Form_Empty extends javax.swing.JPanel {
 
     public Form_Empty(String name) {
         initComponents();
+        setBackground(Main_Colores.Fondo_2);
         lb.setText("Form " + name);
+        lb.setBackground(Main_Colores.Fondo_2);
     }
 
     @SuppressWarnings("unchecked")
@@ -13,12 +17,11 @@ public class Form_Empty extends javax.swing.JPanel {
 
         lb = new javax.swing.JLabel();
 
-        setOpaque(false);
-
         lb.setFont(new java.awt.Font("sansserif", 1, 48)); // NOI18N
         lb.setForeground(new java.awt.Color(125, 125, 125));
         lb.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb.setText("Form");
+        lb.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);

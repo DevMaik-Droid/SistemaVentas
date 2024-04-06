@@ -1,5 +1,6 @@
 package com.dev_team.dashboard.menu;
 
+import com.dev_team.utilidades.Main_Colores;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Component;
@@ -40,26 +41,28 @@ public class MenuItem extends JPanel {
 
     private void init(ModelMenuItem item) {
         //Personalizar menu
-        setOpaque(false);
-        setForeground(new Color(170, 170, 170));
+        setOpaque(true);
+        setBackground(Main_Colores.Fondo);
+        setForeground(Main_Colores.C_cyan);//Color de las Flechas
         setLayout(new MigLayout("wrap,fillx,inset 0", "[fill]", "[fill,35!]" + (hasSubMenu ? "0[fill,30!]" : "")));
         Item menu = new Item(true, 0);
         menu.setGoogleIcon(item.getIcon());
         menu.setText("  " + item.getMenuName());
         menu.setBorderPainted(false);
-        menu.setForeground(new Color(51, 51, 51));
+        
+        menu.setForeground(Main_Colores.C_400); // Color de letras de inicio --Color default
         menu.setFont(new Font("Roboto", 1, 15));
         
         menu.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                setForeground(menu.getMainColor());
+                setForeground(Main_Colores.C_200);
             }
 
             @Override
             public void mouseExited(MouseEvent e) {
                 if (!menu.isSelected()) {
-                    setForeground(new Color(51, 51, 51));
+                    setForeground(Main_Colores.C_400);
                 }
             }
         });
@@ -138,7 +141,7 @@ public class MenuItem extends JPanel {
     }
 
     public void clearSelected() {
-        setForeground(new Color(170, 170, 170));
+        setForeground(Main_Colores.C_cyan);
         for (Component com : getComponents()) {
             Item item = (Item) com;
             item.setSelected(false);
@@ -150,7 +153,7 @@ public class MenuItem extends JPanel {
             Item item = (Item) com;
             if (item.isMainMenu()) {
                 item.setSelected(true);
-                setForeground(item.getMainColor());
+                setForeground(Main_Colores.C_cyan);// Color flecha selecciona
                 
             }
             if (item.getIndex() == index) {

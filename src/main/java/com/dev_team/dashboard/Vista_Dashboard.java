@@ -193,8 +193,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         body.setLayout(new java.awt.BorderLayout());
         getContentPane().add(body, java.awt.BorderLayout.CENTER);
 
-        panelMenu.setBackground(new java.awt.Color(255, 255, 255));
-        panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.PAGE_AXIS));
+        panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.Y_AXIS));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setMaximumSize(new java.awt.Dimension(250, 200));
@@ -220,6 +219,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         menu.setBackground(new java.awt.Color(0, 0, 51));
         menu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         menu.setForeground(new java.awt.Color(255, 255, 255));
+        menu.setOpaque(false);
         menu.setPreferredSize(new java.awt.Dimension(150, 460));
         panelMenu.add(menu);
 

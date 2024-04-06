@@ -36,8 +36,8 @@ public class Item extends JButton {
     private void init() {
         setContentAreaFilled(false);
         setHorizontalAlignment(JButton.LEFT);
-        setForeground(new Color(50, 50, 50));
-        setBackground(new Color(0, 0, 153));
+        setForeground(Main_Colores.C_300);
+        setBackground(Color.WHITE);
         if (mainMenu) {
             setBorder(new EmptyBorder(0, 20, 0, 0));
         } else {
@@ -46,7 +46,7 @@ public class Item extends JButton {
         addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
-                setForeground(mainColor);
+                setForeground(Main_Colores.C_200);//Color de texto al hacer focus al mouse
                 setGoogleIcon(icon);
                 if (!mainMenu) {
                     mouseEnter = true;
@@ -57,7 +57,7 @@ public class Item extends JButton {
             @Override
             public void mouseExited(MouseEvent e) {
                 if (!isSelected()) {
-                    setForeground(new Color(50, 50, 50));
+                    setForeground(Main_Colores.C_400);//Color de exitedmouse del menu
                     setGoogleIcon(icon);
                 }
                 if (!mainMenu) {
@@ -97,12 +97,12 @@ public class Item extends JButton {
         if (!mainMenu) {
             Graphics2D g2 = (Graphics2D) g.create();
             g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-            g2.setColor(new Color(170, 170, 170));
+            g2.setColor(Main_Colores.C_cyan); //Color sub opciones
             int height = getHeight();
             int size = 6;
             int y = (height - size) / 2;
             g2.drawOval(27, y, size, size);
-            g2.setColor(mainColor);
+            g2.setColor(Main_Colores.C_cyan); // Rellenar sub opciones
             if (isSelected()) {
                 alpha = 1;
             }
@@ -123,7 +123,7 @@ public class Item extends JButton {
     public void setGoogleIcon(GoogleMaterialDesignIcon icon) {
         if (icon != null) {
             this.icon = icon;
-            setIcon(new GoogleMaterialIcon(icon, GradientType.HORIZONTAL, Main_Colores.MAIN_COLOR_1, Main_Colores.MAIN_COLOR_2, 19).toIcon());
+            setIcon(new GoogleMaterialIcon(icon, GradientType.HORIZONTAL, Main_Colores.C_300, Main_Colores.C_400, 20).toIcon());
         }
     }
 
@@ -131,10 +131,10 @@ public class Item extends JButton {
     public void setSelected(boolean b) {
         super.setSelected(b);
         if (b || mouseEnter) {
-            setForeground(mainColor);
+            setForeground(Main_Colores.C_200);//Color menu seleccionado
         } else {
             alpha = 0;
-            setForeground(new Color(50, 50, 50));
+            setForeground(Main_Colores.C_400);// Color para restablecer todos
         }
         setGoogleIcon(icon);
     }
