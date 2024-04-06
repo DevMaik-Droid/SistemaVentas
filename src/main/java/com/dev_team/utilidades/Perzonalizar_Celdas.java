@@ -12,8 +12,7 @@ import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
 import javax.swing.JTable;
-import javax.swing.SwingConstants;
-
+import javax.swing.border.Border;
 
 import org.jdesktop.swingx.renderer.DefaultTableRenderer;
 
@@ -23,9 +22,8 @@ import org.jdesktop.swingx.renderer.DefaultTableRenderer;
  */
 public class Perzonalizar_Celdas extends DefaultTableRenderer {
 
-    
-    
-    private Font font_sustom = new Font("Verdana",Font.PLAIN,14);
+    private final Font font_sustom = new Font("Verdana", Font.PLAIN, 14);
+
     public Perzonalizar_Celdas() {
         super();
 
@@ -34,15 +32,21 @@ public class Perzonalizar_Celdas extends DefaultTableRenderer {
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 
+        Border topBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK); // Borde solo en la parte superior
+
         JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         label.setFont(font_sustom);
-        
+
         if (column != 1 && column != 2) {
             label.setHorizontalAlignment(JLabel.CENTER);
         } else {
             label.setHorizontalAlignment(JLabel.LEADING);
         }
-        
+
+        if (isSelected){
+            label.setForeground(new Color(153, 0, 153));
+            label.setBackground(new Color(204, 0, 0));
+        }
         if (value instanceof String) {
             String dato = String.valueOf(value);
             switch (dato) {
@@ -56,7 +60,8 @@ public class Perzonalizar_Celdas extends DefaultTableRenderer {
                     label.setBackground(table.getBackground()); // Fondo por defecto de la tabla
             }
         }
-        label.setBorder(BorderFactory.createEmptyBorder());
+
+        label.setBorder(topBorder);
         return label;
 
     }

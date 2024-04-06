@@ -111,6 +111,8 @@ public class V_GestionarUsuario extends Gradient {
             }
         ));
         tabla_usuarios.setColumnControlVisible(true);
+        tabla_usuarios.setGridColor(new java.awt.Color(255, 255, 255));
+        tabla_usuarios.setIntercellSpacing(new java.awt.Dimension(10, 0));
         jScrollPane1.setViewportView(tabla_usuarios);
 
         javax.swing.GroupLayout PanelMidLayout = new javax.swing.GroupLayout(PanelMid);

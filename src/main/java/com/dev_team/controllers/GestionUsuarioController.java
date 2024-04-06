@@ -9,18 +9,12 @@ import com.dev_team.services.Service_Usuario;
 import com.dev_team.utilidades.Perzonalizar_Celdas;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarUsuario;
+import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import org.jdesktop.swingx.decorator.HighlighterFactory;
 
-import org.jdesktop.swingx.renderer.StringValue;
-import org.jdesktop.swingx.renderer.DefaultTableRenderer;
-/**
- *
- * @author DevMaik
- */
 public class GestionUsuarioController extends V_GestionarUsuario {
 
     public GestionUsuarioController() {
@@ -54,7 +48,7 @@ public class GestionUsuarioController extends V_GestionarUsuario {
 
         tabla_usuarios.setModel(model);
         tabla_usuarios.setRowHeight(30);
-
+        
         //tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_P());
         Perzonalizar_Celdas pers = new Perzonalizar_Celdas();
 

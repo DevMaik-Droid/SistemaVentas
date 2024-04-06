@@ -329,7 +329,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
 
     private void btn_guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar1ActionPerformed
         actualizarUsuario();
-        new GestionUsuarioController().GenerarTabla();
+        this.dispose();
     }//GEN-LAST:event_btn_guardar1ActionPerformed
 
 
