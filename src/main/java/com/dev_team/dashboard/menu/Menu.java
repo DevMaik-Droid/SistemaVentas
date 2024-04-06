@@ -89,7 +89,9 @@ public class Menu extends JPanel {
         JLabel label = new JLabel(title);
         label.setBorder(new EmptyBorder(15, 20, 5, 5));
         label.setFont(label.getFont().deriveFont(Font.BOLD));
-        label.setForeground(new Color(170, 170, 170));
+        label.setForeground(Color.WHITE); // Cambia el color del texto a blanco
+        label.setBackground(new Color(0, 51, 102)); // Cambia el color de fondo a azul oscuro
+        label.setOpaque(true); // Establece la opacidad para que el color de fondo sea visible
         panelMenu.add(label);
     }
 

@@ -214,7 +214,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         jLabel4.setBounds(50, 189, 54, 20);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel5.setText("Cedula de indentidad:");
+        jLabel5.setText("Cedula de identidad:");
         getContentPane().add(jLabel5);
         jLabel5.setBounds(250, 231, 150, 19);
 
