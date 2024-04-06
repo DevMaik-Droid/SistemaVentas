@@ -196,90 +196,79 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         jLabel1.setText("ADMINISTRAR USUARIO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(250, 10, 220, 32);
+        jLabel1.setBounds(250, 12, 220, 30);
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setText("Clave: ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 70, 60, 19);
+        jLabel2.setBounds(30, 69, 60, 20);
 
         jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel3.setText("Nombre:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 150, 53, 19);
+        jLabel3.setBounds(50, 149, 53, 20);
 
         jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel4.setText("Apellido:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 190, 54, 19);
+        jLabel4.setBounds(50, 189, 54, 20);
 
         jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel5.setText("Cedula de indentidad:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(250, 230, 150, 20);
+        jLabel5.setBounds(250, 231, 150, 19);
 
         jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel6.setText("Fecha de nacimiento:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 230, 160, 20);
+        jLabel6.setBounds(50, 231, 160, 19);
 
         jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel7.setText("Telefono:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 300, 60, 19);
+        jLabel7.setBounds(50, 299, 60, 20);
 
         jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel8.setText("Direccion:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(250, 300, 63, 19);
+        jLabel8.setBounds(250, 299, 63, 20);
 
         jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel9.setText("Usuario:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(150, 70, 52, 19);
+        jLabel9.setBounds(150, 69, 52, 20);
 
         jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel10.setText("Contraseña:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(310, 70, 78, 19);
+        jLabel10.setBounds(310, 69, 78, 20);
 
         jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel11.setText("Foto");
         getContentPane().add(jLabel11);
-<<<<<<< Updated upstream
-        jLabel11.setBounds(500, 150, 150, 20);
-=======
-        jLabel11.setBounds(540, 150, 60, 20);
->>>>>>> Stashed changes
+        jLabel11.setBounds(500, 151, 150, 19);
 
         jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel12.setText("Estado:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(50, 370, 48, 19);
+        jLabel12.setBounds(50, 369, 48, 20);
         getContentPane().add(tf_nombre);
-        tf_nombre.setBounds(130, 150, 240, 26);
+        tf_nombre.setBounds(130, 154, 240, 20);
         getContentPane().add(tf_apellido);
-        tf_apellido.setBounds(130, 190, 240, 26);
+        tf_apellido.setBounds(130, 194, 240, 20);
         getContentPane().add(tf_ci);
-        tf_ci.setBounds(250, 260, 170, 26);
+        tf_ci.setBounds(250, 264, 170, 20);
         getContentPane().add(tf_telefono);
-        tf_telefono.setBounds(50, 330, 170, 26);
+        tf_telefono.setBounds(50, 334, 170, 20);
         getContentPane().add(tf_direccion);
-        tf_direccion.setBounds(250, 330, 170, 26);
+        tf_direccion.setBounds(250, 334, 170, 20);
         getContentPane().add(tf_usuario);
-        tf_usuario.setBounds(150, 100, 120, 26);
+        tf_usuario.setBounds(150, 104, 120, 20);
 
-<<<<<<< Updated upstream
         lb_foto.setBackground(new java.awt.Color(255, 255, 255));
         lb_foto.setOpaque(true);
         getContentPane().add(lb_foto);
         lb_foto.setBounds(500, 180, 150, 150);
-=======
-        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel13.setOpaque(true);
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(480, 180, 150, 130);
->>>>>>> Stashed changes
 
         btn_editar.setText("Actualizar Imagen");
         btn_editar.addActionListener(new java.awt.event.ActionListener() {
@@ -288,11 +277,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btn_editar);
-<<<<<<< Updated upstream
         btn_editar.setBounds(500, 340, 150, 30);
-=======
-        btn_editar.setBounds(520, 320, 80, 30);
->>>>>>> Stashed changes
 
         btn_guardar.setText("ELIMINAR");
         getContentPane().add(btn_guardar);
@@ -300,15 +285,15 @@ public class D_AdmUsuario extends javax.swing.JDialog {
 
         dc_fechaNac.setDateFormatString("dd - MMM - YYYY");
         getContentPane().add(dc_fechaNac);
-        dc_fechaNac.setBounds(50, 260, 170, 26);
+        dc_fechaNac.setBounds(50, 264, 170, 20);
 
         cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Ausente", "Inactivo" }));
         getContentPane().add(cbx_estado);
-        cbx_estado.setBounds(50, 400, 160, 26);
+        cbx_estado.setBounds(50, 396, 160, 30);
 
         tf_clave.setEnabled(false);
         getContentPane().add(tf_clave);
-        tf_clave.setBounds(30, 100, 90, 26);
+        tf_clave.setBounds(30, 104, 90, 20);
 
         btn_guardar1.setText("ACTUALIZAR");
         btn_guardar1.addActionListener(new java.awt.event.ActionListener() {
@@ -319,21 +304,21 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         getContentPane().add(btn_guardar1);
         btn_guardar1.setBounds(250, 440, 150, 40);
         getContentPane().add(pf_password);
-        pf_password.setBounds(310, 100, 120, 26);
+        pf_password.setBounds(310, 102, 120, 20);
         getContentPane().add(jPasswordField2);
-        jPasswordField2.setBounds(310, 100, 120, 26);
+        jPasswordField2.setBounds(310, 102, 120, 20);
 
         jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel13.setText("Contraseña:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(310, 70, 78, 19);
+        jLabel13.setBounds(310, 69, 78, 20);
         getContentPane().add(pf_confirmar);
-        pf_confirmar.setBounds(490, 100, 120, 26);
+        pf_confirmar.setBounds(490, 102, 120, 20);
 
         jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel14.setText("Confirmar");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(490, 70, 62, 19);
+        jLabel14.setBounds(490, 69, 62, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
