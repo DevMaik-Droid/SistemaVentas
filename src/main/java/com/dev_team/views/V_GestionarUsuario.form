@@ -40,9 +40,9 @@
                       <Group type="102" attributes="0">
                           <Component id="jLabel2" min="-2" pref="68" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="tf_nombreGU" min="-2" pref="143" max="-2" attributes="0"/>
+                          <Component id="tf_clave" min="-2" pref="143" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btn_buscarGU" min="-2" pref="80" max="-2" attributes="0"/>
+                          <Component id="btn_buscaUS" min="-2" pref="80" max="-2" attributes="0"/>
                       </Group>
                       <Component id="jLabel3" min="-2" pref="237" max="-2" attributes="0"/>
                   </Group>
@@ -66,8 +66,8 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="cbx_filtrarGU" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tf_nombreGU" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="btn_buscarGU" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="tf_clave" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btn_buscaUS" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" pref="25" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
@@ -108,15 +108,21 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tf_nombreGU">
+        <Component class="javax.swing.JTextField" name="tf_clave">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_nombreGUActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tf_claveActionPerformed"/>
           </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btn_buscarGU">
+        <Component class="javax.swing.JButton" name="btn_buscaUS">
           <Properties>
             <Property name="text" type="java.lang.String" value="BUSCAR"/>
           </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="4"/>
+          </AuxValues>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
@@ -205,9 +211,6 @@
                   </Table>
                 </Property>
                 <Property name="columnControlVisible" type="boolean" value="true"/>
-                <Property name="columnSequence" type="[Ljava.lang.Object;" editor="org.netbeans.modules.form.ComponentChooserEditor">
-                  <ComponentRef name="default"/>
-                </Property>
                 <Property name="gridColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
