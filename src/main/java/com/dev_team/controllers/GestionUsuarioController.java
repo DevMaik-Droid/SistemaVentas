@@ -6,6 +6,8 @@ package com.dev_team.controllers;
 
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
+import com.dev_team.utilidades.Perzonalizar_Celdas;
+import com.dev_team.utilidades.Table_Header_P;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarUsuario;
 import java.awt.event.MouseAdapter;
@@ -29,7 +31,7 @@ public class GestionUsuarioController extends V_GestionarUsuario {
 
         List<Usuario> lista_usuario = (List<Usuario>) serv_usuario.listar();
 
-        Object[] columnas = {"Clave", "Apellido", "Nombre", "Telefono", "Direccion", "Estado"};
+        Object[] columnas = {"Clave", "Apellido", "Nombre", "Telefono", "Direccion", "Estado","Modificar"};
 
         DefaultTableModel model = new DefaultTableModel(columnas, 0);
 
@@ -47,8 +49,11 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         }
 
         tabla_usuarios.setModel(model);
+       // tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_P());
+   
+        tabla_usuarios.setDefaultRenderer(Object.class, new Perzonalizar_Celdas()); // Personalizar celdas
+        tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
         
-        tabla_usuarios.setDefaultEditor(Object.class, null);
         tabla_usuarios.addMouseListener(new MouseAdapter() {
 
             @Override
