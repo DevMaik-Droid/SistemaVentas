@@ -13,13 +13,15 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
 public class GestionUsuarioController extends V_GestionarUsuario {
 
     Service_Usuario serv_usuario = new Service_Usuario();
     List<Usuario> lista_usuario;
-    
+    String opcion = "";
     
     public GestionUsuarioController() {
         
@@ -31,15 +33,66 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             GenerarTabla(lists);
         });
         
+        tf_filtrar.getDocument().addDocumentListener(new DocumentListener(){
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                opcion = cbx_filtrarGU.getSelectedItem().toString();
+                filtrarUsuarios(opcion, tf_filtrar.getText().trim());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                opcion = cbx_filtrarGU.getSelectedItem().toString();
+                filtrarUsuarios(opcion, tf_filtrar.getText().trim());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+                
+            }
+        });
+        
+        cbx_filtrarGU.addActionListener(e ->{
+        
+            filtrarUsuarios(cbx_filtrarGU.getSelectedItem().toString(), tf_filtrar.getText());
+            
+        });
+        
+        
         
     }
 
+   // logica para filtrar usuarios
+    public void filtrarUsuarios(String opcion,String cadena){
+        List<Usuario> lists;
+        switch (opcion) {
+            case "Cedula de identidad" -> {
+                lists = lista_usuario.stream()
+                        .filter(us -> us.getCi().startsWith(cadena))
+                        .collect(Collectors.toList());
+                GenerarTabla(lists);
+            }
+            case "Apellido" -> {
+                lists = lista_usuario.stream()
+                        .filter(us -> us.getApellido().startsWith(cadena.toUpperCase()))
+                        .collect(Collectors.toList());
+                GenerarTabla(lists);
+            }
+            case "Nombre" -> {
+                lists = lista_usuario.stream() 
+                        .filter(us -> us.getNombre().startsWith(cadena.toUpperCase()))
+                        .collect(Collectors.toList());
+                GenerarTabla(lists);
+            }
+            default -> {
+                GenerarTabla(lista_usuario);
+            }
+        }
+ 
+    }
    
 
     public final void GenerarTabla(List<Usuario> lista_usuario) {
-        
-        
-        
         Object[] columnas = {"Clave", "Apellido", "Nombre", "CI","Telefono", "Direccion", "Estado"};
 
         DefaultTableModel model = new DefaultTableModel(columnas, 0);
@@ -91,18 +144,6 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         });
 
     }
-
-    private void actualizarTabla() {
-
-    
-        
-        
-    }
-    
-    
-    
-    
-    
     
 
 }

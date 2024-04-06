@@ -26,7 +26,7 @@ public class V_GestionarUsuario extends Gradient {
         cbx_filtrarGU = new javax.swing.JComboBox<>();
         tf_clave = new javax.swing.JTextField();
         btn_buscaUS = new javax.swing.JButton();
-        tf_nombreGU = new javax.swing.JTextField();
+        tf_filtrar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
@@ -45,7 +45,7 @@ public class V_GestionarUsuario extends Gradient {
         jLabel3.setText("GESTION DE USUARIOS");
         PanelTop.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, -1));
 
-        cbx_filtrarGU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Cedula de indentidad", "Nombre", "Apellido" }));
+        cbx_filtrarGU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Cedula de identidad", "Nombre", "Apellido" }));
         PanelTop.add(cbx_filtrarGU, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, -1, -1));
 
         tf_clave.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +57,7 @@ public class V_GestionarUsuario extends Gradient {
 
         btn_buscaUS.setText("BUSCAR");
         PanelTop.add(btn_buscaUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
-        PanelTop.add(tf_nombreGU, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 170, -1));
+        PanelTop.add(tf_filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 170, -1));
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -120,13 +120,13 @@ public class V_GestionarUsuario extends Gradient {
     private javax.swing.JPanel PanelMid;
     private javax.swing.JPanel PanelTop;
     protected javax.swing.JButton btn_buscaUS;
-    private javax.swing.JComboBox<String> cbx_filtrarGU;
+    protected javax.swing.JComboBox<String> cbx_filtrarGU;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     protected org.jdesktop.swingx.JXTable tabla_usuarios;
     protected javax.swing.JTextField tf_clave;
-    private javax.swing.JTextField tf_nombreGU;
+    protected javax.swing.JTextField tf_filtrar;
     // End of variables declaration//GEN-END:variables
 }
