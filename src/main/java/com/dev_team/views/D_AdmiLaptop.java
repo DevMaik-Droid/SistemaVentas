@@ -51,11 +51,11 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
         tf_bateriaLP = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         tf_precioLP = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbx_proveedor = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
-        tf_nombreC1 = new javax.swing.JTextField();
+        tf_cantidad = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        btn_buscarLP1 = new javax.swing.JButton();
+        btn_editar = new javax.swing.JButton();
         btn_buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -139,22 +139,22 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
         getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 60, -1));
         getContentPane().add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 130, 20));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 210, 30));
+        cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
+        getContentPane().add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 210, 30));
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Proveedor:");
         getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
-        getContentPane().add(tf_nombreC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 210, 30));
+        getContentPane().add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 210, 30));
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(255, 255, 255));
         jLabel18.setText("Cantidad:");
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, -1, -1));
 
-        btn_buscarLP1.setText("Buscar");
-        getContentPane().add(btn_buscarLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, -1));
+        btn_editar.setText("Editar");
+        getContentPane().add(btn_editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, -1));
 
         btn_buscar.setText("Guardar");
         getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 130, 30));
@@ -210,11 +210,11 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscar;
-    private javax.swing.JButton btn_buscarLP1;
+    private javax.swing.JButton btn_editar;
     private javax.swing.JComboBox<String> cbx_discoDeAlmacenamientoLP;
     private javax.swing.JComboBox<String> cbx_memoriaRamLP;
     private javax.swing.JComboBox<String> cbx_procesadorLP;
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> cbx_proveedor;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -230,9 +230,9 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JTextField tf_bateriaLP;
+    private javax.swing.JTextField tf_cantidad;
     private javax.swing.JTextField tf_conectividadLP;
     private javax.swing.JTextField tf_modeloLP;
-    private javax.swing.JTextField tf_nombreC1;
     private javax.swing.JTextField tf_nombreLP;
     private javax.swing.JTextField tf_pantallaLP;
     private javax.swing.JTextField tf_precioLP;
