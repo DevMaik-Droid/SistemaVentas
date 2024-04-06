@@ -57,13 +57,14 @@
             <version>1.18.32</version>
             <scope>provided</scope>
         </dependency>
+       
+        
         
         <dependency>
-            <groupId>net.coobird</groupId>
-            <artifactId>thumbnailator</artifactId>
-            <version>0.4.14</version> <!-- Versión actualizada -->
+            <groupId>org.swinglabs</groupId>
+            <artifactId>swingx</artifactId>
+            <version>1.6.1</version>
         </dependency>
-
         
     </dependencies>
     

@@ -11,7 +11,6 @@ import com.dev_team.views.V_GestionarUsuario;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
-import javax.swing.JFrame;
 import javax.swing.table.DefaultTableModel;
 
 /**

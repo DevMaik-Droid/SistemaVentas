@@ -3,7 +3,6 @@ package com.dev_team.views;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
-import com.dev_team.utilidades.ConverterImage;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.Image;

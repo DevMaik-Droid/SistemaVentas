@@ -12,6 +12,8 @@ public class V_GestionarUsuario extends Gradient {
     public V_GestionarUsuario() {
         super(Main_Colores.C_600, Main_Colores.C_500, Main_Colores.C_400);
         initComponents();
+        
+        
     }
 
 
@@ -27,8 +29,8 @@ public class V_GestionarUsuario extends Gradient {
         btn_buscarGU = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tabla_usuarios = new javax.swing.JTable();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla_usuarios = new org.jdesktop.swingx.JXTable();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new java.awt.BorderLayout());
@@ -107,10 +109,9 @@ public class V_GestionarUsuario extends Gradient {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        tabla_usuarios.setOpaque(false);
-        jScrollPane2.setViewportView(tabla_usuarios);
+        jScrollPane1.setViewportView(tabla_usuarios);
 
-        PanelMid.add(jScrollPane2);
+        PanelMid.add(jScrollPane1);
 
         add(PanelMid, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -128,8 +129,8 @@ public class V_GestionarUsuario extends Gradient {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JScrollPane jScrollPane2;
-    protected javax.swing.JTable tabla_usuarios;
+    private javax.swing.JScrollPane jScrollPane1;
+    protected org.jdesktop.swingx.JXTable tabla_usuarios;
     private javax.swing.JTextField tf_nombreGU;
     // End of variables declaration//GEN-END:variables
 }
