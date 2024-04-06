@@ -246,7 +246,11 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel11.setText("Foto");
         getContentPane().add(jLabel11);
+<<<<<<< Updated upstream
         jLabel11.setBounds(500, 150, 150, 20);
+=======
+        jLabel11.setBounds(540, 150, 60, 20);
+>>>>>>> Stashed changes
 
         jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel12.setText("Estado:");
@@ -265,10 +269,17 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         getContentPane().add(tf_usuario);
         tf_usuario.setBounds(150, 100, 120, 26);
 
+<<<<<<< Updated upstream
         lb_foto.setBackground(new java.awt.Color(255, 255, 255));
         lb_foto.setOpaque(true);
         getContentPane().add(lb_foto);
         lb_foto.setBounds(500, 180, 150, 150);
+=======
+        jLabel13.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel13.setOpaque(true);
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(480, 180, 150, 130);
+>>>>>>> Stashed changes
 
         btn_editar.setText("Actualizar Imagen");
         btn_editar.addActionListener(new java.awt.event.ActionListener() {
@@ -277,7 +288,11 @@ public class D_AdmUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btn_editar);
+<<<<<<< Updated upstream
         btn_editar.setBounds(500, 340, 150, 30);
+=======
+        btn_editar.setBounds(520, 320, 80, 30);
+>>>>>>> Stashed changes
 
         btn_guardar.setText("ELIMINAR");
         getContentPane().add(btn_guardar);

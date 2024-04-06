@@ -25,9 +25,10 @@ public class V_GestionarUsuario extends Gradient {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         cbx_filtrarGU = new javax.swing.JComboBox<>();
-        tf_nombreGU = new javax.swing.JTextField();
+        tf_filtrar = new javax.swing.JTextField();
         btn_buscarGU = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        tf_nombreGU1 = new javax.swing.JTextField();
         PanelMid = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_usuarios = new org.jdesktop.swingx.JXTable();
@@ -39,15 +40,17 @@ public class V_GestionarUsuario extends Gradient {
 
         jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Nombre:");
+        jLabel2.setText("Clave:");
 
         jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Filtrar:");
 
-        tf_nombreGU.addActionListener(new java.awt.event.ActionListener() {
+        cbx_filtrarGU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Cedula de indentidad", "Nombre", "Apellido" }));
+
+        tf_filtrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_nombreGUActionPerformed(evt);
+                tf_filtrarActionPerformed(evt);
             }
         });
 
@@ -57,25 +60,36 @@ public class V_GestionarUsuario extends Gradient {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("GESTION DE USUARIOS");
 
+        tf_nombreGU1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nombreGU1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PanelTopLayout = new javax.swing.GroupLayout(PanelTop);
         PanelTop.setLayout(PanelTopLayout);
         PanelTopLayout.setHorizontalGroup(
             PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelTopLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PanelTopLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(PanelTopLayout.createSequentialGroup()
+                        .addGap(54, 54, 54)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(tf_nombreGU, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_buscarGU, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(129, 129, 129)
-                .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbx_filtrarGU, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(368, Short.MAX_VALUE))
+                        .addComponent(tf_nombreGU1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(btn_buscarGU, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 241, Short.MAX_VALUE)))
+                .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(cbx_filtrarGU, 0, 196, Short.MAX_VALUE)
+                    .addComponent(tf_filtrar))
+                .addContainerGap(272, Short.MAX_VALUE))
         );
         PanelTopLayout.setVerticalGroup(
             PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,14 +97,15 @@ public class V_GestionarUsuario extends Gradient {
                 .addContainerGap(20, Short.MAX_VALUE)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
+                    .addComponent(jLabel3)
+                    .addComponent(cbx_filtrarGU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbx_filtrarGU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(tf_nombreGU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_buscarGU)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_filtrar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tf_nombreGU1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28))
         );
 
         add(PanelTop, java.awt.BorderLayout.NORTH);
@@ -134,9 +149,13 @@ public class V_GestionarUsuario extends Gradient {
         add(PanelMid, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void tf_nombreGUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreGUActionPerformed
+    private void tf_filtrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_filtrarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_nombreGUActionPerformed
+    }//GEN-LAST:event_tf_filtrarActionPerformed
+
+    private void tf_nombreGU1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nombreGU1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nombreGU1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -149,6 +168,7 @@ public class V_GestionarUsuario extends Gradient {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     protected org.jdesktop.swingx.JXTable tabla_usuarios;
-    private javax.swing.JTextField tf_nombreGU;
+    private javax.swing.JTextField tf_filtrar;
+    private javax.swing.JTextField tf_nombreGU1;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,7 +29,7 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
     private void initComponents() {
 
         jLabel2 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        lb_imagenAccesorio = new javax.swing.JLabel();
         btn_buscar = new javax.swing.JButton();
         jLabel13 = new javax.swing.JLabel();
         cbx_modeloA = new javax.swing.JComboBox<>();
@@ -57,9 +57,9 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
         jLabel2.setText("ACCESORIO");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 190, 20));
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setOpaque(true);
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 191, 196));
+        lb_imagenAccesorio.setBackground(new java.awt.Color(255, 255, 255));
+        lb_imagenAccesorio.setOpaque(true);
+        getContentPane().add(lb_imagenAccesorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 130, 191, 196));
 
         btn_buscar.setText("Guardar");
         getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 420, 130, 30));
@@ -193,7 +193,6 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cbx_materialA;
     private javax.swing.JComboBox<String> cbx_modeloA;
     private javax.swing.JComboBox<String> cbx_versionA;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -203,6 +202,7 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel lb_imagenAccesorio;
     private javax.swing.JTextField tf_nombreA;
     // End of variables declaration//GEN-END:variables
 }
