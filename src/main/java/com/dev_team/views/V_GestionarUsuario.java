@@ -1,16 +1,17 @@
 package com.dev_team.views;
 
 
-import com.dev_team.utilidades.Gradient;
+import com.dev_team.utilidades.JPanelPersonzalizado;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.Table;
 
-public class V_GestionarUsuario extends Gradient {
+public class V_GestionarUsuario extends JPanelPersonzalizado {
 
     /**
      * Creates new form V_RegistrarUsuariodasdas
      */
     public V_GestionarUsuario() {
-        super(Main_Colores.C_600, Main_Colores.C_500, Main_Colores.C_400);
+        
         initComponents();
         
         
@@ -31,7 +32,7 @@ public class V_GestionarUsuario extends Gradient {
         jLabel1 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla_usuarios = new org.jdesktop.swingx.JXTable();
+        tabla_usuarios = new Table();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new java.awt.BorderLayout());
@@ -125,7 +126,7 @@ public class V_GestionarUsuario extends Gradient {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    protected org.jdesktop.swingx.JXTable tabla_usuarios;
+    protected Table tabla_usuarios;
     protected javax.swing.JTextField tf_clave;
     protected javax.swing.JTextField tf_filtrar;
     // End of variables declaration//GEN-END:variables

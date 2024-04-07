@@ -3,6 +3,7 @@ package com.dev_team.views;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.Image;
@@ -178,7 +179,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         tf_direccion = new javax.swing.JTextField();
         tf_usuario = new javax.swing.JTextField();
         lb_foto = new javax.swing.JLabel();
-        btn_editar = new javax.swing.JButton();
+        btn_actualizarIMG = new javax.swing.JButton();
         btn_guardar = new javax.swing.JButton();
         dc_fechaNac = new com.toedter.calendar.JDateChooser();
         cbx_estado = new javax.swing.JComboBox<>();
@@ -270,14 +271,17 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         getContentPane().add(lb_foto);
         lb_foto.setBounds(500, 180, 150, 150);
 
-        btn_editar.setText("Actualizar Imagen");
-        btn_editar.addActionListener(new java.awt.event.ActionListener() {
+        btn_actualizarIMG.setBackground(new java.awt.Color(153, 0, 255));
+        btn_actualizarIMG.setText("Actualizar Imagen");
+        btn_actualizarIMG.setBorder(null);
+        btn_actualizarIMG.setBorderPainted(false);
+        btn_actualizarIMG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_editarActionPerformed(evt);
+                btn_actualizarIMGActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_editar);
-        btn_editar.setBounds(500, 340, 150, 30);
+        getContentPane().add(btn_actualizarIMG);
+        btn_actualizarIMG.setBounds(500, 340, 150, 30);
 
         btn_guardar.setText("ELIMINAR");
         getContentPane().add(btn_guardar);
@@ -323,9 +327,9 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_editarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editarActionPerformed
+    private void btn_actualizarIMGActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_actualizarIMGActionPerformed
         seleccionarImagen();
-    }//GEN-LAST:event_btn_editarActionPerformed
+    }//GEN-LAST:event_btn_actualizarIMGActionPerformed
 
     private void btn_guardar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardar1ActionPerformed
         actualizarUsuario();
@@ -334,7 +338,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_editar;
+    private javax.swing.JButton btn_actualizarIMG;
     private javax.swing.JButton btn_guardar;
     private javax.swing.JButton btn_guardar1;
     private javax.swing.JComboBox<String> cbx_estado;

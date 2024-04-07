@@ -1,17 +1,17 @@
 package com.dev_team.views;
 
-import com.dev_team.utilidades.Gradient;
+import com.dev_team.utilidades.JPanelPersonzalizado;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Color;
 
 
-public class V_RegistrarComputadora extends Gradient {
+public class V_RegistrarComputadora extends JPanelPersonzalizado {
 
     /**
      * Creates new form V_RegistrarUsuario
      */
     public V_RegistrarComputadora() {
-        super(Main_Colores.C_600,Main_Colores.C_500,Main_Colores.C_400);
+        
         initComponents();
         
     }

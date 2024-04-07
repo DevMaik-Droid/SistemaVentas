@@ -95,9 +95,10 @@ public class GestionUsuarioController extends V_GestionarUsuario {
     public final void GenerarTabla(List<Usuario> lista_usuario) {
         Object[] columnas = {"Clave", "Apellido", "Nombre", "CI","Telefono", "Direccion", "Estado"};
 
-        DefaultTableModel model = new DefaultTableModel(columnas, 0);
-
-        for (Usuario us : lista_usuario) {
+       // DefaultTableModel model = new DefaultTableModel(columnas, 0);
+        tabla_usuarios.setColumnas(columnas);
+        
+        /*for (Usuario us : lista_usuario) {
             Object[] elementos = new Object[columnas.length];
 
             elementos[0] = us.getClave();
@@ -107,19 +108,20 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             elementos[4] = us.getTelefono();
             elementos[5] = us.getDireccion();
             elementos[6] = us.getEstado();
-
-            model.addRow(elementos);
+            
+            tabla_usuarios.setFila(columnas);
         }
-
-        tabla_usuarios.setModel(model);
-        tabla_usuarios.setRowHeight(30);
+        */
+        
+        //tabla_usuarios.setModel(model);
+        //tabla_usuarios.setRowHeight(30);
         
         //tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_P());
-        Perzonalizar_Celdas pers = new Perzonalizar_Celdas();
+        //Perzonalizar_Celdas pers = new Perzonalizar_Celdas();
 
-        tabla_usuarios.setDefaultRenderer(Object.class, pers); // Personalizar celdas
+        //tabla_usuarios.setDefaultRenderer(Object.class, pers); // Personalizar celdas
       
-        tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
+        //tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
         
         
         tabla_usuarios.addMouseListener(new MouseAdapter() {
