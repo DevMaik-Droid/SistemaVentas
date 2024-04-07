@@ -29,7 +29,7 @@ public class V_RegistrarUsuario extends JPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.JPanel panel_form = new RoundPanel();
+        panel_form = new Panel_Round(20);
         tf_nombre = new javax.swing.JTextField();
         tf_apellido = new javax.swing.JTextField();
         tf_ci = new javax.swing.JTextField();

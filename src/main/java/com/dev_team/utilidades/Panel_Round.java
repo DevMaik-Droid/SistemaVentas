@@ -12,8 +12,16 @@ import javax.swing.JPanel;
 
 public class Panel_Round extends JPanel {
 
-    private int round;
+    
+    private int round ;
 
+    public Panel_Round(int round) {
+        setOpaque(false);
+        
+        this.round = round;
+        repaint();
+    }
+    
     public int getRound() {
         return round;
     }
@@ -31,9 +39,8 @@ public class Panel_Round extends JPanel {
         setBackground(color);
     }
 
-    public RoundPanel() {
-        setOpaque(false);
-    }
+
+    
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -43,7 +50,7 @@ public class Panel_Round extends JPanel {
         g2.setColor(getBackground());
         g2.fill(area);
         area.subtract(new Area(new Rectangle2D.Double(0, 0, getWidth(), getHeight() - 3)));
-        g2.setPaint(new GradientPaint(0, 0, new Color(218, 23, 218), getWidth(), 0, Main_Colores.MAIN_COLOR_2));
+        g2.setPaint(new GradientPaint(0, 0, new Color(255, 51, 255), getWidth(), 0, Main_Colores.MAIN_COLOR_2));
         g2.fill(area);
         g2.dispose();
         super.paintComponent(g);
