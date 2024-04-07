@@ -32,7 +32,7 @@ public class V_GestionarUsuario extends JPanelPersonzalizado {
         jLabel1 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabla_usuarios = new Table();
+        tabla_usuarios = new org.jdesktop.swingx.JXTable();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new java.awt.BorderLayout());
@@ -126,7 +126,7 @@ public class V_GestionarUsuario extends JPanelPersonzalizado {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
-    protected Table tabla_usuarios;
+    protected org.jdesktop.swingx.JXTable tabla_usuarios;
     protected javax.swing.JTextField tf_clave;
     protected javax.swing.JTextField tf_filtrar;
     // End of variables declaration//GEN-END:variables

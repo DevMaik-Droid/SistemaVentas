@@ -7,6 +7,7 @@ package com.dev_team.controllers;
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
 import com.dev_team.utilidades.Perzonalizar_Celdas;
+import com.dev_team.utilidades.Table;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarUsuario;
 import java.awt.event.MouseAdapter;
@@ -95,10 +96,10 @@ public class GestionUsuarioController extends V_GestionarUsuario {
     public final void GenerarTabla(List<Usuario> lista_usuario) {
         Object[] columnas = {"Clave", "Apellido", "Nombre", "CI","Telefono", "Direccion", "Estado"};
 
-       // DefaultTableModel model = new DefaultTableModel(columnas, 0);
-        tabla_usuarios.setColumnas(columnas);
+        DefaultTableModel model = new DefaultTableModel(columnas, 0);
         
-        /*for (Usuario us : lista_usuario) {
+        
+        for (Usuario us : lista_usuario) {
             Object[] elementos = new Object[columnas.length];
 
             elementos[0] = us.getClave();
@@ -109,10 +110,10 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             elementos[5] = us.getDireccion();
             elementos[6] = us.getEstado();
             
-            tabla_usuarios.setFila(columnas);
+            model.addRow(elementos);
         }
-        */
-        
+        tabla_usuarios.setModel(model);
+        tabla_usuarios = new Table().decorarTabla(tabla_usuarios);
         //tabla_usuarios.setModel(model);
         //tabla_usuarios.setRowHeight(30);
         
