@@ -61,11 +61,11 @@ public class V_GestionarUsuario extends JPanel {
         jLabel1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Filtrar:");
-        panel_topGestion.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
+        panel_topGestion.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
 
         cbx_filtrarGU.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         cbx_filtrarGU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Cedula de identidad", "Nombre", "Apellido" }));
-        panel_topGestion.add(cbx_filtrarGU, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 26, 200, 30));
+        panel_topGestion.add(cbx_filtrarGU, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 200, 30));
 
         tf_clave.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         tf_clave.setBorder(null);
@@ -76,13 +76,14 @@ public class V_GestionarUsuario extends JPanel {
         });
         panel_topGestion.add(tf_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 130, 30));
 
+        btn_buscaUS.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         btn_buscaUS.setText("BUSCAR");
         btn_buscaUS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel_topGestion.add(btn_buscaUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
+        panel_topGestion.add(btn_buscaUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, 100, 30));
 
         tf_filtrar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         tf_filtrar.setBorder(null);
-        panel_topGestion.add(tf_filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 200, 30));
+        panel_topGestion.add(tf_filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 80, 200, 30));
 
         javax.swing.GroupLayout PanelTopLayout = new javax.swing.GroupLayout(PanelTop);
         PanelTop.setLayout(PanelTopLayout);
