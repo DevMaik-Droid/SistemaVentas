@@ -6,7 +6,8 @@ package com.dev_team.views;
 
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
-import com.dev_team.utilidades.RoundPanel;
+import com.dev_team.utilidades.Panel_Round;
+import javax.swing.JPanel;
 
 
 
@@ -15,16 +16,12 @@ import com.dev_team.utilidades.RoundPanel;
  *
  * @author DevMaik
  */
-public class V_RegistrarUsuario extends RoundPanel{
+public class V_RegistrarUsuario extends JPanel{
    
-    RoundPanel panel_form;
+
     public V_RegistrarUsuario() {
-        
         initComponents();
-        panel_form.setRound(20);
-        panel_form.setFondo(Main_Colores.Fondo_2);
         
- 
     }
 
 
@@ -32,7 +29,7 @@ public class V_RegistrarUsuario extends RoundPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_form = new RoundPanel();
+        panel_form = new Panel_Round(20);
         tf_nombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -209,6 +206,7 @@ public class V_RegistrarUsuario extends RoundPanel{
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JLabel lb_foto;
+    private javax.swing.JPanel panel_form;
     protected javax.swing.JPasswordField pf_confPassword;
     protected javax.swing.JPasswordField pf_password;
     protected javax.swing.JTextArea ta_observaciones;

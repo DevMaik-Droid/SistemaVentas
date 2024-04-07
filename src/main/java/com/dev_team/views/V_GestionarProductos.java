@@ -2,10 +2,11 @@ package com.dev_team.views;
 
 
 import com.dev_team.utilidades.Main_Colores;
-import com.dev_team.utilidades.RoundPanel;
+import com.dev_team.utilidades.Panel_Round;
 import java.awt.Color;
+import javax.swing.JPanel;
 
-public class V_GestionarProductos extends RoundPanel{
+public class V_GestionarProductos extends JPanel{
 
     /**
      * Creates new form V_RegistrarUsuario

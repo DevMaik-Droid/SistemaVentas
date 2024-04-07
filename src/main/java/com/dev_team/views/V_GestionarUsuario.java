@@ -1,17 +1,19 @@
 package com.dev_team.views;
 
 
-import com.dev_team.utilidades.RoundPanel;
+import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.Panel_Round;
+import java.awt.Color;
+import javax.swing.JPanel;
 
-public class V_GestionarUsuario extends RoundPanel {
+public class V_GestionarUsuario extends JPanel {
 
-    /**
-     * Creates new form V_RegistrarUsuariodasdas
-     */
+   
+    
     public V_GestionarUsuario() {
-        
         initComponents();
-        
+        setBackground(Main_Colores.Fondo_2);
+        panel_table.setBackground(Color.WHITE);
         
     }
 
@@ -29,6 +31,7 @@ public class V_GestionarUsuario extends RoundPanel {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         PanelMid = new javax.swing.JPanel();
+        panel_table = new Panel_Round(20);
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_usuarios = new org.jdesktop.swingx.JXTable();
 
@@ -72,6 +75,11 @@ public class V_GestionarUsuario extends RoundPanel {
 
         PanelMid.setOpaque(false);
 
+        panel_table.setBackground(new java.awt.Color(255, 255, 51));
+        panel_table.setPreferredSize(new java.awt.Dimension(800, 408));
+
+        jScrollPane1.setBorder(null);
+
         tabla_usuarios.setBackground(new java.awt.Color(255, 255, 255));
         tabla_usuarios.setForeground(new java.awt.Color(51, 51, 51));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
@@ -88,23 +96,41 @@ public class V_GestionarUsuario extends RoundPanel {
         tabla_usuarios.setColumnControlVisible(true);
         tabla_usuarios.setGridColor(new java.awt.Color(255, 255, 255));
         tabla_usuarios.setIntercellSpacing(new java.awt.Dimension(10, 0));
+        tabla_usuarios.setShowGrid(false);
         jScrollPane1.setViewportView(tabla_usuarios);
+
+        javax.swing.GroupLayout panel_tableLayout = new javax.swing.GroupLayout(panel_table);
+        panel_table.setLayout(panel_tableLayout);
+        panel_tableLayout.setHorizontalGroup(
+            panel_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_tableLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
+        );
+        panel_tableLayout.setVerticalGroup(
+            panel_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_tableLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
+        );
 
         javax.swing.GroupLayout PanelMidLayout = new javax.swing.GroupLayout(PanelMid);
         PanelMid.setLayout(PanelMidLayout);
         PanelMidLayout.setHorizontalGroup(
             PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMidLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 954, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(69, Short.MAX_VALUE))
+                .addGap(50, 50, 50)
+                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addGap(50, 50, 50))
         );
         PanelMidLayout.setVerticalGroup(
             PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelMidLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 508, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33))
+            .addGroup(PanelMidLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                .addGap(50, 50, 50))
         );
 
         add(PanelMid, java.awt.BorderLayout.CENTER);
@@ -124,6 +150,7 @@ public class V_GestionarUsuario extends RoundPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel panel_table;
     protected org.jdesktop.swingx.JXTable tabla_usuarios;
     protected javax.swing.JTextField tf_clave;
     protected javax.swing.JTextField tf_filtrar;

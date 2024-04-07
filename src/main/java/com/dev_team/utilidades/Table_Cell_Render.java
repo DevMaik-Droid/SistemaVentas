@@ -1,14 +1,18 @@
-
 package com.dev_team.utilidades;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Rectangle;
+import java.awt.event.HierarchyEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
 import javax.swing.JTable;
+import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import org.jdesktop.swingx.renderer.DefaultTableRenderer;
@@ -19,22 +23,16 @@ import org.jdesktop.swingx.renderer.DefaultTableRenderer;
  */
 public class Table_Cell_Render extends DefaultTableRenderer {
 
-    private final Font font_sustom = new Font("Verdana", Font.PLAIN, 14);
+    private final Font font_sustom = new Font("Verdana", Font.PLAIN, 12);
 
-    public Table_Cell_Render() {
-        super();
-
-    }
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 
         Border topBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK); // Borde solo en la parte superior
-
-        JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+        TableHeader label = new TableHeader(String.valueOf(value));
+        label.setForeground(new Color(51, 51, 51));
         label.setFont(font_sustom);
-   
-
         if (column != 1 && column != 2) {
             label.setHorizontalAlignment(JLabel.CENTER);
         } else {
@@ -45,6 +43,7 @@ public class Table_Cell_Render extends DefaultTableRenderer {
             label.setForeground(new Color(153, 0, 153));
             label.setBackground(new Color(204, 0, 0));
         }
+
         if (value instanceof String) {
             String dato = String.valueOf(value);
             switch (dato) {
@@ -61,7 +60,6 @@ public class Table_Cell_Render extends DefaultTableRenderer {
 
         label.setBorder(topBorder);
         return label;
-
     }
 
 }
