@@ -4,19 +4,21 @@
  */
 package com.dev_team.views;
 
+import com.dev_team.utilidades.GradientDialog;
+import com.dev_team.utilidades.Main_Colores;
 import java.awt.Dimension;
 
 /**
  *
  * @author Usuario
  */
-public class D_AdmiLaptop extends javax.swing.JDialog {
+public class D_AdmiLaptop extends GradientDialog {
 
     /**
      * Creates new form D_AdmiLaptop
      */
     public D_AdmiLaptop(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+        super(modal, Main_Colores.Fondo, Main_Colores.C_F800, Main_Colores.C_F700);
         initComponents();
         setSize(new Dimension(800, 550));
     }
@@ -30,80 +32,125 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        cbx_memoriaRamLP = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        cbx_procesadorLP = new javax.swing.JComboBox<>();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         cbx_discoDeAlmacenamientoLP = new javax.swing.JComboBox<>();
+        cbx_memoriaRamLP = new javax.swing.JComboBox<>();
+        cbx_procesadorLP = new javax.swing.JComboBox<>();
+        cbx_proveedor = new javax.swing.JComboBox<>();
+        tf_precioLP = new javax.swing.JTextField();
         tf_modeloLP = new javax.swing.JTextField();
         tf_conectividadLP = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
         tf_pantallaLP = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
         tf_nombreLP = new javax.swing.JTextField();
         tf_bateriaLP = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        tf_precioLP = new javax.swing.JTextField();
-        cbx_proveedor = new javax.swing.JComboBox<>();
-        jLabel17 = new javax.swing.JLabel();
         tf_cantidad = new javax.swing.JTextField();
-        jLabel18 = new javax.swing.JLabel();
         btn_editar = new javax.swing.JButton();
         btn_buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setText("ADMINISTRAR LAPTOP");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 20, 270, 50));
+
+        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Laptop");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 90, 200, 20));
 
-        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel10.setOpaque(true);
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 200, 170));
-
-        jLabel13.setFont(new java.awt.Font("Questrian", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("ADMINISTRAR LAPTOP");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 270, 50));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("Nombre:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("Memoria ram:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Conectividad:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 220, -1, -1));
 
-        getContentPane().add(cbx_memoriaRamLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 200, 30));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Pantalla:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("Nombre:");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("Modelo:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
+
+        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setText("Memoria ram:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, -1));
+
+        jLabel10.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel10.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel10.setOpaque(true);
+        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 120, 200, 170));
+
+        jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel11.setText("Disco de almacenamiento:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 200, -1));
+
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Procesador:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 90, -1));
 
+        jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("Bateria:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
+
+        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel15.setText("Precio:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 380, 60, -1));
+
+        jLabel17.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel17.setText("Proveedor:");
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+
+        jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel18.setText("Cantidad:");
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, -1, -1));
+
+        cbx_discoDeAlmacenamientoLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_discoDeAlmacenamientoLP.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_discoDeAlmacenamientoLP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_discoDeAlmacenamientoLPActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbx_discoDeAlmacenamientoLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 200, 30));
+
+        cbx_memoriaRamLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_memoriaRamLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(cbx_memoriaRamLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 200, 30));
+
+        cbx_procesadorLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_procesadorLP.setForeground(new java.awt.Color(19, 18, 54));
         cbx_procesadorLP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_procesadorLPActionPerformed(evt);
@@ -111,52 +158,49 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
         });
         getContentPane().add(cbx_procesadorLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 30));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("Disco de almacenamiento:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 190, -1));
-
-        getContentPane().add(cbx_discoDeAlmacenamientoLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 200, 30));
-        getContentPane().add(tf_modeloLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 200, 30));
-        getContentPane().add(tf_conectividadLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 200, 30));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("Modelo:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, -1, -1));
-        getContentPane().add(tf_pantallaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 200, 30));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("Bateria:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, -1, -1));
-        getContentPane().add(tf_nombreLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 200, 30));
-        getContentPane().add(tf_bateriaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 200, 30));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Precio:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 400, 60, -1));
-        getContentPane().add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 400, 130, 20));
-
+        cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_proveedor.setForeground(new java.awt.Color(19, 18, 54));
         cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
         getContentPane().add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 210, 30));
 
-        jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel17.setText("Proveedor:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, -1, -1));
+        tf_precioLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_precioLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 130, 30));
+
+        tf_modeloLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_modeloLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_modeloLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 200, 30));
+
+        tf_conectividadLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_conectividadLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_conectividadLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 200, 30));
+
+        tf_pantallaLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_pantallaLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_pantallaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 200, 30));
+
+        tf_nombreLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_nombreLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_nombreLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 200, 30));
+
+        tf_bateriaLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_bateriaLP.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_bateriaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 200, 30));
+
+        tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_cantidad.setForeground(new java.awt.Color(19, 18, 54));
         getContentPane().add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 210, 30));
 
-        jLabel18.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel18.setText("Cantidad:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, -1, -1));
-
+        btn_editar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_editar.setForeground(new java.awt.Color(19, 18, 54));
         btn_editar.setText("Editar");
+        btn_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, -1));
 
+        btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_buscar.setForeground(new java.awt.Color(19, 18, 54));
         btn_buscar.setText("Guardar");
+        btn_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 130, 30));
 
         pack();
@@ -165,6 +209,10 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
     private void cbx_procesadorLPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_procesadorLPActionPerformed
 
     }//GEN-LAST:event_cbx_procesadorLPActionPerformed
+
+    private void cbx_discoDeAlmacenamientoLPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_discoDeAlmacenamientoLPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbx_discoDeAlmacenamientoLPActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,10 +263,10 @@ public class D_AdmiLaptop extends javax.swing.JDialog {
     private javax.swing.JComboBox<String> cbx_memoriaRamLP;
     private javax.swing.JComboBox<String> cbx_procesadorLP;
     private javax.swing.JComboBox<String> cbx_proveedor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel17;

@@ -3,7 +3,9 @@ package com.dev_team.views;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
+import com.dev_team.utilidades.GradientDialog;
 import com.dev_team.utilidades.JButtonRound;
+import com.dev_team.utilidades.Main_Colores;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
@@ -25,14 +27,14 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-public class D_AdmUsuario extends javax.swing.JDialog {
+public class D_AdmUsuario extends GradientDialog {
 
     Usuario us = null;
     private InputStream input_image;
     private boolean nueva_imagen = false;
 
     public D_AdmUsuario(java.awt.Frame parent, boolean modal, Usuario us) {
-        super(parent, modal);
+        super(modal, Main_Colores.Fondo,Main_Colores.C_F800,Main_Colores.C_F700);
         this.us = us;
         initComponents();
         iniciarComponentes();
@@ -65,7 +67,6 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         return new ImageIcon(img);
     }
 
-
     private void actualizarUsuario() {
 
         try {
@@ -91,7 +92,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
                     usuario.setFoto(input_image);
 
                     usuario.setEstado(cbx_estado.getSelectedItem().toString());
-                    
+
                     if (service_Usuario.actualizar(usuario, tf_clave.getText())) {
                         JOptionPane.showMessageDialog(null, "Usuario Actualizado");
                     } else {
@@ -173,108 +174,171 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         tf_nombre = new javax.swing.JTextField();
         tf_apellido = new javax.swing.JTextField();
         tf_ci = new javax.swing.JTextField();
         tf_telefono = new javax.swing.JTextField();
         tf_direccion = new javax.swing.JTextField();
         tf_usuario = new javax.swing.JTextField();
-        lb_foto = new javax.swing.JLabel();
-        btn_actualizarIMG = new javax.swing.JButton();
-        btn_guardar = new JButtonRound("ELIMINAR",30);
-        dc_fechaNac = new com.toedter.calendar.JDateChooser();
-        cbx_estado = new javax.swing.JComboBox<>();
-        tf_clave = new javax.swing.JTextField();
-        btn_guardar1 = new JButtonRound("REGISTRAR",30);
         pf_password = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
-        jLabel13 = new javax.swing.JLabel();
+        tf_clave = new javax.swing.JTextField();
         pf_confirmar = new javax.swing.JPasswordField();
-        jLabel14 = new javax.swing.JLabel();
+        dc_fechaNac = new com.toedter.calendar.JDateChooser();
+        lb_foto = new javax.swing.JLabel();
+        btn_actualizarIMG = new JButtonRound("Actualizar Imagen",30);
+        btn_guardar = new JButtonRound("ELIMINAR",30);
+        cbx_estado = new javax.swing.JComboBox<>();
+        btn_guardar1 = new JButtonRound("REGISTRAR",30);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("ADMINISTRAR USUARIO");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(250, 12, 220, 30);
+        jLabel1.setBounds(200, 20, 300, 30);
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Clave: ");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(30, 69, 60, 20);
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Nombre:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(50, 149, 53, 20);
+        jLabel3.setBounds(50, 149, 63, 20);
 
-        jLabel4.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Apellido:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(50, 189, 54, 20);
+        jLabel4.setBounds(50, 189, 70, 20);
 
-        jLabel5.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Cedula de identidad:");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(250, 231, 150, 19);
+        jLabel5.setBounds(250, 231, 150, 20);
 
-        jLabel6.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Fecha de nacimiento:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(50, 231, 160, 19);
+        jLabel6.setBounds(50, 231, 160, 20);
 
-        jLabel7.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Telefono:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(50, 299, 60, 20);
+        jLabel7.setBounds(50, 299, 67, 20);
 
-        jLabel8.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Direccion:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(250, 299, 63, 20);
+        jLabel8.setBounds(250, 299, 73, 20);
 
-        jLabel9.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Usuario:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(150, 69, 52, 20);
+        jLabel9.setBounds(150, 69, 70, 20);
 
-        jLabel10.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Contraseña:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(310, 69, 78, 20);
+        jLabel10.setBounds(310, 69, 88, 20);
 
-        jLabel11.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Foto");
         getContentPane().add(jLabel11);
-        jLabel11.setBounds(500, 151, 150, 19);
+        jLabel11.setBounds(500, 151, 150, 20);
 
-        jLabel12.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Estado:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(50, 369, 48, 20);
+        jLabel12.setBounds(50, 369, 54, 20);
+
+        jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setText("Contraseña:");
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(310, 69, 88, 20);
+
+        jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setText("Confirmar");
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(490, 69, 74, 20);
+
+        tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(tf_nombre);
-        tf_nombre.setBounds(130, 154, 240, 20);
+        tf_nombre.setBounds(130, 140, 240, 30);
+
+        tf_apellido.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(tf_apellido);
-        tf_apellido.setBounds(130, 194, 240, 20);
+        tf_apellido.setBounds(130, 184, 240, 30);
+
+        tf_ci.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(tf_ci);
-        tf_ci.setBounds(250, 264, 170, 20);
+        tf_ci.setBounds(250, 254, 170, 30);
+
+        tf_telefono.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(tf_telefono);
-        tf_telefono.setBounds(50, 334, 170, 20);
+        tf_telefono.setBounds(50, 324, 170, 30);
+
+        tf_direccion.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(tf_direccion);
-        tf_direccion.setBounds(250, 334, 170, 20);
+        tf_direccion.setBounds(250, 324, 170, 30);
+
+        tf_usuario.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(tf_usuario);
-        tf_usuario.setBounds(150, 104, 120, 20);
+        tf_usuario.setBounds(150, 90, 120, 20);
+
+        pf_password.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pf_password.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pf_passwordActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pf_password);
+        pf_password.setBounds(310, 90, 140, 20);
+
+        tf_clave.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_clave.setEnabled(false);
+        getContentPane().add(tf_clave);
+        tf_clave.setBounds(30, 90, 90, 20);
+
+        pf_confirmar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        getContentPane().add(pf_confirmar);
+        pf_confirmar.setBounds(490, 90, 140, 20);
+
+        dc_fechaNac.setBackground(new java.awt.Color(6, 18, 52));
+        dc_fechaNac.setForeground(new java.awt.Color(204, 204, 204));
+        dc_fechaNac.setDateFormatString("dd - MMM - YYYY");
+        dc_fechaNac.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        getContentPane().add(dc_fechaNac);
+        dc_fechaNac.setBounds(50, 254, 170, 30);
 
         lb_foto.setBackground(new java.awt.Color(255, 255, 255));
         lb_foto.setOpaque(true);
         getContentPane().add(lb_foto);
         lb_foto.setBounds(500, 180, 150, 150);
 
+        btn_actualizarIMG.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_actualizarIMG.setForeground(new java.awt.Color(19, 18, 54));
         btn_actualizarIMG.setText("Actualizar Imagen");
         btn_actualizarIMG.setBorder(null);
         btn_actualizarIMG.setBorderPainted(false);
+        btn_actualizarIMG.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_actualizarIMG.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_actualizarIMGActionPerformed(evt);
@@ -283,51 +347,35 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         getContentPane().add(btn_actualizarIMG);
         btn_actualizarIMG.setBounds(500, 340, 150, 30);
 
+        btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_guardar.setForeground(new java.awt.Color(19, 18, 54));
         btn_guardar.setText("ELIMINAR");
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardarActionPerformed(evt);
             }
         });
         getContentPane().add(btn_guardar);
-        btn_guardar.setBounds(450, 440, 110, 30);
+        btn_guardar.setBounds(450, 430, 130, 40);
 
-        dc_fechaNac.setDateFormatString("dd - MMM - YYYY");
-        getContentPane().add(dc_fechaNac);
-        dc_fechaNac.setBounds(50, 264, 170, 20);
-
+        cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_estado.setForeground(new java.awt.Color(19, 18, 54));
         cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Ausente", "Inactivo" }));
         getContentPane().add(cbx_estado);
         cbx_estado.setBounds(50, 396, 160, 30);
 
-        tf_clave.setEnabled(false);
-        getContentPane().add(tf_clave);
-        tf_clave.setBounds(30, 104, 90, 20);
-
+        btn_guardar1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_guardar1.setForeground(new java.awt.Color(19, 18, 54));
         btn_guardar1.setText("ACTUALIZAR");
+        btn_guardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_guardar1ActionPerformed(evt);
             }
         });
         getContentPane().add(btn_guardar1);
-        btn_guardar1.setBounds(280, 440, 120, 30);
-        getContentPane().add(pf_password);
-        pf_password.setBounds(310, 102, 120, 20);
-        getContentPane().add(jPasswordField2);
-        jPasswordField2.setBounds(310, 102, 120, 20);
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel13.setText("Contraseña:");
-        getContentPane().add(jLabel13);
-        jLabel13.setBounds(310, 69, 78, 20);
-        getContentPane().add(pf_confirmar);
-        pf_confirmar.setBounds(490, 102, 120, 20);
-
-        jLabel14.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel14.setText("Confirmar");
-        getContentPane().add(jLabel14);
-        jLabel14.setBounds(490, 69, 62, 20);
+        btn_guardar1.setBounds(280, 430, 130, 40);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -344,6 +392,10 @@ public class D_AdmUsuario extends javax.swing.JDialog {
     private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_guardarActionPerformed
+
+    private void pf_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_passwordActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pf_passwordActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -366,7 +418,6 @@ public class D_AdmUsuario extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPasswordField jPasswordField2;
     private javax.swing.JLabel lb_foto;
     private javax.swing.JPasswordField pf_confirmar;
     private javax.swing.JPasswordField pf_password;

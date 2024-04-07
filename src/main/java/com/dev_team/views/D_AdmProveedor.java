@@ -5,6 +5,7 @@
 package com.dev_team.views;
 
 import com.dev_team.utilidades.GradientDialog;
+import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Dimension;
 
@@ -18,7 +19,7 @@ public class D_AdmProveedor extends GradientDialog {
      * Creates new form D_AdmUsuario
      */
     public D_AdmProveedor(java.awt.Frame parent, boolean modal) {     
-        super(modal, Main_Colores.C_600, Main_Colores.C_500, Main_Colores.C_400);
+        super(modal, Main_Colores.Fondo,Main_Colores.C_F800,Main_Colores.C_F700);
         initComponents();
         setSize(new Dimension(860, 535));
     }
@@ -40,99 +41,163 @@ public class D_AdmProveedor extends GradientDialog {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         tf_nombre = new javax.swing.JTextField();
         tf_email = new javax.swing.JTextField();
         tf_contacto = new javax.swing.JTextField();
-        btn_guardar = new javax.swing.JButton();
-        dc_fechaRegistro = new com.toedter.calendar.JDateChooser();
-        cbx_estado = new javax.swing.JComboBox<>();
-        tf_clave = new javax.swing.JTextField();
         tf_direccionproveedor = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tb_historialTransacciones = new javax.swing.JTable();
-        jLabel16 = new javax.swing.JLabel();
-        cbx_estadoDePago = new javax.swing.JComboBox<>();
         tf_productoSum = new javax.swing.JTextField();
+        tf_clave = new javax.swing.JTextField();
+        btn_guardar = new JButtonRound("GUARDAR",30);
+        cbx_estadoDePago = new javax.swing.JComboBox<>();
+        cbx_estado = new javax.swing.JComboBox<>();
+        dc_fechaRegistro = new com.toedter.calendar.JDateChooser();
+        tb_historial_transacciones = new javax.swing.JScrollPane();
+        tb_historialTransacciones = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("ADMINISTRAR PROVEEDOR");
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(330, 10, 270, 32);
+        jLabel1.setBounds(280, 20, 330, 32);
 
-        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setText("Clave: ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(60, 70, 60, 18);
+        jLabel2.setBounds(30, 70, 60, 20);
 
-        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Nombre:");
         getContentPane().add(jLabel3);
-        jLabel3.setBounds(70, 160, 70, 18);
+        jLabel3.setBounds(30, 150, 70, 20);
 
-        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Email:");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(70, 200, 38, 18);
+        jLabel4.setBounds(30, 190, 46, 20);
 
-        jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Producto suministrado:");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(260, 310, 160, 20);
+        jLabel6.setBounds(230, 310, 190, 20);
 
-        jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Contacto:");
         getContentPane().add(jLabel7);
-        jLabel7.setBounds(70, 240, 90, 18);
+        jLabel7.setBounds(30, 240, 90, 20);
 
-        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Direccion:");
         getContentPane().add(jLabel8);
-        jLabel8.setBounds(260, 240, 64, 18);
+        jLabel8.setBounds(230, 240, 73, 20);
 
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Estado:");
         getContentPane().add(jLabel12);
-        jLabel12.setBounds(70, 380, 46, 18);
-        getContentPane().add(tf_nombre);
-        tf_nombre.setBounds(130, 150, 240, 26);
-        getContentPane().add(tf_email);
-        tf_email.setBounds(130, 190, 240, 26);
-        getContentPane().add(tf_contacto);
-        tf_contacto.setBounds(70, 270, 170, 26);
+        jLabel12.setBounds(30, 380, 54, 20);
 
-        btn_guardar.setText("GUARDAR");
-        getContentPane().add(btn_guardar);
-        btn_guardar.setBounds(380, 450, 120, 30);
-
-        dc_fechaRegistro.setDateFormatString("dd - MMM - YYYY");
-        getContentPane().add(dc_fechaRegistro);
-        dc_fechaRegistro.setBounds(70, 340, 170, 26);
-
-        cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Activo", "Inactivo" }));
-        getContentPane().add(cbx_estado);
-        cbx_estado.setBounds(70, 410, 170, 26);
-
-        tf_clave.setEnabled(false);
-        getContentPane().add(tf_clave);
-        tf_clave.setBounds(60, 100, 90, 26);
-        getContentPane().add(tf_direccionproveedor);
-        tf_direccionproveedor.setBounds(260, 270, 170, 26);
-
-        jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
         jLabel14.setText("Fecha de registro:");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(70, 310, 160, 20);
+        jLabel14.setBounds(30, 310, 160, 20);
 
-        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
         jLabel15.setText("Historial de transacciones:");
         getContentPane().add(jLabel15);
-        jLabel15.setBounds(550, 90, 240, 18);
+        jLabel15.setBounds(500, 90, 230, 18);
 
+        jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel16.setText("Estado de pago:");
+        getContentPane().add(jLabel16);
+        jLabel16.setBounds(170, 70, 120, 20);
+
+        tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_nombre.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_nombre);
+        tf_nombre.setBounds(110, 146, 260, 30);
+
+        tf_email.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_email.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_email);
+        tf_email.setBounds(110, 186, 260, 30);
+
+        tf_contacto.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_contacto.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_contacto);
+        tf_contacto.setBounds(30, 266, 170, 30);
+
+        tf_direccionproveedor.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_direccionproveedor.setForeground(new java.awt.Color(19, 18, 54));
+        getContentPane().add(tf_direccionproveedor);
+        tf_direccionproveedor.setBounds(230, 266, 170, 30);
+
+        tf_productoSum.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_productoSum.setForeground(new java.awt.Color(19, 18, 54));
+        tf_productoSum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_productoSumActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tf_productoSum);
+        tf_productoSum.setBounds(230, 336, 170, 30);
+
+        tf_clave.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_clave.setForeground(new java.awt.Color(19, 18, 54));
+        tf_clave.setEnabled(false);
+        getContentPane().add(tf_clave);
+        tf_clave.setBounds(30, 90, 100, 26);
+
+        btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_guardar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_guardar.setText("GUARDAR");
+        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        getContentPane().add(btn_guardar);
+        btn_guardar.setBounds(350, 450, 120, 30);
+
+        cbx_estadoDePago.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_estadoDePago.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_estadoDePago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Completo", "Pendiente", "Parcialmente pagado" }));
+        cbx_estadoDePago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_estadoDePagoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbx_estadoDePago);
+        cbx_estadoDePago.setBounds(170, 90, 180, 30);
+
+        cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_estado.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Activo", "Inactivo" }));
+        cbx_estado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_estadoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(cbx_estado);
+        cbx_estado.setBounds(30, 410, 180, 30);
+
+        dc_fechaRegistro.setForeground(new java.awt.Color(19, 18, 54));
+        dc_fechaRegistro.setDateFormatString("dd - MMM - YYYY");
+        dc_fechaRegistro.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        getContentPane().add(dc_fechaRegistro);
+        dc_fechaRegistro.setBounds(30, 334, 170, 30);
+
+        tb_historialTransacciones.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tb_historialTransacciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -144,26 +209,10 @@ public class D_AdmProveedor extends GradientDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(tb_historialTransacciones);
+        tb_historial_transacciones.setViewportView(tb_historialTransacciones);
 
-        getContentPane().add(jScrollPane1);
-        jScrollPane1.setBounds(470, 120, 350, 260);
-
-        jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jLabel16.setText("Estado de pago:");
-        getContentPane().add(jLabel16);
-        jLabel16.setBounds(210, 70, 120, 18);
-
-        cbx_estadoDePago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Completo", "Pendiente", "Parcialmente pagado" }));
-        cbx_estadoDePago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_estadoDePagoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbx_estadoDePago);
-        cbx_estadoDePago.setBounds(210, 100, 180, 26);
-        getContentPane().add(tf_productoSum);
-        tf_productoSum.setBounds(260, 340, 170, 26);
+        getContentPane().add(tb_historial_transacciones);
+        tb_historial_transacciones.setBounds(420, 120, 400, 260);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -171,6 +220,14 @@ public class D_AdmProveedor extends GradientDialog {
     private void cbx_estadoDePagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_estadoDePagoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbx_estadoDePagoActionPerformed
+
+    private void tf_productoSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_productoSumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_productoSumActionPerformed
+
+    private void cbx_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_estadoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbx_estadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -231,8 +288,8 @@ public class D_AdmProveedor extends GradientDialog {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tb_historialTransacciones;
+    private javax.swing.JScrollPane tb_historial_transacciones;
     private javax.swing.JTextField tf_clave;
     private javax.swing.JTextField tf_contacto;
     private javax.swing.JTextField tf_direccionproveedor;

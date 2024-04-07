@@ -12,12 +12,8 @@ import javax.swing.JPanel;
 
 public class RoundPanel extends JPanel {
 
-    
-    private int round ;
-    
-    
-    
-    
+    private int round;
+
     public int getRound() {
         return round;
     }
@@ -26,15 +22,14 @@ public class RoundPanel extends JPanel {
         this.round = round;
         repaint();
     }
-    
-    public JPanel getPanelMod(){
+
+    public JPanel getPanelMod() {
         return this;
     }
-    
-    public void setFondo(Color color){
+
+    public void setFondo(Color color) {
         setBackground(color);
     }
-
 
     public RoundPanel() {
         setOpaque(false);
@@ -48,7 +43,7 @@ public class RoundPanel extends JPanel {
         g2.setColor(getBackground());
         g2.fill(area);
         area.subtract(new Area(new Rectangle2D.Double(0, 0, getWidth(), getHeight() - 3)));
-        g2.setPaint(new GradientPaint(0, 0, Color.BLUE, getWidth(), 0, Main_Colores.MAIN_COLOR_2));
+        g2.setPaint(new GradientPaint(0, 0, new Color(218, 23, 218), getWidth(), 0, Main_Colores.MAIN_COLOR_2));
         g2.fill(area);
         g2.dispose();
         super.paintComponent(g);
