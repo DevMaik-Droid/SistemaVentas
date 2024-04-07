@@ -188,7 +188,7 @@ public class V_RegistrarUsuario extends JPanel{
         btn_registrar.setBorderPainted(false);
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_registrar.setFocusPainted(false);
-        panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 570, 190, 50));
+        panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 190, 50));
 
         btn_buscarFoto.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_buscarFoto.setForeground(new java.awt.Color(19, 18, 54));
