@@ -23,6 +23,7 @@ public class V_RegistrarUsuario extends JPanel{
         
         initComponents();
         jLabel9.repaint();
+        setBackground(Main_Colores.Fondo_2);
  
     }
 
@@ -61,7 +62,6 @@ public class V_RegistrarUsuario extends JPanel{
 
         setBackground(new java.awt.Color(51, 51, 51));
 
-        panel_form.setBackground(new java.awt.Color(102, 0, 204));
         panel_form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tf_nombre.setFont(new java.awt.Font("Righteous", 0, 14)); // NOI18N
@@ -139,7 +139,6 @@ public class V_RegistrarUsuario extends JPanel{
         pf_password.setBorder(null);
         panel_form.add(pf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 170, 30));
 
-        btn_registrar.setBackground(new java.awt.Color(153, 0, 255));
         btn_registrar.setText("Registrar");
         btn_registrar.setBorder(null);
         btn_registrar.setBorderPainted(false);

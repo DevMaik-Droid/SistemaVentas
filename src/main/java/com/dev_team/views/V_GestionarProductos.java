@@ -10,9 +10,9 @@ public class V_GestionarProductos extends JPanelPersonzalizado {
      * Creates new form V_RegistrarUsuario
      */
     public V_GestionarProductos() {
-        
-        initComponents();
 
+        initComponents();
+        setBackground(Main_Colores.Fondo_2);
     }
 
     private void iniciarComponentes() {

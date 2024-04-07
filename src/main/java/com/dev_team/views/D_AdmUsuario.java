@@ -3,6 +3,7 @@ package com.dev_team.views;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
+import com.dev_team.utilidades.JButtonRound;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
@@ -180,11 +181,11 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         tf_usuario = new javax.swing.JTextField();
         lb_foto = new javax.swing.JLabel();
         btn_actualizarIMG = new javax.swing.JButton();
-        btn_guardar = new javax.swing.JButton();
+        btn_guardar = new JButtonRound("ELIMINAR",30);
         dc_fechaNac = new com.toedter.calendar.JDateChooser();
         cbx_estado = new javax.swing.JComboBox<>();
         tf_clave = new javax.swing.JTextField();
-        btn_guardar1 = new javax.swing.JButton();
+        btn_guardar1 = new JButtonRound("REGISTRAR",30);
         pf_password = new javax.swing.JPasswordField();
         jPasswordField2 = new javax.swing.JPasswordField();
         jLabel13 = new javax.swing.JLabel();
@@ -271,7 +272,6 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         getContentPane().add(lb_foto);
         lb_foto.setBounds(500, 180, 150, 150);
 
-        btn_actualizarIMG.setBackground(new java.awt.Color(153, 0, 255));
         btn_actualizarIMG.setText("Actualizar Imagen");
         btn_actualizarIMG.setBorder(null);
         btn_actualizarIMG.setBorderPainted(false);
@@ -284,8 +284,13 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         btn_actualizarIMG.setBounds(500, 340, 150, 30);
 
         btn_guardar.setText("ELIMINAR");
+        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_guardarActionPerformed(evt);
+            }
+        });
         getContentPane().add(btn_guardar);
-        btn_guardar.setBounds(450, 440, 140, 40);
+        btn_guardar.setBounds(450, 440, 110, 30);
 
         dc_fechaNac.setDateFormatString("dd - MMM - YYYY");
         getContentPane().add(dc_fechaNac);
@@ -306,7 +311,7 @@ public class D_AdmUsuario extends javax.swing.JDialog {
             }
         });
         getContentPane().add(btn_guardar1);
-        btn_guardar1.setBounds(250, 440, 150, 40);
+        btn_guardar1.setBounds(280, 440, 120, 30);
         getContentPane().add(pf_password);
         pf_password.setBounds(310, 102, 120, 20);
         getContentPane().add(jPasswordField2);
@@ -335,6 +340,10 @@ public class D_AdmUsuario extends javax.swing.JDialog {
         actualizarUsuario();
         this.dispose();
     }//GEN-LAST:event_btn_guardar1ActionPerformed
+
+    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_guardarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

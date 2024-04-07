@@ -4,6 +4,7 @@
  */
 package com.dev_team.views;
 
+import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Dimension;
 
@@ -50,7 +51,7 @@ public class D_AdmiComponentes extends javax.swing.JDialog {
         jLabel14 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
-        btn_buscarC1 = new javax.swing.JButton();
+        btn_buscarC1 = new JButtonRound("Editar",30);
         btn_buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);

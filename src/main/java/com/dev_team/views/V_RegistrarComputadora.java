@@ -13,7 +13,7 @@ public class V_RegistrarComputadora extends JPanelPersonzalizado {
     public V_RegistrarComputadora() {
         
         initComponents();
-        
+        setBackground(Main_Colores.Fondo_2);
     }
 
     

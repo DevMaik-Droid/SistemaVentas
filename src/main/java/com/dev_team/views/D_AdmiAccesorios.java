@@ -1,5 +1,6 @@
 package com.dev_team.views;
 
+import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Dimension;
 
@@ -30,7 +31,7 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
 
         jLabel2 = new javax.swing.JLabel();
         lb_imagenAccesorio = new javax.swing.JLabel();
-        btn_buscar = new javax.swing.JButton();
+        btn_buscar = new JButtonRound("Guardar",30);
         jLabel13 = new javax.swing.JLabel();
         cbx_modeloA = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -46,7 +47,7 @@ public class D_AdmiAccesorios extends javax.swing.JDialog {
         jLabel11 = new javax.swing.JLabel();
         cbx_compatibilidadA = new javax.swing.JComboBox<>();
         tf_nombreA = new javax.swing.JTextField();
-        btn_buscar1 = new javax.swing.JButton();
+        btn_buscar1 = new JButtonRound("Editar",30);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

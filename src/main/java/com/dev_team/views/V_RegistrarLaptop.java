@@ -1,8 +1,8 @@
 package com.dev_team.views;
 
+import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.JPanelPersonzalizado;
 import com.dev_team.utilidades.Main_Colores;
-import java.awt.Color;
 
 
 public class V_RegistrarLaptop extends JPanelPersonzalizado {
@@ -13,6 +13,7 @@ public class V_RegistrarLaptop extends JPanelPersonzalizado {
     public V_RegistrarLaptop() {
       
         initComponents();
+        setBackground(Main_Colores.Fondo_2);
         
     }
 
@@ -43,7 +44,7 @@ public class V_RegistrarLaptop extends JPanelPersonzalizado {
         jLabel11 = new javax.swing.JLabel();
         cbx_discoDeAlmacenamientoLP = new javax.swing.JComboBox<>();
         tf_modeloLP = new javax.swing.JTextField();
-        btn_registrarLP = new javax.swing.JButton();
+        btn_registrarLP = new JButtonRound("REGISTRAR",30);
         tf_conectividadLP = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         tf_pantallaLP = new javax.swing.JTextField();

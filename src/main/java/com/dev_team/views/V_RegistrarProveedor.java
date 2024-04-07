@@ -13,7 +13,7 @@ public class V_RegistrarProveedor extends JPanelPersonzalizado {
     public V_RegistrarProveedor() {
         
         initComponents();
-        
+        setBackground(Main_Colores.Fondo_2);
     }
 
     

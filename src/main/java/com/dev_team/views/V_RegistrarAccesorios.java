@@ -13,7 +13,7 @@ public class V_RegistrarAccesorios extends JPanelPersonzalizado {
     public V_RegistrarAccesorios() {
        
         initComponents();
-        
+        setBackground(Main_Colores.Fondo_2);
     }
 
     

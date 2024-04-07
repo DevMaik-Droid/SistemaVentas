@@ -193,33 +193,35 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         body.setLayout(new java.awt.BorderLayout());
         getContentPane().add(body, java.awt.BorderLayout.CENTER);
 
+        panelMenu.setBackground(new java.awt.Color(30, 32, 47));
         panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.Y_AXIS));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(30, 32, 47));
         jPanel1.setMaximumSize(new java.awt.Dimension(250, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 150));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 60, 57));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 60, 57));
 
         lb_nombre.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
+        lb_nombre.setForeground(new java.awt.Color(255, 255, 255));
         lb_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nombre.setText("Miguel Angel");
-        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 30, 110, -1));
+        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 110, -1));
 
         lb_apellido.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
+        lb_apellido.setForeground(new java.awt.Color(255, 255, 255));
         lb_apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_apellido.setText("Quispe Gutierrez");
-        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 110, -1));
+        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 110, -1));
 
         panelMenu.add(jPanel1);
 
-        menu.setBackground(new java.awt.Color(0, 0, 51));
+        menu.setBackground(new java.awt.Color(30, 32, 47));
         menu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         menu.setForeground(new java.awt.Color(255, 255, 255));
-        menu.setOpaque(false);
         menu.setPreferredSize(new java.awt.Dimension(150, 460));
         panelMenu.add(menu);
 
