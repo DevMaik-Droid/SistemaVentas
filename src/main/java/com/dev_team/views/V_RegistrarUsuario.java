@@ -4,10 +4,9 @@
  */
 package com.dev_team.views;
 
-import com.dev_team.utilidades.JPanelPersonzalizado;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
-import javax.swing.JPanel;
+import com.dev_team.utilidades.RoundPanel;
 
 
 
@@ -16,14 +15,15 @@ import javax.swing.JPanel;
  *
  * @author DevMaik
  */
-public class V_RegistrarUsuario extends JPanel{
-
+public class V_RegistrarUsuario extends RoundPanel{
    
+    RoundPanel panel_form;
     public V_RegistrarUsuario() {
         
         initComponents();
-        jLabel9.repaint();
-        setBackground(Main_Colores.Fondo_2);
+        panel_form.setRound(20);
+        panel_form.setFondo(Main_Colores.Fondo_2);
+        
  
     }
 
@@ -32,7 +32,7 @@ public class V_RegistrarUsuario extends JPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_form = new javax.swing.JPanel();
+        panel_form = new RoundPanel();
         tf_nombre = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -177,16 +177,16 @@ public class V_RegistrarUsuario extends JPanel{
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(40, Short.MAX_VALUE)
-                .addComponent(panel_form, javax.swing.GroupLayout.PREFERRED_SIZE, 975, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40)
+                .addComponent(panel_form, javax.swing.GroupLayout.DEFAULT_SIZE, 975, Short.MAX_VALUE)
                 .addGap(30, 30, 30))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(panel_form, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(panel_form, javax.swing.GroupLayout.DEFAULT_SIZE, 647, Short.MAX_VALUE)
+                .addGap(30, 30, 30))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -209,7 +209,6 @@ public class V_RegistrarUsuario extends JPanel{
     private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JLabel lb_foto;
-    private javax.swing.JPanel panel_form;
     protected javax.swing.JPasswordField pf_confPassword;
     protected javax.swing.JPasswordField pf_password;
     protected javax.swing.JTextArea ta_observaciones;

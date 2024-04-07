@@ -1,11 +1,11 @@
 package com.dev_team.views;
 
-import com.dev_team.utilidades.JPanelPersonzalizado;
 import com.dev_team.utilidades.Main_Colores;
-import java.awt.Color;
+import com.dev_team.utilidades.RoundPanel;
 
 
-public class V_RegistrarAccesorios extends JPanelPersonzalizado {
+
+public class V_RegistrarAccesorios extends RoundPanel {
 
     /**
      * Creates new form V_RegistrarUsuario

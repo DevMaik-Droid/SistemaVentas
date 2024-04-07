@@ -1,11 +1,11 @@
 package com.dev_team.views;
 
 import com.dev_team.utilidades.JButtonRound;
-import com.dev_team.utilidades.JPanelPersonzalizado;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.RoundPanel;
 
 
-public class V_RegistrarLaptop extends JPanelPersonzalizado {
+public class V_RegistrarLaptop extends RoundPanel {
 
     /**
      * Creates new form V_RegistrarUsuario
@@ -14,6 +14,7 @@ public class V_RegistrarLaptop extends JPanelPersonzalizado {
       
         initComponents();
         setBackground(Main_Colores.Fondo_2);
+        setRound(20);
         
     }
 

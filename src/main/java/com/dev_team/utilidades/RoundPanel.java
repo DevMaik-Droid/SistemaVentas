@@ -12,6 +12,12 @@ import javax.swing.JPanel;
 
 public class RoundPanel extends JPanel {
 
+    
+    private int round ;
+    
+    
+    
+    
     public int getRound() {
         return round;
     }
@@ -20,8 +26,15 @@ public class RoundPanel extends JPanel {
         this.round = round;
         repaint();
     }
+    
+    public JPanel getPanelMod(){
+        return this;
+    }
+    
+    public void setFondo(Color color){
+        setBackground(color);
+    }
 
-    private int round;
 
     public RoundPanel() {
         setOpaque(false);

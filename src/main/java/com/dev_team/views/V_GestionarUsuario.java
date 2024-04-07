@@ -1,9 +1,9 @@
 package com.dev_team.views;
 
 
-import com.dev_team.utilidades.JPanelPersonzalizado;
+import com.dev_team.utilidades.RoundPanel;
 
-public class V_GestionarUsuario extends JPanelPersonzalizado {
+public class V_GestionarUsuario extends RoundPanel {
 
     /**
      * Creates new form V_RegistrarUsuariodasdas
@@ -11,7 +11,7 @@ public class V_GestionarUsuario extends JPanelPersonzalizado {
     public V_GestionarUsuario() {
         
         initComponents();
-    
+        
         
     }
 
