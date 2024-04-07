@@ -1,7 +1,9 @@
 package com.dev_team.views;
 
 
+import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.PanelGradient;
 import com.dev_team.utilidades.Panel_Round;
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -23,13 +25,14 @@ public class V_GestionarUsuario extends JPanel {
     private void initComponents() {
 
         PanelTop = new javax.swing.JPanel();
+        panel_topGestion = new PanelGradient(Main_Colores.Naranja1,Main_Colores.Naranja2);
         jLabel3 = new javax.swing.JLabel();
-        cbx_filtrarGU = new javax.swing.JComboBox<>();
-        tf_clave = new javax.swing.JTextField();
-        btn_buscaUS = new javax.swing.JButton();
-        tf_filtrar = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        cbx_filtrarGU = new javax.swing.JComboBox<>();
+        tf_clave = new javax.swing.JTextField();
+        btn_buscaUS = new JButtonRound("BUSCAR",20);
+        tf_filtrar = new javax.swing.JTextField();
         PanelMid = new javax.swing.JPanel();
         panel_table = new Panel_Round(20);
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -38,38 +41,65 @@ public class V_GestionarUsuario extends JPanel {
         setBackground(new java.awt.Color(51, 51, 51));
         setLayout(new java.awt.BorderLayout());
 
-        PanelTop.setOpaque(false);
+        PanelTop.setBackground(Main_Colores.Fondo_2);
         PanelTop.setPreferredSize(new java.awt.Dimension(1070, 159));
-        PanelTop.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        panel_topGestion.setBackground(new java.awt.Color(19, 18, 54));
+        panel_topGestion.setOpaque(false);
+        panel_topGestion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Verdana", 0, 24)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("GESTION DE USUARIOS");
-        PanelTop.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, -1, -1));
+        panel_topGestion.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
+        jLabel2.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Clave:");
+        panel_topGestion.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Verdana", 0, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Filtrar:");
+        panel_topGestion.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 30, -1, -1));
+
+        cbx_filtrarGU.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
         cbx_filtrarGU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Cedula de identidad", "Nombre", "Apellido" }));
-        PanelTop.add(cbx_filtrarGU, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, -1, -1));
+        panel_topGestion.add(cbx_filtrarGU, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 26, 200, 30));
 
+        tf_clave.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        tf_clave.setBorder(null);
         tf_clave.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_claveActionPerformed(evt);
             }
         });
-        PanelTop.add(tf_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 130, -1));
+        panel_topGestion.add(tf_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 130, 30));
 
         btn_buscaUS.setText("BUSCAR");
-        PanelTop.add(btn_buscaUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, -1, -1));
-        PanelTop.add(tf_filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 170, -1));
+        btn_buscaUS.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_topGestion.add(btn_buscaUS, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 80, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setText("Clave:");
-        PanelTop.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+        tf_filtrar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
+        tf_filtrar.setBorder(null);
+        panel_topGestion.add(tf_filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, 200, 30));
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Filtrar:");
-        PanelTop.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 60, -1, -1));
+        javax.swing.GroupLayout PanelTopLayout = new javax.swing.GroupLayout(PanelTop);
+        PanelTop.setLayout(PanelTopLayout);
+        PanelTopLayout.setHorizontalGroup(
+            PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTopLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(panel_topGestion, javax.swing.GroupLayout.DEFAULT_SIZE, 970, Short.MAX_VALUE)
+                .addGap(50, 50, 50))
+        );
+        PanelTopLayout.setVerticalGroup(
+            PanelTopLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelTopLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(panel_topGestion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(5, 5, 5))
+        );
 
         add(PanelTop, java.awt.BorderLayout.PAGE_START);
 
@@ -105,16 +135,13 @@ public class V_GestionarUsuario extends JPanel {
         panel_tableLayout.setHorizontalGroup(
             panel_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_tableLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
+                .addGap(4, 4, 4)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 960, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
+                .addContainerGap())
         );
         panel_tableLayout.setVerticalGroup(
             panel_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_tableLayout.createSequentialGroup()
-                .addGap(5, 5, 5)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 356, Short.MAX_VALUE)
-                .addGap(5, 5, 5))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelMidLayout = new javax.swing.GroupLayout(PanelMid);
@@ -129,8 +156,8 @@ public class V_GestionarUsuario extends JPanel {
         PanelMidLayout.setVerticalGroup(
             PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMidLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 366, Short.MAX_VALUE)
+                .addGap(50, 50, 50)
+                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
                 .addGap(50, 50, 50))
         );
 
@@ -152,6 +179,7 @@ public class V_GestionarUsuario extends JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panel_table;
+    private javax.swing.JPanel panel_topGestion;
     protected org.jdesktop.swingx.JXTable tabla_usuarios;
     protected javax.swing.JTextField tf_clave;
     protected javax.swing.JTextField tf_filtrar;

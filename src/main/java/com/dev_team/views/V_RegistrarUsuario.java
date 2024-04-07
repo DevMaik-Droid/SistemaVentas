@@ -116,7 +116,7 @@ public class V_RegistrarUsuario extends JPanel{
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Imagen de usuario");
-        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 40, 190, 20));
+        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 40, 190, 20));
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
