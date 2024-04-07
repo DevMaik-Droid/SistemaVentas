@@ -2,19 +2,18 @@ package com.dev_team.views;
 
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
-import com.dev_team.utilidades.RoundPanel;
+import com.dev_team.utilidades.Panel_Round;
+import javax.swing.JPanel;
 
 
-public class V_RegistrarLaptop extends RoundPanel {
+public class V_RegistrarLaptop extends JPanel {
 
     /**
      * Creates new form V_RegistrarUsuario
      */
-    public V_RegistrarLaptop() {
-      
+    public V_RegistrarLaptop()  {
         initComponents();
         setBackground(Main_Colores.Fondo_2);
-        setRound(20);
         
     }
 
@@ -175,7 +174,7 @@ public class V_RegistrarLaptop extends RoundPanel {
         jLabel18.setText("Cantidad:");
         jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 15, 951, 663));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(46, 15, 951, 610));
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbx_procesadorLPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_procesadorLPActionPerformed

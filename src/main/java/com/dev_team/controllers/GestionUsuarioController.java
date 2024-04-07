@@ -10,13 +10,23 @@ import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarUsuario;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.swing.BorderFactory;
+import javax.swing.JComponent;
+import javax.swing.JTable;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableRowSorter;
 
 public class GestionUsuarioController extends V_GestionarUsuario {
 
@@ -108,14 +118,21 @@ public class GestionUsuarioController extends V_GestionarUsuario {
 
             model.addRow(elementos);
         }
-
         tabla_usuarios.setModel(model);
+        
+        TableColumnModel columnModel = tabla_usuarios.getColumnModel();
+
+        columnModel.getColumn(0).setPreferredWidth(70); 
+        columnModel.getColumn(1).setPreferredWidth(150);  
+        columnModel.getColumn(2).setPreferredWidth(150); 
+        columnModel.getColumn(3).setPreferredWidth(100); 
+        columnModel.getColumn(4).setPreferredWidth(100); 
+        columnModel.getColumn(5).setPreferredWidth(150); 
+        columnModel.getColumn(6).setPreferredWidth(70);
+        
         tabla_usuarios.setRowHeight(30);
-
         tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-
         tabla_usuarios.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-
         tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
 
         tabla_usuarios.addMouseListener(new MouseAdapter() {

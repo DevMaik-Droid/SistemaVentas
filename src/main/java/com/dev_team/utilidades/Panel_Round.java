@@ -10,7 +10,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.JPanel;
 
-public class RoundPanel extends JPanel {
+public class Panel_Round extends JPanel {
 
     private int round;
 
