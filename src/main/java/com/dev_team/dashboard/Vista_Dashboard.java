@@ -29,7 +29,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         initComponents();
         init();
         setResizable(true);
-        setSize(1280,700);
+        setSize(1280,800);
 
     }
 
@@ -189,7 +189,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         getContentPane().add(panel_title, java.awt.BorderLayout.PAGE_START);
 
         body.setBackground(new java.awt.Color(204, 204, 204));
-        body.setPreferredSize(new java.awt.Dimension(1000, 600));
+        body.setPreferredSize(new java.awt.Dimension(1200, 700));
+        body.setRequestFocusEnabled(false);
         body.setLayout(new java.awt.BorderLayout());
         getContentPane().add(body, java.awt.BorderLayout.CENTER);
 
@@ -197,7 +198,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.Y_AXIS));
 
         jPanel1.setBackground(new java.awt.Color(30, 32, 47));
-        jPanel1.setMaximumSize(new java.awt.Dimension(250, 200));
+        jPanel1.setMaximumSize(new java.awt.Dimension(300, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 150));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

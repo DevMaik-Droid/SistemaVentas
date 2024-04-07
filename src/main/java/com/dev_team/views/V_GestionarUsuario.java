@@ -73,9 +73,10 @@ public class V_GestionarUsuario extends JPanel {
 
         add(PanelTop, java.awt.BorderLayout.PAGE_START);
 
+        PanelMid.setForeground(new java.awt.Color(255, 255, 255));
         PanelMid.setOpaque(false);
 
-        panel_table.setBackground(new java.awt.Color(255, 255, 51));
+        panel_table.setBackground(new java.awt.Color(255, 255, 255));
         panel_table.setPreferredSize(new java.awt.Dimension(800, 408));
 
         jScrollPane1.setBorder(null);
