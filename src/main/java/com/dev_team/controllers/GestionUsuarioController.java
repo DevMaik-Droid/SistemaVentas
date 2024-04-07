@@ -6,8 +6,8 @@ package com.dev_team.controllers;
 
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
-import com.dev_team.utilidades.Perzonalizar_Celdas;
-import com.dev_team.utilidades.Table;
+import com.dev_team.utilidades.Table_Cell_Render;
+import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarUsuario;
 import java.awt.event.MouseAdapter;
@@ -23,18 +23,18 @@ public class GestionUsuarioController extends V_GestionarUsuario {
     Service_Usuario serv_usuario = new Service_Usuario();
     List<Usuario> lista_usuario;
     String opcion = "";
-    
+
     public GestionUsuarioController() {
-        
+
         lista_usuario = (List<Usuario>) serv_usuario.listar();
         GenerarTabla(lista_usuario);
-        
-        btn_buscaUS.addActionListener(ev ->{
-            List<Usuario> lists = lista_usuario.stream().filter( us -> us.getClave().equals(tf_clave.getText())).collect(Collectors.toList());
+
+        btn_buscaUS.addActionListener(ev -> {
+            List<Usuario> lists = lista_usuario.stream().filter(us -> us.getClave().equals(tf_clave.getText())).collect(Collectors.toList());
             GenerarTabla(lists);
         });
-        
-        tf_filtrar.getDocument().addDocumentListener(new DocumentListener(){
+
+        tf_filtrar.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 opcion = cbx_filtrarGU.getSelectedItem().toString();
@@ -49,22 +49,20 @@ public class GestionUsuarioController extends V_GestionarUsuario {
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                
+
             }
         });
-        
-        cbx_filtrarGU.addActionListener(e ->{
-        
+
+        cbx_filtrarGU.addActionListener(e -> {
+
             filtrarUsuarios(cbx_filtrarGU.getSelectedItem().toString(), tf_filtrar.getText());
-            
+
         });
-        
-        
-        
+
     }
 
-   // logica para filtrar usuarios
-    public void filtrarUsuarios(String opcion,String cadena){
+    // logica para filtrar usuarios
+    public void filtrarUsuarios(String opcion, String cadena) {
         List<Usuario> lists;
         switch (opcion) {
             case "Cedula de identidad" -> {
@@ -80,7 +78,7 @@ public class GestionUsuarioController extends V_GestionarUsuario {
                 GenerarTabla(lists);
             }
             case "Nombre" -> {
-                lists = lista_usuario.stream() 
+                lists = lista_usuario.stream()
                         .filter(us -> us.getNombre().startsWith(cadena.toUpperCase()))
                         .collect(Collectors.toList());
                 GenerarTabla(lists);
@@ -89,16 +87,14 @@ public class GestionUsuarioController extends V_GestionarUsuario {
                 GenerarTabla(lista_usuario);
             }
         }
- 
+
     }
-   
 
     public final void GenerarTabla(List<Usuario> lista_usuario) {
-        Object[] columnas = {"Clave", "Apellido", "Nombre", "CI","Telefono", "Direccion", "Estado"};
+        Object[] columnas = {"Clave", "Apellido", "Nombre", "CI", "Telefono", "Direccion", "Estado"};
 
         DefaultTableModel model = new DefaultTableModel(columnas, 0);
-        
-        
+
         for (Usuario us : lista_usuario) {
             Object[] elementos = new Object[columnas.length];
 
@@ -109,22 +105,19 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             elementos[4] = us.getTelefono();
             elementos[5] = us.getDireccion();
             elementos[6] = us.getEstado();
-            
+
             model.addRow(elementos);
         }
-        tabla_usuarios.setModel(model);
-        tabla_usuarios = new Table().decorarTabla(tabla_usuarios);
-        //tabla_usuarios.setModel(model);
-        //tabla_usuarios.setRowHeight(30);
-        
-        //tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_P());
-        //Perzonalizar_Celdas pers = new Perzonalizar_Celdas();
 
-        //tabla_usuarios.setDefaultRenderer(Object.class, pers); // Personalizar celdas
-      
-        //tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
-        
-        
+        tabla_usuarios.setModel(model);
+        tabla_usuarios.setRowHeight(30);
+
+        tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_Render());
+
+        tabla_usuarios.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
+
+        tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
+
         tabla_usuarios.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -147,6 +140,5 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         });
 
     }
-    
 
 }

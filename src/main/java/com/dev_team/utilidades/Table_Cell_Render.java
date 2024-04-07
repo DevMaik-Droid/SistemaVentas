@@ -20,11 +20,11 @@ import org.jdesktop.swingx.renderer.DefaultTableRenderer;
  *
  * @author DevMaik
  */
-public class Perzonalizar_Celdas extends DefaultTableRenderer {
+public class Table_Cell_Render extends DefaultTableRenderer {
 
     private final Font font_sustom = new Font("Verdana", Font.PLAIN, 14);
 
-    public Perzonalizar_Celdas() {
+    public Table_Cell_Render() {
         super();
 
     }
@@ -36,6 +36,7 @@ public class Perzonalizar_Celdas extends DefaultTableRenderer {
 
         JLabel label = (JLabel) super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
         label.setFont(font_sustom);
+   
 
         if (column != 1 && column != 2) {
             label.setHorizontalAlignment(JLabel.CENTER);
@@ -43,7 +44,7 @@ public class Perzonalizar_Celdas extends DefaultTableRenderer {
             label.setHorizontalAlignment(JLabel.LEADING);
         }
 
-        if (isSelected){
+        if (isSelected) {
             label.setForeground(new Color(153, 0, 153));
             label.setBackground(new Color(204, 0, 0));
         }

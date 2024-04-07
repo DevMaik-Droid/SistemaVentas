@@ -2,8 +2,6 @@ package com.dev_team.views;
 
 
 import com.dev_team.utilidades.JPanelPersonzalizado;
-import com.dev_team.utilidades.Main_Colores;
-import com.dev_team.utilidades.Table;
 
 public class V_GestionarUsuario extends JPanelPersonzalizado {
 
@@ -13,7 +11,7 @@ public class V_GestionarUsuario extends JPanelPersonzalizado {
     public V_GestionarUsuario() {
         
         initComponents();
-        
+    
         
     }
 

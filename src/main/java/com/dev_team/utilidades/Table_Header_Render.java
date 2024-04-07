@@ -15,23 +15,15 @@ import javax.swing.table.TableCellRenderer;
  *
  * @author DevMaik
  */
-public class Table_Header_P implements TableCellRenderer{
+public class Table_Header_Render implements TableCellRenderer{
 
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
    
-        JComponent componente = null;
-        if( value instanceof String){
-            componente = new JLabel(value.toString());
-            ((JLabel)componente).setHorizontalAlignment(SwingConstants.CENTER);
-            componente.setSize(100, 50);
-        }
-        
-        // Personzalitar todo
+        TableHeader header = new TableHeader((String.valueOf(value)));
         
         
-        
-        return componente;
+        return header;
     }
     
     
