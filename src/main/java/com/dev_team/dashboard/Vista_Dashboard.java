@@ -30,7 +30,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         init();
         setResizable(true);
         setSize(1280,800);
-
+        panel_header.setBackground(Main_Colores.Fondo);
     }
 
     private void init() {
@@ -87,6 +87,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        panel_header = new javax.swing.JPanel();
         panel_title = new javax.swing.JPanel();
         panel_title_1 = new javax.swing.JPanel();
         lb_barra = new javax.swing.JLabel();
@@ -104,6 +105,9 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         setSize(new java.awt.Dimension(1280, 650));
+
+        panel_header.setBackground(new java.awt.Color(51, 51, 51));
+        panel_header.setLayout(new java.awt.BorderLayout());
 
         panel_title.setPreferredSize(new java.awt.Dimension(100, 30));
         panel_title.setLayout(new javax.swing.BoxLayout(panel_title, javax.swing.BoxLayout.LINE_AXIS));
@@ -186,18 +190,19 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
         panel_title.add(panel_acciones);
 
-        getContentPane().add(panel_title, java.awt.BorderLayout.PAGE_START);
+        panel_header.add(panel_title, java.awt.BorderLayout.NORTH);
 
         body.setBackground(new java.awt.Color(204, 204, 204));
         body.setPreferredSize(new java.awt.Dimension(1200, 700));
         body.setRequestFocusEnabled(false);
         body.setLayout(new java.awt.BorderLayout());
-        getContentPane().add(body, java.awt.BorderLayout.CENTER);
+        panel_header.add(body, java.awt.BorderLayout.CENTER);
 
         panelMenu.setBackground(new java.awt.Color(30, 32, 47));
-        panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.Y_AXIS));
+        panelMenu.setPreferredSize(new java.awt.Dimension(300, 700));
+        panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanel1.setBackground(new java.awt.Color(30, 32, 47));
+        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
         jPanel1.setMaximumSize(new java.awt.Dimension(300, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 150));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -220,13 +225,16 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
         panelMenu.add(jPanel1);
 
-        menu.setBackground(new java.awt.Color(30, 32, 47));
+        menu.setBackground(new java.awt.Color(51, 0, 102));
         menu.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        menu.setForeground(new java.awt.Color(255, 255, 255));
+        menu.setForeground(new java.awt.Color(153, 153, 0));
+        menu.setOpaque(false);
         menu.setPreferredSize(new java.awt.Dimension(150, 460));
         panelMenu.add(menu);
 
-        getContentPane().add(panelMenu, java.awt.BorderLayout.WEST);
+        panel_header.add(panelMenu, java.awt.BorderLayout.WEST);
+
+        getContentPane().add(panel_header, java.awt.BorderLayout.CENTER);
 
         pack();
         setLocationRelativeTo(null);
@@ -301,6 +309,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     private com.dev_team.dashboard.menu.Menu menu;
     private javax.swing.JPanel panelMenu;
     private javax.swing.JPanel panel_acciones;
+    private javax.swing.JPanel panel_header;
     private javax.swing.JPanel panel_title;
     private javax.swing.JPanel panel_title_1;
     // End of variables declaration//GEN-END:variables
