@@ -66,7 +66,7 @@ public class V_RegistrarProveedor extends JPanel {
         jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
         jLabel13.setForeground(Main_Colores.C_100);
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("DANIEL TONTO");
+        jLabel13.setText("REGISTRAR PROVEEDOR");
         panelTitle.add(jLabel13, java.awt.BorderLayout.CENTER);
 
         panel_main.add(panelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 870, -1));
