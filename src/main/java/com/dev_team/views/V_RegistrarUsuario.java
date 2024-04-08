@@ -14,7 +14,6 @@ import javax.swing.JPanel;
 
 public class V_RegistrarUsuario extends JPanel{
    
-    
     public V_RegistrarUsuario() {
         initComponents();
         panel_main.setBackground(Main_Colores.Fondo);

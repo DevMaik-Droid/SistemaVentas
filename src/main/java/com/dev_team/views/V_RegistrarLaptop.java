@@ -174,7 +174,7 @@ public class V_RegistrarLaptop extends JPanel {
         cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_proveedor.setForeground(Main_Colores.Fondo);
         cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
-        panel_form.add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 210, 30));
+        panel_form.add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 230, 30));
 
         btn_registrarLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_registrarLP.setForeground(Main_Colores.Fondo);

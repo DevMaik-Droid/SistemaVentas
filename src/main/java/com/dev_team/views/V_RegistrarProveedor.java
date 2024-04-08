@@ -10,10 +10,7 @@ import javax.swing.JPanel;
 
 
 public class V_RegistrarProveedor extends JPanel {
-
-    /**
-     * Creates new form V_RegistrarUsuario
-     */
+    
     public V_RegistrarProveedor() {
         
         initComponents();
