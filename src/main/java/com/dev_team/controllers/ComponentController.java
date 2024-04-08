@@ -1,12 +1,24 @@
 package com.dev_team.controllers;
 
+import com.dev_team.models.PlacaMadre;
+import com.dev_team.services.Service_Componente;
 import com.dev_team.views.V_RegistrarComponentes;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ComponentController extends V_RegistrarComponentes {
 
+    
+    
+    private Service_Componente service = new Service_Componente();
+    
     public ComponentController() {
 
+     
+        
         cbx_componente.addActionListener(c -> {
 
             String componente = cbx_componente.getSelectedItem().toString();
@@ -41,35 +53,35 @@ public class ComponentController extends V_RegistrarComponentes {
     }
 
     private void cargarCbxMotherboard() {
+        
+        List<PlacaMadre> placas = service.listarPlacas();
+        
         //Agregar Marcas al combo box
-        String[] marcas = {"ASUS", "GIGABYTE", "MSI"};
-        Arrays.stream(marcas).forEach(x -> cbx_marcaC.addItem(x));
+        Set<String> marcas = new HashSet<>();
+        
+        placas.forEach(p -> marcas.add(p.getMarca()));
 
-        String[] modelos_asus = {"ASUS ROG Strix Z690-E Gaming WIFI", "ASUS TUF Gaming Z690-Plus WIFI D4", "ASUS Prime Z690-A", "ASUS ROG Maximus Z690 Hero", "ASUS TUF Gaming B560M-Plus WIFI", "ASUS Prime B560-Plus"};
-        String[] modelos_gigabyte = {"GIGABYTE Z690 AORUS Ultra", "GIGABYTE B660 AORUS PRO AX DDR4", "GIGABYTE Z690 AORUS Master DDR4", "GIGABYTE B660M AORUS ELITE DDR4", "GIGABYTE Z590 AORUS Elite AX DDR4"};
-        String[] modelos_msi = {"MSI MPG Z690 GAMING CARBON WIFI", "MSI MAG B660 TOMAHAWK DDR4", "MSI MEG Z690 GODLIKE DDR4", "MSI MAG B660M MORTAR WIFI DDR4"};
-
+        marcas.forEach(x -> cbx_marcaC.addItem(x));
+        
+        List<String> modelos = new ArrayList<>();
         
         cbx_marcaC.addActionListener(e -> {
             
             String marcaSelecionada = cbx_marcaC.getSelectedItem().toString();
-            switch (marcaSelecionada) {
-                case "ASUS" ->
-                    cargarCbxModelo(modelos_asus);
-                case "GIGABYTE" ->
-                    cargarCbxModelo(modelos_gigabyte);
-                case "MSI" ->
-                    cargarCbxModelo(modelos_msi);
-                default -> {
-                    System.out.println("Error");
-                }
-            }
+            placas.stream()
+                    .filter(placa -> placa.getMarca().equals(marcaSelecionada))
+                    .forEach(x -> modelos.add(x.getModelo()));
+            
+            cargarCbxModelo(modelos.toArray());
+            modelos.clear();
+            
         });
 
     }
 
-    private void cargarCbxModelo(String[] modelos) {
+    private void cargarCbxModelo(Object[] modelos) {
         cbx_modeloC.removeAllItems();
-        Arrays.stream(modelos).forEach(x -> cbx_modeloC.addItem(x));
+       
+        Arrays.stream(modelos).forEach(x -> cbx_modeloC.addItem(x.toString()));
     }
 }
