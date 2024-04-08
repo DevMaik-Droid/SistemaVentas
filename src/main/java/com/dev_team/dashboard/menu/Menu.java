@@ -24,14 +24,16 @@ public class Menu extends JPanel {
     }
 
     private void init() {
-        setBackground(Color.WHITE);
+        setBackground(Main_Colores.Fondo);
         setLayout(new BorderLayout());
         JScrollPane scroll = createScroll();
         panelMenu = createPanelMenu();
+       
         scroll.setViewportView(panelMenu);
         scroll.getViewport().setOpaque(false);
         scroll.setViewportBorder(null);
         add(scroll);
+        scroll.setBackground(Main_Colores.Fondo);
         addTitle("MAIN");
         addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DASHBOARD, "Dashboard"));
         addTitle("WEB APPS");
