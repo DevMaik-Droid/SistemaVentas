@@ -30,10 +30,10 @@ public class V_RegistrarProveedor extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new javax.swing.JPanel();
+        panel_main = new Panel_Round(20);
         panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
         jLabel13 = new javax.swing.JLabel();
-        panel_form = new javax.swing.JPanel();
+        panel_form = new JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -43,13 +43,13 @@ public class V_RegistrarProveedor extends JPanel {
         jLabel8 = new javax.swing.JLabel();
         tf_nombreProveedor = new javax.swing.JTextField();
         jTextField5 = new javax.swing.JTextField();
-        tf_productoSuministrado = new javax.swing.JTextField();
         jTextField9 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_informacionAdicional = new javax.swing.JTextArea();
         btn_registrar = new JButtonRound("REGISTRAR",20);
         dc_fechaRegistro = new com.toedter.calendar.JDateChooser();
         cbx_estadoDePago = new javax.swing.JComboBox<>();
+        cbx_productoSuministrado = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(51, 51, 51));
 
@@ -68,6 +68,7 @@ public class V_RegistrarProveedor extends JPanel {
         panel_main.add(panelTitle, java.awt.BorderLayout.NORTH);
 
         panel_form.setBackground(Main_Colores.Fondo);
+        panel_form.setOpaque(false);
         panel_form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
@@ -106,28 +107,23 @@ public class V_RegistrarProveedor extends JPanel {
         panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 200, 20));
 
         tf_nombreProveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_nombreProveedor.setForeground(new java.awt.Color(19, 18, 54));
+        tf_nombreProveedor.setForeground(Main_Colores.Fondo);
         tf_nombreProveedor.setBorder(null);
         panel_form.add(tf_nombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 60, 310, 30));
 
         jTextField5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(19, 18, 54));
+        jTextField5.setForeground(Main_Colores.Fondo);
         jTextField5.setBorder(null);
         panel_form.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 290, 30));
 
-        tf_productoSuministrado.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_productoSuministrado.setForeground(new java.awt.Color(19, 18, 54));
-        tf_productoSuministrado.setBorder(null);
-        panel_form.add(tf_productoSuministrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 290, 30));
-
         jTextField9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jTextField9.setForeground(new java.awt.Color(19, 18, 54));
+        jTextField9.setForeground(Main_Colores.Fondo);
         jTextField9.setBorder(null);
         panel_form.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 310, 30));
 
         ta_informacionAdicional.setColumns(20);
         ta_informacionAdicional.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        ta_informacionAdicional.setForeground(new java.awt.Color(19, 18, 54));
+        ta_informacionAdicional.setForeground(Main_Colores.Fondo);
         ta_informacionAdicional.setRows(5);
         ta_informacionAdicional.setBorder(null);
         jScrollPane1.setViewportView(ta_informacionAdicional);
@@ -135,20 +131,25 @@ public class V_RegistrarProveedor extends JPanel {
         panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 580, 90));
 
         btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        btn_registrar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_registrar.setForeground(Main_Colores.Fondo   );
         btn_registrar.setText("REGISTRAR");
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 190, 50));
 
-        dc_fechaRegistro.setForeground(new java.awt.Color(19, 18, 54));
+        dc_fechaRegistro.setForeground(Main_Colores.Fondo);
         dc_fechaRegistro.setDateFormatString("dd - MMM - YYYY");
         dc_fechaRegistro.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         panel_form.add(dc_fechaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 230, 270, 30));
 
         cbx_estadoDePago.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_estadoDePago.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_estadoDePago.setForeground(Main_Colores.Fondo   );
         cbx_estadoDePago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Completo", "Pendiente", "Parcialmente pagado" }));
         panel_form.add(cbx_estadoDePago, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 220, 30));
+
+        cbx_productoSuministrado.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        cbx_productoSuministrado.setForeground(Main_Colores.Fondo);
+        cbx_productoSuministrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Computadora", "Laptop", "Componentes", "Accesorios" }));
+        panel_form.add(cbx_productoSuministrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 140, 280, 30));
 
         panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
 
@@ -178,6 +179,7 @@ public class V_RegistrarProveedor extends JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_registrar;
     private javax.swing.JComboBox<String> cbx_estadoDePago;
+    private javax.swing.JComboBox<String> cbx_productoSuministrado;
     private com.toedter.calendar.JDateChooser dc_fechaRegistro;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel11;
@@ -195,6 +197,5 @@ public class V_RegistrarProveedor extends JPanel {
     private javax.swing.JPanel panel_main;
     private javax.swing.JTextArea ta_informacionAdicional;
     private javax.swing.JTextField tf_nombreProveedor;
-    private javax.swing.JTextField tf_productoSuministrado;
     // End of variables declaration//GEN-END:variables
 }
