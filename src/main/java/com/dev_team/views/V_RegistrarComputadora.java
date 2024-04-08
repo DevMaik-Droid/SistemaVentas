@@ -1,8 +1,6 @@
 package com.dev_team.views;
 
-import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
-import com.dev_team.utilidades.PanelGradient;
 import com.dev_team.utilidades.Panel_Round;
 import java.awt.Color;
 import javax.swing.JPanel;
@@ -16,7 +14,6 @@ public class V_RegistrarComputadora extends JPanel {
     public V_RegistrarComputadora() {
         
         initComponents();
-        panel_main.setBackground(Main_Colores.Fondo);
         setBackground(Main_Colores.Fondo_2);
     }
 
@@ -29,306 +26,156 @@ public class V_RegistrarComputadora extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new Panel_Round(20);
-        panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
-        jLabel17 = new javax.swing.JLabel();
-        panel_form = new javax.swing.JPanel();
-        tf_nombreCO = new javax.swing.JTextField();
-        tf_precioT = new javax.swing.JTextField();
-        tf_precioR = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
+        jLabel10 = new javax.swing.JLabel();
+        btn_buscar = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        cbx_modeloCO = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
+        cbx_ramCO = new javax.swing.JComboBox<>();
         jLabel4 = new javax.swing.JLabel();
+        cbx_tarjetaMadreCO = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
+        cbx_pantallaC = new javax.swing.JComboBox<>();
         jLabel12 = new javax.swing.JLabel();
+        cbx_procesadorCO = new javax.swing.JComboBox<>();
         jLabel11 = new javax.swing.JLabel();
+        cbx_discoCO = new javax.swing.JComboBox<>();
+        btn_registrar = new javax.swing.JButton();
+        cbx_caseCO = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
+        tf_nombreCO = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
+        jTextField7 = new javax.swing.JTextField();
+        jTextField5 = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        cbx_modeloCO = new javax.swing.JComboBox<>();
-        cbx_ramCO = new javax.swing.JComboBox<>();
-        cbx_tarjetaMadreCO = new javax.swing.JComboBox<>();
-        cbx_pantallaC = new javax.swing.JComboBox<>();
-        cbx_procesadorCO = new javax.swing.JComboBox<>();
-        cbx_discoCO = new javax.swing.JComboBox<>();
-        cbx_caseCO = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        ta_descripcion = new javax.swing.JTextArea();
-        btn_buscar = new JButtonRound("Buscar",20);
-        btn_registrar = new JButtonRound("Registrar",20);
 
         setBackground(new java.awt.Color(51, 51, 51));
+        setLayout(new javax.swing.BoxLayout(this, javax.swing.BoxLayout.LINE_AXIS));
 
-        panel_main.setLayout(new java.awt.BorderLayout());
+        jPanel1.setOpaque(false);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panelTitle.setBackground(new java.awt.Color(51, 51, 255));
-        panelTitle.setPreferredSize(new java.awt.Dimension(40, 40));
-        panelTitle.setLayout(new java.awt.BorderLayout());
+        jLabel2.setFont(new java.awt.Font("Lucida Console", 0, 18)); // NOI18N
+        jLabel2.setForeground(Main_Colores.C_100);
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Foto");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 80, 190, 20));
 
-        jLabel17.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("REGISTRAR COMPUTADORAS");
-        panelTitle.add(jLabel17, java.awt.BorderLayout.CENTER);
+        jLabel6.setFont(new java.awt.Font("Lucida Console", 0, 15)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Descripcion:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 440, 180, -1));
 
-        panel_main.add(panelTitle, java.awt.BorderLayout.NORTH);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setBorder(null);
+        jScrollPane1.setViewportView(jTextArea1);
 
-        panel_form.setOpaque(false);
-
-        tf_nombreCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_nombreCO.setForeground(Main_Colores.Fondo);
-
-        tf_precioT.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_precioT.setForeground(Main_Colores.Fondo);
-
-        tf_precioR.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_precioR.setForeground(Main_Colores.Fondo);
-        tf_precioR.setEnabled(false);
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 470, 580, 90));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setOpaque(true);
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, 191, 196));
 
-        jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel2.setForeground(Main_Colores.C_100);
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Computadoras");
+        btn_buscar.setText("Buscar");
+        jPanel1.add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 330, 130, -1));
 
-        jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel6.setForeground(Main_Colores.C_100);
-        jLabel6.setText("Descripcion:");
+        jLabel13.setFont(new java.awt.Font("Questrian", 0, 24)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("REGISTRAR COMPUTADORA");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, 360, 50));
 
-        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel3.setForeground(Main_Colores.C_100);
+        jPanel1.add(cbx_modeloCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 200, 30));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Modelo:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel9.setForeground(Main_Colores.C_100);
+        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("Ram:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 180, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel4.setForeground(Main_Colores.C_100);
-        jLabel4.setText("Tarjeta Madre:");
-
-        jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel5.setForeground(Main_Colores.C_100);
-        jLabel5.setText("Pantalla:");
-
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel12.setForeground(Main_Colores.C_100);
-        jLabel12.setText("Procesador:");
-
-        jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel11.setForeground(Main_Colores.C_100);
-        jLabel11.setText("Disco:");
-
-        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel8.setForeground(Main_Colores.C_100);
-        jLabel8.setText("Case:");
-
-        jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel14.setForeground(Main_Colores.C_100);
-        jLabel14.setText("Nombre:");
-
-        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel15.setForeground(Main_Colores.C_100);
-        jLabel15.setText("Precio real:");
-
-        jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel16.setForeground(Main_Colores.C_100);
-        jLabel16.setText("Precio total:");
-
-        cbx_modeloCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_modeloCO.setForeground(Main_Colores.Fondo);
-
-        cbx_ramCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_ramCO.setForeground(Main_Colores.Fondo);
         cbx_ramCO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_ramCOActionPerformed(evt);
             }
         });
+        jPanel1.add(cbx_ramCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 200, 230, 30));
 
-        cbx_tarjetaMadreCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_tarjetaMadreCO.setForeground(Main_Colores.Fondo);
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Tarjeta Madre:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, -1, -1));
 
-        cbx_pantallaC.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_pantallaC.setForeground(Main_Colores.Fondo);
+        jPanel1.add(cbx_tarjetaMadreCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 200, 30));
 
-        cbx_procesadorCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_procesadorCO.setForeground(Main_Colores.Fondo);
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Pantalla:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, -1, -1));
+
+        jPanel1.add(cbx_pantallaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 320, 200, 30));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("Procesador:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 240, -1, -1));
+
         cbx_procesadorCO.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_procesadorCOActionPerformed(evt);
             }
         });
+        jPanel1.add(cbx_procesadorCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 260, 230, 30));
 
-        cbx_discoCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_discoCO.setForeground(Main_Colores.Fondo);
+        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Disco:");
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 300, -1, -1));
 
-        cbx_caseCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_caseCO.setForeground(Main_Colores.Fondo);
+        jPanel1.add(cbx_discoCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 320, 230, 30));
 
-        ta_descripcion.setColumns(20);
-        ta_descripcion.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        ta_descripcion.setForeground(Main_Colores.Fondo);
-        ta_descripcion.setRows(5);
-        ta_descripcion.setBorder(null);
-        jScrollPane1.setViewportView(ta_descripcion);
+        btn_registrar.setText("REGISTRAR");
+        jPanel1.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 580, 190, 50));
 
-        btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        btn_buscar.setForeground(Main_Colores.Fondo);
-        btn_buscar.setText("Buscar");
-        btn_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel1.add(cbx_caseCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 200, 30));
 
-        btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        btn_registrar.setForeground(Main_Colores.Fondo);
-        btn_registrar.setText("Registrar");
-        btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Case:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, -1, -1));
+        jPanel1.add(tf_nombreCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 210, 30));
 
-        javax.swing.GroupLayout panel_formLayout = new javax.swing.GroupLayout(panel_form);
-        panel_form.setLayout(panel_formLayout);
-        panel_formLayout.setHorizontalGroup(
-            panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_formLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addComponent(cbx_caseCO, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(50, 50, 50)
-                        .addComponent(jLabel15))
-                    .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panel_formLayout.createSequentialGroup()
-                            .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel14)
-                                .addComponent(tf_nombreCO, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel4)
-                                .addComponent(cbx_tarjetaMadreCO, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel3)
-                                .addComponent(cbx_modeloCO, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel5))
-                            .addGap(40, 40, 40)
-                            .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9)
-                                .addComponent(cbx_ramCO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel12)
-                                .addComponent(cbx_procesadorCO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11)))
-                        .addGroup(panel_formLayout.createSequentialGroup()
-                            .addComponent(cbx_pantallaC, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(50, 50, 50)
-                            .addComponent(cbx_discoCO, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel8)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 506, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(panel_formLayout.createSequentialGroup()
-                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(70, 70, 70)
-                            .addComponent(jLabel16)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(tf_precioT, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(tf_precioR, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(3, 3, 3)
-                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(54, 54, 54))
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGroup(panel_formLayout.createSequentialGroup()
-                .addGap(282, 282, 282)
-                .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        panel_formLayout.setVerticalGroup(
-            panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_formLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(3, 3, 3)
-                                .addComponent(tf_nombreCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(jLabel4)
-                                .addGap(3, 3, 3)
-                                .addComponent(cbx_tarjetaMadreCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel3)
-                                .addGap(3, 3, 3)
-                                .addComponent(cbx_modeloCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel5))
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addGap(80, 80, 80)
-                                .addComponent(jLabel9)
-                                .addGap(3, 3, 3)
-                                .addComponent(cbx_ramCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel12)
-                                .addGap(3, 3, 3)
-                                .addComponent(cbx_procesadorCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel11)))
-                        .addGap(3, 3, 3)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbx_pantallaC, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_discoCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel8)
-                        .addGap(3, 3, 3)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cbx_caseCO, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel15)
-                            .addComponent(tf_precioR, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel16)
-                            .addComponent(tf_precioT, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel6)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 45, Short.MAX_VALUE))
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(btn_buscar)
-                        .addGap(230, 230, 230))))
-        );
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Nombre:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, -1, -1));
+        jPanel1.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, 150, 20));
 
-        panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
+        jTextField5.setEnabled(false);
+        jPanel1.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 380, 150, 20));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(50, 50, 50))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
-        );
+        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Precio real:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, -1, -1));
+
+        jLabel16.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Precio total:");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 410, -1, -1));
+
+        add(jPanel1);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbx_procesadorCOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_procesadorCOActionPerformed
@@ -353,10 +200,10 @@ public class V_RegistrarComputadora extends JPanel {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -364,13 +211,11 @@ public class V_RegistrarComputadora extends JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JPanel panelTitle;
-    private javax.swing.JPanel panel_form;
-    private javax.swing.JPanel panel_main;
-    private javax.swing.JTextArea ta_descripcion;
+    private javax.swing.JTextArea jTextArea1;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField7;
     private javax.swing.JTextField tf_nombreCO;
-    private javax.swing.JTextField tf_precioR;
-    private javax.swing.JTextField tf_precioT;
     // End of variables declaration//GEN-END:variables
 }
