@@ -1,5 +1,6 @@
 package com.dev_team.dashboard;
 
+import com.dev_team.controllers.ComponentController;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.ProveedorGestionController;
@@ -67,7 +68,9 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             } else if (index == 6 && indexSubMenu == 3) {
                 showForm(new V_RegistrarAccesorios());
             } else if (index == 6 && indexSubMenu == 4) {
-                showForm(new V_RegistrarComponentes());
+                V_RegistrarComponentes componentes = new ComponentController();
+                showForm(componentes);
+                
             } else if (index == 6 && indexSubMenu == 5) {
                 showForm(new V_GestionarProductos());
             } 
