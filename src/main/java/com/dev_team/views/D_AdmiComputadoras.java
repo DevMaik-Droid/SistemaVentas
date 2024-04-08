@@ -101,7 +101,7 @@ public class D_AdmiComputadoras extends GradientDialog {
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Case:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, -1, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, -1, 20));
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(204, 204, 204));

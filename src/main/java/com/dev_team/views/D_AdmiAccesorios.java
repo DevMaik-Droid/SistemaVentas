@@ -54,44 +54,44 @@ public class D_AdmiAccesorios extends GradientDialog{
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ACCESORIO");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 120, 20));
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setForeground(Main_Colores.C_100);
         jLabel7.setText("Nombre:");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Modelo:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel9.setForeground(Main_Colores.C_100);
         jLabel9.setText("Material:");
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setForeground(Main_Colores.C_100);
         jLabel4.setText("Marca:");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setForeground(Main_Colores.C_100);
         jLabel5.setText("Conectividad:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setForeground(Main_Colores.C_100);
         jLabel12.setText("Version:");
         getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel11.setForeground(Main_Colores.C_100);
         jLabel11.setText("Compatibilidad:");
         getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
 
@@ -105,7 +105,7 @@ public class D_AdmiAccesorios extends GradientDialog{
         getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 130, 30));
 
         jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setForeground(Main_Colores.C_100);
         jLabel13.setText("ADMINISTRAR ACCESORIOS");
         getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 350, 50));
 
