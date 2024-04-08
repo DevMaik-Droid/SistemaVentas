@@ -77,7 +77,7 @@
                   <Connection code="Main_Colores.C_100" type="code"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="REGISTRAR PROVEEDOR"/>
+                <Property name="text" type="java.lang.String" value="DANIEL TONTO"/>
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout" value="org.netbeans.modules.form.compat2.layouts.DesignBorderLayout$BorderConstraintsDescription">
