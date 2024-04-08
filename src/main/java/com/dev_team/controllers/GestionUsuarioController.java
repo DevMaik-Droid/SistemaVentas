@@ -10,23 +10,17 @@ import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarUsuario;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Graphics;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
 import java.util.stream.Collectors;
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JTable;
+import javax.swing.Timer;
+
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumnModel;
-import javax.swing.table.TableRowSorter;
 
 public class GestionUsuarioController extends V_GestionarUsuario {
 
@@ -44,11 +38,31 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             GenerarTabla(lists);
         });
 
+        tabla_usuarios.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                if (e.getClickCount() == 2) {
+                    int fila = tabla_usuarios.rowAtPoint(e.getPoint());
+                    int columna = 0;
+
+                    if (fila > -1) {
+                        abrirDialogoUsuario(fila, columna);
+                    }
+                }
+
+            }
+
+        });
+        
         tf_filtrar.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
+
                 opcion = cbx_filtrarGU.getSelectedItem().toString();
                 filtrarUsuarios(opcion, tf_filtrar.getText().trim());
+
             }
 
             @Override
@@ -64,15 +78,13 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         });
 
         cbx_filtrarGU.addActionListener(e -> {
-
             filtrarUsuarios(cbx_filtrarGU.getSelectedItem().toString(), tf_filtrar.getText());
-
         });
-
     }
 
     // logica para filtrar usuarios
     public void filtrarUsuarios(String opcion, String cadena) {
+
         List<Usuario> lists;
         switch (opcion) {
             case "Cedula de identidad" -> {
@@ -119,42 +131,35 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             model.addRow(elementos);
         }
         tabla_usuarios.setModel(model);
-        
+
         TableColumnModel columnModel = tabla_usuarios.getColumnModel();
 
-        columnModel.getColumn(0).setPreferredWidth(70); 
-        columnModel.getColumn(1).setPreferredWidth(150);  
-        columnModel.getColumn(2).setPreferredWidth(150); 
-        columnModel.getColumn(3).setPreferredWidth(100); 
-        columnModel.getColumn(4).setPreferredWidth(100); 
-        columnModel.getColumn(5).setPreferredWidth(150); 
+        columnModel.getColumn(0).setPreferredWidth(70);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(150);
+        columnModel.getColumn(3).setPreferredWidth(100);
+        columnModel.getColumn(4).setPreferredWidth(100);
+        columnModel.getColumn(5).setPreferredWidth(150);
         columnModel.getColumn(6).setPreferredWidth(70);
-        
+
         tabla_usuarios.setRowHeight(30);
         tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_Render());
         tabla_usuarios.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-        tabla_usuarios.setDefaultEditor(Object.class, null); // Personalizar Header
+        tabla_usuarios.setDefaultEditor(Object.class, null);// Personalizar Header
+    }
 
-        tabla_usuarios.addMouseListener(new MouseAdapter() {
+    private void abrirDialogoUsuario(int fila, int columna) {
+        String clave = tabla_usuarios.getValueAt(fila, columna).toString();
+        Usuario us = lista_usuario.stream().filter(persona -> persona.getClave().equals(clave)).findFirst().orElse(null);
+        if (us != null) {
+            abrirVentanaAdmUsuario(us);
+        }
+    }
 
-            @Override
-            public void mouseClicked(MouseEvent e) {
+    private void abrirVentanaAdmUsuario(Usuario usuario) {
 
-                if (e.getClickCount() == 2) {
-                    int fila = tabla_usuarios.rowAtPoint(e.getPoint());
-                    int columna = 0;
-
-                    if (fila > -1) {
-                        String clave = tabla_usuarios.getValueAt(fila, columna).toString();
-                        Usuario us = lista_usuario.stream().filter(persona -> persona.getClave().equals(clave)).findFirst().get();
-                        D_AdmUsuario dialog_usuario = new D_AdmUsuario(null, true, us);
-                        dialog_usuario.setVisible(true);
-                    }
-                }
-
-            }
-
-        });
+        D_AdmUsuario dialog_usuario = new D_AdmUsuario(true, usuario);
+        dialog_usuario.setVisible(true);
 
     }
 

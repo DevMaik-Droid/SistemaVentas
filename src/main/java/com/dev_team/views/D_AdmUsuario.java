@@ -1,12 +1,10 @@
 package com.dev_team.views;
 
-import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Usuario;
 import com.dev_team.utilidades.GradientDialog;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.Image;
@@ -33,7 +31,7 @@ public class D_AdmUsuario extends GradientDialog {
     private InputStream input_image;
     private boolean nueva_imagen = false;
 
-    public D_AdmUsuario(java.awt.Frame parent, boolean modal, Usuario us) {
+    public D_AdmUsuario(boolean modal, Usuario us) {
         super(modal, Main_Colores.Fondo,Main_Colores.C_F800,Main_Colores.C_F700);
         this.us = us;
         initComponents();
