@@ -161,6 +161,11 @@ public class D_AdmiLaptop extends GradientDialog {
         cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_proveedor.setForeground(new java.awt.Color(19, 18, 54));
         cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
+        cbx_proveedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbx_proveedorActionPerformed(evt);
+            }
+        });
         getContentPane().add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 210, 30));
 
         tf_precioLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
@@ -213,6 +218,10 @@ public class D_AdmiLaptop extends GradientDialog {
     private void cbx_discoDeAlmacenamientoLPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_discoDeAlmacenamientoLPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbx_discoDeAlmacenamientoLPActionPerformed
+
+    private void cbx_proveedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_proveedorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbx_proveedorActionPerformed
 
     /**
      * @param args the command line arguments
