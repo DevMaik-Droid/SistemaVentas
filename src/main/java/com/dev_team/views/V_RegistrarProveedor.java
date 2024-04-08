@@ -83,11 +83,7 @@ public class V_RegistrarProveedor extends JPanel {
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Fecha de registro:");
-<<<<<<< Updated upstream
         panel_form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 210, 230, 20));
-=======
-        panel_form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 230, 20));
->>>>>>> Stashed changes
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel4.setForeground(Main_Colores.C_100);
@@ -97,11 +93,7 @@ public class V_RegistrarProveedor extends JPanel {
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel6.setForeground(Main_Colores.C_100);
         jLabel6.setText("Informacion adicional:");
-<<<<<<< Updated upstream
         panel_form.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 200, -1));
-=======
-        panel_form.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 340, 200, -1));
->>>>>>> Stashed changes
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel7.setForeground(Main_Colores.C_100);
@@ -116,18 +108,13 @@ public class V_RegistrarProveedor extends JPanel {
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Estado de pago:");
-<<<<<<< Updated upstream
         panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 200, 20));
-=======
-        panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 200, 20));
->>>>>>> Stashed changes
 
         tf_nombreProveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_nombreProveedor.setForeground(Main_Colores.Fondo);
         tf_nombreProveedor.setBorder(null);
         panel_form.add(tf_nombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 310, 30));
 
-<<<<<<< Updated upstream
         jTextField5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jTextField5.setForeground(Main_Colores.Fondo);
         jTextField5.setBorder(null);
@@ -137,17 +124,6 @@ public class V_RegistrarProveedor extends JPanel {
         jTextField9.setForeground(Main_Colores.Fondo);
         jTextField9.setBorder(null);
         panel_form.add(jTextField9, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 150, 310, 30));
-=======
-        tf_contacto.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_contacto.setForeground(Main_Colores.Fondo);
-        tf_contacto.setBorder(null);
-        panel_form.add(tf_contacto, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 60, 290, 30));
-
-        tf_direccion.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_direccion.setForeground(Main_Colores.Fondo);
-        tf_direccion.setBorder(null);
-        panel_form.add(tf_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 310, 30));
->>>>>>> Stashed changes
 
         ta_informacionAdicional.setColumns(20);
         ta_informacionAdicional.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
@@ -156,61 +132,31 @@ public class V_RegistrarProveedor extends JPanel {
         ta_informacionAdicional.setBorder(null);
         jScrollPane1.setViewportView(ta_informacionAdicional);
 
-<<<<<<< Updated upstream
         panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 580, 90));
-=======
-        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 370, 710, 90));
->>>>>>> Stashed changes
 
         btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_registrar.setForeground(Main_Colores.Fondo   );
         btn_registrar.setText("REGISTRAR");
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-<<<<<<< Updated upstream
         panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 480, 130, 50));
-=======
-        panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 470, 190, 50));
->>>>>>> Stashed changes
 
         dc_fechaRegistro.setForeground(Main_Colores.Fondo);
         dc_fechaRegistro.setDateFormatString("dd - MMM - YYYY");
         dc_fechaRegistro.setEnabled(false);
         dc_fechaRegistro.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-<<<<<<< Updated upstream
         panel_form.add(dc_fechaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 250, 270, 30));
-=======
-        panel_form.add(dc_fechaRegistro, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 220, 270, 30));
->>>>>>> Stashed changes
 
         cbx_estadoDePago.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_estadoDePago.setForeground(Main_Colores.Fondo   );
         cbx_estadoDePago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Completo", "Pendiente", "Parcialmente pagado" }));
-<<<<<<< Updated upstream
         panel_form.add(cbx_estadoDePago, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, 220, 30));
-=======
-        panel_form.add(cbx_estadoDePago, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 250, 30));
->>>>>>> Stashed changes
 
         cbx_productoSuministrado.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_productoSuministrado.setForeground(Main_Colores.Fondo);
         cbx_productoSuministrado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Computadora", "Laptop", "Componentes", "Accesorios" }));
         panel_form.add(cbx_productoSuministrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 150, 280, 30));
 
-<<<<<<< Updated upstream
         panel_main.add(panel_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 870, 570));
-=======
-        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel9.setForeground(Main_Colores.C_100);
-        jLabel9.setText("Email:");
-        panel_form.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 190, 130, -1));
-
-        tf_email.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_email.setForeground(Main_Colores.Fondo);
-        tf_email.setBorder(null);
-        panel_form.add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, 310, 30));
-
-        panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
->>>>>>> Stashed changes
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
