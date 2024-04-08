@@ -56,69 +56,81 @@ public class D_AdmiComponentes extends GradientDialog {
         btn_buscar = new JButtonRound("Guardar",30);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
         jLabel13.setForeground(Main_Colores.C_100);
         jLabel13.setText("ADMINISTRAR COMPONENTES");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, 360, 50));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(230, 10, 360, 50);
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Componente");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 70, 200, 20));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(560, 70, 200, 20);
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Marca:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(30, 140, 49, 20);
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel4.setForeground(Main_Colores.C_100);
         jLabel4.setText("Modelo:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, -1, -1));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(30, 200, 57, 20);
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel7.setForeground(Main_Colores.C_100);
         jLabel7.setText("Componente:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, -1, -1));
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(30, 60, 96, 20);
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Proveedor:");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, -1, 20));
+        getContentPane().add(jLabel8);
+        jLabel8.setBounds(50, 340, 81, 20);
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel9.setForeground(Main_Colores.C_100);
         jLabel9.setText("Tipo:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, -1));
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(30, 260, 34, 20);
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setOpaque(true);
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, 200, 160));
+        getContentPane().add(jLabel10);
+        jLabel10.setBounds(560, 100, 200, 160);
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel11.setForeground(Main_Colores.C_100);
         jLabel11.setText("Velocidad:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, -1, -1));
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(280, 200, 75, 20);
 
         jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel12.setForeground(Main_Colores.C_100);
         jLabel12.setText("Capacidad:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, -1, -1));
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(280, 140, 80, 20);
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel14.setForeground(Main_Colores.C_100);
         jLabel14.setText("Cantidad:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, 20));
+        getContentPane().add(jLabel14);
+        jLabel14.setBounds(320, 340, 68, 20);
 
         cbx_marcaC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_marcaC.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_marcaC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 200, 30));
+        getContentPane().add(cbx_marcaC);
+        cbx_marcaC.setBounds(30, 160, 200, 30);
 
         cbx_tipoC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_tipoC.setForeground(Main_Colores.Fondo);
@@ -127,11 +139,13 @@ public class D_AdmiComponentes extends GradientDialog {
                 cbx_tipoCActionPerformed(evt);
             }
         });
-        getContentPane().add(cbx_tipoC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 280, 200, 30));
+        getContentPane().add(cbx_tipoC);
+        cbx_tipoC.setBounds(30, 280, 200, 30);
 
         cbx_modeloC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_modeloC.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_modeloC, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 200, 30));
+        getContentPane().add(cbx_modeloC);
+        cbx_modeloC.setBounds(30, 220, 200, 30);
 
         cbx_capacidadC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_capacidadC.setForeground(Main_Colores.Fondo);
@@ -140,37 +154,44 @@ public class D_AdmiComponentes extends GradientDialog {
                 cbx_capacidadCActionPerformed(evt);
             }
         });
-        getContentPane().add(cbx_capacidadC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 160, 230, 30));
+        getContentPane().add(cbx_capacidadC);
+        cbx_capacidadC.setBounds(280, 160, 230, 30);
 
         cbx_velocidadC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_velocidadC.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_velocidadC, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 220, 230, 30));
+        getContentPane().add(cbx_velocidadC);
+        cbx_velocidadC.setBounds(280, 220, 230, 30);
 
         tf_nombreC1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_nombreC1.setForeground(Main_Colores.Fondo);
-        getContentPane().add(tf_nombreC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, 210, 30));
+        getContentPane().add(tf_nombreC1);
+        tf_nombreC1.setBounds(320, 360, 210, 30);
 
         jComboBox1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jComboBox1.setForeground(Main_Colores.Fondo);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 210, 30));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(30, 90, 210, 30);
 
         jComboBox2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jComboBox2.setForeground(Main_Colores.Fondo);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
-        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 210, 30));
+        getContentPane().add(jComboBox2);
+        jComboBox2.setBounds(50, 360, 210, 30);
 
         btn_buscarC1.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn_buscarC1.setForeground(Main_Colores.Fondo);
         btn_buscarC1.setText("Editar");
         btn_buscarC1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_buscarC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 280, 130, -1));
+        getContentPane().add(btn_buscarC1);
+        btn_buscarC1.setBounds(600, 280, 130, 28);
 
         btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         btn_buscar.setForeground(Main_Colores.Fondo);
         btn_buscar.setText("Guardar");
         btn_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 130, 30));
+        getContentPane().add(btn_buscar);
+        btn_buscar.setBounds(340, 440, 130, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

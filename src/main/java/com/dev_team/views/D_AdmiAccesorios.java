@@ -51,67 +51,79 @@ public class D_AdmiAccesorios extends GradientDialog{
         btn_buscar1 = new JButtonRound("Editar",30);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        getContentPane().setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("ACCESORIO");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 90, 120, 20));
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(600, 130, 120, 20);
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel7.setForeground(Main_Colores.C_100);
         jLabel7.setText("Nombre:");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, -1, -1));
+        getContentPane().add(jLabel7);
+        jLabel7.setBounds(40, 110, 63, 20);
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Modelo:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, -1, -1));
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(40, 260, 57, 20);
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
         jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel9.setForeground(Main_Colores.C_100);
         jLabel9.setText("Material:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, -1, -1));
+        getContentPane().add(jLabel9);
+        jLabel9.setBounds(290, 170, 64, 20);
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel4.setForeground(Main_Colores.C_100);
         jLabel4.setText("Marca:");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(40, 170, 49, 20);
 
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel5.setForeground(Main_Colores.C_100);
         jLabel5.setText("Conectividad:");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, -1, -1));
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(40, 340, 97, 20);
 
         jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel12.setForeground(Main_Colores.C_100);
         jLabel12.setText("Version:");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, -1));
+        getContentPane().add(jLabel12);
+        jLabel12.setBounds(290, 260, 59, 20);
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel11.setForeground(Main_Colores.C_100);
         jLabel11.setText("Compatibilidad:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 300, -1, -1));
+        getContentPane().add(jLabel11);
+        jLabel11.setBounds(290, 340, 113, 20);
 
         lb_imagenAccesorio.setBackground(new java.awt.Color(255, 255, 255));
         lb_imagenAccesorio.setOpaque(true);
-        getContentPane().add(lb_imagenAccesorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 200, 180));
+        getContentPane().add(lb_imagenAccesorio);
+        lb_imagenAccesorio.setBounds(560, 150, 200, 180);
 
         btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_buscar.setForeground(Main_Colores.Fondo);
         btn_buscar.setText("Guardar");
-        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 130, 30));
+        getContentPane().add(btn_buscar);
+        btn_buscar.setBounds(320, 470, 130, 30);
 
         jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
         jLabel13.setForeground(Main_Colores.C_100);
         jLabel13.setText("ADMINISTRAR ACCESORIOS");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, 350, 50));
+        getContentPane().add(jLabel13);
+        jLabel13.setBounds(230, 30, 350, 50);
 
         cbx_modeloA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_modeloA.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_modeloA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 200, 30));
+        getContentPane().add(cbx_modeloA);
+        cbx_modeloA.setBounds(40, 290, 200, 30);
 
         cbx_materialA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_materialA.setForeground(Main_Colores.Fondo);
@@ -120,11 +132,13 @@ public class D_AdmiAccesorios extends GradientDialog{
                 cbx_materialAActionPerformed(evt);
             }
         });
-        getContentPane().add(cbx_materialA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 230, 30));
+        getContentPane().add(cbx_materialA);
+        cbx_materialA.setBounds(290, 200, 230, 30);
 
         cbx_marcaA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_marcaA.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_marcaA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 200, 30));
+        getContentPane().add(cbx_marcaA);
+        cbx_marcaA.setBounds(40, 200, 200, 30);
 
         cbx_conectividadA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_conectividadA.setForeground(Main_Colores.Fondo);
@@ -133,7 +147,8 @@ public class D_AdmiAccesorios extends GradientDialog{
                 cbx_conectividadAActionPerformed(evt);
             }
         });
-        getContentPane().add(cbx_conectividadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, 200, 30));
+        getContentPane().add(cbx_conectividadA);
+        cbx_conectividadA.setBounds(40, 370, 200, 30);
 
         cbx_versionA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_versionA.setForeground(Main_Colores.Fondo);
@@ -142,20 +157,24 @@ public class D_AdmiAccesorios extends GradientDialog{
                 cbx_versionAActionPerformed(evt);
             }
         });
-        getContentPane().add(cbx_versionA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 230, 30));
+        getContentPane().add(cbx_versionA);
+        cbx_versionA.setBounds(290, 290, 230, 30);
 
         cbx_compatibilidadA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_compatibilidadA.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_compatibilidadA, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 320, 230, 30));
+        getContentPane().add(cbx_compatibilidadA);
+        cbx_compatibilidadA.setBounds(290, 370, 230, 30);
 
         tf_nombreA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_nombreA.setForeground(Main_Colores.Fondo);
-        getContentPane().add(tf_nombreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 200, 30));
+        getContentPane().add(tf_nombreA);
+        tf_nombreA.setBounds(110, 100, 200, 30);
 
         btn_buscar1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_buscar1.setForeground(Main_Colores.Fondo);
         btn_buscar1.setText("Editar");
-        getContentPane().add(btn_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 130, -1));
+        getContentPane().add(btn_buscar1);
+        btn_buscar1.setBounds(600, 350, 130, 26);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
