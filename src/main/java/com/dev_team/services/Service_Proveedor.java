@@ -2,6 +2,7 @@ package com.dev_team.services;
 
 import com.dev_team.models.Proveedor;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -9,24 +10,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Service_Proveedor implements I_Service{
-    /**
-     * **************************************************
- metodo para crear un nuevo proveedor
- **************************************************
-     */
+
+    
+    
+    private String TB_PROVEEDOR = "tb_proveedor";
+    
     @Override
     public boolean crear(Object objeto) {
         boolean respuesta = false;
         Connection cn = Conexion.conectar();
-        Proveedor pr = (Proveedor) objeto;
+        Proveedor proveedor = (Proveedor) objeto;
+        String sql = String.format("INSERT INTO %s values(?,?,?,?,?,?,?,?,?,?)", TB_PROVEEDOR);
         try {
-            PreparedStatement consulta = cn.prepareStatement("insert into tb_proveedor values(?,?,?,?,?,?)");
+            PreparedStatement consulta = cn.prepareStatement(sql);
             consulta.setInt(1, 0);//id
-            consulta.setString(2, pr.getNombre());
-            consulta.setString(3, pr.getContacto());
-            consulta.setString(4, pr.getEmail());
-            consulta.setString(5, pr.getDireccion());
-            consulta.setString(6, pr.getObservaciones());    
+            consulta.setString(2, proveedor.getNombre().toUpperCase());
+            consulta.setString(3, proveedor.getContacto());
+            consulta.setString(4, proveedor.getDireccion().toUpperCase());
+            consulta.setString(5, proveedor.getEmail());
+            consulta.setString(6, proveedor.getProductoSuministrado());
+            consulta.setDate(7,  new Date(proveedor.getFechaRegistro().getTime()));
+            consulta.setString(8, proveedor.getEstadoPago());
+            consulta.setString(9, "Activo");
+            consulta.setString(10, proveedor.getObservaciones());    
             if (consulta.executeUpdate() > 0) {
                 respuesta = true;
             }
@@ -108,16 +114,26 @@ public class Service_Proveedor implements I_Service{
     public List<?> listar() {
         List<Proveedor> lista= new ArrayList<>();
         Connection cn = Conexion.conectar();
-        String sql = "select * from tb_proveedor";
+        String sql = String.format("SELECT * FROM %s", TB_PROVEEDOR);
         try {
+            
             PreparedStatement consulta = cn.prepareStatement(sql);
             ResultSet resultado = consulta.executeQuery();
             while (resultado.next()) {     
                 Proveedor pr = new Proveedor();
                 pr.setIdProveedor(resultado.getLong(1));
                 pr.setNombre(resultado.getString(2));
+                pr.setContacto(resultado.getString(3));
+                pr.setDireccion(resultado.getString(4));
+                pr.setEmail(resultado.getString(5));
+                pr.setProductoSuministrado(resultado.getString(6));
+                pr.setFechaRegistro(resultado.getDate(7));
+                pr.setEstadoPago(resultado.getString(8));
+                pr.setEstado(resultado.getString(9));
+                pr.setObservaciones(resultado.getString(10));
+                
+                
                 lista.add(pr);
-             
             }
         } catch (SQLException ex) {
             

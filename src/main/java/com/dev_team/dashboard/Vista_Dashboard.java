@@ -1,6 +1,8 @@
 package com.dev_team.dashboard;
 
 import com.dev_team.controllers.GestionUsuarioController;
+import com.dev_team.controllers.ProveedorController;
+import com.dev_team.controllers.ProveedorGestionController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.views.V_GestionarProductos;
@@ -51,9 +53,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(gestionarUsuario);
                 
             } else if (index == 5 && indexSubMenu == 1) {
-                showForm(new V_RegistrarProveedor());
+                V_RegistrarProveedor prov = new ProveedorController();
+                showForm(prov);
+                
             } else if (index == 5 && indexSubMenu == 2) {
-                showForm(new V_GestionarProveedores());
+                V_GestionarProveedores gest = new ProveedorGestionController();
+                showForm(gest);
+                
             } else if (index == 6 && indexSubMenu == 1) {
                 showForm(new V_RegistrarComputadora());
             } else if (index == 6 && indexSubMenu == 2) {

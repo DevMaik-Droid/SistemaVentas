@@ -9,11 +9,7 @@ import java.sql.Statement;
 
 public class Service_Cliente {
 
-    /**
-     * **************************************************
-     * metodo para guardar un nuevo cliente
-     * **************************************************
-     */
+    
     public boolean guardar(Cliente objeto) {
         boolean respuesta = false;
         Connection cn = Conexion.conectar();
