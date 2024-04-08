@@ -61,67 +61,67 @@ public class D_AdmProveedor extends GradientDialog {
         getContentPane().setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel1.setForeground(Main_Colores.C_100);
         jLabel1.setText("ADMINISTRAR PROVEEDOR");
         getContentPane().add(jLabel1);
         jLabel1.setBounds(280, 20, 330, 32);
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setText("Clave: ");
         getContentPane().add(jLabel2);
         jLabel2.setBounds(30, 70, 60, 20);
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Nombre:");
         getContentPane().add(jLabel3);
         jLabel3.setBounds(30, 150, 70, 20);
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setForeground(Main_Colores.C_100);
         jLabel4.setText("Email:");
         getContentPane().add(jLabel4);
         jLabel4.setBounds(30, 190, 46, 20);
 
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setForeground(Main_Colores.C_100);
         jLabel6.setText("Producto suministrado:");
         getContentPane().add(jLabel6);
         jLabel6.setBounds(230, 310, 190, 20);
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setForeground(Main_Colores.C_100);
         jLabel7.setText("Contacto:");
         getContentPane().add(jLabel7);
         jLabel7.setBounds(30, 240, 90, 20);
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Direccion:");
         getContentPane().add(jLabel8);
         jLabel8.setBounds(230, 240, 73, 20);
 
         jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setForeground(Main_Colores.C_100);
         jLabel12.setText("Estado:");
         getContentPane().add(jLabel12);
         jLabel12.setBounds(30, 380, 54, 20);
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setForeground(Main_Colores.C_100);
         jLabel14.setText("Fecha de registro:");
         getContentPane().add(jLabel14);
         jLabel14.setBounds(30, 310, 160, 20);
 
         jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel15.setForeground(Main_Colores.C_100);
         jLabel15.setText("Historial de transacciones:");
         getContentPane().add(jLabel15);
         jLabel15.setBounds(500, 90, 230, 18);
 
         jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel16.setForeground(Main_Colores.C_100);
         jLabel16.setText("Estado de pago:");
         getContentPane().add(jLabel16);
         jLabel16.setBounds(170, 70, 120, 20);

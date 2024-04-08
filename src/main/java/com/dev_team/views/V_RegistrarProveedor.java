@@ -46,7 +46,7 @@ public class V_RegistrarProveedor extends JPanel {
         jTextField9 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_informacionAdicional = new javax.swing.JTextArea();
-        btn_registrar = new JButtonRound("REGISTRAR",20);
+        btn_registrar = new JButtonRound("Registrar",20);
         dc_fechaRegistro = new com.toedter.calendar.JDateChooser();
         cbx_estadoDePago = new javax.swing.JComboBox<>();
         cbx_productoSuministrado = new javax.swing.JComboBox<>();
@@ -132,7 +132,7 @@ public class V_RegistrarProveedor extends JPanel {
 
         btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_registrar.setForeground(Main_Colores.Fondo   );
-        btn_registrar.setText("REGISTRAR");
+        btn_registrar.setText("Registrar");
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 460, 190, 50));
 
