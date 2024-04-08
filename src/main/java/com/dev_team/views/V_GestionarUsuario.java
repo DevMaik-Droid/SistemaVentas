@@ -112,7 +112,6 @@ public class V_GestionarUsuario extends JPanel {
 
         jScrollPane1.setBorder(null);
 
-        tabla_usuarios.setBackground(new java.awt.Color(255, 255, 255));
         tabla_usuarios.setForeground(new java.awt.Color(51, 51, 51));
         tabla_usuarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -157,9 +156,9 @@ public class V_GestionarUsuario extends JPanel {
         PanelMidLayout.setVerticalGroup(
             PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMidLayout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addContainerGap()
                 .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
-                .addGap(50, 50, 50))
+                .addGap(32, 32, 32))
         );
 
         add(PanelMid, java.awt.BorderLayout.CENTER);
