@@ -100,7 +100,7 @@ public class D_AdmiAccesorios extends GradientDialog{
         getContentPane().add(lb_imagenAccesorio, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 110, 200, 180));
 
         btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_buscar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_buscar.setForeground(Main_Colores.Fondo);
         btn_buscar.setText("Guardar");
         getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 400, 130, 30));
 
@@ -150,10 +150,10 @@ public class D_AdmiAccesorios extends GradientDialog{
 
         tf_nombreA.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_nombreA.setForeground(Main_Colores.Fondo);
-        getContentPane().add(tf_nombreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 480, 30));
+        getContentPane().add(tf_nombreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 200, 30));
 
         btn_buscar1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_buscar1.setForeground(new java.awt.Color(19, 18, 54));
+        btn_buscar1.setForeground(Main_Colores.Fondo);
         btn_buscar1.setText("Editar");
         getContentPane().add(btn_buscar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 310, 130, -1));
 

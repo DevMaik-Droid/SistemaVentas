@@ -127,27 +127,27 @@ public class D_AdmProveedor extends GradientDialog {
         jLabel16.setBounds(170, 70, 120, 20);
 
         tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_nombre.setForeground(new java.awt.Color(19, 18, 54));
+        tf_nombre.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_nombre);
         tf_nombre.setBounds(110, 146, 260, 30);
 
         tf_email.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_email.setForeground(new java.awt.Color(19, 18, 54));
+        tf_email.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_email);
         tf_email.setBounds(110, 186, 260, 30);
 
         tf_contacto.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_contacto.setForeground(new java.awt.Color(19, 18, 54));
+        tf_contacto.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_contacto);
         tf_contacto.setBounds(30, 266, 170, 30);
 
         tf_direccionproveedor.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_direccionproveedor.setForeground(new java.awt.Color(19, 18, 54));
+        tf_direccionproveedor.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_direccionproveedor);
         tf_direccionproveedor.setBounds(230, 266, 170, 30);
 
         tf_productoSum.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_productoSum.setForeground(new java.awt.Color(19, 18, 54));
+        tf_productoSum.setForeground(Main_Colores.Fondo);
         tf_productoSum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_productoSumActionPerformed(evt);
@@ -157,20 +157,20 @@ public class D_AdmProveedor extends GradientDialog {
         tf_productoSum.setBounds(230, 336, 170, 30);
 
         tf_clave.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_clave.setForeground(new java.awt.Color(19, 18, 54));
+        tf_clave.setForeground(Main_Colores.Fondo);
         tf_clave.setEnabled(false);
         getContentPane().add(tf_clave);
         tf_clave.setBounds(30, 90, 100, 26);
 
         btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_guardar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_guardar.setForeground(Main_Colores.Fondo);
         btn_guardar.setText("GUARDAR");
         btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_guardar);
         btn_guardar.setBounds(350, 450, 120, 30);
 
         cbx_estadoDePago.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_estadoDePago.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_estadoDePago.setForeground(Main_Colores.Fondo);
         cbx_estadoDePago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Completo", "Pendiente", "Parcialmente pagado" }));
         cbx_estadoDePago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +181,7 @@ public class D_AdmProveedor extends GradientDialog {
         cbx_estadoDePago.setBounds(170, 90, 180, 30);
 
         cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_estado.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_estado.setForeground(Main_Colores.Fondo);
         cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Activo", "Inactivo" }));
         cbx_estado.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -191,7 +191,7 @@ public class D_AdmProveedor extends GradientDialog {
         getContentPane().add(cbx_estado);
         cbx_estado.setBounds(30, 410, 180, 30);
 
-        dc_fechaRegistro.setForeground(new java.awt.Color(19, 18, 54));
+        dc_fechaRegistro.setForeground(Main_Colores.Fondo);
         dc_fechaRegistro.setDateFormatString("dd - MMM - YYYY");
         dc_fechaRegistro.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(dc_fechaRegistro);

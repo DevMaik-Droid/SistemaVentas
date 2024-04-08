@@ -78,132 +78,133 @@ public class V_RegistrarUsuario extends JPanel{
         panel_form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_nombre.setForeground(new java.awt.Color(19, 18, 54));
+        tf_nombre.setForeground(Main_Colores.Fondo);
         tf_nombre.setBorder(null);
-        panel_form.add(tf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 300, 30));
+        panel_form.add(tf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 300, 30));
 
         tf_apellido.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_apellido.setForeground(new java.awt.Color(19, 18, 54));
+        tf_apellido.setForeground(Main_Colores.Fondo);
         tf_apellido.setBorder(null);
-        panel_form.add(tf_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 70, 300, 30));
+        panel_form.add(tf_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 300, 30));
 
         tf_ci.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_ci.setForeground(new java.awt.Color(19, 18, 54));
+        tf_ci.setForeground(Main_Colores.Fondo);
         tf_ci.setBorder(null);
-        panel_form.add(tf_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 210, 30));
+        panel_form.add(tf_ci, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 210, 30));
 
         tf_telefono.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_telefono.setForeground(new java.awt.Color(19, 18, 54));
+        tf_telefono.setForeground(Main_Colores.Fondo);
         tf_telefono.setBorder(null);
-        panel_form.add(tf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, 300, 30));
+        panel_form.add(tf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 300, 30));
 
         tf_direccion.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_direccion.setForeground(new java.awt.Color(19, 18, 54));
+        tf_direccion.setForeground(Main_Colores.Fondo);
         tf_direccion.setBorder(null);
-        panel_form.add(tf_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 290, 30));
+        panel_form.add(tf_direccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 290, 30));
 
         tf_usuario.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_usuario.setForeground(new java.awt.Color(19, 18, 54));
+        tf_usuario.setForeground(Main_Colores.Fondo);
         tf_usuario.setBorder(null);
-        panel_form.add(tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 330, 190, 30));
+        panel_form.add(tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 190, 30));
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("Nombre:");
-        panel_form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 90, -1));
+        panel_form.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 204, 204));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Imagen de usuario");
-        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 40, 190, 20));
+        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 190, 20));
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(204, 204, 204));
         jLabel3.setText("Fecha nacimiento:");
-        panel_form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 200, -1));
+        panel_form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 200, -1));
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 204, 204));
         jLabel4.setText("Cedula Identidad:");
-        panel_form.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 130, 200, 20));
+        panel_form.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 200, 20));
 
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 204, 204));
         jLabel5.setText("Telefono");
-        panel_form.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 110, -1));
+        panel_form.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 110, -1));
 
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 204, 204));
         jLabel6.setText("Observaciones: ");
-        panel_form.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 390, 180, -1));
+        panel_form.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 180, -1));
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Direccion:");
-        panel_form.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 210, 130, -1));
+        panel_form.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 130, -1));
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Usuario:");
-        panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 110, -1));
+        panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 110, -1));
 
         jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Contraseña:");
-        panel_form.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 140, -1));
+        panel_form.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 140, -1));
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Apellido:");
-        panel_form.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 120, 20));
+        panel_form.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 120, 20));
 
         jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Confirmar:");
-        panel_form.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 130, -1));
+        panel_form.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 290, 130, -1));
 
         lb_foto.setBackground(new java.awt.Color(255, 255, 255));
         lb_foto.setOpaque(true);
-        panel_form.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, 191, 196));
+        panel_form.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 50, 191, 196));
 
         ta_observaciones.setColumns(20);
         ta_observaciones.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        ta_observaciones.setForeground(Main_Colores.Fondo);
         ta_observaciones.setRows(5);
         ta_observaciones.setBorder(null);
         jScrollPane1.setViewportView(ta_observaciones);
 
-        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 420, 630, 90));
+        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 630, 90));
 
         pf_password.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        pf_password.setForeground(new java.awt.Color(19, 18, 54));
+        pf_password.setForeground(Main_Colores.Fondo);
         pf_password.setBorder(null);
-        panel_form.add(pf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 170, 30));
+        panel_form.add(pf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 310, 170, 30));
 
         pf_confPassword.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        pf_confPassword.setForeground(new java.awt.Color(19, 18, 54));
+        pf_confPassword.setForeground(Main_Colores.Fondo);
         pf_confPassword.setBorder(null);
-        panel_form.add(pf_confPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 330, 170, 30));
+        panel_form.add(pf_confPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 170, 30));
 
         btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        btn_registrar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_registrar.setForeground(Main_Colores.Fondo);
         btn_registrar.setText("Registrar");
         btn_registrar.setBorder(null);
         btn_registrar.setBorderPainted(false);
         btn_registrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_registrar.setFocusPainted(false);
-        panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 520, 190, 50));
+        panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 190, 50));
 
         btn_buscarFoto.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        btn_buscarFoto.setForeground(new java.awt.Color(19, 18, 54));
+        btn_buscarFoto.setForeground(Main_Colores.Fondo);
         btn_buscarFoto.setText("Buscar");
         btn_buscarFoto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel_form.add(btn_buscarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 280, 140, 40));
+        panel_form.add(btn_buscarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 260, 140, 40));
 
-        dc_fechaNac.setForeground(new java.awt.Color(19, 18, 54));
+        dc_fechaNac.setForeground(Main_Colores.Fondo);
         dc_fechaNac.setDateFormatString("dd - MMM - YYYY");
         dc_fechaNac.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        panel_form.add(dc_fechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 220, 30));
+        panel_form.add(dc_fechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 220, 30));
 
         panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
 

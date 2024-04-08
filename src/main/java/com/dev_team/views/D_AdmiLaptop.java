@@ -137,7 +137,7 @@ public class D_AdmiLaptop extends GradientDialog {
         getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, -1, -1));
 
         cbx_discoDeAlmacenamientoLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_discoDeAlmacenamientoLP.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_discoDeAlmacenamientoLP.setForeground(Main_Colores.Fondo);
         cbx_discoDeAlmacenamientoLP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_discoDeAlmacenamientoLPActionPerformed(evt);
@@ -146,11 +146,11 @@ public class D_AdmiLaptop extends GradientDialog {
         getContentPane().add(cbx_discoDeAlmacenamientoLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 200, 30));
 
         cbx_memoriaRamLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_memoriaRamLP.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_memoriaRamLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(cbx_memoriaRamLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 200, 30));
 
         cbx_procesadorLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_procesadorLP.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_procesadorLP.setForeground(Main_Colores.Fondo);
         cbx_procesadorLP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbx_procesadorLPActionPerformed(evt);
@@ -159,7 +159,7 @@ public class D_AdmiLaptop extends GradientDialog {
         getContentPane().add(cbx_procesadorLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 200, 30));
 
         cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_proveedor.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_proveedor.setForeground(Main_Colores.Fondo);
         cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
         cbx_proveedor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -169,41 +169,41 @@ public class D_AdmiLaptop extends GradientDialog {
         getContentPane().add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 210, 30));
 
         tf_precioLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_precioLP.setForeground(new java.awt.Color(19, 18, 54));
+        tf_precioLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 400, 130, 30));
 
         tf_modeloLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_modeloLP.setForeground(new java.awt.Color(19, 18, 54));
+        tf_modeloLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_modeloLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 110, 200, 30));
 
         tf_conectividadLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_conectividadLP.setForeground(new java.awt.Color(19, 18, 54));
+        tf_conectividadLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_conectividadLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 200, 30));
 
         tf_pantallaLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_pantallaLP.setForeground(new java.awt.Color(19, 18, 54));
+        tf_pantallaLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_pantallaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 200, 30));
 
         tf_nombreLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_nombreLP.setForeground(new java.awt.Color(19, 18, 54));
+        tf_nombreLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_nombreLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 200, 30));
 
         tf_bateriaLP.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_bateriaLP.setForeground(new java.awt.Color(19, 18, 54));
+        tf_bateriaLP.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_bateriaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 300, 200, 30));
 
         tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_cantidad.setForeground(new java.awt.Color(19, 18, 54));
+        tf_cantidad.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 400, 210, 30));
 
         btn_editar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_editar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_editar.setForeground(Main_Colores.Fondo);
         btn_editar.setText("Editar");
         btn_editar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_editar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 300, 130, -1));
 
         btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_buscar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_buscar.setForeground(Main_Colores.Fondo);
         btn_buscar.setText("Guardar");
         btn_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 460, 130, 30));

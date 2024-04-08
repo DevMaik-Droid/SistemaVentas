@@ -280,30 +280,37 @@ public class D_AdmUsuario extends GradientDialog {
         jLabel14.setBounds(490, 69, 74, 20);
 
         tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_nombre.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_nombre);
         tf_nombre.setBounds(130, 140, 240, 30);
 
         tf_apellido.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_apellido.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_apellido);
         tf_apellido.setBounds(130, 184, 240, 30);
 
         tf_ci.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_ci.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_ci);
         tf_ci.setBounds(250, 254, 170, 30);
 
         tf_telefono.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_telefono.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_telefono);
         tf_telefono.setBounds(50, 324, 170, 30);
 
         tf_direccion.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_direccion.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_direccion);
         tf_direccion.setBounds(250, 324, 170, 30);
 
         tf_usuario.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_usuario.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_usuario);
         tf_usuario.setBounds(150, 90, 120, 20);
 
         pf_password.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pf_password.setForeground(Main_Colores.Fondo);
         pf_password.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 pf_passwordActionPerformed(evt);
@@ -313,16 +320,18 @@ public class D_AdmUsuario extends GradientDialog {
         pf_password.setBounds(310, 90, 140, 20);
 
         tf_clave.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_clave.setForeground(Main_Colores.Fondo);
         tf_clave.setEnabled(false);
         getContentPane().add(tf_clave);
         tf_clave.setBounds(30, 90, 90, 20);
 
         pf_confirmar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        pf_confirmar.setForeground(Main_Colores.Fondo);
         getContentPane().add(pf_confirmar);
         pf_confirmar.setBounds(490, 90, 140, 20);
 
         dc_fechaNac.setBackground(new java.awt.Color(6, 18, 52));
-        dc_fechaNac.setForeground(new java.awt.Color(204, 204, 204));
+        dc_fechaNac.setForeground(Main_Colores.Fondo);
         dc_fechaNac.setDateFormatString("dd - MMM - YYYY");
         dc_fechaNac.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         getContentPane().add(dc_fechaNac);
@@ -334,7 +343,7 @@ public class D_AdmUsuario extends GradientDialog {
         lb_foto.setBounds(500, 180, 150, 150);
 
         btn_actualizarIMG.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_actualizarIMG.setForeground(new java.awt.Color(19, 18, 54));
+        btn_actualizarIMG.setForeground(Main_Colores.Fondo);
         btn_actualizarIMG.setText("Actualizar Imagen");
         btn_actualizarIMG.setBorder(null);
         btn_actualizarIMG.setBorderPainted(false);
@@ -348,7 +357,7 @@ public class D_AdmUsuario extends GradientDialog {
         btn_actualizarIMG.setBounds(500, 340, 150, 30);
 
         btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_guardar.setForeground(new java.awt.Color(19, 18, 54));
+        btn_guardar.setForeground(Main_Colores.Fondo);
         btn_guardar.setText("ELIMINAR");
         btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar.addActionListener(new java.awt.event.ActionListener() {
@@ -360,13 +369,13 @@ public class D_AdmUsuario extends GradientDialog {
         btn_guardar.setBounds(450, 430, 130, 40);
 
         cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_estado.setForeground(new java.awt.Color(19, 18, 54));
+        cbx_estado.setForeground(Main_Colores.Fondo);
         cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Activo", "Ausente", "Inactivo" }));
         getContentPane().add(cbx_estado);
         cbx_estado.setBounds(50, 396, 160, 30);
 
         btn_guardar1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_guardar1.setForeground(new java.awt.Color(19, 18, 54));
+        btn_guardar1.setForeground(Main_Colores.Fondo);
         btn_guardar1.setText("ACTUALIZAR");
         btn_guardar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_guardar1.addActionListener(new java.awt.event.ActionListener() {
