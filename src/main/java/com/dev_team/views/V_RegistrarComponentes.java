@@ -59,7 +59,7 @@ public class V_RegistrarComponentes extends JPanel{
         cbx_velocidad = new javax.swing.JComboBox<>();
         lb_5 = new javax.swing.JLabel();
         lb_7 = new javax.swing.JLabel();
-        cbx_capacidad1 = new javax.swing.JComboBox<>();
+        cbx_capacidad = new javax.swing.JComboBox<>();
         cbx_tamanio = new javax.swing.JComboBox<>();
         panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
         jLabel15 = new javax.swing.JLabel();
@@ -190,9 +190,9 @@ public class V_RegistrarComponentes extends JPanel{
         lb_7.setText("Resolucion:");
         panel_form.add(lb_7, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
 
-        cbx_capacidad1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_capacidad1.setForeground(Main_Colores.Fondo);
-        panel_form.add(cbx_capacidad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 220, 30));
+        cbx_capacidad.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        cbx_capacidad.setForeground(Main_Colores.Fondo);
+        panel_form.add(cbx_capacidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 220, 30));
 
         cbx_tamanio.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_tamanio.setForeground(Main_Colores.Fondo);
@@ -245,7 +245,7 @@ public class V_RegistrarComponentes extends JPanel{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JButton btn_buscar;
     protected javax.swing.JButton btn_registrar;
-    protected javax.swing.JComboBox<String> cbx_capacidad1;
+    protected javax.swing.JComboBox<String> cbx_capacidad;
     protected javax.swing.JComboBox<String> cbx_componente;
     protected javax.swing.JComboBox<Proveedor> cbx_proveedor;
     protected javax.swing.JComboBox<String> cbx_resolucion;

@@ -1,6 +1,7 @@
 package com.dev_team.dashboard;
 
 import com.dev_team.controllers.ComponentController;
+import com.dev_team.controllers.ComputadoraController;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.ProveedorGestionController;
@@ -67,7 +68,9 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(gest);
                 
             } else if (index == 6 && indexSubMenu == 1) {
-                showForm(new V_RegistrarComputadora());
+                
+                V_RegistrarComputadora computadora = new ComputadoraController();
+                showForm(computadora);
             } else if (index == 6 && indexSubMenu == 2) {
                 showForm(new V_RegistrarLaptop());
             } else if (index == 6 && indexSubMenu == 3) {

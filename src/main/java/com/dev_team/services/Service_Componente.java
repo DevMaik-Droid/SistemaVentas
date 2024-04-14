@@ -82,7 +82,35 @@ public class Service_Componente implements I_Service {
 
     @Override
     public List<?> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        Connection cn = Conexion.conectar();
+        List<Componente> componente = null;
+
+        try {
+            String sql = String.format("SELECT * FROM %s", TABLA);
+            PreparedStatement pst = cn.prepareStatement(sql);
+
+            ResultSet rst = pst.executeQuery();
+
+            componente = new ArrayList<>();
+            while (rst.next()) {
+                Componente comp = new Componente();
+                comp.setIdComponente(rst.getInt("idc"));
+                comp.setComponente(rst.getString("componente"));
+                comp.setMarca(rst.getString("marca"));
+                comp.setModelo(rst.getString("modelo"));
+                comp.setCapacidad(rst.getString("capacidad"));
+                comp.setVelocidad(rst.getString("velocidad"));
+                comp.setPrecio(rst.getDouble("precio"));
+                componente.add(comp);
+            }
+
+        } catch (SQLException e) {
+        }
+
+        return componente;
+        
+    
     }
 
     @Override

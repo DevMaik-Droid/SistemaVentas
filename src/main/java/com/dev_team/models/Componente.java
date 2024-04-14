@@ -20,4 +20,14 @@ public class Componente {
     private InputStream imagen;
     private String descripcion;
 
+    
+    @Override
+    public String toString(){
+        if(getComponente().contains("RAM") || getComponente().contains("HDD") || getComponente().contains("SDD")){
+            return getCapacidad()+", "+getVelocidad()+ " - "+ getMarca()+"-"+getModelo();
+        }else {
+            return getMarca()+"-"+getModelo();
+        }
+        
+    }
 }
