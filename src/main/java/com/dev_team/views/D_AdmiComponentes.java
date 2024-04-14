@@ -44,16 +44,16 @@ public class D_AdmiComponentes extends GradientDialog {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        cbx_marcaC = new javax.swing.JComboBox<>();
-        cbx_tipoC = new javax.swing.JComboBox<>();
-        cbx_modeloC = new javax.swing.JComboBox<>();
-        cbx_capacidadC = new javax.swing.JComboBox<>();
-        cbx_velocidadC = new javax.swing.JComboBox<>();
         tf_nombreC1 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         btn_buscarC1 = new JButtonRound("Editar",30);
         btn_buscar = new JButtonRound("Guardar",30);
+        tf_tipo = new javax.swing.JTextField();
+        tf_marca = new javax.swing.JTextField();
+        tf_capacidad = new javax.swing.JTextField();
+        tf_modelo = new javax.swing.JTextField();
+        tf_velocidad = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -127,41 +127,6 @@ public class D_AdmiComponentes extends GradientDialog {
         getContentPane().add(jLabel14);
         jLabel14.setBounds(320, 340, 68, 20);
 
-        cbx_marcaC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_marcaC.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_marcaC);
-        cbx_marcaC.setBounds(30, 160, 200, 30);
-
-        cbx_tipoC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_tipoC.setForeground(Main_Colores.Fondo);
-        cbx_tipoC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_tipoCActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbx_tipoC);
-        cbx_tipoC.setBounds(30, 280, 200, 30);
-
-        cbx_modeloC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_modeloC.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_modeloC);
-        cbx_modeloC.setBounds(30, 220, 200, 30);
-
-        cbx_capacidadC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_capacidadC.setForeground(Main_Colores.Fondo);
-        cbx_capacidadC.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_capacidadCActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbx_capacidadC);
-        cbx_capacidadC.setBounds(280, 160, 230, 30);
-
-        cbx_velocidadC.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_velocidadC.setForeground(Main_Colores.Fondo);
-        getContentPane().add(cbx_velocidadC);
-        cbx_velocidadC.setBounds(280, 220, 230, 30);
-
         tf_nombreC1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_nombreC1.setForeground(Main_Colores.Fondo);
         getContentPane().add(tf_nombreC1);
@@ -193,16 +158,33 @@ public class D_AdmiComponentes extends GradientDialog {
         getContentPane().add(btn_buscar);
         btn_buscar.setBounds(340, 440, 130, 30);
 
+        tf_tipo.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_tipo.setForeground(Main_Colores.Fondo);
+        getContentPane().add(tf_tipo);
+        tf_tipo.setBounds(30, 280, 180, 31);
+
+        tf_marca.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_marca.setForeground(Main_Colores.Fondo);
+        getContentPane().add(tf_marca);
+        tf_marca.setBounds(30, 160, 180, 31);
+
+        tf_capacidad.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_capacidad.setForeground(Main_Colores.Fondo);
+        getContentPane().add(tf_capacidad);
+        tf_capacidad.setBounds(280, 160, 180, 31);
+
+        tf_modelo.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_modelo.setForeground(Main_Colores.Fondo);
+        getContentPane().add(tf_modelo);
+        tf_modelo.setBounds(30, 220, 180, 31);
+
+        tf_velocidad.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_velocidad.setForeground(Main_Colores.Fondo);
+        getContentPane().add(tf_velocidad);
+        tf_velocidad.setBounds(280, 220, 180, 31);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cbx_tipoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_tipoCActionPerformed
-
-    }//GEN-LAST:event_cbx_tipoCActionPerformed
-
-    private void cbx_capacidadCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_capacidadCActionPerformed
-
-    }//GEN-LAST:event_cbx_capacidadCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,11 +231,6 @@ public class D_AdmiComponentes extends GradientDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_buscarC1;
-    private javax.swing.JComboBox<String> cbx_capacidadC;
-    private javax.swing.JComboBox<String> cbx_marcaC;
-    private javax.swing.JComboBox<String> cbx_modeloC;
-    private javax.swing.JComboBox<String> cbx_tipoC;
-    private javax.swing.JComboBox<String> cbx_velocidadC;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel10;
@@ -267,6 +244,11 @@ public class D_AdmiComponentes extends GradientDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JTextField tf_capacidad;
+    private javax.swing.JTextField tf_marca;
+    private javax.swing.JTextField tf_modelo;
     private javax.swing.JTextField tf_nombreC1;
+    private javax.swing.JTextField tf_tipo;
+    private javax.swing.JTextField tf_velocidad;
     // End of variables declaration//GEN-END:variables
 }
