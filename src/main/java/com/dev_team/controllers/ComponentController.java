@@ -81,23 +81,23 @@ public class ComponentController extends V_RegistrarComponentes {
         } else if (componente.contains("SDD")) {
             agregarItemsComboBox(CAPACIDADES_HDD_SSD, VELOCIDADES_SSD);
         } else {
-            cbx_capacidad.removeAllItems();
+            cbx_resolucion.removeAllItems();
             cbx_velocidad.removeAllItems();
         }
     }
 
     private void activarComponentes(boolean accion) {
         Color fondo = accion ? Color.WHITE : Main_Colores.C_200;
-        cbx_capacidad.setBackground(fondo);
+        cbx_resolucion.setBackground(fondo);
         cbx_velocidad.setBackground(fondo);
-        cbx_capacidad.setEnabled(accion);
+        cbx_resolucion.setEnabled(accion);
         cbx_velocidad.setEnabled(accion);
     }
 
     private void agregarItemsComboBox(String[] capacidades, String[] velocidades) {
-        cbx_capacidad.removeAllItems();
+        cbx_resolucion.removeAllItems();
         cbx_velocidad.removeAllItems();
-        Arrays.stream(capacidades).forEach(cbx_capacidad::addItem);
+        Arrays.stream(capacidades).forEach(cbx_resolucion::addItem);
         Arrays.stream(velocidades).forEach(cbx_velocidad::addItem);
     }
 
@@ -111,8 +111,8 @@ public class ComponentController extends V_RegistrarComponentes {
         componente.setModelo(tf_modelo.getText().trim().toUpperCase());
         String capacidad = "";
         String velocidad = "";
-        if (cbx_capacidad.isEnabled()) {
-            capacidad = cbx_capacidad.getSelectedItem().toString();
+        if (cbx_resolucion.isEnabled()) {
+            capacidad = cbx_resolucion.getSelectedItem().toString();
             velocidad = cbx_velocidad.getSelectedItem().toString();
         }
 
@@ -142,7 +142,7 @@ public class ComponentController extends V_RegistrarComponentes {
         tf_precio.setText("");
         lb_imagen.setIcon(null);
         cbx_componente.setSelectedIndex(0);
-        cbx_capacidad.removeAllItems();
+        cbx_resolucion.removeAllItems();
         cbx_velocidad.removeAllItems();
         ta_descripcion.setText("");
     }
