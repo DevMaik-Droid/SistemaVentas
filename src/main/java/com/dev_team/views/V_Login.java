@@ -1,9 +1,9 @@
-package com.dev_team.vistas;
+package com.dev_team.views;
 
+import com.dev_team.utilidades.Main_Colores;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Point;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 public class V_Login extends javax.swing.JFrame {
 
     Point posicion;
-    Point posicionInicial; // Variable para almacenar la posición inicial al iniciar el arrastre
+    Point posicionInicial; //Variable para almacenar la posición inicial al iniciar el arrastre
 
     public V_Login() {
         initComponents();
@@ -35,7 +35,7 @@ public class V_Login extends javax.swing.JFrame {
         lb_barra.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent m) {
-                // Calcular la nueva posición de la ventana en función del movimiento del ratón y la posición inicial de la ventana
+                // Calcular la nueva posición de lsa ventana en función del movimiento del ratón y la posición inicial de la ventana
                 int x = posicionInicial.x + m.getXOnScreen() - posicion.x;
                 int y = posicionInicial.y + m.getYOnScreen() - posicion.y;
                 setLocation(x, y);
@@ -70,32 +70,18 @@ public class V_Login extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(73, 181, 172));
+        jPanel1.setBackground(Main_Colores.Fondo);
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crea-un-logo-para-un-sistema-de-venta-de-computado-hpl10yfWSjqnQTTBaD9_ag-WFxgTDaJTbKXFKT9h_eeXw.jpeg"))); // NOI18N
         jLabel1.setOpaque(true);
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(78, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(66, 66, 66))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(193, Short.MAX_VALUE)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 262, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(105, 105, 105))
-        );
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 27, 340, 470));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 400, 560));
 
-        jPanel2.setBackground(new java.awt.Color(33, 45, 62));
+        jPanel2.setBackground(Main_Colores.Fondo_2);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_mostrar.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 14)); // NOI18N
@@ -105,7 +91,7 @@ public class V_Login extends javax.swing.JFrame {
                 btn_mostrarActionPerformed(evt);
             }
         });
-        jPanel2.add(btn_mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, 30, 30));
+        jPanel2.add(btn_mostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 330, 30, 30));
 
         jLabel3.setFont(new java.awt.Font("Gotham Thin", 0, 40)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -123,7 +109,7 @@ public class V_Login extends javax.swing.JFrame {
         jLabel5.setText("CONTRASEÑA");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        btnIngresar.setBackground(new java.awt.Color(73, 181, 172));
+        btnIngresar.setBackground(Main_Colores.Fondo);
         btnIngresar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
         btnIngresar.setForeground(new java.awt.Color(255, 255, 255));
         btnIngresar.setText("Ingresar");
@@ -151,26 +137,26 @@ public class V_Login extends javax.swing.JFrame {
         });
         jPanel2.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 210, 60));
 
-        txt_usuario.setBackground(new java.awt.Color(33, 45, 62));
+        txt_usuario.setBackground(Main_Colores.Fondo);
         txt_usuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txt_usuario.setForeground(new java.awt.Color(73, 181, 172));
+        txt_usuario.setForeground(Main_Colores.Fondo);
         txt_usuario.setBorder(null);
         txt_usuario.setCaretColor(new java.awt.Color(73, 181, 172));
         jPanel2.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 270, 40));
 
-        txt_password.setBackground(new java.awt.Color(33, 45, 62));
+        txt_password.setBackground(Main_Colores.Fondo);
         txt_password.setFont(txt_password.getFont().deriveFont(txt_password.getFont().getSize()+7f));
-        txt_password.setForeground(new java.awt.Color(73, 181, 172));
+        txt_password.setForeground(Main_Colores.Fondo);
         txt_password.setBorder(null);
         txt_password.setCaretColor(new java.awt.Color(73, 181, 172));
         jPanel2.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 270, 36));
 
-        jSeparator1.setBackground(new java.awt.Color(73, 181, 172));
-        jSeparator1.setForeground(new java.awt.Color(73, 181, 172));
+        jSeparator1.setBackground(Main_Colores.Fondo_2);
+        jSeparator1.setForeground(Main_Colores.Fondo_2);
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 270, 310, 10));
 
-        jSeparator2.setBackground(new java.awt.Color(73, 181, 172));
-        jSeparator2.setForeground(new java.awt.Color(73, 181, 172));
+        jSeparator2.setBackground(Main_Colores.Fondo_2);
+        jSeparator2.setForeground(Main_Colores.Fondo_2);
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 310, 10));
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 48, 36));
         jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 48, 42));

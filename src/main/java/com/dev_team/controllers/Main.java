@@ -1,6 +1,7 @@
 package com.dev_team.controllers;
 
 import com.dev_team.dashboard.Vista_Dashboard;
+import com.dev_team.views.V_Login;
 
 
 public class Main {
@@ -17,8 +18,8 @@ public class Main {
 
         }
         
-        Vista_Dashboard dashboard = new Vista_Dashboard();
-        dashboard.setVisible(true);
+        V_Login login= new V_Login();
+        login.setVisible(true);
         
     }
 
