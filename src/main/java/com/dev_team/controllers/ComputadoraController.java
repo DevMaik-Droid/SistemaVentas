@@ -22,10 +22,10 @@ public class ComputadoraController extends V_RegistrarComputadora{
         List<Componente> componentes = (List<Componente>) new Service_Componente().listar();
         
         componentes.stream()
-                .filter(c -> c.getComponente().contains("Placa"))
+                .filter(c -> c.getComponente().contains("Placa")).sorted()
                 .forEach(cbx_tarjetaMadre::addItem);
         componentes.stream()
-                .filter(c -> c.getComponente().contains("CPU"))
+                .filter(c -> c.getComponente().contains("CPU")).sorted()
                 .forEach(cbx_procesadorCO::addItem);
         componentes.stream()
                 .filter(c -> c.getComponente().contains("RAM"))
