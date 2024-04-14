@@ -3,9 +3,14 @@ package com.dev_team.models;
 
 import java.util.Date;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 
 @Data
+@NoArgsConstructor
 public class Proveedor {
 
     private Long idProveedor;
@@ -19,4 +24,14 @@ public class Proveedor {
     private String observaciones;
     private String estado;
 
+    public Proveedor(Long idProveedor, String nombre) {
+        this.idProveedor = idProveedor;
+        this.nombre = nombre;
+    }
+
+    @Override
+    public String toString() {
+        return getNombre();
+    }
+    
 }
