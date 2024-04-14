@@ -50,7 +50,11 @@ public class ComponentController extends V_RegistrarComponentes {
     }
 
     private void actualizarComponentes(String ...x) {
-        //JLabel labels = {};
+        JLabel[] labels = {lb_1,lb_2,lb_3,lb_4,lb_5};
+        
+        for(JLabel lbs : labels){
+            
+        }
         
         
     }

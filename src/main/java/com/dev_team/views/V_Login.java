@@ -3,9 +3,12 @@ package com.dev_team.views;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
@@ -20,7 +23,7 @@ public class V_Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Login - SISTEMA DE VENTAS");
         this.setSize(new Dimension(800, 600));
-
+        lb_fondo_login.setIcon(ponerImagen("/images/login_fondo.jpeg"));
         lb_barra.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent m) {
@@ -41,7 +44,14 @@ public class V_Login extends javax.swing.JFrame {
                 setLocation(x, y);
             }
         });
+        
 
+    }
+    
+    private Icon ponerImagen(String url){
+        Image image = new ImageIcon(getClass().getResource(url)).getImage().getScaledInstance(lb_fondo_login.getWidth(), lb_fondo_login.getHeight(), Image.SCALE_DEFAULT);
+        Icon icon = new ImageIcon(image);
+        return icon;
     }
 
     @SuppressWarnings("unchecked")
@@ -49,7 +59,7 @@ public class V_Login extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lb_fondo_login = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         btn_mostrar = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
@@ -71,13 +81,13 @@ public class V_Login extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(Main_Colores.Fondo);
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(new java.awt.BorderLayout());
 
-        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crea-un-logo-para-un-sistema-de-venta-de-computado-hpl10yfWSjqnQTTBaD9_ag-WFxgTDaJTbKXFKT9h_eeXw.jpeg"))); // NOI18N
-        jLabel1.setOpaque(true);
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 27, 340, 470));
+        lb_fondo_login.setBackground(new java.awt.Color(255, 255, 255));
+        lb_fondo_login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_fondo_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/crea-un-logo-para-un-sistema-de-venta-de-computado-hpl10yfWSjqnQTTBaD9_ag-WFxgTDaJTbKXFKT9h_eeXw.jpeg"))); // NOI18N
+        lb_fondo_login.setOpaque(true);
+        jPanel1.add(lb_fondo_login, java.awt.BorderLayout.CENTER);
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 400, 560));
 
@@ -256,7 +266,6 @@ public class V_Login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnIngresar;
     private javax.swing.JButton btn_mostrar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -268,6 +277,7 @@ public class V_Login extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lb_barra;
     private javax.swing.JLabel lb_cerrar;
+    private javax.swing.JLabel lb_fondo_login;
     private javax.swing.JPasswordField txt_password;
     private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
