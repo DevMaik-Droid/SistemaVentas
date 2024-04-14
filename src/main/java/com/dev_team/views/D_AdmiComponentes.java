@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package com.dev_team.views;
 
 import com.dev_team.utilidades.GradientDialog;
@@ -9,15 +5,8 @@ import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Dimension;
 
-/**
- *
- * @author Usuario
- */
 public class D_AdmiComponentes extends GradientDialog {
 
-    /**
-     * Creates new form D_AdmiComponentes
-     */
     public D_AdmiComponentes(java.awt.Frame parent, boolean modal) {
         super(modal, Main_Colores.Fondo,Main_Colores.C_F800,Main_Colores.C_F700);
         initComponents();
