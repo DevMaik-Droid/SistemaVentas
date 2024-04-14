@@ -1,13 +1,10 @@
 package com.dev_team.controllers;
 
-import com.dev_team.models.PlacaMadre;
+
 import com.dev_team.services.Service_Componente;
 import com.dev_team.views.V_RegistrarComponentes;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import javax.swing.JLabel;
+
 
 public class ComponentController extends V_RegistrarComponentes {
 
@@ -32,7 +29,7 @@ public class ComponentController extends V_RegistrarComponentes {
 
         if (componente.contains("Motherboard")) {
 
-            cargarCbxMotherboard();
+                actualizarComponentes("Marca","Modelo", "Socket Procesador","Chipset","Formato");
 
         } else if (componente.contains("CPU")) {
             System.out.println("Tarjeta Grafica");
@@ -52,7 +49,13 @@ public class ComponentController extends V_RegistrarComponentes {
 
     }
 
-    private void cargarCbxMotherboard() {
+    private void actualizarComponentes(String ...x) {
+        //JLabel labels = {};
+        
+        
+    }
+    
+   /* private void cargarCbxMotherboard() {
         
         List<PlacaMadre> placas = service.listarPlacas();
         
@@ -83,5 +86,7 @@ public class ComponentController extends V_RegistrarComponentes {
         cbx_modeloC.removeAllItems();
        
         Arrays.stream(modelos).forEach(x -> cbx_modeloC.addItem(x.toString()));
-    }
+    }*/
+
+    
 }

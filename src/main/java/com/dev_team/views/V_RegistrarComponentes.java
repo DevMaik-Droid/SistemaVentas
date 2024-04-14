@@ -37,11 +37,11 @@ public class V_RegistrarComponentes extends JPanel{
         jLabel6 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
+        lb_1 = new javax.swing.JLabel();
+        lb_5 = new javax.swing.JLabel();
+        lb_2 = new javax.swing.JLabel();
+        lb_3 = new javax.swing.JLabel();
+        lb_4 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -52,7 +52,7 @@ public class V_RegistrarComponentes extends JPanel{
         btn_registrarC = new JButtonRound("Registrar",20);
         tf_nombreC1 = new javax.swing.JTextField();
         tf_tipo = new javax.swing.JTextField();
-        jLabel16 = new javax.swing.JLabel();
+        lb_6 = new javax.swing.JLabel();
         tf_precio = new javax.swing.JTextField();
         tf_marca = new javax.swing.JTextField();
         tf_modelo = new javax.swing.JTextField();
@@ -88,31 +88,31 @@ public class V_RegistrarComponentes extends JPanel{
         jLabel7.setText("Componente:");
         panel_form.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(51, 26, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel3.setForeground(Main_Colores.C_100);
-        jLabel3.setText("Marca:");
-        panel_form.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
+        lb_1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        lb_1.setForeground(Main_Colores.C_100);
+        lb_1.setText("Marca:");
+        panel_form.add(lb_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, -1, -1));
 
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel9.setForeground(Main_Colores.C_100);
-        jLabel9.setText("Tipo:");
-        panel_form.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
+        lb_5.setBackground(new java.awt.Color(0, 0, 0));
+        lb_5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        lb_5.setForeground(Main_Colores.C_100);
+        lb_5.setText("Tipo:");
+        panel_form.add(lb_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel4.setForeground(Main_Colores.C_100);
-        jLabel4.setText("Modelo:");
-        panel_form.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
+        lb_2.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        lb_2.setForeground(Main_Colores.C_100);
+        lb_2.setText("Modelo:");
+        panel_form.add(lb_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 120, -1, -1));
 
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel12.setForeground(Main_Colores.C_100);
-        jLabel12.setText("Capacidad:");
-        panel_form.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+        lb_3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        lb_3.setForeground(Main_Colores.C_100);
+        lb_3.setText("Capacidad:");
+        panel_form.add(lb_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
 
-        jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel11.setForeground(Main_Colores.C_100);
-        jLabel11.setText("Velocidad:");
-        panel_form.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
+        lb_4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        lb_4.setForeground(Main_Colores.C_100);
+        lb_4.setText("Velocidad:");
+        panel_form.add(lb_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
@@ -163,10 +163,10 @@ public class V_RegistrarComponentes extends JPanel{
         tf_tipo.setForeground(Main_Colores.Fondo);
         panel_form.add(tf_tipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 210, 30));
 
-        jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel16.setForeground(Main_Colores.C_100);
-        jLabel16.setText("Precio:");
-        panel_form.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
+        lb_6.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        lb_6.setForeground(Main_Colores.C_100);
+        lb_6.setText("Precio:");
+        panel_form.add(lb_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 260, -1, -1));
 
         tf_precio.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_precio.setForeground(Main_Colores.Fondo);
@@ -238,19 +238,19 @@ public class V_RegistrarComponentes extends JPanel{
     protected javax.swing.JComboBox<String> cbx_componente;
     protected javax.swing.JComboBox<String> cbx_proveedor;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
+    protected javax.swing.JLabel lb_1;
+    protected javax.swing.JLabel lb_2;
+    protected javax.swing.JLabel lb_3;
+    protected javax.swing.JLabel lb_4;
+    protected javax.swing.JLabel lb_5;
+    protected javax.swing.JLabel lb_6;
     private javax.swing.JPanel panelTitle;
     private javax.swing.JPanel panel_form;
     private javax.swing.JPanel panel_main;

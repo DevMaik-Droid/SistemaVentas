@@ -32,7 +32,12 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         initComponents();
         init();
         setResizable(true);
+       
+        
+        setLocationRelativeTo(null);
         setSize(1280,800);
+        
+        
         panel_header.setBackground(Main_Colores.Fondo);
     }
 
