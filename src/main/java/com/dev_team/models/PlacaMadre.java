@@ -1,11 +1,10 @@
-
 package com.dev_team.models;
 
 import lombok.Data;
 
 @Data
 public class PlacaMadre {
-    
+
     private int id;
     private String marca;
     private String modelo;
@@ -15,8 +14,5 @@ public class PlacaMadre {
     private double precio;
     private int cantidad;
     private String observaciones;
-    
-    
-    
-    
+
 }

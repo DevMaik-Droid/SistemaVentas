@@ -1,4 +1,3 @@
-
 package com.dev_team.controllers;
 
 import com.dev_team.models.Componente;
@@ -7,21 +6,16 @@ import com.dev_team.views.V_RegistrarComputadora;
 import java.util.Comparator;
 import java.util.List;
 
-
-public class ComputadoraController extends V_RegistrarComputadora{
+public class ComputadoraController extends V_RegistrarComputadora {
 
     public ComputadoraController() {
         cargarComboBox();
-        
+
     }
 
-    
-    
-    
-    
     private void cargarComboBox() {
         List<Componente> componentes = (List<Componente>) new Service_Componente().listar();
-        
+
         componentes.stream()
                 .filter(c -> c.getComponente().contains("Placa")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_tarjetaMadre::addItem);
@@ -40,7 +34,7 @@ public class ComputadoraController extends V_RegistrarComputadora{
         componentes.stream()
                 .filter(c -> c.getComponente().contains("Fuente")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_fuente::addItem);
-         componentes.stream()
+        componentes.stream()
                 .filter(c -> c.getComponente().equals("Case")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_caseCO::addItem);
         componentes.stream()
@@ -52,11 +46,7 @@ public class ComputadoraController extends V_RegistrarComputadora{
         componentes.stream()
                 .filter(c -> c.getComponente().equals("Disipador")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_disipadores::addItem);
-        
+
     }
-    
-    
-    
-    
-    
+
 }
