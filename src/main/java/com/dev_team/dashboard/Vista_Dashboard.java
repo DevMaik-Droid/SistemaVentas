@@ -1,5 +1,6 @@
 package com.dev_team.dashboard;
 
+import com.dev_team.controllers.ComponentChartsControllers;
 import com.dev_team.controllers.ComponentController;
 import com.dev_team.controllers.ComputadoraController;
 import com.dev_team.controllers.GestionUsuarioController;
@@ -35,11 +36,9 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         init();
         setResizable(true);
        
-        
         setLocationRelativeTo(null);
         setSize(1280,800);
-        
-        
+
         panel_header.setBackground(Main_Colores.Fondo);
     }
 
@@ -83,7 +82,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             } else if (index == 6 && indexSubMenu == 5) {
                 showForm(new V_GestionarProductos());
             } else if (index == 7 && indexSubMenu == 1) {
-                showForm(new V_ChartsComponentes());
+                V_ChartsComponentes charts = new ComponentChartsControllers();
+                showForm(charts);
             } 
             else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
