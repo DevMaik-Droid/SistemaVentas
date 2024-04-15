@@ -1,13 +1,10 @@
-
 package com.dev_team.controllers;
 
 import com.dev_team.models.Proveedor;
-import com.dev_team.models.Usuario;
 import com.dev_team.services.Service_Proveedor;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.D_AdmProveedor;
-import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_GestionarProveedores;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -17,18 +14,17 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 
+public class ProveedorGestionController extends V_GestionarProveedores {
 
-public class ProveedorGestionController extends V_GestionarProveedores{
-
-    
     Service_Proveedor service = new Service_Proveedor();
     List<Proveedor> lista_proveedores;
     String opcion = "";
+
     public ProveedorGestionController() {
-    
+
         lista_proveedores = (List<Proveedor>) service.listar();
         GenerarTabla(lista_proveedores);
-        
+
         tabla_proveedores.addMouseListener(new MouseAdapter() {
 
             @Override
@@ -46,9 +42,8 @@ public class ProveedorGestionController extends V_GestionarProveedores{
             }
 
         });
-        
-        
-         tf_filtrar.getDocument().addDocumentListener(new DocumentListener() {
+
+        tf_filtrar.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
 
@@ -68,13 +63,10 @@ public class ProveedorGestionController extends V_GestionarProveedores{
 
             }
         });
-        
-        
-    
+
     }
-    
-    
-     // logica para filtrar usuarios
+
+    // logica para filtrar usuarios
     public void filtrarProveedor(String opcion, String cadena) {
 
         List<Proveedor> lists;
@@ -97,14 +89,13 @@ public class ProveedorGestionController extends V_GestionarProveedores{
         }
 
     }
-    
-    
-    private void GenerarTabla(List<Proveedor> lista){
-      
-        Object[] columas = {"ID" ,"NOMBRE","CONTACTO","EMAIL","PRODUCTO","FECHA REGISTRO","ESTADO PAGO"};
+
+    private void GenerarTabla(List<Proveedor> lista) {
+
+        Object[] columas = {"ID", "NOMBRE", "CONTACTO", "EMAIL", "PRODUCTO", "FECHA REGISTRO", "ESTADO PAGO"};
         DefaultTableModel model = new DefaultTableModel(columas, 0);
-        
-        for(Proveedor p : lista){
+
+        for (Proveedor p : lista) {
             Object[] datos = new Object[columas.length];
             datos[0] = p.getIdProveedor();
             datos[1] = p.getNombre();
@@ -115,32 +106,32 @@ public class ProveedorGestionController extends V_GestionarProveedores{
             datos[6] = p.getEstadoPago();
             model.addRow(datos);
         }
-        
+
         tabla_proveedores.setModel(model);
         tabla_proveedores.setRowHeight(30);
         tabla_proveedores.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-        
-        //tabla_proveedores.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-        
+
+        tabla_proveedores.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
+
         tabla_proveedores.setDefaultEditor(Object.class, null);
     }
-    
+
     private void abrirDialogoUsuario(int fila, int columna) {
         int id = Integer.parseInt(tabla_proveedores.getValueAt(fila, columna).toString());
-        
+
         Proveedor proveedor = lista_proveedores.stream()
                 .filter(prov -> prov.getIdProveedor() == id)
                 .findFirst()
                 .orElse(null);
-        if(proveedor != null){
+        if (proveedor != null) {
             abrirVentanaAdmUsuario(proveedor);
         }
-        
+
     }
 
     private void abrirVentanaAdmUsuario(Proveedor proveedor) {
         D_AdmProveedor dialog_usuario = new D_AdmProveedor(true, proveedor);
         dialog_usuario.setVisible(true);
     }
-    
+
 }

@@ -141,7 +141,7 @@ public class V_GestionarUsuario extends JPanel {
         );
         panel_tableLayout.setVerticalGroup(
             panel_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelMidLayout = new javax.swing.GroupLayout(PanelMid);
@@ -157,7 +157,7 @@ public class V_GestionarUsuario extends JPanel {
             PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMidLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 351, Short.MAX_VALUE)
+                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
                 .addGap(32, 32, 32))
         );
 
