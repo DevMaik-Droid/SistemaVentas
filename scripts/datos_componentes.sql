@@ -8,9 +8,9 @@ VALUES
 -- Procesador (CPU)
 INSERT INTO tb_componente (componente, marca, modelo, capacidad, velocidad, idProveedor, precio, cantidad, disponibilidad, descripcion)
 VALUES 
-('Procesador', 'Intel', 'Core i7-9700K', NULL, NULL, 2, 350.00, 20, 'Disponible', 'Procesador de 9ª generación para tareas intensivas.'),
-('Procesador', 'AMD', 'Ryzen 7 5800X', NULL, NULL, 2, 450.00, 18, 'Disponible', 'Procesador de la serie Ryzen 5000 con alto rendimiento en juegos y aplicaciones.'),
-('Procesador', 'Intel', 'Core i9-9900K', NULL, NULL, 2, 500.00, 15, 'Disponible', 'Procesador de 9ª generación con rendimiento extremadamente alto y capacidad de overclocking.');
+('Procesador (CPU)', 'Intel', 'Core i7-9700K', NULL, NULL, 2, 350.00, 20, 'Disponible', 'Procesador de 9ª generación para tareas intensivas.'),
+('Procesador (CPU)', 'AMD', 'Ryzen 7 5800X', NULL, NULL, 2, 450.00, 18, 'Disponible', 'Procesador de la serie Ryzen 5000 con alto rendimiento en juegos y aplicaciones.'),
+('Procesador (CPU)', 'Intel', 'Core i9-9900K', NULL, NULL, 2, 500.00, 15, 'Disponible', 'Procesador de 9ª generación con rendimiento extremadamente alto y capacidad de overclocking.');
 
 -- Memoria RAM
 INSERT INTO tb_componente (componente, marca, modelo, capacidad, velocidad, idProveedor, precio, cantidad, disponibilidad, descripcion)
@@ -75,4 +75,3 @@ VALUES
 ('Ventiladores', 'NZXT', 'AER RGB 2', NULL, NULL, 2, 30.00, 40, 'Disponible', 'Ventiladores de alta calidad con iluminación RGB personalizable.'),
 ('Ventiladores', 'Noctua', 'NF-F12', NULL, NULL, 3, 25.00, 45, 'Disponible', 'Ventiladores de alta eficiencia y bajo ruido para un enfriamiento silencioso.');
 
--- Continúa con los demás componentes si es necesario...

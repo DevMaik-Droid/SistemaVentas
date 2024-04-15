@@ -7,6 +7,7 @@ import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.ProveedorGestionController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.views.V_ChartsComponentes;
 import com.dev_team.views.V_GestionarProductos;
 import com.dev_team.views.V_GestionarProveedores;
 import com.dev_team.views.V_GestionarUsuario;
@@ -81,6 +82,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 
             } else if (index == 6 && indexSubMenu == 5) {
                 showForm(new V_GestionarProductos());
+            } else if (index == 7 && indexSubMenu == 1) {
+                showForm(new V_ChartsComponentes());
             } 
             else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));

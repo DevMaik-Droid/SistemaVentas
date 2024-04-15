@@ -2,17 +2,11 @@ package com.dev_team.utilidades;
 
 import java.awt.Color;
 import java.awt.Component;
-import java.awt.Dimension;
 
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Rectangle;
-import java.awt.event.HierarchyEvent;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
-
 import javax.swing.JTable;
-import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import org.jdesktop.swingx.renderer.DefaultTableRenderer;

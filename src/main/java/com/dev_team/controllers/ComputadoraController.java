@@ -1,4 +1,3 @@
-
 package com.dev_team.controllers;
 
 import com.dev_team.models.Componente;
@@ -7,21 +6,53 @@ import com.dev_team.views.V_RegistrarComputadora;
 import java.util.Comparator;
 import java.util.List;
 
+public class ComputadoraController extends V_RegistrarComputadora {
 
-public class ComputadoraController extends V_RegistrarComputadora{
+    private double precio;
 
     public ComputadoraController() {
         cargarComboBox();
-        
+        cbx_procesadorCO.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_caseCO.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_disipadores.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_discoCO.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_gpu.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_ramCO.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_fuente.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_tarjetaMadre.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
+        cbx_ventiladores.addActionListener(e -> {
+            actualizarPrecio();
+
+        });
     }
 
-    
-    
-    
-    
     private void cargarComboBox() {
         List<Componente> componentes = (List<Componente>) new Service_Componente().listar();
-        
+
         componentes.stream()
                 .filter(c -> c.getComponente().contains("Placa")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_tarjetaMadre::addItem);
@@ -40,7 +71,7 @@ public class ComputadoraController extends V_RegistrarComputadora{
         componentes.stream()
                 .filter(c -> c.getComponente().contains("Fuente")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_fuente::addItem);
-         componentes.stream()
+        componentes.stream()
                 .filter(c -> c.getComponente().equals("Case")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_caseCO::addItem);
         componentes.stream()
@@ -52,11 +83,31 @@ public class ComputadoraController extends V_RegistrarComputadora{
         componentes.stream()
                 .filter(c -> c.getComponente().equals("Disipador")).sorted(Comparator.comparing(Componente::getModelo).reversed())
                 .forEach(cbx_disipadores::addItem);
-        
+
     }
-    
-    
-    
-    
-    
+
+    private void actualizarPrecio() {
+
+        Componente case1 = (Componente) cbx_caseCO.getSelectedItem();
+        Componente cpu = (Componente) cbx_procesadorCO.getSelectedItem();
+        Componente gpu = (Componente) cbx_gpu.getSelectedItem();
+        Componente disco = (Componente) cbx_discoCO.getSelectedItem();
+        Componente disipador = (Componente) cbx_disipadores.getSelectedItem();
+        Componente fuente = (Componente) cbx_fuente.getSelectedItem();
+        Componente monitor = (Componente) cbx_monitor.getSelectedItem();
+        Componente ram = (Componente) cbx_ramCO.getSelectedItem();
+        Componente placa = (Componente) cbx_tarjetaMadre.getSelectedItem();
+        Componente ventilador = (Componente) cbx_ventiladores.getSelectedItem();
+
+        List<Double> precios = List.of(case1.getPrecio(), cpu.getPrecio(), gpu.getPrecio(),
+                disco.getPrecio(), disipador.getPrecio(), fuente.getPrecio(), monitor.getPrecio(), ram.getPrecio(), placa.getPrecio(), ventilador.getPrecio());
+
+        double precioTotal = precios.stream().reduce(0.0, Double::sum);
+
+        // Dar formato al precio final
+        String precioFormateado = String.format("%.2f", precioTotal) + " USD";
+
+        tf_precio.setText(precioFormateado);
+    }
+
 }
