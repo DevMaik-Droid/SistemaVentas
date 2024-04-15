@@ -80,16 +80,6 @@
             <artifactId>jcommon</artifactId>
             <version>1.0.24</version>
         </dependency>
-        <dependency>
-            <groupId>Graficoss</groupId>
-            <artifactId>JFREE</artifactId>
-            <version>1.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>GraficoEstadisticos</groupId>
-            <artifactId>JCommon</artifactId>
-            <version>1.0.23</version>
-        </dependency>
     </dependencies>
     
 </project>
