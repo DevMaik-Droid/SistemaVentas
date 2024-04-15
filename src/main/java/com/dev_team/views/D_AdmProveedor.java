@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
- */
 package com.dev_team.views;
 
 import com.dev_team.models.Proveedor;
@@ -10,10 +6,6 @@ import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.Dimension;
 
-/**
- *
- * @author Usuario
- */
 public class D_AdmProveedor extends GradientDialog {
 
     Proveedor prov;
@@ -163,7 +155,7 @@ public class D_AdmProveedor extends GradientDialog {
         tf_clave.setForeground(Main_Colores.Fondo);
         tf_clave.setEnabled(false);
         getContentPane().add(tf_clave);
-        tf_clave.setBounds(30, 90, 70, 28);
+        tf_clave.setBounds(30, 90, 70, 26);
 
         btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_guardar.setForeground(Main_Colores.Fondo);
@@ -217,19 +209,21 @@ public class D_AdmProveedor extends GradientDialog {
         getContentPane().add(tb_historial_transacciones);
         tb_historial_transacciones.setBounds(440, 120, 400, 260);
 
+        cbx_productoSumi.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        cbx_productoSumi.setForeground(Main_Colores.Fondo);
         cbx_productoSumi.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Computadora", "Laptop", "Componentes", "Accesorios" }));
         getContentPane().add(cbx_productoSumi);
-        cbx_productoSumi.setBounds(230, 340, 170, 26);
+        cbx_productoSumi.setBounds(230, 330, 190, 30);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void cbx_estadoDePagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_estadoDePagoActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_cbx_estadoDePagoActionPerformed
 
     private void cbx_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_estadoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_cbx_estadoActionPerformed
 
 
