@@ -52,9 +52,9 @@ public class ComponentChartsControllers extends V_ChartsComponentes {
         CategoryPlot categoryPlot = barChart.getCategoryPlot();
         BarRenderer render = (BarRenderer) categoryPlot.getRenderer();
         
-        render.setSeriesPaint(0, Color.BLUE);
-        render.setSeriesPaint(1, Color.CYAN);
-        render.setSeriesPaint(2, Color.DARK_GRAY);
+        render.setSeriesPaint(1, Color.BLUE);
+        render.setSeriesPaint(2, Color.CYAN);
+        render.setSeriesPaint(3, Color.DARK_GRAY);
         render.setGradientPaintTransformer(null);
         ChartPanel chartPanel = new ChartPanel(barChart);
 
@@ -63,27 +63,6 @@ public class ComponentChartsControllers extends V_ChartsComponentes {
         panel_grafico.validate();
     }
 
-    /*
-    private void generarGrafico(String filtro) {
-        /*
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        comp.stream().filter(x -> x.getComponente().equals(filtro))
-                .forEach(x -> dataset.setValue(x.getCantidad(), x.getComponente(), x.getMarca()));
-        
-        XYDataset dataset = createDataset();
-        JFreeChart barChart = ChartFactory.createXYBarChart("Componentes", "Categorias", false, "Cantidad", (IntervalXYDataset) dataset, PlotOrientation.VERTICAL, true, true, false);
-        
-        XYPlot plot = barChart.getXYPlot();
-        NumberAxis axis = (NumberAxis) plot.getDomainAxis();
-        axis.setAutoRangeIncludesZero(false);
-        
-        XYBarRenderer render = (XYBarRenderer) plot.getRenderer();
-        render.setMargin(0.01);
-        
-        ChartPanel chartPanel = new ChartPanel(barChart);
-        panel_grafico.removeAll();
-        panel_grafico.add(chartPanel, BorderLayout.CENTER);
-    }*/
     private void iniciarComboBox() {
         Set<String> componentes = new HashSet<>();
         comp.forEach(x -> componentes.add(x.getComponente()));

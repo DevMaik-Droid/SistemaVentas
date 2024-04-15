@@ -1,7 +1,6 @@
 package com.dev_team.controllers;
 
 import com.dev_team.dashboard.Vista_Dashboard;
-import com.dev_team.views.V_Login;
 
 
 public class Main {
@@ -14,7 +13,7 @@ public class Main {
                     break;
                 }
             }
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ignored) {
 
         }
         
