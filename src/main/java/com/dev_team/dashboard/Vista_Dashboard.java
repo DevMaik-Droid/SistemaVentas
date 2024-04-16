@@ -7,6 +7,7 @@ import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.ProveedorGestionController;
 import com.dev_team.controllers.UsuarioController;
+import com.dev_team.models.Usuario;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.views.V_ChartsComponentes;
 import com.dev_team.views.V_GestionarProductos;
@@ -20,7 +21,10 @@ import com.dev_team.views.V_RegistrarProveedor;
 import com.dev_team.views.V_RegistrarUsuario;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Image;
 import java.awt.Point;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -30,16 +34,30 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     private static Vista_Dashboard main;
     Point posicion;
     Point posicionInicial; // Variable para almacenar la posición inicial al iniciar el arrastre
-
-    public Vista_Dashboard() {
+    Usuario usuario;
+    
+    public Vista_Dashboard(Usuario us) {
         initComponents();
         init();
+        this.usuario = us;
         setResizable(true);
        
         setLocationRelativeTo(null);
         setSize(1280,800);
-
+        lb_foto.setIcon(ponerFoto());
+        lb_barra.setText("\t Dashboard - ".concat(usuario.getNombre()));
+       
+        lb_nombre.setText(usuario.getNombre());
+        lb_apellido.setText(usuario.getApellido());
+        
         panel_header.setBackground(Main_Colores.Fondo);
+    }
+    private Icon ponerFoto(){
+        Image img = new ImageIcon(usuario.getFoto_recuperada()).getImage().getScaledInstance(lb_foto.getWidth(), lb_foto.getHeight(), Image.SCALE_DEFAULT);
+        
+        Icon icon = new ImageIcon(img);
+        return icon;
+        
     }
 
     private void init() {
@@ -117,7 +135,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         body = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        lb_foto = new javax.swing.JLabel();
         lb_nombre = new javax.swing.JLabel();
         lb_apellido = new javax.swing.JLabel();
         menu = new com.dev_team.dashboard.menu.Menu();
@@ -138,7 +156,6 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         );
         lb_barra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lb_barra.setForeground(new java.awt.Color(255, 255, 255));
-        lb_barra.setText("\t Dashboard - Bienvenido Miguel");
         lb_barra.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         lb_barra.setOpaque(true);
         lb_barra.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
@@ -227,9 +244,9 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 150));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setOpaque(true);
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 60, 57));
+        lb_foto.setBackground(new java.awt.Color(204, 204, 204));
+        lb_foto.setOpaque(true);
+        jPanel1.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 60, 57));
 
         lb_nombre.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
         lb_nombre.setForeground(new java.awt.Color(255, 255, 255));
@@ -319,11 +336,11 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_apellido;
     private javax.swing.JLabel lb_barra;
     private javax.swing.JLabel lb_cerrar;
+    private javax.swing.JLabel lb_foto;
     private javax.swing.JLabel lb_nombre;
     private javax.swing.JLabel maximizar;
     private com.dev_team.dashboard.menu.Menu menu;

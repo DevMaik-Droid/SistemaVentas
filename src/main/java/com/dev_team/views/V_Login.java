@@ -1,15 +1,22 @@
 package com.dev_team.views;
 
+import com.dev_team.dashboard.Vista_Dashboard;
+import com.dev_team.models.Usuario;
+import com.dev_team.services.Conexion;
 import com.dev_team.utilidades.GradientSeparador;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.PanelGradient;
+import com.mysql.cj.xdevapi.Result;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -27,6 +34,7 @@ public class V_Login extends javax.swing.JFrame {
         this.setTitle("Login - SISTEMA DE VENTAS");
         this.setSize(new Dimension(800, 600));
         lb_fondo_login.setIcon(ponerImagen("/images/login_fondo.jpg"));
+        
         lb_barra.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent m) {
@@ -47,6 +55,7 @@ public class V_Login extends javax.swing.JFrame {
                 setLocation(x, y);
             }
         });
+        
 
     }
 
@@ -73,11 +82,11 @@ public class V_Login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        btnIngresar = new JButtonRound("Ingresar",20);
-        txt_usuario = new javax.swing.JTextField();
-        txt_password = new javax.swing.JPasswordField();
+        btn_ingresar = new JButtonRound("Ingresar",20);
         jSeparator1 = new GradientSeparador();
         jSeparator2 = new GradientSeparador();
+        tf_usuario = new javax.swing.JTextField();
+        txt_password = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -182,53 +191,39 @@ public class V_Login extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         jLabel4.setForeground(Main_Colores.C_100);
-        jLabel4.setText("USUARIO");
-        panel_derecho.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 194, -1, 30));
+        jLabel4.setText("USUARIO:");
+        panel_derecho.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, -1, 30));
 
         jLabel5.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
         jLabel5.setForeground(Main_Colores.C_100);
-        jLabel5.setText("CONTRASEÑA");
-        panel_derecho.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, -1, 30));
+        jLabel5.setText("CONTRASEÑA:");
+        panel_derecho.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, -1, 30));
 
-        btnIngresar.setBackground(Main_Colores.Fondo_2);
-        btnIngresar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
-        btnIngresar.setForeground(Main_Colores.C_100);
-        btnIngresar.setText("Ingresar");
-        btnIngresar.setBorder(null);
-        btnIngresar.setBorderPainted(false);
-        btnIngresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnIngresar.setFocusPainted(false);
-        btnIngresar.setFocusable(false);
-        btnIngresar.setRequestFocusEnabled(false);
-        btnIngresar.setVerifyInputWhenFocusTarget(false);
-        btnIngresar.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_ingresar.setBackground(Main_Colores.Fondo_2);
+        btn_ingresar.setFont(new java.awt.Font("Gotham Extra Light", 0, 18)); // NOI18N
+        btn_ingresar.setForeground(Main_Colores.C_100);
+        btn_ingresar.setText("Ingresar");
+        btn_ingresar.setBorder(null);
+        btn_ingresar.setBorderPainted(false);
+        btn_ingresar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ingresar.setFocusPainted(false);
+        btn_ingresar.setFocusable(false);
+        btn_ingresar.setRequestFocusEnabled(false);
+        btn_ingresar.setVerifyInputWhenFocusTarget(false);
+        btn_ingresar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                btnIngresarMouseEntered(evt);
+                btn_ingresarMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                btnIngresarMouseExited(evt);
+                btn_ingresarMouseExited(evt);
             }
         });
-        btnIngresar.addActionListener(new java.awt.event.ActionListener() {
+        btn_ingresar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnIngresarActionPerformed(evt);
+                btn_ingresarActionPerformed(evt);
             }
         });
-        panel_derecho.add(btnIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 210, 60));
-
-        txt_usuario.setBackground(Main_Colores.Fondo);
-        txt_usuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
-        txt_usuario.setForeground(Main_Colores.C_100);
-        txt_usuario.setBorder(null);
-        txt_usuario.setCaretColor(new java.awt.Color(231,231,231));
-        panel_derecho.add(txt_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 270, 40));
-
-        txt_password.setBackground(Main_Colores.Fondo);
-        txt_password.setFont(txt_password.getFont().deriveFont(txt_password.getFont().getSize()+7f));
-        txt_password.setForeground(Main_Colores.C_100);
-        txt_password.setBorder(null);
-        txt_password.setCaretColor(new java.awt.Color(231,231,231));
-        panel_derecho.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 350, 270, 40));
+        panel_derecho.add(btn_ingresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 460, 210, 60));
 
         jSeparator1.setBackground(Main_Colores.Fondo);
         jSeparator1.setForeground(Main_Colores.Fondo);
@@ -238,11 +233,27 @@ public class V_Login extends javax.swing.JFrame {
         jSeparator2.setForeground(Main_Colores.Fondo);
         panel_derecho.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 310, 10));
 
+        tf_usuario.setBackground(Main_Colores.Fondo);
+        tf_usuario.setFont(new java.awt.Font("Gotham Thin", 0, 18)); // NOI18N
+        tf_usuario.setForeground(Main_Colores.C_100);
+        tf_usuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tf_usuario.setBorder(null);
+        tf_usuario.setCaretColor(new java.awt.Color(231,231,231));
+        panel_derecho.add(tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 240, 40));
+
+        txt_password.setBackground(Main_Colores.Fondo);
+        txt_password.setFont(txt_password.getFont().deriveFont(txt_password.getFont().getSize()+7f));
+        txt_password.setForeground(Main_Colores.C_100);
+        txt_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txt_password.setBorder(null);
+        txt_password.setCaretColor(new java.awt.Color(231,231,231));
+        panel_derecho.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 250, 40));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-password-40 (1).png"))); // NOI18N
-        panel_derecho.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 40, 40));
+        panel_derecho.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 40, 40));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-user-40.png"))); // NOI18N
-        panel_derecho.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 40, 50));
+        panel_derecho.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, 40, 50));
 
         panel_header.add(panel_derecho, java.awt.BorderLayout.EAST);
 
@@ -251,17 +262,47 @@ public class V_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
+    private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
 
-    }//GEN-LAST:event_btnIngresarActionPerformed
+        Connection cnt = Conexion.conectar();
+        String sql = String.format("SELECT * FROM tb_usuario WHERE usuario = '%s' AND contrasenia = '%s'", tf_usuario.getText().trim(),txt_password.getText().trim());
+        
+        try (PreparedStatement pst = cnt.prepareStatement(sql)){
+            
+            ResultSet rst = pst.executeQuery();
+            if(rst.next()){
+                Usuario us = new Usuario();
+                us.setIdUsuario(rst.getLong("idUsuario"));
+                us.setNombre(rst.getString("nombre"));
+                us.setApellido(rst.getString("apellido"));
+                byte[] bs_image = rst.getBytes("foto");
+                us.setFoto_recuperada(new ImageIcon(bs_image).getImage());
+                
+                JOptionPane.showMessageDialog(null, "Bienvenido - ".concat(us.getNombre()));
+                
+                Vista_Dashboard dashboard = new Vista_Dashboard(us);
+                dashboard.setVisible(true);
+                this.dispose();
+                
+            }else {
+                JOptionPane.showMessageDialog(null, "No se encontro al usuario.");
+            }
+            
+            
+            cnt.close();
+        } catch (Exception e) {
+            System.out.println("Error"+e);
+        } 
+        
+    }//GEN-LAST:event_btn_ingresarActionPerformed
 
-    private void btnIngresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseEntered
-        btnIngresar.setBackground(new Color(49, 51, 70));
-    }//GEN-LAST:event_btnIngresarMouseEntered
+    private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
+        btn_ingresar.setBackground(new Color(49, 51, 70));
+    }//GEN-LAST:event_btn_ingresarMouseEntered
 
-    private void btnIngresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnIngresarMouseExited
-        btnIngresar.setBackground(new Color(41, 41, 65));
-    }//GEN-LAST:event_btnIngresarMouseExited
+    private void btn_ingresarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseExited
+        btn_ingresar.setBackground(new Color(41, 41, 65));
+    }//GEN-LAST:event_btn_ingresarMouseExited
     boolean bandera = false;
     private void btn_mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarActionPerformed
 
@@ -319,7 +360,7 @@ public class V_Login extends javax.swing.JFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnIngresar;
+    private javax.swing.JButton btn_ingresar;
     private javax.swing.JButton btn_mostrar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -337,8 +378,8 @@ public class V_Login extends javax.swing.JFrame {
     private javax.swing.JPanel panel_izquierdo;
     private javax.swing.JPanel panel_title;
     private javax.swing.JPanel panel_titulo;
+    private javax.swing.JTextField tf_usuario;
     private javax.swing.JPasswordField txt_password;
-    private javax.swing.JTextField txt_usuario;
     // End of variables declaration//GEN-END:variables
 
     /**

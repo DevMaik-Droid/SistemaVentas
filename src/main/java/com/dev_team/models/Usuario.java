@@ -1,5 +1,6 @@
 package com.dev_team.models;
 
+import java.awt.Image;
 import java.io.InputStream;
 import java.util.Date;
 import lombok.Data;
@@ -26,5 +27,6 @@ public class Usuario {
     
     private byte[] bytes_image;
     private Boolean nueva_imagen;
+    private Image foto_recuperada;
 
 }
