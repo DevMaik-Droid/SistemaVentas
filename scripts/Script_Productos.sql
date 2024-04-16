@@ -77,6 +77,7 @@ CREATE TABLE tb_accesorios (
 		idProveedor BIGINT,
 		idUsuario BIGINT,
 		imagen BLOB,
+		fechaRegistro DATE,
 		CONSTRAINT fk_accesorioProveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
 		CONSTRAINT fk_accesorioUsuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
 ); 
