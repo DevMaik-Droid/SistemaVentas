@@ -30,7 +30,7 @@ public class V_GestionarProveedores extends JPanel {
         cbx_filtrar = new javax.swing.JComboBox<>();
         tf_filtrar = new javax.swing.JTextField();
         PanelMid = new javax.swing.JPanel();
-        panel_table = new Panel_Round(20);
+        panel_table = new Panel_Round(20,Color.CYAN,Color.BLUE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_proveedores = new org.jdesktop.swingx.JXTable();
 

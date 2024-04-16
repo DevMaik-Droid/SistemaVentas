@@ -34,7 +34,7 @@ public class V_GestionarUsuario extends JPanel {
         btn_buscaUS = new JButtonRound("BUSCAR",20);
         tf_filtrar = new javax.swing.JTextField();
         PanelMid = new javax.swing.JPanel();
-        panel_table = new Panel_Round(20);
+        panel_table = new Panel_Round(20,Color.MAGENTA,Color.BLUE);
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla_usuarios = new org.jdesktop.swingx.JXTable();
 

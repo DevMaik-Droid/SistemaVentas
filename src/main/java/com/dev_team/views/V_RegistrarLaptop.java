@@ -27,7 +27,7 @@ public class V_RegistrarLaptop extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new Panel_Round(20);
+        panel_main = new Panel_Round(20,Color.ORANGE,Color.red);
         panel_form = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -46,19 +46,23 @@ public class V_RegistrarLaptop extends JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_descripcionLaptop = new javax.swing.JTextArea();
         btn_buscarLP = new javax.swing.JButton();
-        cbx_memoriaRamLP = new javax.swing.JComboBox<>();
-        cbx_procesadorLP = new javax.swing.JComboBox<>();
-        cbx_discoDeAlmacenamientoLP = new javax.swing.JComboBox<>();
         cbx_proveedor = new javax.swing.JComboBox<>();
         btn_registrarLP = new JButtonRound("Registrar",30);
         tf_modeloLP = new javax.swing.JTextField();
-        tf_conectividadLP = new javax.swing.JTextField();
+        tf_almacenamiento = new javax.swing.JTextField();
         tf_pantallaLP = new javax.swing.JTextField();
-        tf_nombreLP = new javax.swing.JTextField();
+        tf_marca = new javax.swing.JTextField();
         tf_bateriaLP = new javax.swing.JTextField();
         tf_precioLP = new javax.swing.JTextField();
         tf_nombreC1 = new javax.swing.JTextField();
-        panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
+        jLabel19 = new javax.swing.JLabel();
+        tf_precioTotal = new javax.swing.JTextField();
+        tf_conectividadLP1 = new javax.swing.JTextField();
+        tf_procesador = new javax.swing.JTextField();
+        tf_memoriaRam = new javax.swing.JTextField();
+        tf_tarjetaGrafica = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        panelTitle = new PanelGradient(Color.ORANGE,Color.red);
         jLabel16 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
@@ -70,16 +74,16 @@ public class V_RegistrarLaptop extends JPanel {
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setOpaque(true);
-        panel_form.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 200, 170));
+        panel_form.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 200, 170));
 
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel6.setForeground(Main_Colores.C_100);
         jLabel6.setText("Descripcion:");
-        panel_form.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 420, 120, -1));
+        panel_form.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, 120, -1));
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel7.setForeground(Main_Colores.C_100);
-        jLabel7.setText("Nombre:");
+        jLabel7.setText("Marca:");
         panel_form.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, -1, -1));
 
         jLabel9.setBackground(new java.awt.Color(0, 0, 0));
@@ -105,8 +109,8 @@ public class V_RegistrarLaptop extends JPanel {
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel11.setForeground(Main_Colores.C_100);
-        jLabel11.setText("Disco de almacenamiento:");
-        panel_form.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 190, -1));
+        jLabel11.setText("Almacenamiento:");
+        panel_form.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 200, -1));
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
@@ -120,24 +124,24 @@ public class V_RegistrarLaptop extends JPanel {
 
         jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel15.setForeground(Main_Colores.C_100);
-        jLabel15.setText("Precio:");
-        panel_form.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 340, 60, -1));
+        jLabel15.setText("Precio unitario:");
+        panel_form.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 130, -1));
 
         jLabel17.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel17.setForeground(Main_Colores.C_100);
         jLabel17.setText("Proveedor:");
-        panel_form.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 340, -1, -1));
+        panel_form.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel18.setForeground(Main_Colores.C_100);
         jLabel18.setText("Cantidad:");
-        panel_form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
+        panel_form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 20)); // NOI18N
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Laptop");
-        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 40, 200, 20));
+        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 90, 200, 20));
 
         ta_descripcionLaptop.setColumns(20);
         ta_descripcionLaptop.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
@@ -146,35 +150,18 @@ public class V_RegistrarLaptop extends JPanel {
         ta_descripcionLaptop.setBorder(null);
         jScrollPane1.setViewportView(ta_descripcionLaptop);
 
-        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 450, 580, 90));
+        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 450, 480, 90));
 
         btn_buscarLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_buscarLP.setForeground(Main_Colores.Fondo);
         btn_buscarLP.setText("Buscar");
         btn_buscarLP.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        panel_form.add(btn_buscarLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 250, 130, -1));
-
-        cbx_memoriaRamLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_memoriaRamLP.setForeground(Main_Colores.Fondo);
-        panel_form.add(cbx_memoriaRamLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 200, 30));
-
-        cbx_procesadorLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_procesadorLP.setForeground(Main_Colores.Fondo);
-        cbx_procesadorLP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_procesadorLPActionPerformed(evt);
-            }
-        });
-        panel_form.add(cbx_procesadorLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 200, 30));
-
-        cbx_discoDeAlmacenamientoLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_discoDeAlmacenamientoLP.setForeground(Main_Colores.Fondo);
-        panel_form.add(cbx_discoDeAlmacenamientoLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 200, 30));
+        panel_form.add(btn_buscarLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 300, 130, -1));
 
         cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_proveedor.setForeground(Main_Colores.Fondo);
         cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
-        panel_form.add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, 230, 30));
+        panel_form.add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 230, 30));
 
         btn_registrarLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_registrarLP.setForeground(Main_Colores.Fondo);
@@ -185,23 +172,23 @@ public class V_RegistrarLaptop extends JPanel {
                 btn_registrarLPActionPerformed(evt);
             }
         });
-        panel_form.add(btn_registrarLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 560, 140, 40));
+        panel_form.add(btn_registrarLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 560, 140, 40));
 
         tf_modeloLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_modeloLP.setForeground(Main_Colores.Fondo);
         panel_form.add(tf_modeloLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 200, 30));
 
-        tf_conectividadLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_conectividadLP.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_conectividadLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 200, 30));
+        tf_almacenamiento.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_almacenamiento.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_almacenamiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 200, 30));
 
         tf_pantallaLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_pantallaLP.setForeground(Main_Colores.Fondo);
         panel_form.add(tf_pantallaLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 200, 30));
 
-        tf_nombreLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_nombreLP.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_nombreLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 200, 30));
+        tf_marca.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_marca.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 200, 30));
 
         tf_bateriaLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_bateriaLP.setForeground(Main_Colores.Fondo);
@@ -209,20 +196,50 @@ public class V_RegistrarLaptop extends JPanel {
 
         tf_precioLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_precioLP.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 370, 150, 30));
+        panel_form.add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 150, 30));
 
         tf_nombreC1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_nombreC1.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_nombreC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, 210, 30));
+        panel_form.add(tf_nombreC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 490, 150, 30));
 
-        panel_main.add(panel_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 45, 820, 620));
+        jLabel19.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel19.setForeground(Main_Colores.C_100);
+        jLabel19.setText("Precio total:");
+        panel_form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 530, 130, -1));
+
+        tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_precioTotal.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 550, 150, 30));
+
+        tf_conectividadLP1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_conectividadLP1.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_conectividadLP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 200, 30));
+
+        tf_procesador.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_procesador.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_procesador, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 200, 30));
+
+        tf_memoriaRam.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_memoriaRam.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_memoriaRam, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 200, 30));
+
+        tf_tarjetaGrafica.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_tarjetaGrafica.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_tarjetaGrafica, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 200, 30));
+
+        jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel13.setForeground(Main_Colores.C_100);
+        jLabel13.setText("Tarjeta grafica:");
+        panel_form.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 330, -1, -1));
+
+        panel_main.add(panel_form, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, 45, 850, 630));
 
         panelTitle.setBackground(new java.awt.Color(51, 51, 255));
         panelTitle.setPreferredSize(new java.awt.Dimension(40, 40));
         panelTitle.setLayout(new java.awt.BorderLayout());
 
         jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("REGISTRAR LAPTOP");
         panelTitle.add(jLabel16, java.awt.BorderLayout.SOUTH);
@@ -247,10 +264,6 @@ public class V_RegistrarLaptop extends JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbx_procesadorLPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_procesadorLPActionPerformed
-
-    }//GEN-LAST:event_cbx_procesadorLPActionPerformed
-
     private void btn_registrarLPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarLPActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_registrarLPActionPerformed
@@ -259,18 +272,17 @@ public class V_RegistrarLaptop extends JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscarLP;
     private javax.swing.JButton btn_registrarLP;
-    private javax.swing.JComboBox<String> cbx_discoDeAlmacenamientoLP;
-    private javax.swing.JComboBox<String> cbx_memoriaRamLP;
-    private javax.swing.JComboBox<String> cbx_procesadorLP;
     private javax.swing.JComboBox<String> cbx_proveedor;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -283,12 +295,17 @@ public class V_RegistrarLaptop extends JPanel {
     private javax.swing.JPanel panel_form;
     private javax.swing.JPanel panel_main;
     private javax.swing.JTextArea ta_descripcionLaptop;
+    private javax.swing.JTextField tf_almacenamiento;
     private javax.swing.JTextField tf_bateriaLP;
-    private javax.swing.JTextField tf_conectividadLP;
+    private javax.swing.JTextField tf_conectividadLP1;
+    private javax.swing.JTextField tf_marca;
+    private javax.swing.JTextField tf_memoriaRam;
     private javax.swing.JTextField tf_modeloLP;
     private javax.swing.JTextField tf_nombreC1;
-    private javax.swing.JTextField tf_nombreLP;
     private javax.swing.JTextField tf_pantallaLP;
     private javax.swing.JTextField tf_precioLP;
+    private javax.swing.JTextField tf_precioTotal;
+    private javax.swing.JTextField tf_procesador;
+    private javax.swing.JTextField tf_tarjetaGrafica;
     // End of variables declaration//GEN-END:variables
 }

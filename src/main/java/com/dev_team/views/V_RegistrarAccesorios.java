@@ -30,8 +30,8 @@ public class V_RegistrarAccesorios extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new Panel_Round(20);
-        panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
+        panel_main = new Panel_Round(20,Color.YELLOW,Color.ORANGE);
+        panelTitle = new PanelGradient(Color.YELLOW,Color.ORANGE);
         jLabel14 = new javax.swing.JLabel();
         panel_form = new javax.swing.JPanel();
         tf_nombreA = new javax.swing.JTextField();
@@ -39,22 +39,20 @@ public class V_RegistrarAccesorios extends JPanel {
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        cbx_versionA = new javax.swing.JComboBox<>();
-        cbx_marcaA = new javax.swing.JComboBox<>();
-        cbx_modeloA = new javax.swing.JComboBox<>();
-        cbx_conectividadA = new javax.swing.JComboBox<>();
-        cbx_compatibilidadA = new javax.swing.JComboBox<>();
-        cbx_materialA = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         btn_buscar = new JButtonRound("Buscar",20);
         btn_registrar = new JButtonRound("Registrar",20);
+        jLabel13 = new javax.swing.JLabel();
+        tf_marca = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        tf_precioLP = new javax.swing.JTextField();
+        jLabel18 = new javax.swing.JLabel();
+        tf_nombreC1 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        tf_precioTotal = new javax.swing.JTextField();
+        cbx_proveedor = new javax.swing.JComboBox<>();
+        jLabel17 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(51, 51, 51));
 
@@ -65,7 +63,7 @@ public class V_RegistrarAccesorios extends JPanel {
         panelTitle.setLayout(new java.awt.BorderLayout());
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("REGISTRAR ACCESORIOS");
         panelTitle.add(jLabel14, java.awt.BorderLayout.CENTER);
@@ -73,78 +71,31 @@ public class V_RegistrarAccesorios extends JPanel {
         panel_main.add(panelTitle, java.awt.BorderLayout.NORTH);
 
         panel_form.setOpaque(false);
+        panel_form.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tf_nombreA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_nombreA.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_nombreA, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 56, 229, 30));
 
         jLabel10.setBackground(new java.awt.Color(255, 255, 255));
         jLabel10.setOpaque(true);
+        panel_form.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(548, 108, 191, 196));
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel7.setForeground(Main_Colores.C_100);
         jLabel7.setText("Nombre:");
+        panel_form.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 30, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Accesorio");
+        panel_form.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 80, 190, 20));
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Descripcion:");
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel9.setForeground(Main_Colores.C_100);
-        jLabel9.setText("Material:");
-
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel12.setForeground(Main_Colores.C_100);
-        jLabel12.setText("Version:");
-
-        jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel5.setForeground(Main_Colores.C_100);
-        jLabel5.setText("Conectividad:");
-
-        jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel3.setForeground(Main_Colores.C_100);
-        jLabel3.setText("Modelo:");
-
-        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel4.setForeground(Main_Colores.C_100);
-        jLabel4.setText("Marca:");
-
-        jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel11.setForeground(Main_Colores.C_100);
-        jLabel11.setText("Compatibilidad:");
-
-        cbx_versionA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_versionA.setForeground(Main_Colores.Fondo);
-        cbx_versionA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_versionAActionPerformed(evt);
-            }
-        });
-
-        cbx_marcaA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_marcaA.setForeground(Main_Colores.Fondo);
-
-        cbx_modeloA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_modeloA.setForeground(Main_Colores.Fondo);
-
-        cbx_conectividadA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_conectividadA.setForeground(Main_Colores.Fondo);
-
-        cbx_compatibilidadA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_compatibilidadA.setForeground(Main_Colores.Fondo);
-
-        cbx_materialA.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        cbx_materialA.setForeground(Main_Colores.Fondo);
-        cbx_materialA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_materialAActionPerformed(evt);
-            }
-        });
+        panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 180, -1));
 
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
@@ -153,10 +104,13 @@ public class V_RegistrarAccesorios extends JPanel {
         jTextArea1.setBorder(null);
         jScrollPane1.setViewportView(jTextArea1);
 
+        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 150, 480, 110));
+
         btn_buscar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_buscar.setForeground(Main_Colores.Fondo);
         btn_buscar.setText("Buscar");
         btn_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        panel_form.add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 330, 130, -1));
 
         btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_registrar.setForeground(Main_Colores.Fondo);
@@ -167,102 +121,53 @@ public class V_RegistrarAccesorios extends JPanel {
                 btn_registrarActionPerformed(evt);
             }
         });
+        panel_form.add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 460, 188, 41));
 
-        javax.swing.GroupLayout panel_formLayout = new javax.swing.GroupLayout(panel_form);
-        panel_form.setLayout(panel_formLayout);
-        panel_formLayout.setHorizontalGroup(
-            panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_formLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_buscar, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86))
-            .addGroup(panel_formLayout.createSequentialGroup()
-                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel4)
-                                    .addComponent(cbx_marcaA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(cbx_modeloA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel5))
-                                .addGap(50, 50, 50)
-                                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
-                                    .addComponent(cbx_materialA, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel12)
-                                    .addComponent(cbx_versionA, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel11)))
-                            .addComponent(tf_nombreA)
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addComponent(cbx_conectividadA, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(50, 50, 50)
-                                .addComponent(cbx_compatibilidadA, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jScrollPane1))
-                        .addGap(43, 43, 43)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(53, Short.MAX_VALUE))
-        );
-        panel_formLayout.setVerticalGroup(
-            panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panel_formLayout.createSequentialGroup()
-                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panel_formLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel7)
-                        .addGap(3, 3, 3)
-                        .addComponent(tf_nombreA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(30, 30, 30)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addGap(3, 3, 3)
-                                .addComponent(cbx_marcaA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel3)
-                                .addGap(3, 3, 3)
-                                .addComponent(cbx_modeloA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel5))
-                            .addGroup(panel_formLayout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cbx_materialA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel12)
-                                .addGap(1, 1, 1)
-                                .addComponent(cbx_versionA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11)))
-                        .addGap(1, 1, 1)
-                        .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbx_conectividadA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cbx_compatibilidadA, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panel_formLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(42, 42, 42)
-                .addGroup(panel_formLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(btn_buscar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btn_registrar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(13, Short.MAX_VALUE))
-        );
+        jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel13.setForeground(Main_Colores.C_100);
+        jLabel13.setText("Marca:");
+        panel_form.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 30, -1, 20));
+
+        tf_marca.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_marca.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_marca, new org.netbeans.lib.awtextra.AbsoluteConstraints(272, 56, 229, 30));
+
+        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel15.setForeground(Main_Colores.C_100);
+        jLabel15.setText("Precio unitario:");
+        panel_form.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 290, 130, -1));
+
+        tf_precioLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_precioLP.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 150, 30));
+
+        jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel18.setForeground(Main_Colores.C_100);
+        jLabel18.setText("Cantidad:");
+        panel_form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, -1, -1));
+
+        tf_nombreC1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_nombreC1.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_nombreC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, 150, 30));
+
+        jLabel19.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel19.setForeground(Main_Colores.C_100);
+        jLabel19.setText("Precio total:");
+        panel_form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 410, 130, -1));
+
+        tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_precioTotal.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 430, 150, 30));
+
+        cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        cbx_proveedor.setForeground(Main_Colores.Fondo);
+        cbx_proveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:" }));
+        panel_form.add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 310, 230, 30));
+
+        jLabel17.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel17.setForeground(Main_Colores.C_100);
+        jLabel17.setText("Proveedor:");
+        panel_form.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 280, -1, -1));
 
         panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
 
@@ -284,14 +189,6 @@ public class V_RegistrarAccesorios extends JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cbx_materialAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_materialAActionPerformed
-
-    }//GEN-LAST:event_cbx_materialAActionPerformed
-
-    private void cbx_versionAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_versionAActionPerformed
-
-    }//GEN-LAST:event_cbx_versionAActionPerformed
-
     private void btn_registrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_registrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_registrarActionPerformed
@@ -300,28 +197,26 @@ public class V_RegistrarAccesorios extends JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_registrar;
-    private javax.swing.JComboBox<String> cbx_compatibilidadA;
-    private javax.swing.JComboBox<String> cbx_conectividadA;
-    private javax.swing.JComboBox<String> cbx_marcaA;
-    private javax.swing.JComboBox<String> cbx_materialA;
-    private javax.swing.JComboBox<String> cbx_modeloA;
-    private javax.swing.JComboBox<String> cbx_versionA;
+    private javax.swing.JComboBox<String> cbx_proveedor;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panelTitle;
     private javax.swing.JPanel panel_form;
     private javax.swing.JPanel panel_main;
+    private javax.swing.JTextField tf_marca;
     private javax.swing.JTextField tf_nombreA;
+    private javax.swing.JTextField tf_nombreC1;
+    private javax.swing.JTextField tf_precioLP;
+    private javax.swing.JTextField tf_precioTotal;
     // End of variables declaration//GEN-END:variables
 }

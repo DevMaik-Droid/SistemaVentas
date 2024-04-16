@@ -26,7 +26,7 @@ public class V_RegistrarUsuario extends JPanel{
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new Panel_Round(20);
+        panel_main = new Panel_Round(20,Color.MAGENTA,Color.BLUE);
         panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
         jLabel14 = new javax.swing.JLabel();
         panel_form = new JPanel();
@@ -66,7 +66,7 @@ public class V_RegistrarUsuario extends JPanel{
         panelTitle.setLayout(new java.awt.BorderLayout());
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("REGISTRAR USUARIO");
         panelTitle.add(jLabel14, java.awt.BorderLayout.SOUTH);

@@ -1,4 +1,4 @@
-package com.dev_team.views;
+ package com.dev_team.views;
 
 import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Usuario;
@@ -7,7 +7,6 @@ import com.dev_team.utilidades.GradientSeparador;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.PanelGradient;
-import com.mysql.cj.xdevapi.Result;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
@@ -174,6 +173,7 @@ public class V_Login extends javax.swing.JFrame {
         btn_mostrar.setBorder(null);
         btn_mostrar.setBorderPainted(false);
         btn_mostrar.setContentAreaFilled(false);
+        btn_mostrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_mostrar.setFocusPainted(false);
         btn_mostrar.setPressedIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-ophthalmology-30.png"))); // NOI18N
         btn_mostrar.addActionListener(new java.awt.event.ActionListener() {
@@ -351,7 +351,7 @@ public class V_Login extends javax.swing.JFrame {
 
     private void lb_cerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseExited
         lb_cerrar.setBackground(Color.white);
-        lb_cerrar.setForeground(new Color(73, 181, 172));
+        lb_cerrar.setForeground(new Color(37, 32, 47));
 
         lb_barra.setBackground(Main_Colores.C_900);
         lb_barra.setText("\t Dashboard - Bienvenido Miguel Angel");

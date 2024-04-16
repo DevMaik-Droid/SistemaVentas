@@ -25,8 +25,8 @@ public class V_RegistrarProveedor extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new Panel_Round(20);
-        panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
+        panel_main = new Panel_Round(20,Color.CYAN,Color.BLUE);
+        panelTitle = new PanelGradient(Color.CYAN, Color.BLUE);
         jLabel13 = new javax.swing.JLabel();
         panel_form = new JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -57,7 +57,7 @@ public class V_RegistrarProveedor extends JPanel {
         panelTitle.setLayout(new java.awt.BorderLayout());
 
         jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel13.setForeground(Main_Colores.C_100);
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel13.setText("REGISTRAR PROVEEDOR");
         panelTitle.add(jLabel13, java.awt.BorderLayout.CENTER);

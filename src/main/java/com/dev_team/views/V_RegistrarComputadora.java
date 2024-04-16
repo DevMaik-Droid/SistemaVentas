@@ -35,8 +35,8 @@ public class V_RegistrarComputadora extends JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel_main = new Panel_Round(20);
-        panelTitle = new PanelGradient(Color.MAGENTA, Color.BLUE);
+        panel_main = new Panel_Round(20,Color.YELLOW,Color.GREEN);
+        panelTitle = new PanelGradient(Color.YELLOW, Color.GREEN);
         jLabel17 = new javax.swing.JLabel();
         panel_form = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
@@ -82,7 +82,7 @@ public class V_RegistrarComputadora extends JPanel {
         panelTitle.setLayout(new java.awt.BorderLayout());
 
         jLabel17.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel17.setText("REGISTRAR COMPUTADORA");
         panelTitle.add(jLabel17, java.awt.BorderLayout.PAGE_END);
@@ -121,7 +121,7 @@ public class V_RegistrarComputadora extends JPanel {
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel5.setForeground(Main_Colores.C_100);
         jLabel5.setText("Monitor:");
-        panel_form.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, -1, -1));
+        panel_form.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 100, -1, -1));
 
         jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel12.setForeground(Main_Colores.C_100);
@@ -136,12 +136,12 @@ public class V_RegistrarComputadora extends JPanel {
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Case:");
-        panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, -1, -1));
+        panel_form.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 30, -1, -1));
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel14.setForeground(Main_Colores.C_100);
         jLabel14.setText("Nombre:");
-        panel_form.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 40, -1, -1));
+        panel_form.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
         jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel15.setForeground(Main_Colores.C_100);
@@ -177,7 +177,6 @@ public class V_RegistrarComputadora extends JPanel {
         });
         panel_form.add(cbx_ramCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 230, 30));
 
-        cbx_tarjetaMadre.setBackground(new java.awt.Color(255, 255, 255));
         cbx_tarjetaMadre.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_tarjetaMadre.setForeground(Main_Colores.Fondo);
         cbx_tarjetaMadre.setBorder(null);
@@ -199,7 +198,7 @@ public class V_RegistrarComputadora extends JPanel {
 
         cbx_discoCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_discoCO.setForeground(Main_Colores.Fondo);
-        panel_form.add(cbx_discoCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, 230, 30));
+        panel_form.add(cbx_discoCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 230, 30));
 
         btn_registrar.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         btn_registrar.setForeground(Main_Colores.Fondo);
@@ -214,7 +213,7 @@ public class V_RegistrarComputadora extends JPanel {
                 cbx_caseCOActionPerformed(evt);
             }
         });
-        panel_form.add(cbx_caseCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 220, 30));
+        panel_form.add(cbx_caseCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 220, 30));
 
         tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_precioTotal.setForeground(Main_Colores.Fondo);
@@ -223,7 +222,7 @@ public class V_RegistrarComputadora extends JPanel {
 
         tf_nombreCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_nombreCO.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_nombreCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 210, 30));
+        panel_form.add(tf_nombreCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 190, 30));
 
         tf_precio.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_precio.setForeground(Main_Colores.Fondo);
@@ -243,12 +242,12 @@ public class V_RegistrarComputadora extends JPanel {
         jLabel13.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel13.setForeground(Main_Colores.C_100);
         jLabel13.setText("Ventiladores:");
-        panel_form.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, -1, -1));
+        panel_form.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, -1, -1));
 
         jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel18.setForeground(Main_Colores.C_100);
         jLabel18.setText("Disipadores:");
-        panel_form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
+        panel_form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 170, -1, -1));
 
         cbx_disipadores.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_disipadores.setForeground(Main_Colores.Fondo);
@@ -258,7 +257,7 @@ public class V_RegistrarComputadora extends JPanel {
         jLabel19.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel19.setForeground(Main_Colores.C_100);
         jLabel19.setText("Tarjeta Grafica:");
-        panel_form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 320, -1, -1));
+        panel_form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, -1, -1));
 
         cbx_gpu.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_gpu.setForeground(Main_Colores.Fondo);
@@ -267,16 +266,16 @@ public class V_RegistrarComputadora extends JPanel {
                 cbx_gpuActionPerformed(evt);
             }
         });
-        panel_form.add(cbx_gpu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 230, 30));
+        panel_form.add(cbx_gpu, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 230, 30));
 
         jLabel20.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel20.setForeground(Main_Colores.C_100);
         jLabel20.setText("Fuente:");
-        panel_form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, -1, -1));
+        panel_form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, -1, -1));
 
         cbx_fuente.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_fuente.setForeground(Main_Colores.Fondo);
-        panel_form.add(cbx_fuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 430, 230, 30));
+        panel_form.add(cbx_fuente, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 400, 230, 30));
 
         panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
 

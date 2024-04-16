@@ -8,7 +8,9 @@ import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.ProveedorGestionController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.models.Usuario;
+import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.Panel_Round;
 import com.dev_team.views.V_ChartsComponentes;
 import com.dev_team.views.V_GestionarProductos;
 import com.dev_team.views.V_GestionarProveedores;
@@ -134,10 +136,11 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         lb_cerrar = new javax.swing.JLabel();
         body = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
-        lb_foto = new javax.swing.JLabel();
+        jPanel1 = new Panel_Round(0,Color.MAGENTA,Color.BLUE);
         lb_nombre = new javax.swing.JLabel();
         lb_apellido = new javax.swing.JLabel();
+        btn_ajustesUsuario = new javax.swing.JButton();
+        lb_foto = new JButtonRound("",100);
         menu = new com.dev_team.dashboard.menu.Menu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -239,26 +242,36 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         panelMenu.setPreferredSize(new java.awt.Dimension(300, 700));
         panelMenu.setLayout(new javax.swing.BoxLayout(panelMenu, javax.swing.BoxLayout.PAGE_AXIS));
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(Main_Colores.Fondo);
         jPanel1.setMaximumSize(new java.awt.Dimension(300, 200));
         jPanel1.setPreferredSize(new java.awt.Dimension(200, 150));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lb_foto.setBackground(new java.awt.Color(204, 204, 204));
-        lb_foto.setOpaque(true);
-        jPanel1.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 60, 57));
-
-        lb_nombre.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
+        lb_nombre.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         lb_nombre.setForeground(new java.awt.Color(255, 255, 255));
         lb_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nombre.setText("Miguel Angel");
-        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 110, -1));
+        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 160, 20));
 
-        lb_apellido.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
+        lb_apellido.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         lb_apellido.setForeground(new java.awt.Color(255, 255, 255));
         lb_apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_apellido.setText("Quispe Gutierrez");
-        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 110, -1));
+        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 170, 20));
+
+        btn_ajustesUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-setting-30.png"))); // NOI18N
+        btn_ajustesUsuario.setBorder(null);
+        btn_ajustesUsuario.setBorderPainted(false);
+        btn_ajustesUsuario.setContentAreaFilled(false);
+        btn_ajustesUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_ajustesUsuario.setFocusPainted(false);
+        jPanel1.add(btn_ajustesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+
+        lb_foto.setBorder(null);
+        lb_foto.setBorderPainted(false);
+        lb_foto.setContentAreaFilled(false);
+        lb_foto.setFocusPainted(false);
+        jPanel1.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, 100));
 
         panelMenu.add(jPanel1);
 
@@ -336,11 +349,12 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
+    private javax.swing.JButton btn_ajustesUsuario;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_apellido;
     private javax.swing.JLabel lb_barra;
     private javax.swing.JLabel lb_cerrar;
-    private javax.swing.JLabel lb_foto;
+    private javax.swing.JButton lb_foto;
     private javax.swing.JLabel lb_nombre;
     private javax.swing.JLabel maximizar;
     private com.dev_team.dashboard.menu.Menu menu;
