@@ -183,9 +183,10 @@ public class V_RegistrarComponentes extends JPanel{
         jLabel19.setText("Precio total:");
         panel_form.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 130, -1));
 
-        tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_precioTotal.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 150, 30));
+        tf_precioTotal.setEnabled(false);
+        panel_form.add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 140, 30));
 
         panelTitle.setBackground(new java.awt.Color(51, 51, 255));
         panelTitle.setPreferredSize(new java.awt.Dimension(40, 40));

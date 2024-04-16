@@ -81,7 +81,7 @@ public class ComponentController extends V_RegistrarComponentes {
         } else if (componente.contains("SDD")) {
             agregarItemsComboBox(CAPACIDADES_HDD_SSD, VELOCIDADES_SSD);
         } else {
-            cbx_resolucion.removeAllItems();
+            cbx_capacidad.removeAllItems();
             cbx_velocidad.removeAllItems();
         }
     }
@@ -120,8 +120,8 @@ public class ComponentController extends V_RegistrarComponentes {
         componente.setVelocidad(velocidad);
         Proveedor prov = (Proveedor) cbx_proveedor.getSelectedItem();
         componente.setIdProveedor(prov.getIdProveedor());
-        componente.setPrecio(Double.valueOf(tf_precio.getText().trim()));
-        componente.setCantidad(Integer.valueOf(tf_cantidad.getText().trim()));
+       /* componente.setPrecio(Double.valueOf(tf_precio.getText().trim()));
+        componente.setCantidad(Integer.valueOf(tf_cantidad.getText().trim()));*/
         componente.setDisponibilidad("DISPONIBLE");
         componente.setImagen(input_image);
         componente.setDescripcion(ta_descripcion.getText().trim());
@@ -137,9 +137,9 @@ public class ComponentController extends V_RegistrarComponentes {
 
     private void limpiar() {
         tf_marca.setText("");
-        tf_cantidad.setText("");
+    //    tf_cantidad.setText("");
         tf_modelo.setText("");
-        tf_precio.setText("");
+     //   tf_precio.setText("");
         lb_imagen.setIcon(null);
         cbx_componente.setSelectedIndex(0);
         cbx_capacidad.removeAllItems();
