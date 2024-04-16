@@ -1,8 +1,8 @@
 package com.dev_team.services;
 
 import com.dev_team.models.Componente;
-import com.dev_team.models.PlacaMadre;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +19,7 @@ public class Service_Componente implements I_Service {
     public boolean crear(Object objeto) {
         Connection cn = Conexion.conectar();
         Componente componente = (Componente) objeto;
-        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?,?,?)", TABLA);
+        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", TABLA);
 
         try (PreparedStatement consulta = cn.prepareStatement(sql)) {
             consulta.setInt(1, 0);//id
@@ -28,14 +28,18 @@ public class Service_Componente implements I_Service {
             consulta.setString(4, componente.getModelo());
             consulta.setString(5, componente.getCapacidad());
             consulta.setString(6, componente.getVelocidad());
-            consulta.setLong(7, componente.getIdProveedor());
-            consulta.setDouble(8, componente.getPrecio());
+            consulta.setDouble(7, componente.getPrecioUnitario());
+            consulta.setDouble(8, componente.getPrecioTotal());
             consulta.setInt(9, componente.getCantidad());
             consulta.setString(10, componente.getDisponibilidad());
             consulta.setBinaryStream(11, componente.getImagen());
             consulta.setString(12, componente.getDescripcion());
-
+            consulta.setLong(13, componente.getIdProveedor());
+            consulta.setLong(14, componente.getIdUsuario());
+            consulta.setDate(15, new Date(componente.getFechaRegistro().getTime()));
+            
             return consulta.executeUpdate() > 0;
+            
         } catch (SQLException ex) {
             Logger.getLogger(Service_Componente.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -70,7 +74,7 @@ public class Service_Componente implements I_Service {
                 comp.setModelo(rst.getString("modelo"));
                 comp.setCapacidad(rst.getString("capacidad"));
                 comp.setVelocidad(rst.getString("velocidad"));
-                comp.setPrecio(rst.getDouble("precio"));
+                comp.setPrecioTotal(rst.getDouble("precio"));
                 comp.setCantidad(rst.getInt("cantidad"));
                 componente.add(comp);
             }

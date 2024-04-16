@@ -10,8 +10,8 @@ import javax.swing.JPanel;
 
 public class PanelGradient extends JPanel {
 
-    private Color startColor;
-    private Color endColor;
+    private final Color startColor;
+    private final Color endColor;
 
     public PanelGradient(Color startColor, Color endColor) {
         this.startColor = startColor;

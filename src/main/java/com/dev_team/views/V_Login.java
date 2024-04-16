@@ -382,25 +382,4 @@ public class V_Login extends javax.swing.JFrame {
     private javax.swing.JPasswordField txt_password;
     // End of variables declaration//GEN-END:variables
 
-    /**
-     * metodo Iniciar Sesion
-     */
-    /*private void Login() {
-        if (!txt_usuario.getText().isEmpty() && !txt_password.getText().isEmpty()) {
-            Service_Usuario controlUsuario = new Service_Usuario();
-            Usuario usuario = new Usuario();
-            usuario.setUsuario(txt_usuario.getText().trim());
-            usuario.setPassword(txt_password.getText().trim());
-            if (controlUsuario.loginUser(usuario)) {
-                //JOptionPane.showMessageDialog(null, "Login Correcto...");
-                FrmMenu menu = new FrmMenu();
-                menu.setVisible(true);
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(null, "Usuario o Clave Incorrectos");
-            }
-        } else {
-            JOptionPane.showMessageDialog(null, "Ingrese sus credenciales");
-        }
-    }*/
 }

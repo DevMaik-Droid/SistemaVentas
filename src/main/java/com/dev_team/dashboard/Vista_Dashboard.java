@@ -1,5 +1,6 @@
 package com.dev_team.dashboard;
 
+import com.dev_team.controllers.AccesorioController;
 import com.dev_team.controllers.ComponentChartsControllers;
 import com.dev_team.controllers.ComponentController;
 import com.dev_team.controllers.ComputadoraController;
@@ -34,6 +35,7 @@ import javax.swing.SwingUtilities;
 public class Vista_Dashboard extends javax.swing.JFrame {
 
     private static Vista_Dashboard main;
+    public static Long idUsuario;
     Point posicion;
     Point posicionInicial; // Variable para almacenar la posición inicial al iniciar el arrastre
     Usuario usuario;
@@ -42,8 +44,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         initComponents();
         init();
         this.usuario = us;
+        Vista_Dashboard.idUsuario = usuario.getIdUsuario();
         setResizable(true);
-       
         setLocationRelativeTo(null);
         setSize(1280,800);
         lb_foto.setIcon(ponerFoto());
@@ -94,7 +96,11 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             } else if (index == 6 && indexSubMenu == 2) {
                 showForm(new V_RegistrarLaptop());
             } else if (index == 6 && indexSubMenu == 3) {
-                showForm(new V_RegistrarAccesorios());
+                V_RegistrarAccesorios accesorios = new AccesorioController();
+                
+                showForm(accesorios);
+                
+                
             } else if (index == 6 && indexSubMenu == 4) {
                 V_RegistrarComponentes componentes = new ComponentController();
                 showForm(componentes);
@@ -251,13 +257,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         lb_nombre.setForeground(new java.awt.Color(255, 255, 255));
         lb_nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_nombre.setText("Miguel Angel");
-        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 160, 20));
+        jPanel1.add(lb_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 150, 20));
 
         lb_apellido.setFont(new java.awt.Font("Bahnschrift", 1, 14)); // NOI18N
         lb_apellido.setForeground(new java.awt.Color(255, 255, 255));
         lb_apellido.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_apellido.setText("Quispe Gutierrez");
-        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 170, 20));
+        jPanel1.add(lb_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 150, 20));
 
         btn_ajustesUsuario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-setting-30.png"))); // NOI18N
         btn_ajustesUsuario.setBorder(null);
@@ -265,13 +271,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         btn_ajustesUsuario.setContentAreaFilled(false);
         btn_ajustesUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ajustesUsuario.setFocusPainted(false);
-        jPanel1.add(btn_ajustesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
+        jPanel1.add(btn_ajustesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 30, 30));
 
         lb_foto.setBorder(null);
         lb_foto.setBorderPainted(false);
         lb_foto.setContentAreaFilled(false);
         lb_foto.setFocusPainted(false);
-        jPanel1.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 110, 100));
+        jPanel1.add(lb_foto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 60, 60));
 
         panelMenu.add(jPanel1);
 

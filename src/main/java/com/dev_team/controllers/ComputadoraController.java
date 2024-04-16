@@ -99,15 +99,13 @@ public class ComputadoraController extends V_RegistrarComputadora {
         Componente placa = (Componente) cbx_tarjetaMadre.getSelectedItem();
         Componente ventilador = (Componente) cbx_ventiladores.getSelectedItem();
 
-        List<Double> precios = List.of(case1.getPrecio(), cpu.getPrecio(), gpu.getPrecio(),
+        /*List<Double> precios = List.of(case1.getPrecio(), cpu.getPrecio(), gpu.getPrecio(),
                 disco.getPrecio(), disipador.getPrecio(), fuente.getPrecio(), monitor.getPrecio(), ram.getPrecio(), placa.getPrecio(), ventilador.getPrecio());
-
         double precioTotal = precios.stream().reduce(0.0, Double::sum);
-
         // Dar formato al precio final
         String precioFormateado = String.format("%.2f", precioTotal) + " USD";
-
-        tf_precio.setText(precioFormateado);
+       tf_precio.setText(precioFormateado);*/ 
+        
     }
 
 }

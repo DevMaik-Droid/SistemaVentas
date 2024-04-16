@@ -2,6 +2,7 @@
 package com.dev_team.models;
 
 import java.io.InputStream;
+import java.util.Date;
 import lombok.Data;
 
 @Data
@@ -13,13 +14,15 @@ public class Componente {
     private String modelo;
     private String capacidad;
     private String velocidad;
-    private Long idProveedor;
-    private Double precio;
+    private Double precioUnitario;
+    private Double precioTotal;
     private Integer cantidad;
     private String disponibilidad;
     private InputStream imagen;
     private String descripcion;
-
+    private Long idProveedor;
+    private Long idUsuario;
+    private Date fechaRegistro;
     
     @Override
     public String toString(){

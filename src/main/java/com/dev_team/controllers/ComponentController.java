@@ -1,5 +1,6 @@
 package com.dev_team.controllers;
 
+import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Componente;
 import com.dev_team.models.Proveedor;
 import com.dev_team.services.Service_Componente;
@@ -13,11 +14,14 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ComponentController extends V_RegistrarComponentes {
@@ -62,6 +66,34 @@ public class ComponentController extends V_RegistrarComponentes {
 
         });
 
+        tf_cantidad.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                tf_precioTotal.setText(calcularPrecioTotal());
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                tf_precioTotal.setText(calcularPrecioTotal());
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+
+        });
+
+    }
+
+    private String calcularPrecioTotal() {
+        if (!tf_precioUnitario.getText().isEmpty()) {
+            double precioUnitario = Double.parseDouble(tf_precioUnitario.getText());
+            double cantidad = Double.parseDouble(tf_cantidad.getText());
+            return String.valueOf(precioUnitario * cantidad);
+        } else {
+            return "";
+        }
     }
 
     private void cargarCbxProveedor() {
@@ -115,17 +147,22 @@ public class ComponentController extends V_RegistrarComponentes {
             capacidad = cbx_capacidad.getSelectedItem().toString();
             velocidad = cbx_velocidad.getSelectedItem().toString();
         }
-
         componente.setCapacidad(capacidad);
         componente.setVelocidad(velocidad);
-        Proveedor prov = (Proveedor) cbx_proveedor.getSelectedItem();
-        componente.setIdProveedor(prov.getIdProveedor());
-       /* componente.setPrecio(Double.valueOf(tf_precio.getText().trim()));
-        componente.setCantidad(Integer.valueOf(tf_cantidad.getText().trim()));*/
+
+        componente.setPrecioUnitario(Double.valueOf(tf_precioUnitario.getText().trim()));
+        componente.setPrecioTotal(Double.valueOf(tf_precioTotal.getText().trim()));
+        componente.setCantidad(Integer.valueOf(tf_cantidad.getText().trim()));
+
         componente.setDisponibilidad("DISPONIBLE");
         componente.setImagen(input_image);
         componente.setDescripcion(ta_descripcion.getText().trim());
-        
+
+        Proveedor prov = (Proveedor) cbx_proveedor.getSelectedItem();
+        componente.setIdProveedor(prov.getIdProveedor());
+        componente.setIdUsuario(Vista_Dashboard.idUsuario);
+        componente.setFechaRegistro(new Date());
+
         if (service.crear(componente)) {
             mostrarMensaje("Componente Registrado");
             limpiar();
@@ -137,9 +174,9 @@ public class ComponentController extends V_RegistrarComponentes {
 
     private void limpiar() {
         tf_marca.setText("");
-    //    tf_cantidad.setText("");
+        //    tf_cantidad.setText("");
         tf_modelo.setText("");
-     //   tf_precio.setText("");
+        //   tf_precio.setText("");
         lb_imagen.setIcon(null);
         cbx_componente.setSelectedIndex(0);
         cbx_capacidad.removeAllItems();

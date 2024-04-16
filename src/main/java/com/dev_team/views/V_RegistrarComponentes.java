@@ -1,5 +1,6 @@
 package com.dev_team.views;
 
+import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Proveedor;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
@@ -54,9 +55,9 @@ public class V_RegistrarComponentes extends JPanel{
         cbx_velocidad = new javax.swing.JComboBox<>();
         cbx_capacidad = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
-        tf_precioLP = new javax.swing.JTextField();
+        tf_precioUnitario = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        tf_nombreC1 = new javax.swing.JTextField();
+        tf_cantidad = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         tf_precioTotal = new javax.swing.JTextField();
         panelTitle = new PanelGradient(Color.MAGENTA,Color.red);
@@ -165,18 +166,18 @@ public class V_RegistrarComponentes extends JPanel{
         jLabel16.setText("Precio unitario:");
         panel_form.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 130, -1));
 
-        tf_precioLP.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_precioLP.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_precioLP, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 30));
+        tf_precioUnitario.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_precioUnitario.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_precioUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 30));
 
         jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel18.setForeground(Main_Colores.C_100);
         jLabel18.setText("Cantidad:");
         panel_form.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, -1, -1));
 
-        tf_nombreC1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_nombreC1.setForeground(Main_Colores.Fondo);
-        panel_form.add(tf_nombreC1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 150, 30));
+        tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        tf_cantidad.setForeground(Main_Colores.Fondo);
+        panel_form.add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 150, 30));
 
         jLabel19.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel19.setForeground(Main_Colores.C_100);
@@ -257,10 +258,10 @@ public class V_RegistrarComponentes extends JPanel{
     private javax.swing.JPanel panel_form;
     private javax.swing.JPanel panel_main;
     protected javax.swing.JTextArea ta_descripcion;
+    protected javax.swing.JTextField tf_cantidad;
     protected javax.swing.JTextField tf_marca;
     protected javax.swing.JTextField tf_modelo;
-    private javax.swing.JTextField tf_nombreC1;
-    private javax.swing.JTextField tf_precioLP;
-    private javax.swing.JTextField tf_precioTotal;
+    protected javax.swing.JTextField tf_precioTotal;
+    protected javax.swing.JTextField tf_precioUnitario;
     // End of variables declaration//GEN-END:variables
 }
