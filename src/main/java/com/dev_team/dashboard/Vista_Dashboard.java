@@ -12,6 +12,7 @@ import com.dev_team.models.Usuario;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.Panel_Round;
+import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_ChartsComponentes;
 import com.dev_team.views.V_GestionarProductos;
 import com.dev_team.views.V_GestionarProveedores;
@@ -39,29 +40,35 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     Point posicion;
     Point posicionInicial; // Variable para almacenar la posición inicial al iniciar el arrastre
     Usuario usuario;
-    
+
     public Vista_Dashboard(Usuario us) {
         initComponents();
         init();
-        this.usuario = us;
-        Vista_Dashboard.idUsuario = usuario.getIdUsuario();
+
+        try {
+            this.usuario = us;
+            Vista_Dashboard.idUsuario = usuario.getIdUsuario();
+            lb_foto.setIcon(ponerFoto());
+            lb_barra.setText("\t Dashboard - ".concat(usuario.getNombre()));
+
+            lb_nombre.setText(usuario.getNombre());
+            lb_apellido.setText(usuario.getApellido());
+        } catch (Exception e) {
+        }
+
         setResizable(true);
         setLocationRelativeTo(null);
-        setSize(1280,800);
-        lb_foto.setIcon(ponerFoto());
-        lb_barra.setText("\t Dashboard - ".concat(usuario.getNombre()));
-       
-        lb_nombre.setText(usuario.getNombre());
-        lb_apellido.setText(usuario.getApellido());
-        
+        setSize(1280, 800);
+
         panel_header.setBackground(Main_Colores.Fondo);
     }
-    private Icon ponerFoto(){
+
+    private Icon ponerFoto() {
         Image img = new ImageIcon(usuario.getFoto_recuperada()).getImage().getScaledInstance(lb_foto.getWidth(), lb_foto.getHeight(), Image.SCALE_DEFAULT);
-        
+
         Icon icon = new ImageIcon(img);
         return icon;
-        
+
     }
 
     private void init() {
@@ -72,46 +79,44 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
                 showForm(new Form_Empty(0 + " " + 0));
             } else if (index == 4 && indexSubMenu == 1) {
-                
+
                 V_RegistrarUsuario usr = new UsuarioController();
                 showForm(usr);
-                
+
             } else if (index == 4 && indexSubMenu == 2) {
-                
+
                 V_GestionarUsuario gestionarUsuario = new GestionUsuarioController();
                 showForm(gestionarUsuario);
-                
+
             } else if (index == 5 && indexSubMenu == 1) {
                 V_RegistrarProveedor prov = new ProveedorController();
                 showForm(prov);
-                
+
             } else if (index == 5 && indexSubMenu == 2) {
                 V_GestionarProveedores gest = new ProveedorGestionController();
                 showForm(gest);
-                
+
             } else if (index == 6 && indexSubMenu == 1) {
-                
+
                 V_RegistrarComputadora computadora = new ComputadoraController();
                 showForm(computadora);
             } else if (index == 6 && indexSubMenu == 2) {
                 showForm(new V_RegistrarLaptop());
             } else if (index == 6 && indexSubMenu == 3) {
                 V_RegistrarAccesorios accesorios = new AccesorioController();
-                
+
                 showForm(accesorios);
-                
-                
+
             } else if (index == 6 && indexSubMenu == 4) {
                 V_RegistrarComponentes componentes = new ComponentController();
                 showForm(componentes);
-                
+
             } else if (index == 6 && indexSubMenu == 5) {
                 showForm(new V_GestionarProductos());
             } else if (index == 7 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);
-            } 
-            else {
+            } else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });
@@ -125,6 +130,15 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         body.revalidate();
     }
 
+    
+   
+
+    private void abrirVentanaAdmUsuario(Usuario usuario) {
+
+        D_AdmUsuario dialog_usuario = new D_AdmUsuario(true, usuario);
+        dialog_usuario.setVisible(true);
+
+    }
     public static Vista_Dashboard getMain() {
         return main;
     }
@@ -271,6 +285,11 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         btn_ajustesUsuario.setContentAreaFilled(false);
         btn_ajustesUsuario.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_ajustesUsuario.setFocusPainted(false);
+        btn_ajustesUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ajustesUsuarioActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_ajustesUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 10, 30, 30));
 
         lb_foto.setBorder(null);
@@ -307,7 +326,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     private void lb_cerrarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_cerrarMouseExited
         lb_cerrar.setBackground(Color.white);
         lb_cerrar.setForeground(new Color(73, 181, 172));
-        
+
         lb_barra.setBackground(Main_Colores.C_900);
         lb_barra.setText("\t Dashboard - Bienvenido Miguel Angel");
         lb_barra.setForeground(Color.WHITE);
@@ -351,6 +370,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         // Almacenar la posición inicial de la ventana
         posicionInicial = getLocation();
     }//GEN-LAST:event_lb_barraMousePressed
+
+    private void btn_ajustesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajustesUsuarioActionPerformed
+        abrirVentanaAdmUsuario(usuario);
+    }//GEN-LAST:event_btn_ajustesUsuarioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

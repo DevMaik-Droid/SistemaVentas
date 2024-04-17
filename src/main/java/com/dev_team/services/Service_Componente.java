@@ -74,12 +74,13 @@ public class Service_Componente implements I_Service {
                 comp.setModelo(rst.getString("modelo"));
                 comp.setCapacidad(rst.getString("capacidad"));
                 comp.setVelocidad(rst.getString("velocidad"));
-                comp.setPrecioTotal(rst.getDouble("precio"));
+                comp.setPrecioUnitario(rst.getDouble("precioUnitario"));
                 comp.setCantidad(rst.getInt("cantidad"));
                 componente.add(comp);
             }
 
         } catch (SQLException e) {
+            System.out.println("Error listar Componentes: ".concat(e.getMessage()));
         }
 
         return componente;

@@ -1,4 +1,4 @@
- package com.dev_team.views;
+package com.dev_team.views;
 
 import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Usuario;
@@ -11,6 +11,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Point;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.Connection;
@@ -33,7 +34,7 @@ public class V_Login extends javax.swing.JFrame {
         this.setTitle("Login - SISTEMA DE VENTAS");
         this.setSize(new Dimension(800, 600));
         lb_fondo_login.setIcon(ponerImagen("/images/login_fondo.jpg"));
-        
+
         lb_barra.addMouseListener(new MouseAdapter() {
             @Override
             public void mousePressed(MouseEvent m) {
@@ -54,7 +55,6 @@ public class V_Login extends javax.swing.JFrame {
                 setLocation(x, y);
             }
         });
-        
 
     }
 
@@ -85,7 +85,7 @@ public class V_Login extends javax.swing.JFrame {
         jSeparator1 = new GradientSeparador();
         jSeparator2 = new GradientSeparador();
         tf_usuario = new javax.swing.JTextField();
-        txt_password = new javax.swing.JPasswordField();
+        pf_password = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -241,13 +241,18 @@ public class V_Login extends javax.swing.JFrame {
         tf_usuario.setCaretColor(new java.awt.Color(231,231,231));
         panel_derecho.add(tf_usuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 240, 40));
 
-        txt_password.setBackground(Main_Colores.Fondo);
-        txt_password.setFont(txt_password.getFont().deriveFont(txt_password.getFont().getSize()+7f));
-        txt_password.setForeground(Main_Colores.C_100);
-        txt_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txt_password.setBorder(null);
-        txt_password.setCaretColor(new java.awt.Color(231,231,231));
-        panel_derecho.add(txt_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 250, 40));
+        pf_password.setBackground(Main_Colores.Fondo);
+        pf_password.setFont(pf_password.getFont().deriveFont(pf_password.getFont().getSize()+7f));
+        pf_password.setForeground(Main_Colores.C_100);
+        pf_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        pf_password.setBorder(null);
+        pf_password.setCaretColor(new java.awt.Color(231,231,231));
+        pf_password.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                pf_passwordKeyPressed(evt);
+            }
+        });
+        panel_derecho.add(pf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 350, 250, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-password-40 (1).png"))); // NOI18N
         panel_derecho.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 350, 40, 40));
@@ -263,38 +268,52 @@ public class V_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_ingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ingresarActionPerformed
+        iniciarSession();
 
-        Connection cnt = Conexion.conectar();
-        String sql = String.format("SELECT * FROM tb_usuario WHERE usuario = '%s' AND contrasenia = '%s'", tf_usuario.getText().trim(),txt_password.getText().trim());
-        
-        try (PreparedStatement pst = cnt.prepareStatement(sql)){
-            
-            ResultSet rst = pst.executeQuery();
-            if(rst.next()){
-                Usuario us = new Usuario();
-                us.setIdUsuario(rst.getLong("idUsuario"));
-                us.setNombre(rst.getString("nombre"));
-                us.setApellido(rst.getString("apellido"));
-                byte[] bs_image = rst.getBytes("foto");
-                us.setFoto_recuperada(new ImageIcon(bs_image).getImage());
-                
-                JOptionPane.showMessageDialog(null, "Bienvenido - ".concat(us.getNombre()));
-                
-                Vista_Dashboard dashboard = new Vista_Dashboard(us);
-                dashboard.setVisible(true);
-                this.dispose();
-                
-            }else {
-                JOptionPane.showMessageDialog(null, "No se encontro al usuario.");
-            }
-            
-            
-            cnt.close();
-        } catch (Exception e) {
-            System.out.println("Error"+e);
-        } 
-        
     }//GEN-LAST:event_btn_ingresarActionPerformed
+
+    private void iniciarSession() {
+        if (!tf_usuario.getText().isEmpty() && !pf_password.getText().isEmpty()) {
+
+            Connection cnt = Conexion.conectar();
+            String sql = String.format("SELECT * FROM tb_usuario WHERE usuario = '%s' AND contrasenia = '%s'", tf_usuario.getText().trim(), pf_password.getText().trim());
+
+            try (PreparedStatement pst = cnt.prepareStatement(sql)) {
+
+                ResultSet rst = pst.executeQuery();
+                if (rst.next()) {
+                    Usuario us = new Usuario();
+                    us.setIdUsuario(rst.getLong("idUsuario"));
+                    us.setNombre(rst.getString("nombre"));
+                    us.setApellido(rst.getString("apellido"));
+                    us.setCi(rst.getString("ci"));
+                    us.setFechaNacimiento(rst.getDate("fecha_nacimiento"));
+                    us.setTelefono(rst.getString("telefono"));
+                    us.setDireccion(rst.getString("direccion"));
+                    us.setUsuario(rst.getString("usuario"));
+                    us.setPassword(rst.getString("contrasenia"));
+                    byte[] bs_image = rst.getBytes("foto");
+                    us.setBytes_image(bs_image);
+                    us.setFoto_recuperada(new ImageIcon(bs_image).getImage());
+                    us.setClave(rst.getString("clave"));
+                    us.setEstado(rst.getString("estado"));
+
+                    JOptionPane.showMessageDialog(null, "Bienvenido - ".concat(us.getNombre()));
+
+                    Vista_Dashboard dashboard = new Vista_Dashboard(us);
+                    dashboard.setVisible(true);
+                    this.dispose();
+
+                } else {
+                    JOptionPane.showMessageDialog(null, "No se encontro al usuario.");
+                }
+
+                cnt.close();
+            } catch (Exception e) {
+                System.out.println("Error" + e);
+            }
+        }
+    }
 
     private void btn_ingresarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btn_ingresarMouseEntered
         btn_ingresar.setBackground(new Color(49, 51, 70));
@@ -307,11 +326,11 @@ public class V_Login extends javax.swing.JFrame {
     private void btn_mostrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_mostrarActionPerformed
 
         if (!bandera) {
-            txt_password.setEchoChar((char) 0);
+            pf_password.setEchoChar((char) 0);
             btn_mostrar.setIcon(new ImageIcon(getClass().getResource("/images/icons8-ophthalmology-30.png")));
             bandera = true;
         } else {
-            txt_password.setEchoChar('\u2022');
+            pf_password.setEchoChar('\u2022');
             btn_mostrar.setIcon(new ImageIcon(getClass().getResource("/images/icons8-eye-30.png")));
             bandera = false;
         }
@@ -358,6 +377,13 @@ public class V_Login extends javax.swing.JFrame {
         lb_barra.setForeground(Color.WHITE);
     }//GEN-LAST:event_lb_cerrarMouseExited
 
+    private void pf_passwordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pf_passwordKeyPressed
+
+        if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            iniciarSession();
+        }
+    }//GEN-LAST:event_pf_passwordKeyPressed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_ingresar;
@@ -378,8 +404,8 @@ public class V_Login extends javax.swing.JFrame {
     private javax.swing.JPanel panel_izquierdo;
     private javax.swing.JPanel panel_title;
     private javax.swing.JPanel panel_titulo;
+    private javax.swing.JPasswordField pf_password;
     private javax.swing.JTextField tf_usuario;
-    private javax.swing.JPasswordField txt_password;
     // End of variables declaration//GEN-END:variables
 
 }
