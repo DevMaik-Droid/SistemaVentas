@@ -9,25 +9,18 @@ import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.Utilidad;
 import com.dev_team.views.V_RegistrarComponentes;
 import java.awt.Color;
-import java.awt.Image;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class ComponentController extends V_RegistrarComponentes {
 
     private static final String[] CAPACIDADES_RAM = {"8 GB", "16 GB", "32 GB", "64 GB"};
+    
     private static final String[] CAPACIDADES_HDD_SSD = {"250 GB", "500 GB", "1 TB", "2 TB", "4 TB"};
 
     private static final String[] VELOCIDADES_RAM = {
@@ -105,13 +98,18 @@ public class ComponentController extends V_RegistrarComponentes {
     }
 
     private void actualizarComponentes(String componente) {
-        activarComponentes(componente.contains("RAM") || componente.contains("SDD") || componente.contains("HDD"));
+        activarComponentes(componente.contains("RAM") || componente.contains("SSD") || componente.contains("HDD"));
 
         if (componente.contains("RAM")) {
+            
             agregarItemsComboBox(CAPACIDADES_RAM, VELOCIDADES_RAM);
+            
         } else if (componente.contains("HDD")) {
+            
             agregarItemsComboBox(CAPACIDADES_HDD_SSD, VELOCIDADES_HDD);
+            
         } else if (componente.contains("SDD")) {
+            
             agregarItemsComboBox(CAPACIDADES_HDD_SSD, VELOCIDADES_SSD);
         } else {
             cbx_capacidad.removeAllItems();

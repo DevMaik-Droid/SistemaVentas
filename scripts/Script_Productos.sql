@@ -1,6 +1,5 @@
+-- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas2
 -- DDL COMPONENTES:
-
-
 CREATE TABLE tb_componente(
 	idc int auto_increment PRIMARY KEY,
 	componente VARCHAR(100),
@@ -8,8 +7,8 @@ CREATE TABLE tb_componente(
 	modelo VARCHAR(100),
 	capacidad VARCHAR(20),
 	velocidad VARCHAR(50),
-	precioUnitario DECIMAL(10,2),
-	precioTotal DECIMAL(10,2),
+	precioUnitario DECIMAL(10, 2),
+	precioTotal DECIMAL(10, 2),
 	cantidad INT,
 	disponibilidad VARCHAR(50),
 	imagen BLOB,
@@ -35,8 +34,8 @@ CREATE TABLE tb_computadora(
 	disipadores VARCHAR(100),
 	ventiladores VARCHAR(100),
 	imagen BLOB,
-	precioReal DECIMAL(10,2),
-	precioTotal DECIMAL(10,2),
+	precioReal DECIMAL(10, 2),
+	precioTotal DECIMAL(10, 2),
 	descripcion TEXT,
 	idUsuario BIGINT,
 	fechaRegistro DATE,
@@ -67,25 +66,32 @@ CREATE TABLE tb_laptop(
 );
 
 CREATE TABLE tb_accesorios (
-    IdAccesorio INT auto_increment PRIMARY KEY,
-    nombre VARCHAR(50),
-		marca VARCHAR(50),
-    descripcion VARCHAR(100),
-    cantidad INT,
-		precioUnitario DECIMAL(10, 2),
-		precioTotal DECIMAL(10, 2),
-		idProveedor BIGINT,
-		idUsuario BIGINT,
-		imagen BLOB,
-		fechaRegistro DATE,
-		CONSTRAINT fk_accesorioProveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
-		CONSTRAINT fk_accesorioUsuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
-); 
+	IdAccesorio INT auto_increment PRIMARY KEY,
+	nombre VARCHAR(50),
+	marca VARCHAR(50),
+	descripcion VARCHAR(100),
+	cantidad INT,
+	precioUnitario DECIMAL(10, 2),
+	precioTotal DECIMAL(10, 2),
+	idProveedor BIGINT,
+	idUsuario BIGINT,
+	imagen BLOB,
+	fechaRegistro DATE,
+	CONSTRAINT fk_accesorioProveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
+	CONSTRAINT fk_accesorioUsuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
+);
 
+CREATE TABLE tb_transacciones(
+	idTransaccion INT AUTO_INCREMENT PRIMARY KEY,
+	idProducto BIGINT,
+	montoTotal DOUBLE,
+	tipoPago VARCHAR(50),
+	estadoPago VARCHAR(50),
+	id_Proveedor BIGINT,
+	id_Usuario BIGINT,
+	fecha DATE NOW(),
+	observaciones TEXT,
 
+	CONSTRAINT 
 
-
-
-
-
-
+);
