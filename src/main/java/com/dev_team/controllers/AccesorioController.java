@@ -5,7 +5,7 @@ import com.dev_team.models.Accesorios;
 import com.dev_team.models.Proveedor;
 import com.dev_team.services.Service_Accesorios;
 import com.dev_team.services.Service_Proveedor;
-import com.dev_team.services.Utilidad;
+import com.dev_team.utilidades.Utilidad;
 import com.dev_team.views.V_RegistrarAccesorios;
 import java.io.InputStream;
 import java.util.Date;

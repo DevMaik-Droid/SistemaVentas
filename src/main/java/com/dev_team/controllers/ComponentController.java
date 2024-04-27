@@ -6,6 +6,7 @@ import com.dev_team.models.Proveedor;
 import com.dev_team.services.Service_Componente;
 import com.dev_team.services.Service_Proveedor;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.Utilidad;
 import com.dev_team.views.V_RegistrarComponentes;
 import java.awt.Color;
 import java.awt.Image;
@@ -53,7 +54,7 @@ public class ComponentController extends V_RegistrarComponentes {
         cargarCbxProveedor();
 
         btn_buscar.addActionListener(e -> {
-            seleccionarImagen();
+            input_image = Utilidad.seleccionarImagen(lb_imagen);
         });
 
         btn_registrar.addActionListener(e -> {
@@ -189,29 +190,6 @@ public class ComponentController extends V_RegistrarComponentes {
 
     }
 
-    private void seleccionarImagen() {
-        File archivo = null;
-        try {
-
-            JFileChooser chooser = new JFileChooser();
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagenes", "jpg", "png");
-            chooser.setFileFilter(filter);
-            int result = chooser.showOpenDialog(null);
-
-            if (result == JFileChooser.APPROVE_OPTION) {
-                archivo = chooser.getSelectedFile();
-            }
-
-            Image img = ImageIO.read(archivo).getScaledInstance(lb_imagen.getWidth(), lb_imagen.getHeight(), Image.SCALE_DEFAULT);
-            ImageIcon icon = new ImageIcon(img);
-
-            lb_imagen.setIcon(icon);
-
-            input_image = new FileInputStream(archivo);
-        } catch (IOException | IllegalArgumentException ex) {
-            System.out.println("No se seleciono la imagen");
-        }
-    }
 
     /* private void cargarCbxMotherboard() {
         

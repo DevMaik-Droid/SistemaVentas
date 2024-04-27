@@ -18,7 +18,7 @@ public class Main {
 
         }
         
-        V_Login login = new V_Login();
+        Vista_Dashboard login = new Vista_Dashboard(null);
         login.setVisible(true);
         
     }

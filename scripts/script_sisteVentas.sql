@@ -8,20 +8,19 @@ use bd_sistema_ventas;
 -- crear tabla usuarios
 CREATE TABLE tb_usuario (
     idUsuario BIGINT AUTO_INCREMENT PRIMARY KEY,
-    nombre VARCHAR(30),
-    apellido VARCHAR(30),
-    ci VARCHAR(20),
-    fecha_nacimiento DATE,
-    telefono VARCHAR(15),
-    direccion VARCHAR(100),
-    usuario VARCHAR(100),
-    contrasenia VARCHAR(200),
-    foto BLOB,
-    clave VARCHAR(10),
-    estado VARCHAR(20), 
-    observaciones TEXT
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30) NOT NULL,
+    ci VARCHAR(20) NOT NULL,  -- Se aumentó la longitud para contemplar diferentes formatos de CI
+    fecha_nacimiento DATE NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    direccion VARCHAR(100) NOT NULL,
+    usuario VARCHAR(15) NOT NULL,
+    contrasenia VARCHAR(255) NOT NULL,  -- Se aumentó la longitud de la contraseña
+    foto BLOB NOT NULL,
+    clave VARCHAR(10) NOT NULL,
+    estado VARCHAR(20) NOT NULL, 
+    observaciones TEXT
 );
-
 
 -- CREAR PROVEEDOR
 CREATE TABLE tb_proveedor(
@@ -37,6 +36,12 @@ CREATE TABLE tb_proveedor(
 	observaciones TEXT
 );
 
+-- CREAR TABLA PRODUCTO
+
+
+
+
+
 -- crear tabla cliente
 create table tb_cliente(
 idCliente BIGINT auto_increment primary key,
@@ -46,12 +51,6 @@ telefono varchar(15) not null,
 direccion varchar(100)
 );
 
--- crear tabla categoria
-create table tb_categoria(
-idCategoria BIGINT auto_increment primary KEY,
-nombre VARCHAR(50) NOT NULL,
-estado VARCHAR(1) not null
-);
 
 -- crear tabla producto
 create table tb_producto(

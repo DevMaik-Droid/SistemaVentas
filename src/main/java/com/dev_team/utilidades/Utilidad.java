@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.dev_team.services;
+package com.dev_team.utilidades;
 
 import java.awt.Image;
 import java.io.File;
@@ -29,7 +29,7 @@ public class Utilidad {
         try {
 
             JFileChooser chooser = new JFileChooser();
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagenes", "jpg", "png");
+            FileNameExtensionFilter filter = new FileNameExtensionFilter("Imagenes", "jpg","jpeg", "png");
             chooser.setFileFilter(filter);
             int result = chooser.showOpenDialog(null);
 
