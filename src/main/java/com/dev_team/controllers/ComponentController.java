@@ -108,9 +108,10 @@ public class ComponentController extends V_RegistrarComponentes {
             
             agregarItemsComboBox(CAPACIDADES_HDD_SSD, VELOCIDADES_HDD);
             
-        } else if (componente.contains("SDD")) {
+        } else if (componente.contains("SSD")) {
             
             agregarItemsComboBox(CAPACIDADES_HDD_SSD, VELOCIDADES_SSD);
+            
         } else {
             cbx_capacidad.removeAllItems();
             cbx_velocidad.removeAllItems();
