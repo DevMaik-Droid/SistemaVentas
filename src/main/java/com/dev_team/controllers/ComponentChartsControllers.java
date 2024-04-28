@@ -35,12 +35,12 @@ public class ComponentChartsControllers extends V_ChartsComponentes {
         iniciarComboBox();
         cbx_graficar.addActionListener(e -> {
             String filtro = cbx_graficar.getSelectedItem().toString();
-            generarGrafico(filtro);
+            
 
         });
 
     }
-
+/*
     private void generarGrafico(String filtro) {
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
@@ -61,7 +61,7 @@ public class ComponentChartsControllers extends V_ChartsComponentes {
         panel_grafico.removeAll();
         panel_grafico.add(chartPanel, BorderLayout.CENTER);
         panel_grafico.validate();
-    }
+    }*/
 
     private void iniciarComboBox() {
         Set<String> componentes = new HashSet<>();

@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -52,6 +53,13 @@ public class Utilidad {
     
     public static void mostrarMensaje(String mensaje){
         JOptionPane.showMessageDialog(null, mensaje);
+    }
+    
+    public static String generarClave(String nombre){
+        String p = nombre.substring(0, 1).toUpperCase();
+        int numero = new Random().nextInt(10000, 99999);
+        
+        return p+numero; 
     }
     
     

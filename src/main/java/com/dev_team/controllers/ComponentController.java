@@ -2,8 +2,10 @@ package com.dev_team.controllers;
 
 import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Componente;
+import com.dev_team.models.Producto;
 import com.dev_team.models.Proveedor;
 import com.dev_team.services.Service_Componente;
+import com.dev_team.services.Service_Producto;
 import com.dev_team.services.Service_Proveedor;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.Utilidad;
@@ -13,6 +15,7 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 import javax.swing.JOptionPane;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -93,7 +96,7 @@ public class ComponentController extends V_RegistrarComponentes {
     private void cargarCbxProveedor() {
         List<Proveedor> proveedor = (List<Proveedor>) new Service_Proveedor().listar();
         proveedor.stream()
-                .filter(p -> p.getProductoSuministrado().equals("Componentes"))
+                .filter(p -> p.getProductoSuministrado().equals("COMPONENTES"))
                 .forEach(x -> cbx_proveedor.addItem(x));
     }
 
@@ -136,35 +139,43 @@ public class ComponentController extends V_RegistrarComponentes {
     private void registrarComponente() {
 
         Componente componente = new Componente();
+        Producto producto = new Producto();
+        
+        String clave = Utilidad.generarClave(cbx_componente.getSelectedItem().toString());
+        
         Service_Componente service = new Service_Componente();
+        Service_Producto service_Producto = new Service_Producto();
 
         componente.setComponente(cbx_componente.getSelectedItem().toString());
         componente.setMarca(tf_marca.getText().trim().toUpperCase());
         componente.setModelo(tf_modelo.getText().trim().toUpperCase());
+        componente.setClave(clave);
         String capacidad = "";
         String velocidad = "";
+        
         if (cbx_capacidad.isEnabled()) {
             capacidad = cbx_capacidad.getSelectedItem().toString();
             velocidad = cbx_velocidad.getSelectedItem().toString();
         }
         componente.setCapacidad(capacidad);
         componente.setVelocidad(velocidad);
-
-        componente.setPrecioUnitario(Double.valueOf(tf_precioUnitario.getText().trim()));
-        componente.setPrecioTotal(Double.valueOf(tf_precioTotal.getText().trim()));
-        componente.setCantidad(Integer.valueOf(tf_cantidad.getText().trim()));
-
-        componente.setDisponibilidad("DISPONIBLE");
         componente.setImagen(input_image);
         componente.setDescripcion(ta_descripcion.getText().trim());
 
+        producto.setPrecioUnitario(Double.valueOf(tf_precioUnitario.getText().trim()));
+        producto.setPrecioTotal(Double.valueOf(tf_precioTotal.getText().trim()));
+        producto.setClaveProducto(clave);
+        producto.setStock(Integer.valueOf(tf_cantidad.getText().trim()));
+        
         Proveedor prov = (Proveedor) cbx_proveedor.getSelectedItem();
-        componente.setIdProveedor(prov.getIdProveedor());
-        componente.setIdUsuario(Vista_Dashboard.idUsuario);
-        componente.setFechaRegistro(new Date());
+        producto.setIdProveedor(prov.getIdProveedor());
+        producto.setIdUsuario(3L);
 
         if (service.crear(componente)) {
-            mostrarMensaje("Componente Registrado");
+            
+            if(service_Producto.crear(producto)){
+                Utilidad.mostrarMensaje("Componente Creado");
+            }
             limpiar();
         } else {
             mostrarMensaje("Error en registrar componente");
@@ -172,6 +183,7 @@ public class ComponentController extends V_RegistrarComponentes {
 
     }
 
+    
     private void limpiar() {
         tf_marca.setText("");
         //    tf_cantidad.setText("");

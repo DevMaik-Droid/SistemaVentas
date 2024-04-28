@@ -2,7 +2,6 @@ package com.dev_team.services;
 
 import com.dev_team.models.Producto;
 import java.sql.Connection;
-import java.util.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,9 +12,13 @@ public class Service_Producto implements I_Service {
 
     /**
      * ********************************************************************
-     * metodo para consultar si el producto ya esta registrado en la BBDD
+     * metodo para consultar si el producto ya esta registrado en la BBDDcomo
      * ********************************************************************
      */
+    
+    private final String TABLA = "tb_productos";
+    
+    
     public boolean existeProducto(String producto) {
         boolean respuesta = false;
         String sql = "select nombre from tb_producto where nombre = '" + producto + "';";
@@ -34,57 +37,24 @@ public class Service_Producto implements I_Service {
         }
         return respuesta;
     }
-
-    /**
-     * **************************************************
-     * metodo para actualizar un producto
-     * **************************************************
-     */
-
-
-    /**
-     * **************************************************
-     * metodo para actualizar stock un producto
-     * **************************************************
-     */
-    public boolean actualizarStock(Producto object, int idProducto) {
-        boolean respuesta = false;
-        Connection cn = Conexion.conectar();
-        try {
-            PreparedStatement consulta = cn.prepareStatement("update tb_producto set cantidad=? where idProducto ='" + idProducto + "'");
-            consulta.setInt(1, object.getCantidad());
-
-            if (consulta.executeUpdate() > 0) {
-                respuesta = true;
-            }
-            cn.close();
-        } catch (SQLException e) {
-            System.out.println("Error al actualizar stock del producto: " + e);
-        }
-        return respuesta;
-    }
+    
 
     @Override
     public boolean crear(Object objeto) {
-        boolean respuesta = false;
         Connection cn = Conexion.conectar();
         Producto producto = (Producto) objeto;
+        String sql = String.format("INSERT INTO %s (claveProducto,precioUnitario,precioTotal,stock,idProveedor,idUsuario) VALUES (?,?,?,?,?,?)", TABLA);
         try {
 
-            PreparedStatement consulta = cn.prepareStatement("insert into tb_producto values(?,?,?,?,?,?,?,?,?,?)");
-            consulta.setLong(1, 0);//id
-            consulta.setString(2, producto.getNombre());
-            consulta.setInt(3, producto.getCantidad());
-            consulta.setDouble(4, producto.getPrecio());
-            consulta.setInt(5, producto.getPorcentajeIva());
-            consulta.setLong(6, producto.getIdCategoria());
-            consulta.setLong(7, producto.getIdProveedor());
-            consulta.setInt(8, producto.getEstado());
-            consulta.setString(9,new Date().toString());
-            consulta.setBinaryStream(10, producto.getImagen());
-
+            PreparedStatement consulta = cn.prepareStatement(sql);
+            consulta.setString(1, producto.getClaveProducto());
+            consulta.setDouble(2, producto.getPrecioUnitario());
+            consulta.setDouble(3, producto.getPrecioTotal());
+            consulta.setDouble(4, producto.getStock());
+            consulta.setLong(5, producto.getIdProveedor());
+            consulta.setDouble(6, producto.getIdUsuario());
             if (consulta.executeUpdate() > 0) {
-                respuesta = true;
+                return true;
             }
 
             cn.close();
@@ -93,7 +63,7 @@ public class Service_Producto implements I_Service {
             System.out.println("Error al guardar producto: " + e);
         }
 
-        return respuesta;
+        return false;
     }
 
    /* @Override

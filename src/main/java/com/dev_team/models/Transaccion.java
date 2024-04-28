@@ -7,7 +7,6 @@ import lombok.Data;
 public class Transaccion {
 
     private Long idTransaccion;
-    
     private Double montoTotal;
     private Double montoPagado;
     private String tipoDePago;

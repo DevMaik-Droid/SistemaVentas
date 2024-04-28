@@ -12,7 +12,7 @@ public class ComputadoraController extends V_RegistrarComputadora {
 
     public ComputadoraController() {
         cargarComboBox();
-        cbx_procesadorCO.addActionListener(e -> {
+        /*cbx_procesadorCO.addActionListener(e -> {
             actualizarPrecio();
 
         });
@@ -47,7 +47,7 @@ public class ComputadoraController extends V_RegistrarComputadora {
         cbx_ventiladores.addActionListener(e -> {
             actualizarPrecio();
 
-        });
+        });*/
     }
 
     private void cargarComboBox() {
@@ -85,7 +85,7 @@ public class ComputadoraController extends V_RegistrarComputadora {
                 .forEach(cbx_disipadores::addItem);
 
     }
-
+/*
     private void actualizarPrecio() {
 
         Componente case1 = (Componente) cbx_caseCO.getSelectedItem();
@@ -108,5 +108,5 @@ public class ComputadoraController extends V_RegistrarComputadora {
        tf_precio.setText(precioFormateado);
         
     }
-
+*/
 }

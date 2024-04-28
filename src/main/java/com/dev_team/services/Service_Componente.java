@@ -2,7 +2,6 @@ package com.dev_team.services;
 
 import com.dev_team.models.Componente;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,23 +18,17 @@ public class Service_Componente implements I_Service {
     public boolean crear(Object objeto) {
         Connection cn = Conexion.conectar();
         Componente componente = (Componente) objeto;
-        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", TABLA);
+        String sql = String.format("INSERT INTO %s (claveComponente, componente,marca,modelo,capacidad,velocidad,imagen,descripcion)  VALUES (?,?,?,?,?,?,?,?)", TABLA);
 
         try (PreparedStatement consulta = cn.prepareStatement(sql)) {
-            consulta.setInt(1, 0);//id
+            consulta.setString(1, componente.getClave());
             consulta.setString(2, componente.getComponente());
             consulta.setString(3, componente.getMarca());
             consulta.setString(4, componente.getModelo());
             consulta.setString(5, componente.getCapacidad());
             consulta.setString(6, componente.getVelocidad());
-            consulta.setDouble(7, componente.getPrecioUnitario());
-            consulta.setDouble(8, componente.getPrecioTotal());
-            consulta.setInt(9, componente.getCantidad());
-            consulta.setString(10, componente.getDisponibilidad());
-            consulta.setBinaryStream(11, componente.getImagen());
-            consulta.setString(12, componente.getDescripcion());
-            consulta.setLong(13, componente.getIdProveedor());
-            consulta.setLong(14, componente.getIdUsuario());
+            consulta.setBinaryStream(7, componente.getImagen());
+            consulta.setString(8, componente.getDescripcion());
             
             return consulta.executeUpdate() > 0;
             
@@ -73,8 +66,6 @@ public class Service_Componente implements I_Service {
                 comp.setModelo(rst.getString("modelo"));
                 comp.setCapacidad(rst.getString("capacidad"));
                 comp.setVelocidad(rst.getString("velocidad"));
-                comp.setPrecioUnitario(rst.getDouble("precioUnitario"));
-                comp.setCantidad(rst.getInt("cantidad"));
                 componente.add(comp);
             }
 
