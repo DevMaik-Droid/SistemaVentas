@@ -1,4 +1,4 @@
--- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas
+-- Active: 1714257401294@@127.0.0.1@3306@bd_sistema_ventas
 
 -- DDL COMPONENTES:
 CREATE TABLE tb_componente(
@@ -84,7 +84,6 @@ CREATE TABLE tb_accesorios (
 
 CREATE TABLE tb_transacciones(
 	idTransaccion INTEGER AUTO_INCREMENT PRIMARY KEY,
-	idProducto BIGINT,
 	montoTotal DOUBLE,
 	tipoPago VARCHAR(50),
 	estadoPago VARCHAR(50),
@@ -95,5 +94,6 @@ CREATE TABLE tb_transacciones(
 	CONSTRAINT fk_TProveedor FOREIGN KEY(id_Proveedor) REFERENCES tb_proveedor(idProveedor),
 	CONSTRAINT fk_TUsuario FOREIGN KEY(id_Usuario) REFERENCES tb_usuario(idUsuario)
 );
+
 
 SELECT * FROM tb_accesorios;

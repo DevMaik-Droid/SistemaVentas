@@ -44,7 +44,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     public Vista_Dashboard(Usuario us) {
         initComponents();
         init();
-
+        setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
         try {
             this.usuario = us;
             Vista_Dashboard.idUsuario = usuario.getIdUsuario();

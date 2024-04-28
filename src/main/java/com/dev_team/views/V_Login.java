@@ -33,6 +33,7 @@ public class V_Login extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setTitle("Login - SISTEMA DE VENTAS");
         this.setSize(new Dimension(800, 600));
+        setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
         lb_fondo_login.setIcon(ponerImagen("/images/login_fondo.jpg"));
 
         lb_barra.addMouseListener(new MouseAdapter() {
