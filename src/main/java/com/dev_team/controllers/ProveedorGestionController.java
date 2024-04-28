@@ -8,11 +8,13 @@ import com.dev_team.views.D_AdmProveedor;
 import com.dev_team.views.V_GestionarProveedores;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
 
 public class ProveedorGestionController extends V_GestionarProveedores {
 
@@ -63,6 +65,9 @@ public class ProveedorGestionController extends V_GestionarProveedores {
 
             }
         });
+        cbx_filtrar.addActionListener(e -> {
+            filtrarProveedor(cbx_filtrar.getSelectedItem().toString(), tf_filtrar.getText());
+        });
 
     }
 
@@ -71,15 +76,21 @@ public class ProveedorGestionController extends V_GestionarProveedores {
 
         List<Proveedor> lists;
         switch (opcion) {
-            case "Fecha" -> {
+            case "Producto" -> {
                 lists = lista_proveedores.stream()
-                        .filter(us -> us.getFechaRegistro().toString().startsWith(cadena))
+                        .filter(us -> us.getProductoSuministrado().startsWith(cadena.toUpperCase()))
+                        .collect(Collectors.toList());
+                GenerarTabla(lists);
+            }
+            case "Telefono" -> {
+                lists = lista_proveedores.stream()
+                        .filter(us -> us.getContacto().startsWith(cadena) || us.getContacto().contains(cadena))
                         .collect(Collectors.toList());
                 GenerarTabla(lists);
             }
             case "Nombre" -> {
                 lists = lista_proveedores.stream()
-                        .filter(us -> us.getNombre().startsWith(cadena.toUpperCase()))
+                        .filter(us -> us.getProveedor().startsWith(cadena))
                         .collect(Collectors.toList());
                 GenerarTabla(lists);
             }
@@ -87,32 +98,42 @@ public class ProveedorGestionController extends V_GestionarProveedores {
                 GenerarTabla(lista_proveedores);
             }
         }
-
     }
 
     private void GenerarTabla(List<Proveedor> lista) {
 
-        Object[] columas = {"ID", "NOMBRE", "CONTACTO", "EMAIL", "PRODUCTO", "FECHA REGISTRO", "ESTADO PAGO"};
+        Object[] columas = {"ID", "NOMBRE", "TELEFONO", "EMAIL", "PRODUCTO", "FECHA REGISTRO", "ESTADO"};
         DefaultTableModel model = new DefaultTableModel(columas, 0);
+
+        SimpleDateFormat formato_fecha = new SimpleDateFormat("dd/MMM/yyyy");
 
         for (Proveedor p : lista) {
             Object[] datos = new Object[columas.length];
+            
             datos[0] = p.getIdProveedor();
-            datos[1] = p.getNombre();
+            datos[1] = p.getProveedor();
             datos[2] = p.getContacto();
             datos[3] = p.getEmail();
             datos[4] = p.getProductoSuministrado();
-            datos[5] = p.getFechaRegistro().toString();
-            datos[6] = p.getEstadoPago();
+            datos[5] = formato_fecha.format(p.getFechaRegistro());
+            datos[6] = p.getEstado();
             model.addRow(datos);
         }
-
+        
         tabla_proveedores.setModel(model);
+        
+        TableColumnModel columnModel = tabla_proveedores.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(1).setPreferredWidth(120);
+        columnModel.getColumn(2).setPreferredWidth(100);
+        columnModel.getColumn(3).setPreferredWidth(150);
+        columnModel.getColumn(4).setPreferredWidth(110);
+        columnModel.getColumn(5).setPreferredWidth(100);
+        columnModel.getColumn(6).setPreferredWidth(70);
+        
         tabla_proveedores.setRowHeight(30);
         tabla_proveedores.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-
         tabla_proveedores.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-
         tabla_proveedores.setDefaultEditor(Object.class, null);
     }
 

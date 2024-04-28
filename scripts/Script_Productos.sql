@@ -1,4 +1,5 @@
--- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas2
+-- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas
+
 -- DDL COMPONENTES:
 CREATE TABLE tb_componente(
 	idc int auto_increment PRIMARY KEY,
@@ -15,7 +16,7 @@ CREATE TABLE tb_componente(
 	descripcion TEXT,
 	idProveedor BIGINT,
 	idUsuario BIGINT,
-	fechaRegistro DATE,
+	fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_componenteProveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
 	CONSTRAINT fk_componenteUsuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
 );
@@ -38,7 +39,7 @@ CREATE TABLE tb_computadora(
 	precioTotal DECIMAL(10, 2),
 	descripcion TEXT,
 	idUsuario BIGINT,
-	fechaRegistro DATE,
+	fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_usuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
 );
 
@@ -60,7 +61,7 @@ CREATE TABLE tb_laptop(
 	descripcion TEXT,
 	idUsuario BIGINT,
 	idProveedor BIGINT,
-	fechaRegistro DATE,
+	fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_LaptopProveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
 	CONSTRAINT fk_LaptopUsuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
 );
@@ -76,22 +77,23 @@ CREATE TABLE tb_accesorios (
 	idProveedor BIGINT,
 	idUsuario BIGINT,
 	imagen BLOB,
-	fechaRegistro DATE,
+	fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_accesorioProveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
 	CONSTRAINT fk_accesorioUsuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
 );
 
 CREATE TABLE tb_transacciones(
-	idTransaccion INT AUTO_INCREMENT PRIMARY KEY,
+	idTransaccion INTEGER AUTO_INCREMENT PRIMARY KEY,
 	idProducto BIGINT,
 	montoTotal DOUBLE,
 	tipoPago VARCHAR(50),
 	estadoPago VARCHAR(50),
 	id_Proveedor BIGINT,
 	id_Usuario BIGINT,
-	fecha DATE NOW(),
 	observaciones TEXT,
-
-	CONSTRAINT 
-
+	fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	CONSTRAINT fk_TProveedor FOREIGN KEY(id_Proveedor) REFERENCES tb_proveedor(idProveedor),
+	CONSTRAINT fk_TUsuario FOREIGN KEY(id_Usuario) REFERENCES tb_usuario(idUsuario)
 );
+
+SELECT * FROM tb_accesorios;

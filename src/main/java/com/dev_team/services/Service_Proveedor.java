@@ -13,34 +13,32 @@ public class Service_Proveedor implements I_Service{
 
     
     
-    private String TB_PROVEEDOR = "tb_proveedor";
+    private final String TB_PROVEEDOR = "tb_proveedor";
     
     @Override
     public boolean crear(Object objeto) {
-        boolean respuesta = false;
         Connection cn = Conexion.conectar();
         Proveedor proveedor = (Proveedor) objeto;
-        String sql = String.format("INSERT INTO %s values(?,?,?,?,?,?,?,?,?,?)", TB_PROVEEDOR);
+        String sql = String.format("INSERT INTO %s (empresa, proveedor, telefono, direccion, email, productoSum, estado, observaciones) values(?,?,?,?,?,?,?,?)", TB_PROVEEDOR);
         try {
             PreparedStatement consulta = cn.prepareStatement(sql);
-            consulta.setInt(1, 0);//id
-            consulta.setString(2, proveedor.getNombre().toUpperCase());
+            consulta.setString(1, proveedor.getEmpresa());
+            consulta.setString(2, proveedor.getProveedor());
             consulta.setString(3, proveedor.getContacto());
-            consulta.setString(4, proveedor.getDireccion().toUpperCase());
+            consulta.setString(4, proveedor.getDireccion());
             consulta.setString(5, proveedor.getEmail());
-            consulta.setString(6, proveedor.getProductoSuministrado());
-            consulta.setDate(7,  new Date(proveedor.getFechaRegistro().getTime()));
-            consulta.setString(8, proveedor.getEstadoPago());
-            consulta.setString(9, "Activo");
-            consulta.setString(10, proveedor.getObservaciones());    
+            consulta.setString(6, proveedor.getProductoSuministrado().toUpperCase());
+            consulta.setString(7, "ACTIVO");
+            consulta.setString(8, proveedor.getObservaciones());
+            
             if (consulta.executeUpdate() > 0) {
-                respuesta = true;
+                return true;
             }
             cn.close();
         } catch (SQLException e) {
             System.out.println("Error al guardar proveedor: " + e);
         }
-        return respuesta;
+        return false;
     }
 
     public boolean existeProveedor(String proveedor) {
@@ -71,7 +69,7 @@ public class Service_Proveedor implements I_Service{
         try {
 
             PreparedStatement consulta = cn.prepareStatement("update tb_proveedor set proveedor=?, contacto = ?, email = ?, direccion= ?, observaciones = ?  where idProveedor ='" + idProveedor + "'");
-            consulta.setString(1, pr.getNombre());
+            consulta.setString(1, pr.getEmpresa());
             consulta.setString(2, pr.getContacto());
             consulta.setString(3, pr.getEmail());
             consulta.setString(4, pr.getDireccion());
@@ -122,21 +120,19 @@ public class Service_Proveedor implements I_Service{
             while (resultado.next()) {     
                 Proveedor pr = new Proveedor();
                 pr.setIdProveedor(resultado.getLong(1));
-                pr.setNombre(resultado.getString(2));
-                pr.setContacto(resultado.getString(3));
-                pr.setDireccion(resultado.getString(4));
-                pr.setEmail(resultado.getString(5));
-                pr.setProductoSuministrado(resultado.getString(6));
-                pr.setFechaRegistro(resultado.getDate(7));
-                pr.setEstadoPago(resultado.getString(8));
-                pr.setEstado(resultado.getString(9));
-                pr.setObservaciones(resultado.getString(10));
-                
-                
+                pr.setEmpresa(resultado.getString(2));
+                pr.setProveedor(resultado.getString(3));
+                pr.setContacto(resultado.getString(4));
+                pr.setDireccion(resultado.getString(5));
+                pr.setEmail(resultado.getString(6));
+                pr.setProductoSuministrado(resultado.getString(7));
+                pr.setEstado(resultado.getString(8));
+                pr.setObservaciones(resultado.getString(9));
+                pr.setFechaRegistro(resultado.getTimestamp(10));
                 lista.add(pr);
             }
         } catch (SQLException ex) {
-            
+            System.out.println("Error en listar proveedores: "+ex.getMessage());
         }
         return lista;
     }

@@ -24,7 +24,7 @@ public class Service_Accesorios implements I_Service{
        
         Connection cnt = Conexion.conectar();
         Accesorios accesorios = (Accesorios) objeto;
-        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?,?)", TABLA);
+        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?)", TABLA);
         
         try (PreparedStatement pst = cnt.prepareStatement(sql)){
             pst.setInt(1, 0);//id
@@ -37,7 +37,6 @@ public class Service_Accesorios implements I_Service{
             pst.setLong(8, accesorios.getIdProveedor());
             pst.setLong(9, accesorios.getIdUsuario());
             pst.setBinaryStream(10, accesorios.getImagen());
-            pst.setDate(11, new Date(accesorios.getFechaRegistro().getTime()));
             
             return pst.executeUpdate() > 0;
         } catch (Exception e) {

@@ -24,10 +24,12 @@ public class Table_Cell_Render extends DefaultTableRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 
         Border topBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK); // Borde solo en la parte superior
-        TableHeader label = new TableHeader(String.valueOf(value));
+        
+        JLabel label = new TableHeader(String.valueOf(value));
+        label.setBackground(Color.WHITE);
         label.setForeground(new Color(51, 51, 51));
         label.setFont(font_sustom);
-        if (column != 1 && column != 2) {
+        if (column != 1) {
             label.setHorizontalAlignment(JLabel.CENTER);
         } else {
             label.setHorizontalAlignment(JLabel.LEADING);
@@ -35,17 +37,16 @@ public class Table_Cell_Render extends DefaultTableRenderer {
 
         if (isSelected) {
             label.setForeground(new Color(153, 0, 153));
-            label.setBackground(new Color(204, 0, 0));
         }
 
         if (value instanceof String) {
             String dato = String.valueOf(value);
             switch (dato) {
-                case "Activo" ->
+                case "ACTIVO" ->
                     label.setBackground(new Color(153, 255, 153)); // Verde claro para "Activo"
-                case "Inactivo" ->
+                case "INACTIVO" ->
                     label.setBackground(new Color(255, 153, 153)); // Rojo claro para "Inactivo"
-                case "Ausente" ->
+                case "AUSENTE" ->
                     label.setBackground(new Color(255, 255, 153)); // Rojo claro para "Inactivo"
                 default ->
                     label.setBackground(table.getBackground()); // Fondo por defecto de la tabla
@@ -53,6 +54,7 @@ public class Table_Cell_Render extends DefaultTableRenderer {
         }
 
         label.setBorder(topBorder);
+        
         return label;
     }
 

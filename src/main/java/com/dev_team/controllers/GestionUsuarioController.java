@@ -143,9 +143,9 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         columnModel.getColumn(6).setPreferredWidth(70);
 
         tabla_usuarios.setRowHeight(30);
-        tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_Render());
+        tabla_usuarios.getTableHeader().setDefaultRenderer(new Table_Header_Render());// Personalizar Header
         tabla_usuarios.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-        tabla_usuarios.setDefaultEditor(Object.class, null);// Personalizar Header
+        tabla_usuarios.setDefaultEditor(Object.class, null);
     }
 
     private void abrirDialogoUsuario(int fila, int columna) {

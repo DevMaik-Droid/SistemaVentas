@@ -1,11 +1,11 @@
--- Active: 1710955439391@@127.0.0.1@3306@bd_sistema_ventas
+-- Active: 1714257401294@@127.0.0.1@3306@bd_sistema_ventas
 -- crear nuestra base de datos
 
 create database bd_sistema_ventas;
 -- usamos la base de datos
 use bd_sistema_ventas;
 
--- crear tabla usuarios
+-- tabla usuarios
 CREATE TABLE tb_usuario (
     idUsuario BIGINT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(30) NOT NULL,
@@ -22,24 +22,19 @@ CREATE TABLE tb_usuario (
     observaciones TEXT
 );
 
--- CREAR PROVEEDOR
+-- TABLA PROVEEDOR
 CREATE TABLE tb_proveedor(
 	idProveedor BIGINT AUTO_INCREMENT PRIMARY KEY,
-	nombre VARCHAR(50),
-	contacto VARCHAR(20),
+  empresa VARCHAR(100),
+	proveedor VARCHAR(100),
+	telefono VARCHAR(20),
 	direccion VARCHAR(100),
-	email VARCHAR(50),
+	email VARCHAR(100),
 	productoSum VARCHAR(50),
-	fechaRegistro DATE,
-	estadoPago VARCHAR(50),
 	estado VARCHAR(10),
-	observaciones TEXT
+	observaciones TEXT,
+  fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
-
--- CREAR TABLA PRODUCTO
-
-
-
 
 
 -- crear tabla cliente

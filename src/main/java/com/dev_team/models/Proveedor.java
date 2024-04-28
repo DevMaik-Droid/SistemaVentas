@@ -3,10 +3,8 @@ package com.dev_team.models;
 
 import java.util.Date;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+
 
 
 @Data
@@ -14,24 +12,24 @@ import lombok.ToString;
 public class Proveedor {
 
     private Long idProveedor;
-    private String nombre;
+    private String empresa;
+    private String proveedor;
     private String contacto;
     private String email;
     private String productoSuministrado;
     private String direccion;
-    private String estadoPago;
-    private Date fechaRegistro;
     private String observaciones;
     private String estado;
+    private Date fechaRegistro;
 
     public Proveedor(Long idProveedor, String nombre) {
         this.idProveedor = idProveedor;
-        this.nombre = nombre;
+        this.proveedor = nombre;
     }
 
     @Override
     public String toString() {
-        return getNombre();
+        return getProveedor();
     }
     
 }

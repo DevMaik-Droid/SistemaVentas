@@ -55,7 +55,7 @@ public class V_GestionarProveedores extends JPanel {
         panel_topGestion.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, -1, -1));
 
         cbx_filtrar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
-        cbx_filtrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Id", "Nombre", "Contacto", "Email", "Producto", "Fecha de registro", "Estado  de pago" }));
+        cbx_filtrar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Nombre", "Telefono", "Producto", "Fecha de Registro" }));
         panel_topGestion.add(cbx_filtrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 200, 30));
 
         tf_filtrar.setFont(new java.awt.Font("Verdana", 0, 14)); // NOI18N
@@ -118,7 +118,7 @@ public class V_GestionarProveedores extends JPanel {
         );
         panel_tableLayout.setVerticalGroup(
             panel_tableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout PanelMidLayout = new javax.swing.GroupLayout(PanelMid);
@@ -134,7 +134,7 @@ public class V_GestionarProveedores extends JPanel {
             PanelMidLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PanelMidLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 369, Short.MAX_VALUE)
+                .addComponent(panel_table, javax.swing.GroupLayout.DEFAULT_SIZE, 383, Short.MAX_VALUE)
                 .addGap(32, 32, 32))
         );
 

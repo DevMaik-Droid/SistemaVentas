@@ -22,13 +22,10 @@ public class D_AdmProveedor extends GradientDialog {
     private void iniciarComponenetes(){
         
         tf_clave.setText(prov.getIdProveedor().toString());
-        tf_nombre.setText(prov.getNombre());
+        tf_nombre.setText(prov.getProveedor());
         tf_contacto.setText(prov.getContacto());
         tf_direccionproveedor.setText(prov.getDireccion());
         tf_email.setText(prov.getEmail());
-        dc_fechaRegistro.setDate(prov.getFechaRegistro());
-        cbx_estado.setSelectedItem(prov.getEstado());
-        cbx_estadoDePago.setSelectedItem(prov.getEstadoPago());
         cbx_productoSumi.setSelectedItem(prov.getProductoSuministrado());
 
     }
@@ -45,7 +42,6 @@ public class D_AdmProveedor extends GradientDialog {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -56,7 +52,6 @@ public class D_AdmProveedor extends GradientDialog {
         tf_clave = new javax.swing.JTextField();
         btn_guardar = new JButtonRound("ACTUALIZAR",30);
         cbx_estadoDePago = new javax.swing.JComboBox<>();
-        cbx_estado = new javax.swing.JComboBox<>();
         dc_fechaRegistro = new com.toedter.calendar.JDateChooser();
         tb_historial_transacciones = new javax.swing.JScrollPane();
         tb_historialTransacciones = new javax.swing.JTable();
@@ -107,12 +102,6 @@ public class D_AdmProveedor extends GradientDialog {
         getContentPane().add(jLabel8);
         jLabel8.setBounds(230, 240, 73, 20);
 
-        jLabel12.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
-        jLabel12.setForeground(Main_Colores.C_100);
-        jLabel12.setText("Estado:");
-        getContentPane().add(jLabel12);
-        jLabel12.setBounds(30, 380, 54, 20);
-
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel14.setForeground(Main_Colores.C_100);
         jLabel14.setText("Fecha de registro:");
@@ -155,7 +144,7 @@ public class D_AdmProveedor extends GradientDialog {
         tf_clave.setForeground(Main_Colores.Fondo);
         tf_clave.setEnabled(false);
         getContentPane().add(tf_clave);
-        tf_clave.setBounds(30, 90, 70, 26);
+        tf_clave.setBounds(30, 90, 70, 28);
 
         btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_guardar.setForeground(Main_Colores.Fondo);
@@ -174,17 +163,6 @@ public class D_AdmProveedor extends GradientDialog {
         });
         getContentPane().add(cbx_estadoDePago);
         cbx_estadoDePago.setBounds(150, 90, 200, 30);
-
-        cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        cbx_estado.setForeground(Main_Colores.Fondo);
-        cbx_estado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "Activo", "Inactivo" }));
-        cbx_estado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbx_estadoActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cbx_estado);
-        cbx_estado.setBounds(30, 410, 180, 30);
 
         dc_fechaRegistro.setForeground(Main_Colores.Fondo);
         dc_fechaRegistro.setDateFormatString("dd - MMM - YYYY");
@@ -222,19 +200,13 @@ public class D_AdmProveedor extends GradientDialog {
    
     }//GEN-LAST:event_cbx_estadoDePagoActionPerformed
 
-    private void cbx_estadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_estadoActionPerformed
-        
-    }//GEN-LAST:event_cbx_estadoActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_guardar;
-    private javax.swing.JComboBox<String> cbx_estado;
     private javax.swing.JComboBox<String> cbx_estadoDePago;
     private javax.swing.JComboBox<String> cbx_productoSumi;
     protected com.toedter.calendar.JDateChooser dc_fechaRegistro;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

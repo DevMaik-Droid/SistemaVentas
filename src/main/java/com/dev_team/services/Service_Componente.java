@@ -19,7 +19,7 @@ public class Service_Componente implements I_Service {
     public boolean crear(Object objeto) {
         Connection cn = Conexion.conectar();
         Componente componente = (Componente) objeto;
-        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)", TABLA);
+        String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)", TABLA);
 
         try (PreparedStatement consulta = cn.prepareStatement(sql)) {
             consulta.setInt(1, 0);//id
@@ -36,7 +36,6 @@ public class Service_Componente implements I_Service {
             consulta.setString(12, componente.getDescripcion());
             consulta.setLong(13, componente.getIdProveedor());
             consulta.setLong(14, componente.getIdUsuario());
-            consulta.setDate(15, new Date(componente.getFechaRegistro().getTime()));
             
             return consulta.executeUpdate() > 0;
             
