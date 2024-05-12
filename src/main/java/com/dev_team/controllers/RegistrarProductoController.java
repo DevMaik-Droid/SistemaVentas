@@ -117,19 +117,16 @@ public class RegistrarProductoController extends V_RegistrarProducto {
             Service_Componente svc = new Service_Componente();
             Componente componente = svc.buscarCompenente(clave);
             tf_nombreProducto.setText(componente.getNombre());
-            txt = " Nombre: " + componente.getNombre()
-                    + "\n Marca: " + componente.getMarca()
-                    + "\n Modelo: " + componente.getModelo()
-                    + "\n Capacidad: " + ((componente.getCapacidad() != null) ? componente.getCapacidad() : "No tiene")
-                    + "\n Velocidad: " + ((componente.getVelocidad() != null) ? componente.getVelocidad() : "No tiene");
+            txt =" -Marca: " + componente.getMarca()
+                    + "\n -Modelo: " + componente.getModelo()
+                    + "\n -Capacidad: " + ((componente.getCapacidad() != null) ? componente.getCapacidad() : "No tiene")
+                    + "\n -Velocidad: " + ((componente.getVelocidad() != null) ? componente.getVelocidad() : "No tiene");
         } else if (categoria.equalsIgnoreCase("Accesorios")) {
             Service_Accesorios svc = new Service_Accesorios();
             Accesorios accesorios = svc.buscarAccesorio(clave);
             tf_nombreProducto.setText(accesorios.getNombre());
-            txt = " Nombre: " + accesorios.getNombre()
-                    + "\n Marca: " + accesorios.getMarca()
-                    + "\n Modelo: " + accesorios.getModelo()
-                    + "\n Descripcion: " + accesorios.getDescripcion();
+            txt =  " -Marca: " + accesorios.getMarca()
+                    + "\n -Modelo: " + accesorios.getModelo();
         }
 
         ta_detalle.setText(txt);

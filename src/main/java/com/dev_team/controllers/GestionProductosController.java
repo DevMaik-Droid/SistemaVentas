@@ -1,11 +1,14 @@
+
 package com.dev_team.controllers;
 
+import com.dev_team.models.Producto;
 import com.dev_team.models.Proveedor;
+import com.dev_team.services.Service_Producto;
 import com.dev_team.services.Service_Proveedor;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.D_AdmProveedor;
-import com.dev_team.views.V_GestionarProveedores;
+import com.dev_team.views.V_GestionarProductos;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.SimpleDateFormat;
@@ -16,24 +19,26 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
-public class ProveedorGestionController extends V_GestionarProveedores {
 
-    Service_Proveedor service = new Service_Proveedor();
-    List<Proveedor> lista_proveedores;
+public class GestionProductosController extends V_GestionarProductos{
+
+    
+    Service_Producto service = new Service_Producto();
+    List<Producto> lista_productos;
     String opcion = "";
 
-    public ProveedorGestionController() {
+    public GestionProductosController() {
 
-        lista_proveedores = (List<Proveedor>) service.listar();
-        GenerarTabla(lista_proveedores);
+        lista_productos = (List<Producto>) service.listar();
+        GenerarTabla(lista_productos);
 
-        tabla_proveedores.addMouseListener(new MouseAdapter() {
+        /*tabla_productos.addMouseListener(new MouseAdapter() {
 
             @Override
             public void mouseClicked(MouseEvent e) {
 
                 if (e.getClickCount() == 2) {
-                    int fila = tabla_proveedores.rowAtPoint(e.getPoint());
+                    int fila = tabla_productos.rowAtPoint(e.getPoint());
                     int columna = 0;
 
                     if (fila > -1) {
@@ -67,62 +72,62 @@ public class ProveedorGestionController extends V_GestionarProveedores {
         });
         cbx_filtrar.addActionListener(e -> {
             filtrarProveedor(cbx_filtrar.getSelectedItem().toString(), tf_filtrar.getText());
-        });
+        });*/
 
     }
 
     // logica para filtrar usuarios
-    public void filtrarProveedor(String opcion, String cadena) {
+    /*public void filtrarProveedor(String opcion, String cadena) {
 
         List<Proveedor> lists;
         switch (opcion) {
             case "Producto" -> {
-                lists = lista_proveedores.stream()
+                lists = lista_productos.stream()
                         .filter(us -> us.getProductoSuministrado().startsWith(cadena.toUpperCase()))
                         .collect(Collectors.toList());
                 GenerarTabla(lists);
             }
             case "Telefono" -> {
-                lists = lista_proveedores.stream()
+                lists = lista_productos.stream()
                         .filter(us -> us.getContacto().startsWith(cadena) || us.getContacto().contains(cadena))
                         .collect(Collectors.toList());
                 GenerarTabla(lists);
             }
             case "Nombre" -> {
-                lists = lista_proveedores.stream()
+                lists = lista_productos.stream()
                         .filter(us -> us.getProveedor().startsWith(cadena))
                         .collect(Collectors.toList());
                 GenerarTabla(lists);
             }
             default -> {
-                GenerarTabla(lista_proveedores);
+                GenerarTabla(lista_productos);
             }
         }
-    }
+    }*/
 
-    private void GenerarTabla(List<Proveedor> lista) {
+    private void GenerarTabla(List<Producto> lista) {
 
-        Object[] columas = {"ID", "NOMBRE", "TELEFONO", "EMAIL", "PRODUCTO", "FECHA REGISTRO", "ESTADO"};
+        Object[] columas = {"CLAVE", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE", "ESTADO"};
         DefaultTableModel model = new DefaultTableModel(columas, 0);
 
         SimpleDateFormat formato_fecha = new SimpleDateFormat("dd/MMM/yyyy");
 
-        for (Proveedor p : lista) {
+        for (Producto p : lista) {
             Object[] datos = new Object[columas.length];
             
-            datos[0] = p.getIdProveedor();
-            datos[1] = p.getProveedor();
-            datos[2] = p.getContacto();
-            datos[3] = p.getEmail();
-            datos[4] = p.getProductoSuministrado();
-            datos[5] = formato_fecha.format(p.getFechaRegistro());
-            datos[6] = p.getEstado();
+            datos[0] = p.getClaveProducto();
+            datos[1] = p.getNombreProducto();
+            datos[2] = p.getCategoriaProducto();
+            datos[3] = p.getPrecioUnitario();
+            datos[4] = p.getStock();
+            datos[5] = p.getDetalle();
+            datos[6] = p.getDisponibilidad();
             model.addRow(datos);
         }
         
-        tabla_proveedores.setModel(model);
+        tabla_productos.setModel(model);
         
-        TableColumnModel columnModel = tabla_proveedores.getColumnModel();
+        TableColumnModel columnModel = tabla_productos.getColumnModel();
         columnModel.getColumn(0).setPreferredWidth(50);
         columnModel.getColumn(1).setPreferredWidth(120);
         columnModel.getColumn(2).setPreferredWidth(100);
@@ -131,16 +136,16 @@ public class ProveedorGestionController extends V_GestionarProveedores {
         columnModel.getColumn(5).setPreferredWidth(100);
         columnModel.getColumn(6).setPreferredWidth(70);
         
-        tabla_proveedores.setRowHeight(30);
-        tabla_proveedores.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-        tabla_proveedores.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-        tabla_proveedores.setDefaultEditor(Object.class, null);
+        tabla_productos.setRowHeight(30);
+        tabla_productos.getTableHeader().setDefaultRenderer(new Table_Header_Render());
+        tabla_productos.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
+        tabla_productos.setDefaultEditor(Object.class, null);
     }
 
-    private void abrirDialogoUsuario(int fila, int columna) {
-        int id = Integer.parseInt(tabla_proveedores.getValueAt(fila, columna).toString());
+    /*private void abrirDialogoUsuario(int fila, int columna) {
+        int id = Integer.parseInt(tabla_productos.getValueAt(fila, columna).toString());
 
-        Proveedor proveedor = lista_proveedores.stream()
+        Proveedor proveedor = lista_productos.stream()
                 .filter(prov -> prov.getIdProveedor() == id)
                 .findFirst()
                 .orElse(null);
@@ -148,11 +153,15 @@ public class ProveedorGestionController extends V_GestionarProveedores {
             abrirVentanaAdmUsuario(proveedor);
         }
 
-    }
+    }*/
 
     private void abrirVentanaAdmUsuario(Proveedor proveedor) {
         D_AdmProveedor dialog_usuario = new D_AdmProveedor(true, proveedor);
         dialog_usuario.setVisible(true);
     }
 
+    
+    
+    
+    
 }

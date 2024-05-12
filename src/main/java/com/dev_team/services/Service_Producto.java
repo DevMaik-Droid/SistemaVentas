@@ -1,11 +1,13 @@
 package com.dev_team.services;
 
 import com.dev_team.models.Producto;
+import com.dev_team.models.Proveedor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Service_Producto implements I_Service {
@@ -19,9 +21,8 @@ public class Service_Producto implements I_Service {
     private final String TABLA = "tb_productos";
     
     
-    public boolean existeProducto(String producto) {
-        boolean respuesta = false;
-        String sql = "select nombre from tb_producto where nombre = '" + producto + "';";
+    public boolean existeProducto(String clave) {
+        String sql = String.format("SELECT nombreProducto FROM '%s' WHERE claveProducto = '%s'", TABLA,clave);
         Statement st;
 
         try {
@@ -29,13 +30,13 @@ public class Service_Producto implements I_Service {
             st = cn.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while (rs.next()) {
-                respuesta = true;
+                return true;
             }
 
         } catch (SQLException e) {
             System.out.println("Error al consultar producto: " + e);
         }
-        return respuesta;
+        return false;
     }
     
 
@@ -95,7 +96,36 @@ public class Service_Producto implements I_Service {
 */
     @Override
     public List<?> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        List<Producto> lista= new ArrayList<>();
+        Connection cn = Conexion.conectar();
+        String sql = String.format("SELECT * FROM %s", TABLA);
+        try {
+            
+            PreparedStatement consulta = cn.prepareStatement(sql);
+            ResultSet resultado = consulta.executeQuery();
+            while (resultado.next()) {     
+                Producto p = new Producto();
+                p.setIdProducto(resultado.getLong(1));
+                p.setClaveProducto(resultado.getString(2));
+                p.setNombreProducto(resultado.getString(3));
+                p.setCategoriaProducto(resultado.getString(4));
+                p.setPrecioUnitario(resultado.getDouble(5));
+                p.setStock(resultado.getInt(6));
+                p.setPrecioTotal(resultado.getDouble(7));
+                p.setDisponibilidad(resultado.getString(8));
+                p.setIdProveedor(resultado.getLong(9));
+                p.setIdProducto(resultado.getLong(10));
+                p.setDetalle(resultado.getString(11));
+                p.setFechaModicacion(resultado.getTimestamp(12));
+                lista.add(p);
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error en listar productos: "+ex.getMessage());
+        }
+        return lista;
+    
+    
+    
     }
 
     @Override

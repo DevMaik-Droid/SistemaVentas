@@ -4,9 +4,10 @@ import com.dev_team.controllers.AccesorioController;
 import com.dev_team.controllers.ComponentChartsControllers;
 import com.dev_team.controllers.ComponentController;
 import com.dev_team.controllers.ComputadoraController;
+import com.dev_team.controllers.GestionProductosController;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.ProveedorController;
-import com.dev_team.controllers.ProveedorGestionController;
+import com.dev_team.controllers.GestionProveedorController;
 import com.dev_team.controllers.RegistrarProductoController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.models.Usuario;
@@ -95,7 +96,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(prov);
 
             } else if (index == 5 && indexSubMenu == 2) {
-                V_GestionarProveedores gest = new ProveedorGestionController();
+                V_GestionarProveedores gest = new GestionProveedorController();
                 showForm(gest);
 
             } else if (index == 6 && indexSubMenu == 1) {
@@ -117,7 +118,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 V_RegistrarProducto producto = new RegistrarProductoController();
                 showForm(producto);
                 
-                
+            }else if (index == 6 && indexSubMenu == 6) {
+                V_GestionarProductos gestionarProductos = new GestionProductosController();
+                showForm(gestionarProductos);
+ 
             } else if (index == 7 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);
