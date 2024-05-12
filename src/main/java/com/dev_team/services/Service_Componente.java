@@ -17,18 +17,18 @@ public class Service_Componente implements I_Service {
     @Override
     public boolean crear(Object objeto) {
         Connection cn = Conexion.conectar();
-        Componente componente = (Componente) objeto;
-        String sql = String.format("INSERT INTO %s (claveComponente, componente,marca,modelo,capacidad,velocidad,imagen,descripcion)  VALUES (?,?,?,?,?,?,?,?)", TABLA);
+        Componente componenteonente = (Componente) objeto;
+        String sql = String.format("INSERT INTO %s (claveComponente, componenteonente,marca,modelo,capacidad,velocidad,imagen,descripcion)  VALUES (?,?,?,?,?,?,?,?)", TABLA);
 
         try (PreparedStatement consulta = cn.prepareStatement(sql)) {
-            consulta.setString(1, componente.getClave());
-            consulta.setString(2, componente.getComponente());
-            consulta.setString(3, componente.getMarca());
-            consulta.setString(4, componente.getModelo());
-            consulta.setString(5, componente.getCapacidad());
-            consulta.setString(6, componente.getVelocidad());
-            consulta.setBinaryStream(7, componente.getImagen());
-            consulta.setString(8, componente.getDescripcion());
+            consulta.setString(1, componenteonente.getClave());
+            consulta.setString(2, componenteonente.getNombre());
+            consulta.setString(3, componenteonente.getMarca());
+            consulta.setString(4, componenteonente.getModelo());
+            consulta.setString(5, componenteonente.getCapacidad());
+            consulta.setString(6, componenteonente.getVelocidad());
+            consulta.setBinaryStream(7, componenteonente.getImagen());
+            consulta.setString(8, componenteonente.getDescripcion());
             
             return consulta.executeUpdate() > 0;
             
@@ -47,62 +47,81 @@ public class Service_Componente implements I_Service {
 
     @Override
     public List<?> listar() {
-        
         Connection cn = Conexion.conectar();
-        List<Componente> componente = null;
-
+        List<Componente> componenteonente = null;
         try {
             String sql = String.format("SELECT * FROM %s", TABLA);
             PreparedStatement pst = cn.prepareStatement(sql);
 
             ResultSet rst = pst.executeQuery();
 
-            componente = new ArrayList<>();
+            componenteonente = new ArrayList<>();
             while (rst.next()) {
-                Componente comp = new Componente();
-                comp.setIdComponente(rst.getInt("idc"));
-                comp.setClave(rst.getString("claveComponente"));
-                comp.setComponente(rst.getString("componente"));
-                comp.setMarca(rst.getString("marca"));
-                comp.setModelo(rst.getString("modelo"));
-                comp.setCapacidad(rst.getString("capacidad"));
-                comp.setVelocidad(rst.getString("velocidad"));
-                componente.add(comp);
+                Componente componente = new Componente();
+                componente.setIdComponente(rst.getInt("idc"));
+                componente.setClave(rst.getString("claveComponente"));
+                componente.setNombre(rst.getString("componenteonente"));
+                componente.setMarca(rst.getString("marca"));
+                componente.setModelo(rst.getString("modelo"));
+                componente.setCapacidad(rst.getString("capacidad"));
+                componente.setVelocidad(rst.getString("velocidad"));
+                componenteonente.add(componente);
             }
 
         } catch (SQLException e) {
             System.out.println("Error listar Componentes: ".concat(e.getMessage()));
         }
-        return componente;
+        return componenteonente;
     }
     
     public List<?> listarClaves() {
         
         Connection cn = Conexion.conectar();
-        List<Componente> componente = null;
-
+        List<Componente> componenteonente = null;
         try {
             String sql = String.format("SELECT * FROM %s", TABLA);
+            PreparedStatement pst = cn.prepareStatement(sql);
+            ResultSet rst = pst.executeQuery();
+            componenteonente = new ArrayList<>();
+            while (rst.next()) {
+                Componente componente = new Componente();
+                componente.setClave(rst.getString("claveComponente"));
+                componenteonente.add(componente);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error listar Componentes: ".concat(e.getMessage()));
+        }
+        return componenteonente;
+    }
+
+    @Override
+    public boolean eliminar(Long L) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
+    public Componente buscarCompenente(String clave){
+        Connection cn = Conexion.conectar();
+        Componente componente = null;
+        try {
+            String sql = String.format("SELECT * FROM %s WHERE claveComponente = '%s'", TABLA,clave);
             PreparedStatement pst = cn.prepareStatement(sql);
 
             ResultSet rst = pst.executeQuery();
 
-            componente = new ArrayList<>();
             while (rst.next()) {
-                Componente comp = new Componente();
-                comp.setClave(rst.getString("claveComponente"));
-                componente.add(comp);
+                componente = new Componente();
+                componente.setNombre(rst.getString("nombre"));
+                componente.setMarca(rst.getString("marca"));
+                componente.setModelo(rst.getString("modelo"));
+                componente.setCapacidad(rst.getString("capacidad"));
+                componente.setVelocidad(rst.getString("velocidad"));
             }
 
         } catch (SQLException e) {
             System.out.println("Error listar Componentes: ".concat(e.getMessage()));
         }
         return componente;
-    }
-
-    @Override
-    public boolean eliminar(Long L) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

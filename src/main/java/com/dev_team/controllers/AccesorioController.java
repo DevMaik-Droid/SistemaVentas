@@ -70,12 +70,8 @@ public class AccesorioController extends V_RegistrarAccesorios {
             accesorio.setNombre(tf_nombre.getText().toUpperCase().trim());
             accesorio.setMarca(tf_marca.getText().toUpperCase().trim());
             accesorio.setDescripcion(ta_descripcion.getText().trim());
-            accesorio.setCantidad(Integer.valueOf(tf_cantidad.getText()));
-            accesorio.setPrecioUnitario(Double.valueOf(tf_precioUnitario.getText()));
-            accesorio.setPrecioTotal(Double.valueOf(tf_precioTotal.getText()));
             Proveedor prov = (Proveedor) cbx_proveedor.getSelectedItem();
-            accesorio.setIdProveedor(prov.getIdProveedor());
-            accesorio.setIdUsuario(Vista_Dashboard.idUsuario);
+
             accesorio.setImagen(imagen);
             accesorio.setFechaRegistro(new Date());
 

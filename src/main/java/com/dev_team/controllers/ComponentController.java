@@ -146,7 +146,7 @@ public class ComponentController extends V_RegistrarComponentes {
         Service_Componente service = new Service_Componente();
         Service_Producto service_Producto = new Service_Producto();
 
-        componente.setComponente(cbx_componente.getSelectedItem().toString());
+        componente.setNombre(cbx_componente.getSelectedItem().toString());
         componente.setMarca(tf_marca.getText().trim().toUpperCase());
         componente.setModelo(tf_modelo.getText().trim().toUpperCase());
         componente.setClave(clave);

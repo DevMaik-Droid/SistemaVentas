@@ -1,3 +1,4 @@
+-- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES ('C001', 'Tarjeta de Video', 'Nvidia', 'RTX 3080', '8GB', '2000MHz', 'Tarjeta gráfica de alta gama para gaming.');
 
@@ -33,7 +34,6 @@ VALUES ('PC001', 'PC Gamer', 'AMD Ryzen 9 5900X', 'ASUS ROG Strix X570-E', '32GB
 
 INSERT INTO tb_computadora (claveComputadora, nombre, procesador, placaMadre, memoriaRam, almacenamiento, tarjetaGrafica, fuente, ccase, monitor, disipadores, ventiladores, precioReal, descripcion)
 VALUES ('PC002', 'PC Workstation', 'Intel Xeon W-2295', 'GIGABYTE C621 AORUS XTREME', '64GB ECC DDR4', '2TB NVMe SSD, 4TB HDD', 'Nvidia Quadro RTX 8000', 'EVGA SuperNOVA 1600 T2', 'Fractal Design Define 7 XL', '32" 4K HDR', 'Noctua NH-D15', 'Noctua NF-A14', 5999.99, 'Estación de trabajo profesional para diseño y renderización.');
-
 INSERT INTO tb_computadora (claveComputadora, nombre, procesador, placaMadre, memoriaRam, almacenamiento, tarjetaGrafica, fuente, ccase, monitor, disipadores, ventiladores, precioReal, descripcion)
 VALUES ('PC003', 'PC Todo en Uno', 'Intel Core i7-10700', 'ASUS ProArt StudioBook One', '16GB DDR4', '512GB PCIe SSD', 'Nvidia GeForce RTX 2060', 'Dell 200W AC Adapter', 'Dell OptiPlex 7780 AIO', '27" 4K UHD Touch', 'N/A', 'N/A', 1999.99, 'PC compacta con monitor integrado para espacios reducidos.');
 

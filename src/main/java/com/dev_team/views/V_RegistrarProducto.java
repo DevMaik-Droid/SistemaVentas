@@ -4,6 +4,7 @@
  */
 package com.dev_team.views;
 
+import com.dev_team.models.Proveedor;
 import com.dev_team.utilidades.Main_Colores;
 
 /**
@@ -38,38 +39,43 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         cbx_clave = new javax.swing.JComboBox<>();
+        jLabel8 = new javax.swing.JLabel();
+        cbx_proveedor = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ta_detalle = new javax.swing.JTextArea();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel19.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel19.setForeground(Main_Colores.C_100);
         jLabel19.setText("Precio total:");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 330, 130, -1));
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 480, 130, 30));
 
         jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel16.setForeground(Main_Colores.C_100);
         jLabel16.setText("Precio unitario:");
-        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 330, 130, -1));
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 480, 130, 30));
 
         jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel18.setForeground(Main_Colores.C_100);
-        jLabel18.setText("Cantidad:");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, -1, -1));
+        jLabel18.setText("Stock:");
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 480, -1, 30));
 
         tf_precioUnitario.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_precioUnitario.setForeground(Main_Colores.Fondo);
-        add(tf_precioUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 360, 150, 30));
+        add(tf_precioUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 500, 150, 40));
 
         tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_cantidad.setForeground(Main_Colores.Fondo);
-        add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 360, 150, 30));
+        add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 500, 150, 40));
 
         tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_precioTotal.setForeground(Main_Colores.Fondo);
         tf_precioTotal.setEnabled(false);
-        add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 140, 30));
+        add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 500, 170, 40));
 
-        cbx_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE CATEGORIA", "Computadora", "Laptop", "Componente", "Accesorio" }));
+        cbx_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE CATEGORIA", "Computadora", "Laptop", "Componentes", "Accesorios" }));
         add(cbx_categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 170, 30));
 
         jLabel1.setText("Categorias");
@@ -79,17 +85,40 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
         add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
 
         add(cbx_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 180, -1));
+
+        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel8.setForeground(Main_Colores.C_100);
+        jLabel8.setText("Proveedor:");
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+
+        cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        cbx_proveedor.setForeground(Main_Colores.Fondo);
+        add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 220, 30));
+
+        jButton1.setText("Registrar");
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 590, 180, 50));
+
+        ta_detalle.setColumns(20);
+        ta_detalle.setRows(5);
+        jScrollPane1.setViewportView(ta_detalle);
+
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 50, 300, 320));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JComboBox<String> cbx_categoria;
     protected javax.swing.JComboBox<String> cbx_clave;
+    protected javax.swing.JComboBox<Proveedor> cbx_proveedor;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    protected javax.swing.JTextArea ta_detalle;
     protected javax.swing.JTextField tf_cantidad;
     protected javax.swing.JTextField tf_precioTotal;
     protected javax.swing.JTextField tf_precioUnitario;

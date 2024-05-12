@@ -8,7 +8,7 @@ import lombok.Data;
 public class Componente {
 
     private Integer idComponente;
-    private String componente;
+    private String nombre;
     private String clave;
     private String marca;
     private String modelo;
@@ -16,12 +16,13 @@ public class Componente {
     private String velocidad;
     private InputStream imagen;
     private String descripcion;
+    
     @Override
     public String toString() {
-        if (getComponente().contains("RAM")) {
+        if (getNombre().contains("RAM")) {
             return getCapacidad() + ", " + getVelocidad() + " - " + getMarca() + "-" + getModelo();
-        } else if (getComponente().contains("HDD") || getComponente().contains("SDD")) {
-            String tipo = getComponente().contains("SSD") ? "SSD" : "HDD";
+        } else if (getNombre().contains("HDD") || getNombre().contains("SDD")) {
+            String tipo = getNombre().contains("SSD") ? "SSD" : "HDD";
             return tipo + "-" + getCapacidad() + "," + getVelocidad();
         } else {
             return getMarca() + "-" + getModelo();

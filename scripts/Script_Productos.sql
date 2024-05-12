@@ -1,4 +1,4 @@
--- Active: 1714257401294@@127.0.0.1@3306@bd_sistema_ventas
+-- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas
 
 -- DDL COMPONENTES:
 

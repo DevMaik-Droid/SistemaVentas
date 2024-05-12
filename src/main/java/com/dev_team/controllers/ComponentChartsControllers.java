@@ -65,7 +65,7 @@ public class ComponentChartsControllers extends V_ChartsComponentes {
 
     private void iniciarComboBox() {
         Set<String> componentes = new HashSet<>();
-        comp.forEach(x -> componentes.add(x.getComponente()));
+        comp.forEach(x -> componentes.add(x.getNombre()));
         componentes.forEach(cbx_graficar::addItem);
     }
 

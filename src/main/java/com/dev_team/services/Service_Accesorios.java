@@ -5,45 +5,43 @@
 package com.dev_team.services;
 
 import com.dev_team.models.Accesorios;
+import com.dev_team.models.Componente;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  *
  * @author DevMaik
  */
-public class Service_Accesorios implements I_Service{
+public class Service_Accesorios implements I_Service {
 
-    
     private final String TABLA = "tb_accesorios";
-            
+
     @Override
     public boolean crear(Object objeto) {
-       
+
         Connection cnt = Conexion.conectar();
         Accesorios accesorios = (Accesorios) objeto;
         String sql = String.format("INSERT INTO %s VALUES (?,?,?,?,?,?,?,?,?,?)", TABLA);
-        
-        try (PreparedStatement pst = cnt.prepareStatement(sql)){
+
+        try (PreparedStatement pst = cnt.prepareStatement(sql)) {
             pst.setInt(1, 0);//id
             pst.setString(2, accesorios.getNombre());
             pst.setString(3, accesorios.getMarca());
             pst.setString(4, accesorios.getDescripcion());
-            pst.setInt(5, accesorios.getCantidad());
-            pst.setDouble(6, accesorios.getPrecioUnitario());
-            pst.setDouble(7, accesorios.getPrecioTotal());
-            pst.setLong(8, accesorios.getIdProveedor());
-            pst.setLong(9, accesorios.getIdUsuario());
             pst.setBinaryStream(10, accesorios.getImagen());
-            
+
             return pst.executeUpdate() > 0;
         } catch (Exception e) {
             System.out.println("Error en la consulta: " + e);
         }
         return false;
-    
+
     }
 
     @Override
@@ -56,9 +54,33 @@ public class Service_Accesorios implements I_Service{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    public List<?> listarClaves() {
+        Connection cn = Conexion.conectar();
+        List<Accesorios> componente = null;
+
+        try {
+            String sql = String.format("SELECT * FROM %s", TABLA);
+            PreparedStatement pst = cn.prepareStatement(sql);
+
+            ResultSet rst = pst.executeQuery();
+
+            componente = new ArrayList<>();
+            while (rst.next()) {
+                Accesorios acc = new Accesorios();
+                acc.setClaveAccesorio(rst.getString("claveAccesorio"));
+                componente.add(acc);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error listar Componentes: ".concat(e.getMessage()));
+        }
+        return componente;
+
+    }
+
     @Override
     public boolean eliminar(Long L) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
+
 }
