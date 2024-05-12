@@ -78,6 +78,35 @@ public class Service_Accesorios implements I_Service {
 
     }
 
+    public Accesorios buscarAccesorio(String clave) {
+
+        Connection cn = Conexion.conectar();
+        Accesorios accesorio = null;
+
+        try {
+            String sql = String.format("SELECT * FROM %s WHERE claveAccesorio = '%s'", TABLA,clave);
+            PreparedStatement pst = cn.prepareStatement(sql);
+
+            ResultSet rst = pst.executeQuery();
+            
+            while (rst.next()) {
+                accesorio = new Accesorios();
+                accesorio.setNombre(rst.getString("nombre"));
+                accesorio.setMarca(rst.getString("marca"));
+                accesorio.setModelo(rst.getString("modelo"));
+                accesorio.setDescripcion(rst.getString("descripcion"));
+               
+            }
+            cn.close();
+            rst.close();
+
+        } catch (SQLException e) {
+            System.out.println("Error listar Componentes: ".concat(e.getMessage()));
+        }
+        return accesorio;
+
+    }
+
     @Override
     public boolean eliminar(Long L) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

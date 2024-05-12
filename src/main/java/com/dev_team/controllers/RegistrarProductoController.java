@@ -13,6 +13,16 @@ public class RegistrarProductoController extends V_RegistrarProducto {
 
     public RegistrarProductoController() {
         ta_detalle.setEditable(false);
+
+        cbx_clave.addActionListener(xx -> {
+            if (cbx_clave.getSelectedIndex() > 0) {
+                String categoria = cbx_categoria.getSelectedItem().toString();
+                String clave = cbx_clave.getSelectedItem().toString();
+                generarTexto(clave, categoria);
+            }
+
+        });
+
         cbx_categoria.addActionListener(x -> {
             cbx_clave.removeAllItems();
             cbx_proveedor.removeAllItems();
@@ -21,15 +31,12 @@ public class RegistrarProductoController extends V_RegistrarProducto {
             cargarCbxProveedor(categoria);
         });
 
-        cbx_clave.addActionListener(x -> {
-            generarTexto(cbx_clave.getSelectedItem().toString());
-        });
-
     }
 
     private void cargarCBXClave(String categoria) {
-
+        cbx_clave.addItem("Seleccione Clave");
         if (categoria.equalsIgnoreCase("COMPONENTES")) {
+
             Service_Componente svc = new Service_Componente();
             List<Componente> lista_producto = (List<Componente>) svc.listarClaves();
             lista_producto.forEach(x -> cbx_clave.addItem(x.getClave()));
@@ -38,6 +45,9 @@ public class RegistrarProductoController extends V_RegistrarProducto {
             Service_Accesorios svc = new Service_Accesorios();
             List<Accesorios> lista_producto = (List<Accesorios>) svc.listarClaves();
             lista_producto.forEach(x -> cbx_clave.addItem(x.getClaveAccesorio()));
+
+        } else {
+
         }
     }
 
@@ -48,17 +58,26 @@ public class RegistrarProductoController extends V_RegistrarProducto {
                 .forEach(x -> cbx_proveedor.addItem(x));
     }
 
-    private void generarTexto(String clave) {
+    private void generarTexto(String clave, String categoria) {
+        String txt = "";
+        System.out.println(clave);
+        if (categoria.equalsIgnoreCase("Componentes")) {
+            Service_Componente svc = new Service_Componente();
+            Componente componente = svc.buscarCompenente(clave);
+            txt = " Nombre: " + componente.getNombre()
+                    + "\n Marca: " + componente.getMarca()
+                    + "\n Modelo: " + componente.getModelo()
+                    + "\n Capacidad: " + ((componente.getCapacidad() != null) ? componente.getCapacidad() : "No tiene")
+                    + "\n Velocidad: " + ((componente.getVelocidad() != null) ? componente.getVelocidad() : "No tiene");
+        } else if (categoria.equalsIgnoreCase("Accesorios")) {
+            Service_Accesorios svc = new Service_Accesorios();
+            Accesorios accesorios = svc.buscarAccesorio(clave);
+            txt = " Nombre: " + accesorios.getNombre()
+                    + "\n Marca: " + accesorios.getMarca()
+                    + "\n Modelo: " + accesorios.getModelo()
+                    + "\n Descripcion: " + accesorios.getDescripcion();
+        }
 
-        Service_Componente svc = new Service_Componente();
-        Componente componente = svc.buscarCompenente(clave);
-        String txt = " Nombre: " + componente.getNombre()
-                +"\n Marca: "+ componente.getMarca()
-                +"\n Modelo: "+ componente.getModelo()
-                +"\n Capacidad: "+ ((componente.getCapacidad() != null)?componente.getCapacidad():"No tiene")
-                +"\n Velocidad: "+ ((componente.getVelocidad()!= null)?componente.getVelocidad():"No tiene");
-        
-        
         ta_detalle.setText(txt);
 
     }
