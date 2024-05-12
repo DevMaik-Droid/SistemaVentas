@@ -5,7 +5,6 @@ import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.PanelGradient;
 import com.dev_team.utilidades.Panel_Round;
 import java.awt.Color;
-import java.util.Date;
 import javax.swing.JPanel;
 
 
