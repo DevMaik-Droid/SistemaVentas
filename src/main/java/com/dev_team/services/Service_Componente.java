@@ -61,6 +61,7 @@ public class Service_Componente implements I_Service {
             while (rst.next()) {
                 Componente comp = new Componente();
                 comp.setIdComponente(rst.getInt("idc"));
+                comp.setClave(rst.getString("claveComponente"));
                 comp.setComponente(rst.getString("componente"));
                 comp.setMarca(rst.getString("marca"));
                 comp.setModelo(rst.getString("modelo"));
@@ -72,10 +73,31 @@ public class Service_Componente implements I_Service {
         } catch (SQLException e) {
             System.out.println("Error listar Componentes: ".concat(e.getMessage()));
         }
-
         return componente;
-        
+    }
     
+    public List<?> listarClaves() {
+        
+        Connection cn = Conexion.conectar();
+        List<Componente> componente = null;
+
+        try {
+            String sql = String.format("SELECT * FROM %s", TABLA);
+            PreparedStatement pst = cn.prepareStatement(sql);
+
+            ResultSet rst = pst.executeQuery();
+
+            componente = new ArrayList<>();
+            while (rst.next()) {
+                Componente comp = new Componente();
+                comp.setClave(rst.getString("claveComponente"));
+                componente.add(comp);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error listar Componentes: ".concat(e.getMessage()));
+        }
+        return componente;
     }
 
     @Override

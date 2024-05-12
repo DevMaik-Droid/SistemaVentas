@@ -7,6 +7,7 @@ import com.dev_team.controllers.ComputadoraController;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.ProveedorGestionController;
+import com.dev_team.controllers.RegistrarProductoController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.models.Usuario;
 import com.dev_team.utilidades.JButtonRound;
@@ -21,6 +22,7 @@ import com.dev_team.views.V_RegistrarAccesorios;
 import com.dev_team.views.V_RegistrarComponentes;
 import com.dev_team.views.V_RegistrarComputadora;
 import com.dev_team.views.V_RegistrarLaptop;
+import com.dev_team.views.V_RegistrarProducto;
 import com.dev_team.views.V_RegistrarProveedor;
 import com.dev_team.views.V_RegistrarUsuario;
 import java.awt.Color;
@@ -112,7 +114,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(componentes);
 
             } else if (index == 6 && indexSubMenu == 5) {
-                showForm(new V_GestionarProductos());
+                V_RegistrarProducto producto = new RegistrarProductoController();
+                showForm(producto);
+                
+                
             } else if (index == 7 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);

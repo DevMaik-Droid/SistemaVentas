@@ -60,6 +60,8 @@ public class V_RegistrarComponentes extends JPanel{
         tf_cantidad = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         tf_precioTotal = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
+        tf_precioTotal1 = new javax.swing.JTextField();
         panelTitle = new PanelGradient(Color.MAGENTA,Color.red);
         jLabel15 = new javax.swing.JLabel();
 
@@ -189,6 +191,16 @@ public class V_RegistrarComponentes extends JPanel{
         tf_precioTotal.setEnabled(false);
         panel_form.add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 140, 30));
 
+        jLabel20.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        jLabel20.setForeground(Main_Colores.C_100);
+        jLabel20.setText("Clave:");
+        panel_form.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 20, 130, -1));
+
+        tf_precioTotal1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_precioTotal1.setForeground(Main_Colores.Fondo);
+        tf_precioTotal1.setEnabled(false);
+        panel_form.add(tf_precioTotal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 140, 30));
+
         panelTitle.setBackground(new java.awt.Color(51, 51, 255));
         panelTitle.setPreferredSize(new java.awt.Dimension(40, 40));
         panelTitle.setLayout(new java.awt.BorderLayout());
@@ -245,6 +257,7 @@ public class V_RegistrarComponentes extends JPanel{
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -262,6 +275,7 @@ public class V_RegistrarComponentes extends JPanel{
     protected javax.swing.JTextField tf_marca;
     protected javax.swing.JTextField tf_modelo;
     protected javax.swing.JTextField tf_precioTotal;
+    protected javax.swing.JTextField tf_precioTotal1;
     protected javax.swing.JTextField tf_precioUnitario;
     // End of variables declaration//GEN-END:variables
 }

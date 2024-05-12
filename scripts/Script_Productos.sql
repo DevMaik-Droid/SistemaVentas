@@ -6,13 +6,41 @@
 CREATE TABLE tb_componente(
 	idc int auto_increment PRIMARY KEY,
 	claveComponente VARCHAR(10),
-	componente VARCHAR(100),
+	nombre VARCHAR(100),
 	marca VARCHAR(100),
 	modelo VARCHAR(100),
 	capacidad VARCHAR(20),
 	velocidad VARCHAR(50),
 	imagen BLOB,
 	descripcion TEXT,
+	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+CREATE TABLE tb_laptop(
+	idLaptop int auto_increment PRIMARY KEY,
+	claveLaptop VARCHAR(10),
+	nombre VARCHAR(100),
+	marca VARCHAR(100),
+	modelo VARCHAR(100),
+	procesador VARCHAR(100),
+	memoriaRam VARCHAR(100),
+	almacenamiento VARCHAR(100),
+	conectividad VARCHAR(100),
+	tarjetaGrafica VARCHAR(100),
+	pantalla VARCHAR(100),
+	bateria VARCHAR(100),
+	imagen BLOB,
+	descripcion TEXT,
+	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE tb_accesorios (
+	IdAccesorio INT auto_increment PRIMARY KEY,
+	claveAccesorio VARCHAR(10),
+	nombre VARCHAR(50),
+	marca VARCHAR(50),
+	modelo VARCHAR(50),
+	imagen BLOB,
+	descripcion VARCHAR(100),
 	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -36,40 +64,15 @@ CREATE TABLE tb_computadora(
 	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE tb_laptop(
-	idLaptop int auto_increment PRIMARY KEY,
-	claveLaptop VARCHAR(10),
-	marca VARCHAR(100),
-	modelo VARCHAR(100),
-	procesador VARCHAR(100),
-	memoriaRam VARCHAR(100),
-	almacenamiento VARCHAR(100),
-	conectividad VARCHAR(100),
-	tarjetaGrafica VARCHAR(100),
-	pantalla VARCHAR(100),
-	bateria VARCHAR(100),
-	imagen BLOB,
-	descripcion TEXT,
-	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE tb_accesorios (
-	IdAccesorio INT auto_increment PRIMARY KEY,
-	claveAccesorio VARCHAR(10),
-	nombre VARCHAR(50),
-	marca VARCHAR(50),
-	imagen BLOB,
-	descripcion VARCHAR(100),
-	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
 CREATE TABLE tb_productos(
 	idp BIGINT AUTO_INCREMENT PRIMARY KEY,
 	claveProducto VARCHAR(10),
-	tipoProducto VARCHAR(50),
+	nombreProducto VARCHAR(100),
+	categoriaProducto VARCHAR(50),
 	precioUnitario DECIMAL(10, 2),
-	precioTotal DECIMAL(10, 2),
 	stock INTEGER,
+	precioTotal DECIMAL(10, 2),
 	disponibilidad VARCHAR(50) DEFAULT 'DISPONIBLE',
 	idProveedor BIGINT,
 	idUsuario BIGINT,
