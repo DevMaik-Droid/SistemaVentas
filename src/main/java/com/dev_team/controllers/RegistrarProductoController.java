@@ -81,5 +81,12 @@ public class RegistrarProductoController extends V_RegistrarProducto {
         ta_detalle.setText(txt);
 
     }
+    
+    
+    private void registrarProducto(){
+        
+                                                                                                                       
+        
+    }
 
 }

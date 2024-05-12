@@ -47,8 +47,6 @@ public class ComponentController extends V_RegistrarComponentes {
 
     public ComponentController() {
 
-        cargarCbxProveedor();
-
         btn_buscar.addActionListener(e -> {
             input_image = Utilidad.seleccionarImagen(lb_imagen);
         });
@@ -63,7 +61,7 @@ public class ComponentController extends V_RegistrarComponentes {
 
         });
 
-        tf_cantidad.getDocument().addDocumentListener(new DocumentListener() {
+        /*tf_cantidad.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 tf_precioTotal.setText(calcularPrecioTotal());
@@ -79,11 +77,11 @@ public class ComponentController extends V_RegistrarComponentes {
 
             }
 
-        });
+        });*/
 
     }
 
-    private String calcularPrecioTotal() {
+    /*private String calcularPrecioTotal() {
         if (!tf_precioUnitario.getText().isEmpty()) {
             double precioUnitario = Double.parseDouble(tf_precioUnitario.getText());
             double cantidad = Double.parseDouble(tf_cantidad.getText());
@@ -91,14 +89,8 @@ public class ComponentController extends V_RegistrarComponentes {
         } else {
             return "";
         }
-    }
+    }*/
 
-    private void cargarCbxProveedor() {
-        List<Proveedor> proveedor = (List<Proveedor>) new Service_Proveedor().listar();
-        proveedor.stream()
-                .filter(p -> p.getProductoSuministrado().equals("COMPONENTES"))
-                .forEach(x -> cbx_proveedor.addItem(x));
-    }
 
     private void actualizarComponentes(String componente) {
         activarComponentes(componente.contains("RAM") || componente.contains("SSD") || componente.contains("HDD"));
@@ -161,14 +153,6 @@ public class ComponentController extends V_RegistrarComponentes {
         componente.setVelocidad(velocidad);
         componente.setImagen(input_image);
         componente.setDescripcion(ta_descripcion.getText().trim());
-
-        producto.setPrecioUnitario(Double.valueOf(tf_precioUnitario.getText().trim()));
-        producto.setPrecioTotal(Double.valueOf(tf_precioTotal.getText().trim()));
-        producto.setClaveProducto(clave);
-        producto.setStock(Integer.valueOf(tf_cantidad.getText().trim()));
-        
-        Proveedor prov = (Proveedor) cbx_proveedor.getSelectedItem();
-        producto.setIdProveedor(prov.getIdProveedor());
         producto.setIdUsuario(3L);
 
         if (service.crear(componente)) {

@@ -51,30 +51,30 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
         jLabel19.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel19.setForeground(Main_Colores.C_100);
         jLabel19.setText("Precio total:");
-        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 300, 130, 30));
+        add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 380, 130, 30));
 
         jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel16.setForeground(Main_Colores.C_100);
         jLabel16.setText("Precio unitario:");
-        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 300, 130, 30));
+        add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 130, 30));
 
         jLabel18.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel18.setForeground(Main_Colores.C_100);
         jLabel18.setText("Stock:");
-        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 300, -1, 30));
+        add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 380, -1, 30));
 
         tf_precioUnitario.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_precioUnitario.setForeground(Main_Colores.Fondo);
-        add(tf_precioUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 360, 150, 40));
+        add(tf_precioUnitario, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, 150, 40));
 
         tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_cantidad.setForeground(Main_Colores.Fondo);
-        add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 360, 150, 40));
+        add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 430, 150, 40));
 
         tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_precioTotal.setForeground(Main_Colores.Fondo);
         tf_precioTotal.setEnabled(false);
-        add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 360, 170, 40));
+        add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 170, 40));
 
         cbx_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE CATEGORIA", "Computadora", "Laptop", "Componentes", "Accesorios" }));
         add(cbx_categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 170, 30));
@@ -90,24 +90,24 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Proveedor:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
         cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_proveedor.setForeground(Main_Colores.Fondo);
-        add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 220, 30));
+        add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 220, 30));
 
         jButton1.setText("Registrar");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 470, 230, 50));
+        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 230, 50));
 
         ta_detalle.setColumns(20);
         ta_detalle.setLineWrap(true);
         ta_detalle.setRows(5);
         jScrollPane1.setViewportView(ta_detalle);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, 300, 320));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, 700, 170));
 
         jLabel3.setText("Detalle:");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, -1, -1));
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
