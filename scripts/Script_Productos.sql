@@ -76,6 +76,7 @@ CREATE TABLE tb_productos(
 	disponibilidad VARCHAR(50) DEFAULT 'DISPONIBLE',
 	idProveedor BIGINT,
 	idUsuario BIGINT,
+	detalle TEXT,
 	fechaModificacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	CONSTRAINT fk_Proveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor),
 	CONSTRAINT fk_Usuario FOREIGN KEY(idUsuario) REFERENCES tb_usuario(idUsuario)
