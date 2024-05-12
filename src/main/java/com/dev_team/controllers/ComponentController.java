@@ -13,12 +13,7 @@ import com.dev_team.views.V_RegistrarComponentes;
 import java.awt.Color;
 import java.io.InputStream;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.Random;
 import javax.swing.JOptionPane;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
 
 public class ComponentController extends V_RegistrarComponentes {
 

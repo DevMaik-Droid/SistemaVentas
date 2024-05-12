@@ -1,4 +1,4 @@
--- Active: 1708136644866@@127.0.0.1@3306@bd_sistema_ventas
+-- Active: 1714257401294@@127.0.0.1@3306@bd_sistema_ventas
 
 -- DDL COMPONENTES:
 
@@ -45,25 +45,35 @@ CREATE TABLE tb_accesorios (
 );
 
 CREATE TABLE tb_computadora(
-	idComputadora int auto_increment PRIMARY KEY,
-	claveComputadora VARCHAR(10),
-	nombre VARCHAR(100),
-	procesador VARCHAR(100),
-	placaMadre VARCHAR(100),
-	memoriaRam VARCHAR(100),
-	almacenamiento VARCHAR(100),
-	tarjetaGrafica VARCHAR(100),
-	fuente VARCHAR(100),
-	ccase VARCHAR(100),
-	monitor VARCHAR(100),
-	disipadores VARCHAR(100),
-	ventiladores VARCHAR(100),
-	imagen BLOB,
-	precioReal DECIMAL(10, 2),
-	descripcion TEXT,
-	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    idComputadora INT AUTO_INCREMENT PRIMARY KEY,
+    claveComputadora VARCHAR(10),
+    nombre VARCHAR(100),
+    procesador VARCHAR(10),
+    placaMadre VARCHAR(10),
+    memoriaRam VARCHAR(10),
+    almacenamiento VARCHAR(10),
+    tarjetaGrafica VARCHAR(10),
+    fuente VARCHAR(10),
+    ccase VARCHAR(10),
+    monitor VARCHAR(10),
+    disipadores VARCHAR(10),
+    ventiladores VARCHAR(10),
+    imagen BLOB,
+    precioReal DECIMAL(10, 2),
+    descripcion TEXT,
+    fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_procesador FOREIGN KEY (procesador) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_placaMadre FOREIGN KEY (placaMadre) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_memoriaRam FOREIGN KEY (memoriaRam) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_almacenamiento FOREIGN KEY (almacenamiento) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_tarjetaGrafica FOREIGN KEY (tarjetaGrafica) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_fuente FOREIGN KEY (fuente) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_ccase FOREIGN KEY (ccase) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_monitor FOREIGN KEY (monitor) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_disipadores FOREIGN KEY (disipadores) REFERENCES tb_componente(claveComponente),
+    CONSTRAINT fk_ventiladores FOREIGN KEY (ventiladores) REFERENCES tb_componente(claveComponente)
 );
-
+CREATE INDEX idx_claveComponente ON tb_componente (claveComponente);
 
 CREATE TABLE tb_productos(
 	idp BIGINT AUTO_INCREMENT PRIMARY KEY,

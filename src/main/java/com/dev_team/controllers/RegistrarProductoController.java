@@ -2,18 +2,23 @@ package com.dev_team.controllers;
 
 import com.dev_team.models.Accesorios;
 import com.dev_team.models.Componente;
+import com.dev_team.models.Producto;
 import com.dev_team.models.Proveedor;
 import com.dev_team.services.Service_Accesorios;
 import com.dev_team.services.Service_Componente;
+import com.dev_team.services.Service_Producto;
 import com.dev_team.services.Service_Proveedor;
+import com.dev_team.utilidades.Utilidad;
 import com.dev_team.views.V_RegistrarProducto;
 import java.util.List;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 
 public class RegistrarProductoController extends V_RegistrarProducto {
 
     public RegistrarProductoController() {
         ta_detalle.setEditable(false);
-
+        
         cbx_clave.addActionListener(xx -> {
             if (cbx_clave.getSelectedIndex() > 0) {
                 String categoria = cbx_categoria.getSelectedItem().toString();
@@ -30,6 +35,53 @@ public class RegistrarProductoController extends V_RegistrarProducto {
             cargarCBXClave(categoria);
             cargarCbxProveedor(categoria);
         });
+
+        btn_registrar.addActionListener(x -> registrarProducto());
+
+        tf_cantidad.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                calcularPrecio();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                calcularPrecio();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+
+        });
+        tf_precioUnitario.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                calcularPrecio();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                calcularPrecio();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+
+        });
+    }
+
+    private void calcularPrecio() {
+        if (!tf_precioUnitario.getText().isEmpty() && !tf_cantidad.getText().isEmpty()) {
+            double precioUnitario = Double.parseDouble(tf_precioUnitario.getText());
+            int cantidad = Integer.parseInt(tf_cantidad.getText());
+            tf_precioTotal.setText((precioUnitario * cantidad) + "");
+        }else{
+            tf_precioTotal.setText("0");
+        }
 
     }
 
@@ -64,6 +116,7 @@ public class RegistrarProductoController extends V_RegistrarProducto {
         if (categoria.equalsIgnoreCase("Componentes")) {
             Service_Componente svc = new Service_Componente();
             Componente componente = svc.buscarCompenente(clave);
+            tf_nombreProducto.setText(componente.getNombre());
             txt = " Nombre: " + componente.getNombre()
                     + "\n Marca: " + componente.getMarca()
                     + "\n Modelo: " + componente.getModelo()
@@ -72,6 +125,7 @@ public class RegistrarProductoController extends V_RegistrarProducto {
         } else if (categoria.equalsIgnoreCase("Accesorios")) {
             Service_Accesorios svc = new Service_Accesorios();
             Accesorios accesorios = svc.buscarAccesorio(clave);
+            tf_nombreProducto.setText(accesorios.getNombre());
             txt = " Nombre: " + accesorios.getNombre()
                     + "\n Marca: " + accesorios.getMarca()
                     + "\n Modelo: " + accesorios.getModelo()
@@ -79,14 +133,28 @@ public class RegistrarProductoController extends V_RegistrarProducto {
         }
 
         ta_detalle.setText(txt);
-
     }
-    
-    
-    private void registrarProducto(){
-        
-                                                                                                                       
-        
+
+    private void registrarProducto() {
+        Producto producto = new Producto();
+
+        producto.setClaveProducto(cbx_clave.getSelectedItem().toString());
+        producto.setNombreProducto(tf_nombreProducto.getText());
+        producto.setCategoriaProducto(cbx_categoria.getSelectedItem().toString());
+        producto.setPrecioUnitario(Double.valueOf(tf_precioUnitario.getText()));
+        producto.setStock(Integer.valueOf(tf_cantidad.getText()));
+        producto.setPrecioTotal(Double.valueOf(tf_precioTotal.getText()));
+        producto.setIdProveedor(((Proveedor) cbx_proveedor.getSelectedItem()).getIdProveedor());
+        producto.setIdUsuario(3L);
+        producto.setDetalle(ta_detalle.getText());
+
+        Service_Producto svc = new Service_Producto();
+        if (svc.crear(producto)) {
+            Utilidad.mostrarMensaje("Producto Creado");
+        } else {
+            Utilidad.mostrarMensaje("Error en crear");
+        }
+
     }
 
 }

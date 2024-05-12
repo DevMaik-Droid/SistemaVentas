@@ -43,16 +43,19 @@ public class Service_Producto implements I_Service {
     public boolean crear(Object objeto) {
         Connection cn = Conexion.conectar();
         Producto producto = (Producto) objeto;
-        String sql = String.format("INSERT INTO %s (claveProducto,precioUnitario,precioTotal,stock,idProveedor,idUsuario) VALUES (?,?,?,?,?,?)", TABLA);
+        String sql = String.format("INSERT INTO %s (claveProducto,nombreProducto,categoriaProducto,precioUnitario,stock, precioTotal,idProveedor,idUsuario,detalle) VALUES (?,?,?,?,?,?,?,?,?)", TABLA);
         try {
 
             PreparedStatement consulta = cn.prepareStatement(sql);
             consulta.setString(1, producto.getClaveProducto());
-            consulta.setDouble(2, producto.getPrecioUnitario());
-            consulta.setDouble(3, producto.getPrecioTotal());
-            consulta.setDouble(4, producto.getStock());
-            consulta.setLong(5, producto.getIdProveedor());
-            consulta.setDouble(6, producto.getIdUsuario());
+            consulta.setString(2, producto.getNombreProducto());
+            consulta.setString(3, producto.getCategoriaProducto());
+            consulta.setDouble(4, producto.getPrecioUnitario());
+            consulta.setInt(5, producto.getStock());
+            consulta.setDouble(6, producto.getPrecioTotal());
+            consulta.setLong(7, producto.getIdProveedor());
+            consulta.setLong(8, producto.getIdUsuario());
+            consulta.setString(9, producto.getDetalle());
             if (consulta.executeUpdate() > 0) {
                 return true;
             }

@@ -56,7 +56,7 @@ public class Service_Accesorios implements I_Service {
 
     public List<?> listarClaves() {
         Connection cn = Conexion.conectar();
-        List<Accesorios> componente = null;
+        List<Accesorios> accesorios = null;
 
         try {
             String sql = String.format("SELECT * FROM %s", TABLA);
@@ -64,17 +64,18 @@ public class Service_Accesorios implements I_Service {
 
             ResultSet rst = pst.executeQuery();
 
-            componente = new ArrayList<>();
+            accesorios = new ArrayList<>();
             while (rst.next()) {
                 Accesorios acc = new Accesorios();
                 acc.setClaveAccesorio(rst.getString("claveAccesorio"));
-                componente.add(acc);
+                acc.setNombre(rst.getString("nombre"));
+                accesorios.add(acc);
             }
 
         } catch (SQLException e) {
             System.out.println("Error listar Componentes: ".concat(e.getMessage()));
         }
-        return componente;
+        return accesorios;
 
     }
 

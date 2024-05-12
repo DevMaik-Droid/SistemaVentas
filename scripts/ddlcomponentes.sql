@@ -4,7 +4,6 @@ VALUES
 ('C001', 'Placa Base', 'ASUS', 'ROG STRIX Z390-F', NULL, NULL, 'Placa base para juegos de alto rendimiento.'),
 ('C002', 'Placa Base', 'Gigabyte', 'B450 AORUS ELITE', NULL, NULL, 'Placa base para una configuración de nivel medio.'),
 ('C003', 'Placa Base', 'MSI', 'MAG B550 TOMAHAWK', NULL, NULL, 'Placa base con soporte para los últimos procesadores Ryzen de AMD.');
-
 -- Procesador (CPU)
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 

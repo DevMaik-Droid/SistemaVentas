@@ -49,8 +49,6 @@ public class V_RegistrarComputadora extends JPanel {
         jLabel11 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         btn_buscar = new JButtonRound("Buscar",20);
@@ -61,9 +59,7 @@ public class V_RegistrarComputadora extends JPanel {
         cbx_discoCO = new javax.swing.JComboBox<>();
         btn_registrar = new JButtonRound("Registrar",20);
         cbx_caseCO = new javax.swing.JComboBox<>();
-        tf_precioTotal = new javax.swing.JTextField();
         tf_nombreCO = new javax.swing.JTextField();
-        tf_precio = new javax.swing.JTextField();
         cbx_ventiladores = new javax.swing.JComboBox<>();
         jLabel13 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
@@ -143,16 +139,6 @@ public class V_RegistrarComputadora extends JPanel {
         jLabel14.setText("Nombre:");
         panel_form.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel15.setForeground(Main_Colores.C_100);
-        jLabel15.setText("Precio real:");
-        panel_form.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, -1));
-
-        jLabel16.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel16.setForeground(Main_Colores.C_100);
-        jLabel16.setText("Precio total:");
-        panel_form.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, -1, 20));
-
         jTextArea1.setColumns(20);
         jTextArea1.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jTextArea1.setForeground(Main_Colores.Fondo);
@@ -215,25 +201,9 @@ public class V_RegistrarComputadora extends JPanel {
         });
         panel_form.add(cbx_caseCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 220, 30));
 
-        tf_precioTotal.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_precioTotal.setForeground(Main_Colores.Fondo);
-        tf_precioTotal.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        panel_form.add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 540, 130, 30));
-
         tf_nombreCO.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         tf_nombreCO.setForeground(Main_Colores.Fondo);
         panel_form.add(tf_nombreCO, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 190, 30));
-
-        tf_precio.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        tf_precio.setForeground(Main_Colores.Fondo);
-        tf_precio.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        tf_precio.setEnabled(false);
-        tf_precio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_precioActionPerformed(evt);
-            }
-        });
-        panel_form.add(tf_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 540, 130, 30));
 
         cbx_ventiladores.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_ventiladores.setForeground(Main_Colores.Fondo);
@@ -305,10 +275,6 @@ public class V_RegistrarComputadora extends JPanel {
 
     }//GEN-LAST:event_cbx_ramCOActionPerformed
 
-    private void tf_precioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_precioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tf_precioActionPerformed
-
     private void cbx_gpuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbx_gpuActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbx_gpuActionPerformed
@@ -336,8 +302,6 @@ public class V_RegistrarComputadora extends JPanel {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -354,7 +318,5 @@ public class V_RegistrarComputadora extends JPanel {
     protected javax.swing.JPanel panel_form;
     private javax.swing.JPanel panel_main;
     private javax.swing.JTextField tf_nombreCO;
-    protected javax.swing.JTextField tf_precio;
-    private javax.swing.JTextField tf_precioTotal;
     // End of variables declaration//GEN-END:variables
 }

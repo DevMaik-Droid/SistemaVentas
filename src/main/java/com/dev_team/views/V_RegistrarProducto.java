@@ -41,10 +41,12 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
         cbx_clave = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
         cbx_proveedor = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btn_registrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         ta_detalle = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
+        tf_nombreProducto = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -77,27 +79,27 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
         add(tf_precioTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 430, 170, 40));
 
         cbx_categoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECIONE CATEGORIA", "Computadora", "Laptop", "Componentes", "Accesorios" }));
-        add(cbx_categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, 170, 30));
+        add(cbx_categoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 170, 30));
 
         jLabel1.setText("Categorias");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, -1, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         jLabel2.setText("Clave Producto");
-        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, -1, -1));
+        add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 50, -1, -1));
 
-        add(cbx_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, 180, -1));
+        add(cbx_clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 70, 180, -1));
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("Proveedor:");
-        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
+        add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, -1, -1));
 
         cbx_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         cbx_proveedor.setForeground(Main_Colores.Fondo);
-        add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, 220, 30));
+        add(cbx_proveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 70, 220, 30));
 
-        jButton1.setText("Registrar");
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 230, 50));
+        btn_registrar.setText("Registrar");
+        add(btn_registrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 510, 230, 50));
 
         ta_detalle.setColumns(20);
         ta_detalle.setLineWrap(true);
@@ -108,24 +110,30 @@ public class V_RegistrarProducto extends javax.swing.JPanel {
 
         jLabel3.setText("Detalle:");
         add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, -1, -1));
+        add(tf_nombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 160, -1));
+
+        jLabel4.setText("Nombre Producto:");
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    protected javax.swing.JButton btn_registrar;
     protected javax.swing.JComboBox<String> cbx_categoria;
     protected javax.swing.JComboBox<String> cbx_clave;
     protected javax.swing.JComboBox<Proveedor> cbx_proveedor;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JTextArea ta_detalle;
     protected javax.swing.JTextField tf_cantidad;
+    protected javax.swing.JTextField tf_nombreProducto;
     protected javax.swing.JTextField tf_precioTotal;
     protected javax.swing.JTextField tf_precioUnitario;
     // End of variables declaration//GEN-END:variables
