@@ -18,7 +18,7 @@ public class Service_Componente implements I_Service {
     public boolean crear(Object objeto) {
         Connection cn = Conexion.conectar();
         Componente componenteonente = (Componente) objeto;
-        String sql = String.format("INSERT INTO %s (claveComponente, componenteonente,marca,modelo,capacidad,velocidad,imagen,descripcion)  VALUES (?,?,?,?,?,?,?,?)", TABLA);
+        String sql = String.format("INSERT INTO %s (claveComponente, nombre,marca,modelo,capacidad,velocidad,imagen,descripcion)  VALUES (?,?,?,?,?,?,?,?)", TABLA);
 
         try (PreparedStatement consulta = cn.prepareStatement(sql)) {
             consulta.setString(1, componenteonente.getClave());
@@ -60,7 +60,7 @@ public class Service_Componente implements I_Service {
                 Componente componente = new Componente();
                 componente.setIdComponente(rst.getInt("idc"));
                 componente.setClave(rst.getString("claveComponente"));
-                componente.setNombre(rst.getString("componenteonente"));
+                componente.setNombre(rst.getString("nombre"));
                 componente.setMarca(rst.getString("marca"));
                 componente.setModelo(rst.getString("modelo"));
                 componente.setCapacidad(rst.getString("capacidad"));
