@@ -17,6 +17,7 @@ public class Main {
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ignored) {
 
         }
+        System.out.println("");
         
         Vista_Dashboard login = new Vista_Dashboard(null);
         login.setVisible(true);
