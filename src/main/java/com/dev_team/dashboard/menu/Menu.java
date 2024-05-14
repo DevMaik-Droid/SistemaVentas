@@ -2,7 +2,6 @@ package com.dev_team.dashboard.menu;
 
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
 import java.util.ArrayList;
