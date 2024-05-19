@@ -24,6 +24,7 @@ public class Usuario {
     private InputStream foto;
     private String estado;
     private String observaciones;
+    private String nivel;
     
     private byte[] bytes_image;
     private Boolean nueva_imagen;

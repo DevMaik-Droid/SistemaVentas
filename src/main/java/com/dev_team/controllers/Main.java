@@ -19,7 +19,7 @@ public class Main {
         }
         System.out.println("");
         
-        Vista_Dashboard login = new Vista_Dashboard(null);
+        V_Login login = new V_Login();
         login.setVisible(true);
         
     }

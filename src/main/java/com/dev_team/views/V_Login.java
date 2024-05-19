@@ -298,11 +298,11 @@ public class V_Login extends javax.swing.JFrame {
                     us.setFoto_recuperada(new ImageIcon(bs_image).getImage());
                     us.setClave(rst.getString("clave"));
                     us.setEstado(rst.getString("estado"));
-
+                    us.setNivel(rst.getString("nivel"));
                     JOptionPane.showMessageDialog(null, "Bienvenido - ".concat(us.getNombre()));
 
-                    Vista_Dashboard dashboard = new Vista_Dashboard(us);
-                    dashboard.setVisible(true);
+                    Vista_Dashboard filtro = new Vista_Dashboard(us);
+                    filtro.setVisible(true);
                     this.dispose();
 
                 } else {
@@ -311,7 +311,7 @@ public class V_Login extends javax.swing.JFrame {
 
                 cnt.close();
             } catch (Exception e) {
-                System.out.println("Error" + e);
+                System.out.println("Error al iniciar sesion: " + e);
             }
         }
     }

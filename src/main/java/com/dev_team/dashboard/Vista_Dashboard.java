@@ -45,9 +45,6 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     Usuario usuario;
 
     public Vista_Dashboard(Usuario us) {
-        initComponents();
-        init();
-        setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
         try {
             this.usuario = us;
             Vista_Dashboard.idUsuario = usuario.getIdUsuario();
@@ -59,6 +56,16 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         } catch (Exception e) {
         }
 
+        initComponents();
+        
+        if(usuario.getNivel().equalsIgnoreCase("Gerente")){
+            iniciarAccionesGen();
+        }else if(usuario.getNivel().equalsIgnoreCase("Administrativo")){
+            iniciarAccionesAdm();
+        }
+        
+        setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
+
         setResizable(true);
         setLocationRelativeTo(null);
         setSize(1280, 800);
@@ -68,60 +75,87 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
     private Icon ponerFoto() {
         Image img = new ImageIcon(usuario.getFoto_recuperada()).getImage().getScaledInstance(lb_foto.getWidth(), lb_foto.getHeight(), Image.SCALE_DEFAULT);
-
         Icon icon = new ImageIcon(img);
         return icon;
 
     }
-
-    private void init() {
+    
+    private void iniciarAccionesAdm(){
         main = this;
-
         menu.addEvent((int index, int indexSubMenu) -> {
             if (index == 0 && indexSubMenu == 0) {
-
                 showForm(new Form_Empty(0 + " " + 0));
-            } else if (index == 4 && indexSubMenu == 1) {
-
-                V_RegistrarUsuario usr = new UsuarioController();
-                showForm(usr);
-
-            } else if (index == 4 && indexSubMenu == 2) {
-
-                V_GestionarUsuario gestionarUsuario = new GestionUsuarioController();
-                showForm(gestionarUsuario);
-
-            } else if (index == 5 && indexSubMenu == 1) {
+            }  else if (index == 1 && indexSubMenu == 1) {
                 V_RegistrarProveedor prov = new ProveedorController();
                 showForm(prov);
-
-            } else if (index == 5 && indexSubMenu == 2) {
+            } else if (index == 1 && indexSubMenu == 2) {
                 V_GestionarProveedores gest = new GestionProveedorController();
                 showForm(gest);
-
-            } else if (index == 6 && indexSubMenu == 1) {
-
+            } else if (index == 2 && indexSubMenu == 1) {
                 V_RegistrarComputadora computadora = new ComputadoraController();
                 showForm(computadora);
-            } else if (index == 6 && indexSubMenu == 2) {
+            } else if (index == 2 && indexSubMenu == 2) {
                 showForm(new V_RegistrarLaptop());
-            } else if (index == 6 && indexSubMenu == 3) {
+            } else if (index == 2 && indexSubMenu == 3) {
                 V_RegistrarAccesorios accesorios = new AccesorioController();
-
                 showForm(accesorios);
-
-            } else if (index == 6 && indexSubMenu == 4) {
+            } else if (index == 2 && indexSubMenu == 4) {
                 V_RegistrarComponentes componentes = new ComponentController();
                 showForm(componentes);
-
-            } else if (index == 6 && indexSubMenu == 5) {
+            } else if (index == 2 && indexSubMenu == 5) {
                 V_RegistrarProducto producto = new RegistrarProductoController();
                 showForm(producto);
-                
-            }else if (index == 6 && indexSubMenu == 6) {
+
+            } else if (index == 2 && indexSubMenu == 6) {
                 V_GestionarProductos gestionarProductos = new GestionProductosController();
                 showForm(gestionarProductos);
- 
+
+            } else if (index == 7 && indexSubMenu == 1) {
+                V_ChartsComponentes charts = new ComponentChartsControllers();
+                showForm(charts);
+            } else {
+                showForm(new Form_Empty(index + " " + indexSubMenu));
+            }
+        });
+        menu.setSelectedIndex(0, 0);
+    }
+
+    private void iniciarAccionesGen() {
+        main = this;
+        menu.addEvent((int index, int indexSubMenu) -> {
+            if (index == 0 && indexSubMenu == 0) {
+                showForm(new Form_Empty(0 + " " + 0));
+            } else if (index == 1 && indexSubMenu == 1) {
+                V_RegistrarUsuario usr = new UsuarioController();
+                showForm(usr);
+            } else if (index == 1 && indexSubMenu == 2) {
+                V_GestionarUsuario gestionarUsuario = new GestionUsuarioController();
+                showForm(gestionarUsuario);
+            } else if (index == 2 && indexSubMenu == 1) {
+                V_RegistrarProveedor prov = new ProveedorController();
+                showForm(prov);
+            } else if (index == 2 && indexSubMenu == 2) {
+                V_GestionarProveedores gest = new GestionProveedorController();
+                showForm(gest);
+            } else if (index == 3 && indexSubMenu == 1) {
+                V_RegistrarComputadora computadora = new ComputadoraController();
+                showForm(computadora);
+            } else if (index == 3 && indexSubMenu == 2) {
+                showForm(new V_RegistrarLaptop());
+            } else if (index == 3 && indexSubMenu == 3) {
+                V_RegistrarAccesorios accesorios = new AccesorioController();
+                showForm(accesorios);
+            } else if (index == 3 && indexSubMenu == 4) {
+                V_RegistrarComponentes componentes = new ComponentController();
+                showForm(componentes);
+            } else if (index == 3 && indexSubMenu == 5) {
+                V_RegistrarProducto producto = new RegistrarProductoController();
+                showForm(producto);
+
+            } else if (index == 3 && indexSubMenu == 6) {
+                V_GestionarProductos gestionarProductos = new GestionProductosController();
+                showForm(gestionarProductos);
+
             } else if (index == 7 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);
@@ -139,15 +173,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         body.revalidate();
     }
 
-    
-   
-
     private void abrirVentanaAdmUsuario(Usuario usuario) {
 
         D_AdmUsuario dialog_usuario = new D_AdmUsuario(true, usuario);
         dialog_usuario.setVisible(true);
 
     }
+
     public static Vista_Dashboard getMain() {
         return main;
     }
@@ -163,6 +195,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         panel_acciones = new javax.swing.JPanel();
         maximizar = new javax.swing.JLabel();
         lb_cerrar = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         body = new javax.swing.JPanel();
         panelMenu = new javax.swing.JPanel();
         jPanel1 = new Panel_Round(0,Color.MAGENTA,Color.BLUE);
@@ -170,7 +203,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         lb_apellido = new javax.swing.JLabel();
         btn_ajustesUsuario = new javax.swing.JButton();
         lb_foto = new JButtonRound("",100);
-        menu = new com.dev_team.dashboard.menu.Menu();
+        menu = new com.dev_team.dashboard.menu.Menu(usuario.getNivel());
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -204,7 +237,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
         panel_title.add(panel_title_1);
 
-        panel_acciones.setPreferredSize(new java.awt.Dimension(70, 30));
+        panel_acciones.setPreferredSize(new java.awt.Dimension(120, 30));
         panel_acciones.setRequestFocusEnabled(false);
 
         maximizar.setBackground(new java.awt.Color(153, 0, 255));
@@ -238,6 +271,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("-");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panel_accionesLayout = new javax.swing.GroupLayout(panel_acciones);
         panel_acciones.setLayout(panel_accionesLayout);
         panel_accionesLayout.setHorizontalGroup(
@@ -246,6 +286,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(maximizar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(lb_cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -254,7 +296,9 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             .addGroup(panel_accionesLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(lb_cerrar))
-            .addComponent(maximizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(panel_accionesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(maximizar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1))
         );
 
         panel_title.add(panel_acciones);
@@ -384,10 +428,15 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         abrirVentanaAdmUsuario(usuario);
     }//GEN-LAST:event_btn_ajustesUsuarioActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setState(JFrame.ICONIFIED);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel body;
     private javax.swing.JButton btn_ajustesUsuario;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel lb_apellido;
     private javax.swing.JLabel lb_barra;

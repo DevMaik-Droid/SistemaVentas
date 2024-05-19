@@ -1,5 +1,6 @@
 package com.dev_team.dashboard.menu;
 
+import com.dev_team.models.Usuario;
 import com.dev_team.utilidades.Main_Colores;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -17,9 +18,12 @@ public class Menu extends JPanel {
 
     private int index = -1;
     private final List<EventMenuSelected> events = new ArrayList<>();
+    private final String nivel;
 
-    public Menu() {
+    public Menu(String nivel) {
+        this.nivel = nivel;
         init();
+
     }
 
     private void init() {
@@ -27,25 +31,37 @@ public class Menu extends JPanel {
         setLayout(new BorderLayout());
         JScrollPane scroll = createScroll();
         panelMenu = createPanelMenu();
-       
+
         scroll.setViewportView(panelMenu);
         scroll.getViewport().setOpaque(false);
         scroll.setViewportBorder(null);
         add(scroll);
         scroll.setBackground(Main_Colores.Fondo);
-        addTitle("MAIN");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DASHBOARD, "Dashboard"));
-        addTitle("WEB APPS");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.MAIL_OUTLINE, "Email", "Inbox", "Read", "Compose"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.MESSAGE, "Chat"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PERM_CONTACT_CALENDAR, "Calendar"));
-        addTitle("ADMINISTRACION");
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PEOPLE, "Usuarios", "Registrar", "Gestionar"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.BORDER_INNER, "Proveedor", "Registrar", "Gestionar"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DVR, "Productos", "Computadora", "Laptop", "Accesorios", "Componentes","Registrar Producto","Gestionar Productos"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PIE_CHART_OUTLINED, "Graficos Estadisticos", "Componentes", "Accesorios", "Computadora", "Laptop"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.VIEW_LIST, "Clientes", "Gestion de clientes"));
-        addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.INSERT_EMOTICON, "Reportes", "Clientes", "Usuarios", "Proveedores","Productos"));
+        crearMenuGeneral();
+
+    }
+
+    private void crearMenuGeneral() {
+        if (nivel.equals("GERENTE")) {
+            addTitle("MAIN");
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DASHBOARD, "Dashboard"));
+            addTitle("ADMINISTRACION");
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PEOPLE, "Usuarios", "Registrar", "Gestionar"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.BORDER_INNER, "Proveedor", "Registrar", "Gestionar"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DVR, "Productos", "Computadora", "Laptop", "Accesorios", "Componentes", "Registrar Producto", "Gestionar Productos"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PIE_CHART_OUTLINED, "Graficos Estadisticos", "Componentes", "Accesorios", "Computadora", "Laptop"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.VIEW_LIST, "Clientes", "Gestion de clientes"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.INSERT_EMOTICON, "Reportes", "Clientes", "Usuarios", "Proveedores", "Productos"));
+        }else if (nivel.equalsIgnoreCase("Administrativo")) {
+            addTitle("Inventario");
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DASHBOARD, "Dashboard"));
+            addTitle("ADMINISTRACION");
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.BORDER_INNER, "Proveedor", "Registrar", "Gestionar"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.DVR, "Productos", "Computadora", "Laptop", "Accesorios", "Componentes", "Registrar Producto", "Gestionar Productos"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.PIE_CHART_OUTLINED, "Graficos Estadisticos", "Componentes", "Accesorios", "Computadora", "Laptop"));
+            addMenuItem(new ModelMenuItem(GoogleMaterialDesignIcon.INSERT_EMOTICON, "Reportes", "Productos"));
+        }
+
     }
 
     private JScrollPane createScroll() {

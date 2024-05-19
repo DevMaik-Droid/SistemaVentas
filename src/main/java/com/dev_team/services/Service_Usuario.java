@@ -179,6 +179,7 @@ public class Service_Usuario implements I_Service {
                 us.setClave(rst.getString("clave"));
                 us.setEstado(rst.getString("estado"));
                 us.setObservaciones(rst.getString("observaciones"));
+                us.setNivel(rst.getString("nivel"));
                 lista_usuarios.add(us);
             }
             cn.close();
