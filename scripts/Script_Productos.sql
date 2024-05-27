@@ -43,6 +43,7 @@ CREATE TABLE tb_accesorios (
 	descripcion VARCHAR(100),
 	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+CREATE INDEX idx_claveComponente ON tb_componente (claveComponente);
 
 CREATE TABLE tb_computadora(
     idComputadora INT AUTO_INCREMENT PRIMARY KEY,
@@ -73,7 +74,7 @@ CREATE TABLE tb_computadora(
     CONSTRAINT fk_disipadores FOREIGN KEY (disipadores) REFERENCES tb_componente(claveComponente),
     CONSTRAINT fk_ventiladores FOREIGN KEY (ventiladores) REFERENCES tb_componente(claveComponente)
 );
-CREATE INDEX idx_claveComponente ON tb_componente (claveComponente);
+
 
 CREATE TABLE tb_productos(
 	idp BIGINT AUTO_INCREMENT PRIMARY KEY,

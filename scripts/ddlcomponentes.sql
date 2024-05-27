@@ -1,9 +1,9 @@
 -- Placa Base (Motherboard)
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
-('C001', 'Placa Base', 'ASUS', 'ROG STRIX Z390-F', NULL, NULL, 'Placa base para juegos de alto rendimiento.'),
-('C002', 'Placa Base', 'Gigabyte', 'B450 AORUS ELITE', NULL, NULL, 'Placa base para una configuración de nivel medio.'),
-('C003', 'Placa Base', 'MSI', 'MAG B550 TOMAHAWK', NULL, NULL, 'Placa base con soporte para los últimos procesadores Ryzen de AMD.');
+('P001', 'Placa Base', 'ASUS', 'ROG STRIX Z390-F', NULL, NULL, 'Placa base para juegos de alto rendimiento.'),
+('P002', 'Placa Base', 'Gigabyte', 'B450 AORUS ELITE', NULL, NULL, 'Placa base para una configuración de nivel medio.'),
+('P003', 'Placa Base', 'MSI', 'MAG B550 TOMAHAWK', NULL, NULL, 'Placa base con soporte para los últimos procesadores Ryzen de AMD.');
 -- Procesador (CPU)
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
@@ -14,9 +14,9 @@ VALUES
 -- Memoria RAM
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
-('C001', 'Memoria RAM', 'Corsair', 'Vengeance LPX', '8 GB', 'DDR5-6400 MHz', 'Memoria RAM de 8GB DDR5 para una excelente multitarea.'),
-('C002', 'Memoria RAM', 'Kingston', 'HyperX Fury', '16 GB', 'DDR4-3200 MHz', 'Memoria RAM de 16GB DDR4 para un rendimiento rápido y estable.'),
-('C003', 'Memoria RAM', 'Crucial', 'Ballistix Sport', '32 GB', 'DDR4-3600 MHz', 'Memoria RAM de 32GB DDR4 para una experiencia de juego fluida y multitarea.');
+('M001', 'Memoria RAM', 'Corsair', 'Vengeance LPX', '8 GB', 'DDR5-6400 MHz', 'Memoria RAM de 8GB DDR5 para una excelente multitarea.'),
+('M002', 'Memoria RAM', 'Kingston', 'HyperX Fury', '16 GB', 'DDR4-3200 MHz', 'Memoria RAM de 16GB DDR4 para un rendimiento rápido y estable.'),
+('M003', 'Memoria RAM', 'Crucial', 'Ballistix Sport', '32 GB', 'DDR4-3600 MHz', 'Memoria RAM de 32GB DDR4 para una experiencia de juego fluida y multitarea.');
 
 -- Almacenamiento HDD
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
