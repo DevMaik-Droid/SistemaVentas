@@ -19,7 +19,8 @@ CREATE TABLE tb_usuario (
     foto BLOB NOT NULL,
     clave VARCHAR(10) NOT NULL,
     estado VARCHAR(20) NOT NULL, 
-    observaciones TEXT
+    observaciones TEXT,
+		nivel VARCHAR(50)
 );
 
 -- TABLA PROVEEDOR
