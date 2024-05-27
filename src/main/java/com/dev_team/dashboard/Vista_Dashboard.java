@@ -16,6 +16,7 @@ import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.Panel_Round;
 import com.dev_team.views.D_AdmUsuario;
 import com.dev_team.views.V_ChartsComponentes;
+import com.dev_team.views.V_Dashboard;
 import com.dev_team.views.V_GestionarProductos;
 import com.dev_team.views.V_GestionarProveedores;
 import com.dev_team.views.V_GestionarUsuario;
@@ -124,7 +125,8 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         main = this;
         menu.addEvent((int index, int indexSubMenu) -> {
             if (index == 0 && indexSubMenu == 0) {
-                showForm(new Form_Empty(0 + " " + 0));
+                V_Dashboard vh = new V_Dashboard();
+                showForm(vh);
             } else if (index == 1 && indexSubMenu == 1) {
                 V_RegistrarUsuario usr = new UsuarioController();
                 showForm(usr);
