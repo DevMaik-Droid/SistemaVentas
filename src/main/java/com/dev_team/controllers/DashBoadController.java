@@ -13,9 +13,10 @@ import javax.swing.table.TableColumnModel;
 
 public class DashBoadController extends V_Dashboard{
 
+    List<Producto> productos; 
     public DashBoadController() {
         
-        
+        productos = (List<Producto>) new Service_Producto().listar();
         cbx_opciones.addActionListener(x -> {
             String op = cbx_opciones.getSelectedItem().toString();
             generarTabla(op);
@@ -28,15 +29,13 @@ public class DashBoadController extends V_Dashboard{
             case "PRODUCTOS" -> generarTablaProductos();
             case "Clientes" -> generarTablaProductos();
             case "Ventas" -> generarTablaProductos();
-            
         }
-        
-        
+
     }
 
     private void generarTablaProductos() {
         
-        List<Producto> productos = (List<Producto>) new Service_Producto().listar();
+        
         
         Object[] columas = {"CLAVE", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE", "ESTADO"};
         DefaultTableModel model = new DefaultTableModel(columas, 0);

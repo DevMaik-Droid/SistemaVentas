@@ -11,6 +11,7 @@ import com.dev_team.controllers.ProveedorController;
 import com.dev_team.controllers.GestionProveedorController;
 import com.dev_team.controllers.RegistrarProductoController;
 import com.dev_team.controllers.UsuarioController;
+import com.dev_team.controllers.VentasController;
 import com.dev_team.models.Usuario;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
@@ -28,6 +29,7 @@ import com.dev_team.views.V_RegistrarLaptop;
 import com.dev_team.views.V_RegistrarProducto;
 import com.dev_team.views.V_RegistrarProveedor;
 import com.dev_team.views.V_RegistrarUsuario;
+import com.dev_team.views.V_Ventas;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
@@ -104,18 +106,18 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             } else if (index == 2 && indexSubMenu == 4) {
                 V_RegistrarComponentes componentes = new ComponentController();
                 showForm(componentes);
-            } else if (index == 2 && indexSubMenu == 5) {
+            } else if (index == 3 && indexSubMenu == 1) {
                 V_RegistrarProducto producto = new RegistrarProductoController();
                 showForm(producto);
 
-            } else if (index == 2 && indexSubMenu == 6) {
+            } else if (index == 3 && indexSubMenu == 2) {
                 V_GestionarProductos gestionarProductos = new GestionProductosController();
                 showForm(gestionarProductos);
 
             } else if (index == 4 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);
-            } else {
+            }else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });
@@ -162,7 +164,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             } else if (index == 7 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);
-            } else {
+            }else if (index == 8 && indexSubMenu == 1) {
+                V_Ventas ventas = new VentasController();
+                showForm(ventas);
+            }  else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });

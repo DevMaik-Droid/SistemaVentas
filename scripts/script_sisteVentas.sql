@@ -63,29 +63,7 @@ CONSTRAINT fk_producto FOREIGN KEY(idCategoria) REFERENCES tb_categoria(idCatego
 CONSTRAINT fk_proveedor FOREIGN KEY(idProveedor) REFERENCES tb_proveedor(idProveedor)
 );
 
--- Tabla detalle laptop
-CREATE TABLE tb_detalle_computadora(
-	id_detalle BIGINT AUTO_INCREMENT PRIMARY KEY,
-	modelo VARCHAR(50),
-	marca VARCHAR(50),
-	procesador VARCHAR(50),
-	ram VARCHAR(20),
-	discoDuro VARCHAR(30),
-	pantalla VARCHAR(50),
-	peso DOUBLE,
-	id_producto BIGINT,
-  CONSTRAINT fk_det_laptop FOREIGN KEY(id_producto) REFERENCES tb_producto(idProducto)
-);
 
-CREATE TABLE tb_detalle_accesorio(
-    id_detalle BIGINT AUTO_INCREMENT PRIMARY KEY,
-    modelo VARCHAR(50),
-    marca VARCHAR(50),
-    tipo VARCHAR(100),
-    descripcion VARCHAR(100),
-    id_producto BIGINT,
-    CONSTRAINT fk_det_accesorio Foreign Key (id_producto) REFERENCES tb_producto(idProducto)
-);
 
 
 -- crear tabla cabecera de venta
@@ -118,3 +96,5 @@ ALTER TABLE tb_usuario MODIFY COLUMN foto LONGBLOB;
 
 -- mostrar todas las tablas de mi base de datos
 show tables;
+
+
