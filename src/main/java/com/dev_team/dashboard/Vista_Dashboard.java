@@ -4,6 +4,7 @@ import com.dev_team.controllers.AccesorioController;
 import com.dev_team.controllers.ComponentChartsControllers;
 import com.dev_team.controllers.ComponentController;
 import com.dev_team.controllers.ComputadoraController;
+import com.dev_team.controllers.DashBoadController;
 import com.dev_team.controllers.GestionProductosController;
 import com.dev_team.controllers.GestionUsuarioController;
 import com.dev_team.controllers.ProveedorController;
@@ -125,7 +126,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         main = this;
         menu.addEvent((int index, int indexSubMenu) -> {
             if (index == 0 && indexSubMenu == 0) {
-                V_Dashboard vh = new V_Dashboard();
+                V_Dashboard vh = new DashBoadController();
                 showForm(vh);
             } else if (index == 1 && indexSubMenu == 1) {
                 V_RegistrarUsuario usr = new UsuarioController();

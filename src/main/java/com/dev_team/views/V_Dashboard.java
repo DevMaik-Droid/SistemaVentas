@@ -47,8 +47,9 @@ public class V_Dashboard extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jXTable1 = new org.jdesktop.swingx.JXTable();
+        tb_dashboard = new org.jdesktop.swingx.JXTable();
         lb_fecha = new javax.swing.JLabel();
+        cbx_opciones = new javax.swing.JComboBox<>();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -152,7 +153,7 @@ public class V_Dashboard extends javax.swing.JPanel {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
-        jXTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_dashboard.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -163,7 +164,7 @@ public class V_Dashboard extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jXTable1);
+        jScrollPane1.setViewportView(tb_dashboard);
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 291, 820, 360));
 
@@ -174,11 +175,15 @@ public class V_Dashboard extends javax.swing.JPanel {
         lb_fecha.setOpaque(true);
         jPanel1.add(lb_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 190, 30));
 
+        cbx_opciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "PRODUCTOS", "CLIENTES", "VENTAS" }));
+        jPanel1.add(cbx_opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 190, 40));
+
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    protected javax.swing.JComboBox<String> cbx_opciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -190,7 +195,7 @@ public class V_Dashboard extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private org.jdesktop.swingx.JXTable jXTable1;
     private javax.swing.JLabel lb_fecha;
+    protected org.jdesktop.swingx.JXTable tb_dashboard;
     // End of variables declaration//GEN-END:variables
 }
