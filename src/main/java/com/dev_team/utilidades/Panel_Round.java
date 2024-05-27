@@ -13,8 +13,8 @@ import javax.swing.JPanel;
 public class Panel_Round extends JPanel {
 
     private final int round;
-    private Color startColor;
-    private Color endColor;
+    private final Color startColor;
+    private final Color endColor;
 
     public Panel_Round(int round,Color startColor,Color endColor) {
         setOpaque(false);
