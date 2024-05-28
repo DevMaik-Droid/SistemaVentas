@@ -13,6 +13,7 @@ import com.dev_team.controllers.RegistrarProductoController;
 import com.dev_team.controllers.UsuarioController;
 import com.dev_team.controllers.VentasController;
 import com.dev_team.models.Usuario;
+import com.dev_team.services.Conexion;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.Panel_Round;
@@ -34,11 +35,20 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.Point;
+import java.sql.Connection;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
 public class Vista_Dashboard extends javax.swing.JFrame {
 
@@ -126,7 +136,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
     private void iniciarAccionesGen() {
         main = this;
-        menu.addEvent((int index, int indexSubMenu) -> {
+        menu.addEvent((var index, var indexSubMenu) -> {
             if (index == 0 && indexSubMenu == 0) {
                 V_Dashboard vh = new DashBoadController();
                 showForm(vh);
@@ -162,8 +172,44 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(gestionarProductos);
 
             } else if (index == 7 && indexSubMenu == 1) {
-                V_ChartsComponentes charts = new ComponentChartsControllers();
-                showForm(charts);
+              try {
+                Conexion cone=new Conexion();
+                Connection con=null;
+                con = cone.conectar();
+                String nombre ="";
+                JasperReport reporte =null;
+                reporte=(JasperReport) JRLoader.loadObjectFromFile(nombre);
+                JasperPrint jp;
+                Map parametro = new HashMap();
+                jp = JasperFillManager.fillReport(reporte,null,con);
+                JasperViewer jv= new JasperViewer(jp,false);
+                jv.setTitle("REPORTE DE CLIENTES");
+                jv.setVisible(true);
+              } catch (JRException e) {
+              JOptionPane.showMessageDialog(null, "Error:"+e.getMessage());
+                }
+                
+// reporte 7 2 usuarios
+
+            } else if (index == 7 && indexSubMenu == 2) {
+              try {
+                Conexion cone=new Conexion();
+                Connection con=null;
+                con = cone.conectar();
+                String nombre ="C://Users//Personal//Documents//GitHub//SistemaVentas//src//main//java//com//dev_team//reports//rep_usuario.jasper";
+                JasperReport reporte =null;
+                reporte=(JasperReport) JRLoader.loadObjectFromFile(nombre);
+                JasperPrint jp;
+                Map parametro = new HashMap();
+                jp = JasperFillManager.fillReport(reporte,null,con);
+                JasperViewer jv= new JasperViewer(jp,false);
+                jv.setTitle("REPORTE DE USUARIOS");
+                jv.setVisible(true);
+              } catch (JRException e) {
+              JOptionPane.showMessageDialog(null, "Error:"+e.getMessage());
+                }
+
+              // reporte 7 3 
             }else if (index == 8 && indexSubMenu == 1) {
                 V_Ventas ventas = new VentasController();
                 showForm(ventas);
