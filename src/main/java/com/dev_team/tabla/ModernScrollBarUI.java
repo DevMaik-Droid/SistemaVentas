@@ -14,10 +14,7 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 
 
 
-/**
- *
- * @author Christian Maldonado
- */
+
 public class ModernScrollBarUI extends BasicScrollBarUI{
     private final int THUMB_SIZE=40;    //Tamaño del ScrollBar
     @Override
@@ -96,7 +93,7 @@ public class ModernScrollBarUI extends BasicScrollBarUI{
         g2.setColor(scrollbar.getForeground());
         g2.fillRoundRect(x, y, width, height, 10, 10);
     }
-    private class  ScrollBarButton extends JButton{
+    private class ScrollBarButton extends JButton{
         public ScrollBarButton(){
             setBorder(BorderFactory.createEmptyBorder());
         }

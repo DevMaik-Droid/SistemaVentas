@@ -11,14 +11,16 @@ import javax.swing.JTable;
 import javax.swing.JViewport;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableCellRenderer;
+import org.jdesktop.swingx.JXTable;
+import org.jdesktop.swingx.renderer.DefaultTableRenderer;
 
-public class TableDark_1 extends JTable{
+public class TablePerzonalizado extends JXTable{
 
     static void fixtable(JScrollPane jScrollPane1) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    public TableDark_1() {
+    public TablePerzonalizado() {
         getTableHeader().setDefaultRenderer(new TableDarkHeader());
         getTableHeader().setPreferredSize(new Dimension(0, 35));
         setDefaultRenderer(Object.class, new TableDarkCell());
@@ -35,7 +37,7 @@ public class TableDark_1 extends JTable{
     }
     
     //cabeza
-    private class TableDarkHeader extends DefaultTableCellRenderer{
+    private class TableDarkHeader extends DefaultTableRenderer{
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
@@ -46,8 +48,9 @@ public class TableDark_1 extends JTable{
             return com;
         }
     }
+    
     //celda
-    private class TableDarkCell extends DefaultTableCellRenderer{
+    private class TableDarkCell extends DefaultTableRenderer{
 
         @Override
         public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {

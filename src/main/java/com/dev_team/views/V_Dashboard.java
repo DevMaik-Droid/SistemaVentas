@@ -4,6 +4,7 @@
  */
 package com.dev_team.views;
 
+import com.dev_team.tabla.TablePerzonalizado;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.PanelGradient;
 import com.dev_team.utilidades.Panel_Round;
@@ -46,10 +47,9 @@ public class V_Dashboard extends javax.swing.JPanel {
         jPanel4 = new Panel_Round(20, Color.BLACK, Color.CYAN);
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tb_dashboard = new org.jdesktop.swingx.JXTable();
         lb_fecha = new javax.swing.JLabel();
         cbx_opciones = new javax.swing.JComboBox<>();
+        panelTabla = new javax.swing.JPanel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -153,21 +153,6 @@ public class V_Dashboard extends javax.swing.JPanel {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
-        tb_dashboard.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tb_dashboard);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 291, 820, 360));
-
         lb_fecha.setBackground(new java.awt.Color(255, 102, 102));
         lb_fecha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lb_fecha.setForeground(new java.awt.Color(255, 255, 255));
@@ -177,6 +162,10 @@ public class V_Dashboard extends javax.swing.JPanel {
 
         cbx_opciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "PRODUCTOS", "CLIENTES", "VENTAS" }));
         jPanel1.add(cbx_opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 190, 40));
+
+        panelTabla.setOpaque(false);
+        panelTabla.setLayout(new java.awt.BorderLayout());
+        jPanel1.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 830, 130));
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -194,8 +183,7 @@ public class V_Dashboard extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lb_fecha;
-    protected org.jdesktop.swingx.JXTable tb_dashboard;
+    protected javax.swing.JPanel panelTabla;
     // End of variables declaration//GEN-END:variables
 }

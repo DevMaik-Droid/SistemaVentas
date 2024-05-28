@@ -71,7 +71,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         }
 
         initComponents();
-        
+            
         if(usuario.getNivel().equalsIgnoreCase("Gerente")){
             iniciarAccionesGen();
         }else if(usuario.getNivel().equalsIgnoreCase("Administrativo")){
