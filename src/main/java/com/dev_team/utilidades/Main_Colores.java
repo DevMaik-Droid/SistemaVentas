@@ -10,9 +10,7 @@ public class Main_Colores {
     public final static Color COLOR_TITULO = Color.decode("#4e139f");
     public final static Color COLOR_SUB_TITULO = Color.decode("#6617D3");
     public final static Color COLOR_BTN = Color.decode("#7e2cfb");
-    
-    
-    
+
     public final static Color C_100 = Color.decode("#e7e7e7");
     public final static Color C_200 = Color.decode("#d1d1d1");
     public final static Color C_300 = Color.decode("#b0b0b0");
@@ -29,8 +27,10 @@ public class Main_Colores {
     public final static Color C_F600 = Color.decode("#495280");
     public final static Color Fondo_2 = Color.decode("#25253B");
     //#6e33ce
+    //332824
     //COLORES GRADIENT 
     //COLOR NARANJA
     public final static Color Naranja1 = Color.decode("#f93a4f");
     public final static Color Naranja2 = Color.decode("#ff7883");
+    public final static Color Nuevo = Color.decode("#30313c");
 }

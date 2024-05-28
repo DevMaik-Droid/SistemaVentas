@@ -11,7 +11,6 @@ import com.dev_team.utilidades.Panel_Round;
 import java.awt.Color;
 import org.jdesktop.swingx.JXList;
 
-
 /**
  *
  * @author DevMaik
@@ -23,9 +22,10 @@ public class V_Ventas extends javax.swing.JPanel {
      */
     public V_Ventas() {
         initComponents();
-        
-   
-        
+
+        panel_main.setBackground(Main_Colores.Fondo);
+        setBackground(Main_Colores.Fondo_2);
+
     }
 
     /**
@@ -37,7 +37,7 @@ public class V_Ventas extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new Panel_Round(20,Color.CYAN,Color.BLUE);
+        panel_main = new Panel_Round(20,Color.CYAN,Color.BLUE);
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_productos = new org.jdesktop.swingx.JXTable();
@@ -54,7 +54,7 @@ public class V_Ventas extends javax.swing.JPanel {
         btn_vender = new JButtonRound("Vender",20);
         tf_descuento = new javax.swing.JTextField();
         cbx_metodo = new javax.swing.JComboBox<>();
-        panel_cliente = new javax.swing.JPanel();
+        panel_cliente = new PanelGradient(Color.WHITE,Main_Colores.C_300);
         sh_buscarCliente = new org.jdesktop.swingx.JXSearchField();
         tf_nombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -65,15 +65,14 @@ public class V_Ventas extends javax.swing.JPanel {
         tf_email = new javax.swing.JTextField();
         tf_telefono = new javax.swing.JTextField();
         btn_limpiar = new JButtonRound("Limpiar",20);
-        jPanel2 = new PanelGradient(Color.PINK,Color.RED);
+        jPanel2 = new PanelGradient(Color.MAGENTA,Color.RED);
         jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
         setBackground(Main_Colores.Fondo_2);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setOpaque(false);
-        jPanel1.setLayout(new java.awt.BorderLayout());
+        panel_main.setBackground(new java.awt.Color(255, 255, 255));
+        panel_main.setLayout(new java.awt.BorderLayout());
 
         jPanel3.setBackground(Main_Colores.Fondo);
         jPanel3.setMinimumSize(new java.awt.Dimension(400, 40));
@@ -94,69 +93,75 @@ public class V_Ventas extends javax.swing.JPanel {
         tb_productos.setFont(new java.awt.Font("Bahnschrift", 0, 12)); // NOI18N
         jScrollPane1.setViewportView(tb_productos);
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 580, 320));
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 370, 570, 290));
 
+        tf_total.setBackground(Main_Colores.C_100);
         tf_total.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_totalActionPerformed(evt);
             }
         });
-        jPanel3.add(tf_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 520, 110, 30));
+        jPanel3.add(tf_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, 110, 30));
 
+        tf_cantidad.setBackground(Main_Colores.C_100);
         tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 260, 110, 30));
+        jPanel3.add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 110, 30));
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel1.setForeground(Main_Colores.C_100);
         jLabel1.setText("ID Producto:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setText("Cantidad:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 240, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Descuento: %");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 330, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 360, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel9.setForeground(Main_Colores.C_100);
         jLabel9.setText("Precio:");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 240, -1, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel10.setForeground(Main_Colores.C_100);
         jLabel10.setText("Total:");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 500, -1, -1));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel11.setForeground(Main_Colores.C_100);
         jLabel11.setText("Metodo Pago:");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 410, -1, -1));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 440, -1, -1));
 
+        tf_id_producto.setBackground(Main_Colores.C_100);
         tf_id_producto.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_id_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 100, 30));
+        jPanel3.add(tf_id_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 100, 30));
 
+        tf_precio.setBackground(Main_Colores.C_100);
         tf_precio.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 260, 100, 30));
+        jPanel3.add(tf_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 100, 30));
 
         btn_vender.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_vender.setForeground(new java.awt.Color(0, 0, 0));
         btn_vender.setText("Vender");
         btn_vender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.add(btn_vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 580, 90, 40));
+        jPanel3.add(btn_vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 90, 40));
 
+        tf_descuento.setBackground(Main_Colores.C_100);
         tf_descuento.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 350, 100, 30));
+        jPanel3.add(tf_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, 100, 30));
 
         cbx_metodo.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
-        jPanel3.add(cbx_metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 440, 110, 30));
+        jPanel3.add(cbx_metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 470, 110, 30));
 
-        panel_cliente.setBackground(new java.awt.Color(204, 204, 204));
+        panel_cliente.setBackground(Color.WHITE
+        );
         panel_cliente.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         panel_cliente.setMinimumSize(new java.awt.Dimension(150, 80));
         panel_cliente.setPreferredSize(new java.awt.Dimension(250, 200));
@@ -177,39 +182,43 @@ public class V_Ventas extends javax.swing.JPanel {
         });
         panel_cliente.add(sh_buscarCliente);
 
-        jPanel3.add(panel_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 180, 590));
+        jPanel3.add(panel_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 630));
 
+        tf_nombre.setBackground(Main_Colores.C_100);
         tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 200, 30));
+        jPanel3.add(tf_nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 200, 30));
 
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel5.setForeground(Main_Colores.C_100);
         jLabel5.setText("Nombre:");
-        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, -1, -1));
+        jPanel3.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, -1, -1));
 
+        tf_apellido.setBackground(Main_Colores.C_100);
         tf_apellido.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 200, 30));
+        jPanel3.add(tf_apellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 200, 30));
 
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel6.setForeground(Main_Colores.C_100);
         jLabel6.setText("Apellido:");
-        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, -1, -1));
+        jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel7.setForeground(Main_Colores.C_100);
         jLabel7.setText("Email:");
-        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 160, -1, -1));
+        jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 180, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel8.setForeground(Main_Colores.C_100);
         jLabel8.setText("telefono");
-        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, -1));
+        jPanel3.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, -1, -1));
 
+        tf_email.setBackground(Main_Colores.C_100);
         tf_email.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 180, 230, 30));
+        jPanel3.add(tf_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 200, 230, 30));
 
+        tf_telefono.setBackground(Main_Colores.C_100);
         tf_telefono.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 230, 30));
+        jPanel3.add(tf_telefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 140, 230, 30));
 
         btn_limpiar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_limpiar.setForeground(new java.awt.Color(0, 0, 0));
@@ -220,7 +229,7 @@ public class V_Ventas extends javax.swing.JPanel {
                 btn_limpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 100, 40));
+        jPanel3.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 100, 40));
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 255));
         jPanel2.setMaximumSize(new java.awt.Dimension(0, 0));
@@ -250,12 +259,12 @@ public class V_Ventas extends javax.swing.JPanel {
 
         jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 910, 50));
 
-        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 24)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel4.setForeground(Main_Colores.C_100);
         jLabel4.setText("DATOS CLIENTE");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 60, 180, 40));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 180, 40));
 
-        jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
+        panel_main.add(jPanel3, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -263,15 +272,15 @@ public class V_Ventas extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(50, 50, 50)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(61, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -307,11 +316,11 @@ public class V_Ventas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     protected javax.swing.JPanel panel_cliente;
+    private javax.swing.JPanel panel_main;
     protected org.jdesktop.swingx.JXSearchField sh_buscarCliente;
     protected org.jdesktop.swingx.JXTable tb_productos;
     protected javax.swing.JTextField tf_apellido;

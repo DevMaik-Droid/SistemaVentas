@@ -10,6 +10,7 @@ import com.dev_team.models.Producto;
 import com.dev_team.models.Venta;
 import com.dev_team.services.Service_Cliente;
 import com.dev_team.services.Service_Producto;
+import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.MultilineaCellRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
@@ -104,11 +105,11 @@ public class VentasController extends V_Ventas {
         model_list = new DefaultListModel<>();
         lista_clientes.forEach(model_list::addElement);
         list = new JXList(model_list);
-        list.setForeground(Color.BLUE);
-        list.setBackground(Color.red);
-        list.setSelectionForeground(Color.lightGray);
-        list.setSelectionBackground(Color.lightGray);
-        list.setFont(new Font("Arial",Font.PLAIN,16));
+        list.setForeground(Main_Colores.Fondo);
+        list.setBackground(Color.WHITE);
+        list.setSelectionForeground(Main_Colores.Fondo);
+        list.setSelectionBackground(Main_Colores.C_200);
+        list.setFont(new Font("Bahnschrift",Font.PLAIN,14));
         panel_cliente.add(new JScrollPane(list));
     }
 
