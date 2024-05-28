@@ -65,7 +65,7 @@ public class V_Ventas extends javax.swing.JPanel {
         tf_email = new javax.swing.JTextField();
         tf_telefono = new javax.swing.JTextField();
         btn_limpiar = new JButtonRound("Limpiar",20);
-        jPanel2 = new PanelGradient(Color.CYAN,Color.MAGENTA);
+        jPanel2 = new PanelGradient(Main_Colores.Nuevoo,Main_Colores.Nuevoc);
         jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 
@@ -280,9 +280,9 @@ public class V_Ventas extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(40, 40, 40)
                 .addComponent(panel_main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

@@ -28,7 +28,10 @@ public class Main_Colores {
     public final static Color Fondo_2 = Color.decode("#25253B");
     //COLORES GRADIENT 
     //COLOR NARANJA
+    //#a29bfe
     public final static Color Naranja1 = Color.decode("#f93a4f");
     public final static Color Naranja2 = Color.decode("#ff7883");
-    public final static Color Nuevo = Color.decode("#30313c");
+    public final static Color Nuevo = Color.decode("#6c5ce7");
+    public final static Color Nuevoc = Color.decode("#341f97");
+    public final static Color Nuevoo = Color.decode("#a29bfe");
 }
