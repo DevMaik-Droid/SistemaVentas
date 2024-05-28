@@ -97,16 +97,17 @@ public class V_Ventas extends javax.swing.JPanel {
 
         tf_total.setBackground(Main_Colores.C_100);
         tf_total.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_total.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tf_total.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tf_totalActionPerformed(evt);
             }
         });
-        jPanel3.add(tf_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 550, 110, 30));
+        jPanel3.add(tf_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 420, 110, 50));
 
         tf_cantidad.setBackground(Main_Colores.C_100);
         tf_cantidad.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 310, 110, 30));
+        jPanel3.add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, 110, 30));
 
         jLabel1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel1.setForeground(Main_Colores.C_100);
@@ -116,56 +117,57 @@ public class V_Ventas extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setText("Cantidad:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 290, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 290, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
         jLabel3.setText("Descuento: %");
-        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 360, -1, -1));
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 290, -1, -1));
 
         jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel9.setForeground(Main_Colores.C_100);
         jLabel9.setText("Precio:");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 290, -1, -1));
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 290, -1, -1));
 
         jLabel10.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel10.setForeground(Main_Colores.C_100);
         jLabel10.setText("Total:");
-        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 530, -1, -1));
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 390, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         jLabel11.setForeground(Main_Colores.C_100);
         jLabel11.setText("Metodo Pago:");
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 440, -1, -1));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 290, -1, -1));
 
         tf_id_producto.setBackground(Main_Colores.C_100);
         tf_id_producto.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_id_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 100, 30));
+        jPanel3.add(tf_id_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 100, 40));
 
         tf_precio.setBackground(Main_Colores.C_100);
         tf_precio.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 310, 100, 30));
+        jPanel3.add(tf_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 100, 40));
 
         btn_vender.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         btn_vender.setForeground(new java.awt.Color(0, 0, 0));
         btn_vender.setText("Vender");
         btn_vender.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.add(btn_vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 610, 90, 40));
+        jPanel3.add(btn_vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 500, 90, 40));
 
         tf_descuento.setBackground(Main_Colores.C_100);
         tf_descuento.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        jPanel3.add(tf_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 380, 100, 30));
+        tf_descuento.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPanel3.add(tf_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 310, 100, 30));
 
         cbx_metodo.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
-        jPanel3.add(cbx_metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 470, 110, 30));
+        jPanel3.add(cbx_metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 310, 120, 30));
 
         panel_cliente.setBackground(Color.WHITE
         );
         panel_cliente.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         panel_cliente.setMinimumSize(new java.awt.Dimension(150, 80));
         panel_cliente.setPreferredSize(new java.awt.Dimension(250, 200));
-        panel_cliente.setLayout(new org.jdesktop.swingx.VerticalLayout());
+        panel_cliente.setLayout(new java.awt.BorderLayout());
 
         sh_buscarCliente.setBackground(new java.awt.Color(255, 255, 255));
         sh_buscarCliente.setBorder(null);
@@ -180,7 +182,7 @@ public class V_Ventas extends javax.swing.JPanel {
                 sh_buscarClienteActionPerformed(evt);
             }
         });
-        panel_cliente.add(sh_buscarCliente);
+        panel_cliente.add(sh_buscarCliente, java.awt.BorderLayout.NORTH);
 
         jPanel3.add(panel_cliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 50, 190, 630));
 
@@ -229,7 +231,7 @@ public class V_Ventas extends javax.swing.JPanel {
                 btn_limpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 140, 100, 40));
+        jPanel3.add(btn_limpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 60, 100, 40));
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 255));
         jPanel2.setMaximumSize(new java.awt.Dimension(0, 0));

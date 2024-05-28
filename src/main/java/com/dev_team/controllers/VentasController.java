@@ -15,6 +15,7 @@ import com.dev_team.utilidades.MultilineaCellRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.V_Ventas;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -36,13 +37,13 @@ public class VentasController extends V_Ventas {
     private List<Cliente> lista_clientes;
     private JXList list;
     private List<Producto> lista_productos;
+    private final Service_Cliente cvc_cliente = new Service_Cliente();
 
     public VentasController() {
-        lista_clientes = (List<Cliente>) new Service_Cliente().listar();
+        lista_clientes = (List<Cliente>) cvc_cliente.listar();
         Service_Producto svc_producto = new Service_Producto();
         lista_productos = (List<Producto>) svc_producto.listar();
-        
-        
+
         generarLista();
         generarTablaProductos();
         sh_buscarCliente.getDocument().addDocumentListener(new DocumentListener() {
@@ -78,20 +79,53 @@ public class VentasController extends V_Ventas {
 
                 int fila = tb_productos.rowAtPoint(e.getPoint());
                 int columna = 0;
-                
+
                 Long idProducto = Long.valueOf(tb_productos.getValueAt(fila, columna).toString());
                 Producto p = lista_productos.stream().filter(x -> Objects.equals(x.getIdProducto(), idProducto)).findFirst().orElse(null);
-                tf_precio.setText(p.getPrecioUnitario()+"");
-                tf_id_producto.setText(p.getIdProducto()+"");
-                
+                tf_precio.setText(p.getPrecioUnitario() + "");
+                tf_id_producto.setText(p.getIdProducto() + "");
+
             }
 
         });
 
-        btn_vender.addActionListener(x-> {
+        btn_vender.addActionListener(x -> {
             registrarVenta();
         });
+
+        tf_descuento.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                calcularTotal();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                calcularTotal();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+
+            }
+
+        });
+
+        tf_id_producto.setEditable(false);
+        tf_precio.setEditable(false);
+        tf_total.setEditable(false);
         this.repaint();
+    }
+
+    private void calcularTotal() {
+        if (!tf_descuento.getText().isEmpty() && !tf_cantidad.getText().isEmpty()) {
+            double subtotal = Double.parseDouble(tf_cantidad.getText()) * Double.parseDouble(tf_precio.getText());
+            double total = subtotal - ((Double.parseDouble(tf_descuento.getText()) / 100) * subtotal);
+            tf_total.setText(total + "");
+        }else{
+            tf_total.setText("0");
+        }
+
     }
 
     private void actualizarCampos(Cliente c) {
@@ -109,8 +143,8 @@ public class VentasController extends V_Ventas {
         list.setBackground(Color.WHITE);
         list.setSelectionForeground(Main_Colores.Fondo);
         list.setSelectionBackground(Main_Colores.C_200);
-        list.setFont(new Font("Bahnschrift",Font.PLAIN,14));
-        panel_cliente.add(new JScrollPane(list));
+        list.setFont(new Font("Bahnschrift", Font.PLAIN, 14));
+        panel_cliente.add(new JScrollPane(list), BorderLayout.CENTER);
     }
 
     private void filtrarLista(String entrada) {
@@ -121,8 +155,7 @@ public class VentasController extends V_Ventas {
 
     private void generarTablaProductos() {
 
-        
-        Object[] columas = {"ID PRODUCTO", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE"};
+        Object[] columas = {"ID", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE"};
         DefaultTableModel model = new DefaultTableModel(columas, 0);
 
         for (Producto p : lista_productos) {
@@ -155,20 +188,52 @@ public class VentasController extends V_Ventas {
 
     }
 
-    private void registrarVenta() {
-
+    private Cliente listarCliente() {
         Cliente cliente = lista_clientes.stream()
                 .filter(x -> x.getNombre().equals(tf_nombre.getText()) && x.getApellido().equals(tf_apellido.getText()))
                 .findFirst().orElse(null);
-        
-        System.out.println(cliente.getIdCliente());
-        Long l = Vista_Dashboard.idUsuario;
-        System.out.println("Id_usuario" + l);
-        
+        return cliente;
+    }
+
+    private void registrarVenta() {
+
         Venta venta = new Venta();
-        
-        
-       
+        Cliente cl = listarCliente();
+        // registrar id_cliente
+        if (cl != null) {
+            venta.setIdCliente(cl.getIdCliente());
+        } else {
+            Cliente cliente1 = new Cliente();
+            cliente1.setNombre(tf_nombre.getText());
+            cliente1.setApellido(tf_apellido.getText());
+            cliente1.setTelefono(tf_telefono.getText());
+            cliente1.setEmail(tf_email.getText());
+            cliente1.setDepartamento("no aplica");
+            cliente1.setDireccion("no aplica");
+            cliente1.setEstado("1");
+
+            if (cvc_cliente.crear(cliente1)) {
+                System.out.println("cliente Creado");
+            } else {
+                System.out.println("Error en crear cliente");
+            }
+            lista_clientes = (List<Cliente>) cvc_cliente.listar();
+            cl = listarCliente();
+            venta.setIdCliente(cl.getIdCliente());
+            generarLista();
+        }
+        venta.setIdProducto(Long.valueOf(tf_id_producto.getText()));
+        venta.setIdUsuario(Vista_Dashboard.idUsuario);
+        venta.setCantidad(Double.valueOf(tf_cantidad.getText()));
+        venta.setPrecioUnitario(Double.valueOf(tf_precio.getText()));
+        venta.setMetodoPago(cbx_metodo.getSelectedItem().toString());
+
+        double subtotal = venta.getPrecioUnitario() * venta.getPrecioUnitario();
+
+        venta.setSubTotal(subtotal);
+        venta.setDescuento(Double.valueOf(tf_descuento.getText()));
+
+        venta.setTotal(Double.valueOf(tf_total.getText()));
 
     }
 }

@@ -20,6 +20,6 @@ public class Cliente {
     
     @Override
     public String toString(){
-        return getNombre();
+        return getNombre() + " " + getApellido();
     }
 }
