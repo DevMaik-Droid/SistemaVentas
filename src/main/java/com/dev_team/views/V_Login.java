@@ -106,7 +106,7 @@ public class V_Login extends javax.swing.JFrame {
         );
         lb_barra.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         lb_barra.setForeground(new java.awt.Color(255, 255, 255));
-        lb_barra.setText("\t Dashboard - Bienvenido Miguel");
+        lb_barra.setText("\t Login - Bienvenido");
         lb_barra.setCursor(new java.awt.Cursor(java.awt.Cursor.MOVE_CURSOR));
         lb_barra.setPreferredSize(new java.awt.Dimension(1500, 20));
         lb_barra.setVerifyInputWhenFocusTarget(false);
@@ -374,7 +374,7 @@ public class V_Login extends javax.swing.JFrame {
         lb_cerrar.setForeground(new Color(37, 32, 47));
 
         lb_barra.setBackground(Main_Colores.C_900);
-        lb_barra.setText("\t Dashboard - Bienvenido Miguel Angel");
+        lb_barra.setText("\t Login - Bienvenido");
         lb_barra.setForeground(Color.WHITE);
     }//GEN-LAST:event_lb_cerrarMouseExited
 

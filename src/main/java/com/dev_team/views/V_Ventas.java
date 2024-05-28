@@ -65,7 +65,7 @@ public class V_Ventas extends javax.swing.JPanel {
         tf_email = new javax.swing.JTextField();
         tf_telefono = new javax.swing.JTextField();
         btn_limpiar = new JButtonRound("Limpiar",20);
-        jPanel2 = new PanelGradient(Color.MAGENTA,Color.RED);
+        jPanel2 = new PanelGradient(Color.CYAN,Color.MAGENTA);
         jLabel12 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
 

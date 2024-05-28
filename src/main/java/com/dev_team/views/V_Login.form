@@ -74,7 +74,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="&quot;\t Dashboard - Bienvenido Miguel&quot;" type="code"/>
+                      <Connection code="&quot;\t Login - Bienvenido&quot;" type="code"/>
                     </Property>
                     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                       <Color id="Move Cursor"/>
