@@ -34,7 +34,6 @@ public class V_Login extends javax.swing.JFrame {
         this.setTitle("Login - SISTEMA DE VENTAS");
         this.setSize(new Dimension(800, 600));
         setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
-        lb_fondo_login.setIcon(ponerImagen("/images/login_fondo.jpg"));
 
         lb_barra.addMouseListener(new MouseAdapter() {
             @Override
@@ -159,6 +158,7 @@ public class V_Login extends javax.swing.JFrame {
 
         lb_fondo_login.setBackground(new java.awt.Color(255, 255, 255));
         lb_fondo_login.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_fondo_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Login_logo.jpeg"))); // NOI18N
         lb_fondo_login.setOpaque(true);
         lb_fondo_login.setPreferredSize(new java.awt.Dimension(400, 500));
         panel_izquierdo.add(lb_fondo_login, java.awt.BorderLayout.CENTER);

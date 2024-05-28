@@ -75,4 +75,4 @@ VALUES
 ('C027', 'Ventiladores', 'Noctua', 'NF-F12', NULL, NULL, 'Ventiladores de alta eficiencia y bajo ruido para un enfriamiento silencioso.');
 
 -- Continúa con los demás componentes si es necesario...
-tb_productostb_productostb_usuariotb_usuariobd_sistema_ventasbd_sistema_inventariotb_cabecera_ventatb_productotb_usuario
+tb_productostb_productostb_usuariotb_usuariobd_sistema_ventasbd_sistema_inventariotb_cabecera_ventatb_productotb_usuariotb_productos
