@@ -1,4 +1,4 @@
-package com.dev_team.views;
+          package com.dev_team.views;
 
 import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Usuario;
@@ -311,7 +311,7 @@ public class V_Login extends javax.swing.JFrame {
 
                 cnt.close();
             } catch (Exception e) {
-                System.out.println("Error al iniciar sesion: " + e);
+                System.out.println("Error al iniciar sesion: " + e.getMessage());
             }
         }
     }

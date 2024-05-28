@@ -21,12 +21,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="1036" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="1037" max="32767" attributes="0"/>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
                   <Component id="panel_main" min="-2" pref="930" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="54" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>

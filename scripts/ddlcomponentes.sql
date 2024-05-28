@@ -1,15 +1,15 @@
 -- Placa Base (Motherboard)
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
-('P001', 'Placa Base', 'ASUS', 'ROG STRIX Z390-F', NULL, NULL, 'Placa base para juegos de alto rendimiento.'),
-('P002', 'Placa Base', 'Gigabyte', 'B450 AORUS ELITE', NULL, NULL, 'Placa base para una configuración de nivel medio.'),
-('P003', 'Placa Base', 'MSI', 'MAG B550 TOMAHAWK', NULL, NULL, 'Placa base con soporte para los últimos procesadores Ryzen de AMD.');
+('PL001', 'Placa Base', 'ASUS', 'ROG STRIX Z390-F', NULL, NULL, 'Placa base para juegos de alto rendimiento.'),
+('PL002', 'Placa Base', 'Gigabyte', 'B450 AORUS ELITE', NULL, NULL, 'Placa base para una configuración de nivel medio.'),
+('PL003', 'Placa Base', 'MSI', 'MAG B550 TOMAHAWK', NULL, NULL, 'Placa base con soporte para los últimos procesadores Ryzen de AMD.');
 -- Procesador (CPU)
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
-('C001', 'Procesador (CPU)', 'Intel', 'Core i7-9700K', '8 núcleos', '3.6GHz', 'Procesador de 9ª generación para tareas intensivas.'),
-('C002', 'Procesador (CPU)', 'AMD', 'Ryzen 7 5800X', '8 núcleos', '3.8GHz', 'Procesador de la serie Ryzen 5000 con alto rendimiento en juegos y aplicaciones.'),
-('C003', 'Procesador (CPU)', 'Intel', 'Core i9-9900K', '8 núcleos', '3.6GHz', 'Procesador de 9ª generación con rendimiento extremadamente alto y capacidad de overclocking.');
+('P001', 'Procesador (CPU)', 'Intel', 'Core i7-9700K', '8 núcleos', '3.6GHz', 'Procesador de 9ª generación para tareas intensivas.'),
+('P002', 'Procesador (CPU)', 'AMD', 'Ryzen 7 5800X', '8 núcleos', '3.8GHz', 'Procesador de la serie Ryzen 5000 con alto rendimiento en juegos y aplicaciones.'),
+('P003', 'Procesador (CPU)', 'Intel', 'Core i9-9900K', '8 núcleos', '3.6GHz', 'Procesador de 9ª generación con rendimiento extremadamente alto y capacidad de overclocking.');
 
 -- Memoria RAM
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
@@ -21,11 +21,11 @@ VALUES
 -- Almacenamiento HDD
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
-('C004', 'Almacenamiento HDD', 'Seagate', 'Barracuda', '1 TB', '5400 RPM', 'Disco duro de 1TB para almacenamiento.'),
-('C005', 'Almacenamiento HDD', 'Western Digital', 'Blue', '2 TB', '7200 RPM', 'Disco duro de 2TB para almacenar una gran cantidad de datos.'),
-('C006', 'Almacenamiento HDD', 'Toshiba', 'P300', '4 TB', '5400 RPM', 'Disco duro de 4TB para almacenamiento masivo y respaldo de datos.');
+('AL004', 'Almacenamiento HDD', 'Seagate', 'Barracuda', '1 TB', '5400 RPM', 'Disco duro de 1TB para almacenamiento.'),
+('AL005', 'Almacenamiento HDD', 'Western Digital', 'Blue', '2 TB', '7200 RPM', 'Disco duro de 2TB para almacenar una gran cantidad de datos.'),
+('AL006', 'Almacenamiento HDD', 'Toshiba', 'P300', '4 TB', '5400 RPM', 'Disco duro de 4TB para almacenamiento masivo y respaldo de datos.');
 
--- Almacenamiento SSD
+-- Almacenamiento SSDtb_usuario
 INSERT INTO tb_componente (claveComponente, nombre, marca, modelo, capacidad, velocidad, descripcion)
 VALUES 
 ('C007', 'Almacenamiento SSD', 'Samsung', '970 EVO', '500 GB', 'SATA SSD - 300 MB/s a 400 MB/s', 'SSD de 500GB con velocidades de lectura/escritura rápidas.'),
@@ -75,3 +75,4 @@ VALUES
 ('C027', 'Ventiladores', 'Noctua', 'NF-F12', NULL, NULL, 'Ventiladores de alta eficiencia y bajo ruido para un enfriamiento silencioso.');
 
 -- Continúa con los demás componentes si es necesario...
+tb_productostb_productostb_usuariotb_usuariobd_sistema_ventasbd_sistema_inventariotb_cabecera_ventatb_productotb_usuario
