@@ -49,12 +49,19 @@ public class V_Ventas extends javax.swing.JPanel {
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_productos = new org.jdesktop.swingx.JXTable();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
+        tf_total = new javax.swing.JTextField();
+        tf_cantidad = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        tf_id_producto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
+        tf_precio = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        tf_descuento = new javax.swing.JTextField();
+        cbx_metodo = new javax.swing.JComboBox<>();
+        jLabel11 = new javax.swing.JLabel();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -120,6 +127,7 @@ public class V_Ventas extends javax.swing.JPanel {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setMinimumSize(new java.awt.Dimension(400, 40));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tb_productos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -135,58 +143,42 @@ public class V_Ventas extends javax.swing.JPanel {
         tb_productos.setColumnControlVisible(true);
         jScrollPane1.setViewportView(tb_productos);
 
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 180, 690, 310));
+        jPanel3.add(tf_total, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 110, 110, 40));
+        jPanel3.add(tf_cantidad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 110, 40));
+
         jLabel2.setForeground(new java.awt.Color(51, 51, 51));
         jLabel2.setText("Cantidad:");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
 
         jLabel1.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel1.setText("Clave:");
+        jLabel1.setText("ID Producto");
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+        jPanel3.add(tf_id_producto, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 90, 40));
 
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Descuento:");
+        jLabel3.setText("Descuento: %");
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
+        jPanel3.add(tf_precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 90, 44));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(148, 148, 148)
-                                .addComponent(jLabel2))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(40, 40, 40)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(60, 60, 60)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addGap(0, 210, Short.MAX_VALUE)))
-                .addGap(20, 20, 20))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addGap(4, 4, 4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(80, 80, 80)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 325, Short.MAX_VALUE)
-                .addGap(20, 20, 20))
-        );
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Precio");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
+
+        jButton1.setText("Vender");
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 110, 60));
+
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Total");
+        jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, -1, -1));
+        jPanel3.add(tf_descuento, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 100, 40));
+
+        cbx_metodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Efectivo", "Tarjeta" }));
+        jPanel3.add(cbx_metodo, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 40, 120, 40));
+
+        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel11.setText("Metodo Pago");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 20, -1, -1));
 
         jPanel1.add(jPanel3, java.awt.BorderLayout.CENTER);
 
@@ -207,7 +199,11 @@ public class V_Ventas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_limpiar;
+    protected javax.swing.JComboBox<String> cbx_metodo;
+    protected javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -215,19 +211,22 @@ public class V_Ventas extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     protected javax.swing.JPanel panel_cliente;
     protected org.jdesktop.swingx.JXSearchField sh_buscarCliente;
     protected org.jdesktop.swingx.JXTable tb_productos;
     protected javax.swing.JTextField tf_apellido;
+    protected javax.swing.JTextField tf_cantidad;
+    protected javax.swing.JTextField tf_descuento;
     protected javax.swing.JTextField tf_email;
+    protected javax.swing.JTextField tf_id_producto;
     protected javax.swing.JTextField tf_nombre;
+    protected javax.swing.JTextField tf_precio;
     protected javax.swing.JTextField tf_telefono;
+    protected javax.swing.JTextField tf_total;
     // End of variables declaration//GEN-END:variables
 }

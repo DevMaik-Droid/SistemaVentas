@@ -6,13 +6,17 @@ package com.dev_team.controllers;
 
 import com.dev_team.models.Cliente;
 import com.dev_team.models.Producto;
+import com.dev_team.models.Venta;
 import com.dev_team.services.Service_Cliente;
 import com.dev_team.services.Service_Producto;
 import com.dev_team.utilidades.MultilineaCellRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.V_Ventas;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.Objects;
 import javax.swing.DefaultListModel;
 import javax.swing.JScrollPane;
 import javax.swing.event.DocumentEvent;
@@ -25,14 +29,16 @@ import org.jdesktop.swingx.JXList;
 public class VentasController extends V_Ventas {
 
     private DefaultListModel<Cliente> model_list;
-    private final List<Cliente> lista_clientes;
+    private List<Cliente> lista_clientes;
     private JXList list;
-    private final List<Producto> lista_productos;
+    private List<Producto> lista_productos;
 
     public VentasController() {
         lista_clientes = (List<Cliente>) new Service_Cliente().listar();
-        lista_productos = (List<Producto>) new Service_Producto().listar();
-
+        Service_Producto svc_producto = new Service_Producto();
+        lista_productos = (List<Producto>) svc_producto.listar();
+        
+        
         generarLista();
         generarTablaProductos();
         sh_buscarCliente.getDocument().addDocumentListener(new DocumentListener() {
@@ -61,6 +67,22 @@ public class VentasController extends V_Ventas {
                 }
             }
         });
+        tb_productos.addMouseListener(new MouseAdapter() {
+
+            @Override
+            public void mouseClicked(MouseEvent e) {
+
+                int fila = tb_productos.rowAtPoint(e.getPoint());
+                int columna = 0;
+                
+                Long idProducto = Long.valueOf(tb_productos.getValueAt(fila, columna).toString());
+                Producto p = lista_productos.stream().filter(x -> Objects.equals(x.getIdProducto(), idProducto)).findFirst().orElse(null);
+                tf_precio.setText(p.getPrecioUnitario()+"");
+                tf_id_producto.setText(p.getIdProducto()+"");
+                
+            }
+
+        });
 
         this.repaint();
     }
@@ -87,15 +109,13 @@ public class VentasController extends V_Ventas {
 
     private void generarTablaProductos() {
 
-        List<Producto> productos = (List<Producto>) new Service_Producto().listar();
-
-        Object[] columas = {"CLAVE", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE"};
+        
+        Object[] columas = {"ID PRODUCTO", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE"};
         DefaultTableModel model = new DefaultTableModel(columas, 0);
 
-        for (Producto p : productos) {
+        for (Producto p : lista_productos) {
             Object[] datos = new Object[columas.length];
-
-            datos[0] = p.getClaveProducto();
+            datos[0] = p.getIdProducto();
             datos[1] = p.getNombreProducto();
             datos[2] = p.getCategoriaProducto();
             datos[3] = p.getPrecioUnitario();
@@ -120,7 +140,20 @@ public class VentasController extends V_Ventas {
         tb_productos.setDefaultEditor(Object.class, null);
         // Asignar el MultiLineCellRenderer a la columna "DETALLE"
         columnModel.getColumn(5).setCellRenderer(new MultilineaCellRenderer());
-        
+
     }
 
+    private void registrarVenta() {
+
+        Cliente cliente = lista_clientes.stream()
+                .filter(x -> x.getNombre().equals(tf_nombre.getText()) && x.getApellido().equals(tf_apellido.getText()))
+                .findFirst().orElse(null);
+        
+        System.out.println(cliente.getIdCliente());
+                
+        Venta venta = new Venta();
+        venta.setIdProducto(Long.valueOf(tf_id_producto.getText()));
+       
+
+    }
 }

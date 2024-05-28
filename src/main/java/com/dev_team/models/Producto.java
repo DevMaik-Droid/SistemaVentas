@@ -20,4 +20,5 @@ public class Producto {
     private String detalle;
     private Date fechaModicacion;
     
+    
 }

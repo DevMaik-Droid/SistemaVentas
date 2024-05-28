@@ -112,7 +112,29 @@ public class Service_Cliente implements I_Service{
 
     @Override
     public boolean crear(Object objeto) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        boolean respuesta = false;
+        Connection cn = Conexion.conectar();
+        Cliente cliente = (Cliente) objeto;
+        try {
+            PreparedStatement consulta = cn.prepareStatement("insert into tb_cliente values(?,?,?,?,?,?,?,?)");
+            consulta.setInt(1, 0);//id
+            consulta.setString(2, cliente.getNombre());
+            consulta.setString(3, cliente.getApellido());
+            consulta.setString(4, cliente.getEmail());
+            consulta.setString(5, cliente.getTelefono());
+            consulta.setString(6, cliente.getDepartamento());
+            consulta.setString(7, cliente.getDireccion());
+            consulta.setString(8, cliente.getEstado());
+            
+            
+            respuesta = consulta.executeUpdate() > 0;
+            cn.close();
+            
+        } catch (SQLException e) {
+            System.out.println("Error al guardar cliente: " + e);
+        }
+        return respuesta;
+    
     }
 
     @Override
@@ -157,5 +179,8 @@ public class Service_Cliente implements I_Service{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
+    
+        
+        
     
 }

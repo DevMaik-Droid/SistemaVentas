@@ -1,7 +1,6 @@
 package com.dev_team.services;
 
 import com.dev_team.models.Producto;
-import com.dev_team.models.Proveedor;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -114,19 +113,32 @@ public class Service_Producto implements I_Service {
                 p.setPrecioTotal(resultado.getDouble(7));
                 p.setDisponibilidad(resultado.getString(8));
                 p.setIdProveedor(resultado.getLong(9));
-                p.setIdProducto(resultado.getLong(10));
+                p.setIdUsuario(resultado.getLong(10));
                 p.setDetalle(resultado.getString(11));
                 p.setFechaModicacion(resultado.getTimestamp(12));
                 lista.add(p);
             }
+            cn.close();
         } catch (SQLException ex) {
             System.out.println("Error en listar productos: "+ex.getMessage());
         }
         return lista;
-    
-    
-    
     }
+    
+    public Boolean actualizarStock(Long id,int cantidad){
+        
+        Connection cn = Conexion.conectar();
+        String sql = String.format("UPDATE %s SET stock=stock-%d WHERE idp = %d", TABLA,cantidad,id);
+        try(PreparedStatement pst = cn.prepareStatement(sql)){
+            
+            return pst.executeUpdate() > 0;
+            
+        }catch(SQLException e){
+            System.out.println("error en actualizar stock: " + e);
+        }
+        return false;
+    }
+            
 
     @Override
     public boolean eliminar(Long idProducto) {
