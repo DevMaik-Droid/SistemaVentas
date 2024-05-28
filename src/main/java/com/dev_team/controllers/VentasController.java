@@ -4,6 +4,7 @@
  */
 package com.dev_team.controllers;
 
+import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Cliente;
 import com.dev_team.models.Producto;
 import com.dev_team.models.Venta;
@@ -84,6 +85,9 @@ public class VentasController extends V_Ventas {
 
         });
 
+        btn_vender.addActionListener(x-> {
+            registrarVenta();
+        });
         this.repaint();
     }
 
@@ -150,9 +154,12 @@ public class VentasController extends V_Ventas {
                 .findFirst().orElse(null);
         
         System.out.println(cliente.getIdCliente());
-                
+        Long l = Vista_Dashboard.idUsuario;
+        System.out.println("Id_usuario" + l);
+        
         Venta venta = new Venta();
-        venta.setIdProducto(Long.valueOf(tf_id_producto.getText()));
+        
+        
        
 
     }

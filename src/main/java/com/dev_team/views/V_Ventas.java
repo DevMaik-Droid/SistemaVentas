@@ -57,7 +57,7 @@ public class V_Ventas extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         tf_precio = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_vender = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
         tf_descuento = new javax.swing.JTextField();
         cbx_metodo = new javax.swing.JComboBox<>();
@@ -165,8 +165,8 @@ public class V_Ventas extends javax.swing.JPanel {
         jLabel9.setText("Precio");
         jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, -1));
 
-        jButton1.setText("Vender");
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 110, 60));
+        btn_vender.setText("Vender");
+        jPanel3.add(btn_vender, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 100, 110, 60));
 
         jLabel10.setForeground(new java.awt.Color(51, 51, 51));
         jLabel10.setText("Total");
@@ -199,8 +199,8 @@ public class V_Ventas extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_limpiar;
+    protected javax.swing.JButton btn_vender;
     protected javax.swing.JComboBox<String> cbx_metodo;
-    protected javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
