@@ -14,6 +14,8 @@ import com.dev_team.utilidades.MultilineaCellRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.V_Ventas;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -102,6 +104,11 @@ public class VentasController extends V_Ventas {
         model_list = new DefaultListModel<>();
         lista_clientes.forEach(model_list::addElement);
         list = new JXList(model_list);
+        list.setForeground(Color.BLUE);
+        list.setBackground(Color.red);
+        list.setSelectionForeground(Color.lightGray);
+        list.setSelectionBackground(Color.lightGray);
+        list.setFont(new Font("Arial",Font.PLAIN,16));
         panel_cliente.add(new JScrollPane(list));
     }
 
