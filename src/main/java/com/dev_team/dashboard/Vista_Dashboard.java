@@ -33,6 +33,7 @@ import com.dev_team.views.V_RegistrarUsuario;
 import com.dev_team.views.V_Ventas;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Point;
 import java.sql.Connection;
@@ -71,13 +72,15 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         }
 
         initComponents();
-            
-        if(usuario.getNivel().equalsIgnoreCase("Gerente")){
+        
+        panel_acciones.setLayout(new GridLayout(1,3,0,0));
+
+        if (usuario.getNivel().equalsIgnoreCase("Gerente")) {
             iniciarAccionesGen();
-        }else if(usuario.getNivel().equalsIgnoreCase("Administrativo")){
+        } else if (usuario.getNivel().equalsIgnoreCase("Administrativo")) {
             iniciarAccionesAdm();
         }
-        
+
         setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
 
         setResizable(true);
@@ -93,13 +96,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         return icon;
 
     }
-    
-    private void iniciarAccionesAdm(){
+
+    private void iniciarAccionesAdm() {
         main = this;
         menu.addEvent((int index, int indexSubMenu) -> {
             if (index == 0 && indexSubMenu == 0) {
                 showForm(new Form_Empty(0 + " " + 0));
-            }  else if (index == 1 && indexSubMenu == 1) {
+            } else if (index == 1 && indexSubMenu == 1) {
                 V_RegistrarProveedor prov = new ProveedorController();
                 showForm(prov);
             } else if (index == 1 && indexSubMenu == 2) {
@@ -127,7 +130,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
             } else if (index == 4 && indexSubMenu == 1) {
                 V_ChartsComponentes charts = new ComponentChartsControllers();
                 showForm(charts);
-            }else {
+            } else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });
@@ -172,48 +175,47 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(gestionarProductos);
 
             } else if (index == 7 && indexSubMenu == 1) {
-              try {
-                Conexion cone=new Conexion();
-                Connection con=null;
-                con = cone.conectar();
-                String nombre ="";
-                JasperReport reporte =null;
-                reporte=(JasperReport) JRLoader.loadObjectFromFile(nombre);
-                JasperPrint jp;
-                Map parametro = new HashMap();
-                jp = JasperFillManager.fillReport(reporte,null,con);
-                JasperViewer jv= new JasperViewer(jp,false);
-                jv.setTitle("REPORTE DE CLIENTES");
-                jv.setVisible(true);
-              } catch (JRException e) {
-              JOptionPane.showMessageDialog(null, "Error:"+e.getMessage());
+                try {
+                    Conexion cone = new Conexion();
+                    Connection con = null;
+                    con = cone.conectar();
+                    String nombre = "";
+                    JasperReport reporte = null;
+                    reporte = (JasperReport) JRLoader.loadObjectFromFile(nombre);
+                    JasperPrint jp;
+                    Map parametro = new HashMap();
+                    jp = JasperFillManager.fillReport(reporte, null, con);
+                    JasperViewer jv = new JasperViewer(jp, false);
+                    jv.setTitle("REPORTE DE CLIENTES");
+                    jv.setVisible(true);
+                } catch (JRException e) {
+                    JOptionPane.showMessageDialog(null, "Error:" + e.getMessage());
                 }
-                
+
 // reporte 7 2 usuarios
-
             } else if (index == 7 && indexSubMenu == 2) {
-              try {
-                Conexion cone=new Conexion();
-                Connection con=null;
-                con = cone.conectar();
-                String nombre ="C://Users//Personal//Documents//GitHub//SistemaVentas//src//main//java//com//dev_team//reports//rep_usuario.jasper";
-                JasperReport reporte =null;
-                reporte=(JasperReport) JRLoader.loadObjectFromFile(nombre);
-                JasperPrint jp;
-                Map parametro = new HashMap();
-                jp = JasperFillManager.fillReport(reporte,null,con);
-                JasperViewer jv= new JasperViewer(jp,false);
-                jv.setTitle("REPORTE DE USUARIOS");
-                jv.setVisible(true);
-              } catch (JRException e) {
-              JOptionPane.showMessageDialog(null, "Error:"+e.getMessage());
+                try {
+                    Conexion cone = new Conexion();
+                    Connection con = null;
+                    con = cone.conectar();
+                    String nombre = "C://Users//Personal//Documents//GitHub//SistemaVentas//src//main//java//com//dev_team//reports//rep_usuario.jasper";
+                    JasperReport reporte = null;
+                    reporte = (JasperReport) JRLoader.loadObjectFromFile(nombre);
+                    JasperPrint jp;
+                    Map parametro = new HashMap();
+                    jp = JasperFillManager.fillReport(reporte, null, con);
+                    JasperViewer jv = new JasperViewer(jp, false);
+                    jv.setTitle("REPORTE DE USUARIOS");
+                    jv.setVisible(true);
+                } catch (JRException e) {
+                    JOptionPane.showMessageDialog(null, "Error:" + e.getMessage());
                 }
 
-              // reporte 7 3 
-            }else if (index == 8 && indexSubMenu == 1) {
+                // reporte 7 3 
+            } else if (index == 8 && indexSubMenu == 1) {
                 V_Ventas ventas = new VentasController();
                 showForm(ventas);
-            }  else {
+            } else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
         });
