@@ -99,7 +99,7 @@ public class D_AdmiComponentes extends GradientDialog {
         btn_buscar.setForeground(Main_Colores.Fondo);
         btn_buscar.setText("Guardar");
         btn_buscar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, 130, 30));
+        getContentPane().add(btn_buscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, 130, 30));
 
         tf_proveedor.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_proveedor.setForeground(Main_Colores.Fondo);
@@ -229,16 +229,16 @@ public class D_AdmiComponentes extends GradientDialog {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel lb_3;
-    private javax.swing.JLabel lb_4;
-    private javax.swing.JLabel lb_5;
-    private javax.swing.JLabel lb_6;
-    private javax.swing.JLabel lb_7;
-    private javax.swing.JTextField tf_cantidad;
+    protected javax.swing.JLabel lb_3;
+    protected javax.swing.JLabel lb_4;
+    protected javax.swing.JLabel lb_5;
+    protected javax.swing.JLabel lb_6;
+    protected javax.swing.JLabel lb_7;
+    protected javax.swing.JTextField tf_cantidad;
     private javax.swing.JTextField tf_capacidad;
     private javax.swing.JTextField tf_marca1;
     private javax.swing.JTextField tf_modelo;
-    private javax.swing.JTextField tf_precio;
+    protected javax.swing.JTextField tf_precio;
     private javax.swing.JTextField tf_proveedor;
     private javax.swing.JTextField tf_resolucion;
     private javax.swing.JTextField tf_tamanio;
