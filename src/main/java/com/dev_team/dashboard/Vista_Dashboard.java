@@ -36,12 +36,14 @@ import java.awt.Component;
 import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.Point;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import net.sf.jasperreports.engine.JRException;
@@ -60,12 +62,12 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     Usuario usuario;
 
     public Vista_Dashboard(Usuario us) {
-        
+
         this.usuario = us;
         initComponents();
-        
+
         try {
-            
+
             Vista_Dashboard.idUsuario = usuario.getIdUsuario();
             lb_foto.setIcon(ponerFoto());
             lb_barra.setText("\t Nivel - ".concat(usuario.getNivel()));
@@ -75,8 +77,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         } catch (Exception e) {
         }
 
-        
-        panel_acciones.setLayout(new GridLayout(1,3,0,0));
+        panel_acciones.setLayout(new GridLayout(1, 3, 0, 0));
 
         if (usuario.getNivel().equalsIgnoreCase("Gerente")) {
             iniciarAccionesGen();
@@ -85,7 +86,12 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         }
 
         setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
-
+        
+        maximizar.setText("");
+        maximizar.setIcon(ponerIcono("/images/iconoMinimizar.png", maximizar));
+        
+        jButton1.setText("[-]");
+       
         setResizable(true);
         setLocationRelativeTo(null);
         setSize(1280, 800);
@@ -95,6 +101,13 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
     private Icon ponerFoto() {
         Image img = new ImageIcon(usuario.getFoto_recuperada()).getImage().getScaledInstance(lb_foto.getWidth(), lb_foto.getHeight(), Image.SCALE_DEFAULT);
+        Icon icon = new ImageIcon(img);
+        return icon;
+
+    }
+
+    private Icon ponerIcono(String url, JLabel label) {
+        Image img = new ImageIcon(getClass().getResource(url)).getImage().getScaledInstance(label.getWidth(), label.getHeight(), Image.SCALE_DEFAULT);
         Icon icon = new ImageIcon(img);
         return icon;
 
@@ -191,6 +204,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                     JasperViewer jv = new JasperViewer(jp, false);
                     jv.setTitle("REPORTE DE CLIENTES");
                     jv.setVisible(true);
+                    
                 } catch (JRException e) {
                     JOptionPane.showMessageDialog(null, "Error:" + e.getMessage());
                 }
@@ -198,20 +212,17 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 // reporte 7 2 usuarios
             } else if (index == 7 && indexSubMenu == 2) {
                 try {
-                    Conexion cone = new Conexion();
-                    Connection con = null;
-                    con = cone.conectar();
-                    String nombre = "C://Users//Personal//Documents//GitHub//SistemaVentas//src//main//java//com//dev_team//reports//rep_usuario.jasper";
-                    JasperReport reporte = null;
-                    reporte = (JasperReport) JRLoader.loadObjectFromFile(nombre);
-                    JasperPrint jp;
-                    Map parametro = new HashMap();
-                    jp = JasperFillManager.fillReport(reporte, null, con);
+                    
+                    Connection con = Conexion.conectar();
+                    String url = "src/main/java/com/dev_team/reports/rep_usuario.jasper";
+                    InputStream inputStream = JRLoader.getFileInputStream(url);
+                    
+                    JasperPrint jp = JasperFillManager.fillReport(inputStream, null, con);
                     JasperViewer jv = new JasperViewer(jp, false);
                     jv.setTitle("REPORTE DE USUARIOS");
                     jv.setVisible(true);
                 } catch (JRException e) {
-                    JOptionPane.showMessageDialog(null, "Error:" + e.getMessage());
+                    JOptionPane.showMessageDialog(null, "Error en generar reporte:" + e.getMessage());
                 }
 
                 // reporte 7 3 
@@ -453,18 +464,10 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 
     }//GEN-LAST:event_lb_cerrarMouseClicked
 
-    int antes;
-    boolean bandera = false;
-    private void maximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizarMouseClicked
 
-        if (!bandera) {
-            antes = this.getExtendedState();
-            setExtendedState(JFrame.MAXIMIZED_BOTH);
-            bandera = true;
-        } else {
-            setExtendedState(antes);
-            bandera = false;
-        }
+    private void maximizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_maximizarMouseClicked
+        this.setState(JFrame.ICONIFIED);
+
 
     }//GEN-LAST:event_maximizarMouseClicked
 
@@ -486,9 +489,19 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     private void btn_ajustesUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ajustesUsuarioActionPerformed
         abrirVentanaAdmUsuario(usuario);
     }//GEN-LAST:event_btn_ajustesUsuarioActionPerformed
-
+    int antes;
+    boolean bandera = false;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        this.setState(JFrame.ICONIFIED);
+
+        if (!bandera) {
+            antes = this.getExtendedState();
+            setExtendedState(JFrame.MAXIMIZED_BOTH);
+            bandera = true;
+        } else {
+            setExtendedState(antes);
+            bandera = false;
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
