@@ -1,5 +1,6 @@
 package com.dev_team.controllers;
 
+import com.dev_team.dashboard.Vista_Dashboard;
 import com.dev_team.models.Accesorios;
 import com.dev_team.models.Componente;
 import com.dev_team.models.Producto;
@@ -142,7 +143,7 @@ public class RegistrarProductoController extends V_RegistrarProducto {
         producto.setStock(Integer.valueOf(tf_cantidad.getText()));
         producto.setPrecioTotal(Double.valueOf(tf_precioTotal.getText()));
         producto.setIdProveedor(((Proveedor) cbx_proveedor.getSelectedItem()).getIdProveedor());
-        producto.setIdUsuario(3L);
+        producto.setIdUsuario(Vista_Dashboard.idUsuario);
         producto.setDetalle(ta_detalle.getText());
 
         Service_Producto svc = new Service_Producto();
