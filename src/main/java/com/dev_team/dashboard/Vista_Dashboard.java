@@ -60,18 +60,21 @@ public class Vista_Dashboard extends javax.swing.JFrame {
     Usuario usuario;
 
     public Vista_Dashboard(Usuario us) {
+        
+        this.usuario = us;
+        initComponents();
+        
         try {
-            this.usuario = us;
+            
             Vista_Dashboard.idUsuario = usuario.getIdUsuario();
             lb_foto.setIcon(ponerFoto());
-            lb_barra.setText("\t Dashboard - ".concat(usuario.getNombre()));
+            lb_barra.setText("\t Nivel - ".concat(usuario.getNivel()));
 
             lb_nombre.setText(usuario.getNombre());
             lb_apellido.setText(usuario.getApellido());
         } catch (Exception e) {
         }
 
-        initComponents();
         
         panel_acciones.setLayout(new GridLayout(1,3,0,0));
 

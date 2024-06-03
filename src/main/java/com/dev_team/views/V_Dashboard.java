@@ -50,6 +50,8 @@ public class V_Dashboard extends javax.swing.JPanel {
         lb_fecha = new javax.swing.JLabel();
         cbx_opciones = new javax.swing.JComboBox<>();
         panelTabla = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tb_dashboard = new org.jdesktop.swingx.JXTable();
 
         setLayout(new java.awt.BorderLayout());
 
@@ -58,7 +60,7 @@ public class V_Dashboard extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(102, 255, 102));
 
-        lb_ganancias.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        lb_ganancias.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         lb_ganancias.setForeground(new java.awt.Color(51, 51, 51));
         lb_ganancias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_ganancias.setText("1520 bs");
@@ -165,7 +167,24 @@ public class V_Dashboard extends javax.swing.JPanel {
 
         panelTabla.setOpaque(false);
         panelTabla.setLayout(new java.awt.BorderLayout());
-        jPanel1.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 830, 130));
+
+        tb_dashboard.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tb_dashboard.setColumnControlVisible(true);
+        jScrollPane1.setViewportView(tb_dashboard);
+
+        panelTabla.add(jScrollPane1, java.awt.BorderLayout.CENTER);
+
+        jPanel1.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 830, 300));
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
@@ -180,10 +199,12 @@ public class V_Dashboard extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel lb_clientes;
+    private javax.swing.JScrollPane jScrollPane1;
+    protected javax.swing.JLabel lb_clientes;
     private javax.swing.JLabel lb_fecha;
-    private javax.swing.JLabel lb_ganancias;
-    private javax.swing.JLabel lb_ventas;
+    protected javax.swing.JLabel lb_ganancias;
+    protected javax.swing.JLabel lb_ventas;
     protected javax.swing.JPanel panelTabla;
+    protected org.jdesktop.swingx.JXTable tb_dashboard;
     // End of variables declaration//GEN-END:variables
 }

@@ -22,10 +22,12 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import javax.swing.DefaultListModel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextField;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
@@ -40,10 +42,13 @@ public class VentasController extends V_Ventas {
     private JXList list;
     private List<Producto> lista_productos;
     private final Service_Cliente cvc_cliente = new Service_Cliente();
+    Service_Producto svc_producto = new Service_Producto();
+
+    private int cantidad_maxima;
 
     public VentasController() {
         lista_clientes = (List<Cliente>) cvc_cliente.listar();
-        Service_Producto svc_producto = new Service_Producto();
+
         lista_productos = (List<Producto>) svc_producto.listar();
 
         generarLista();
@@ -79,13 +84,17 @@ public class VentasController extends V_Ventas {
             @Override
             public void mouseClicked(MouseEvent e) {
 
-                int fila = tb_productos.rowAtPoint(e.getPoint());
-                int columna = 0;
-
-                Long idProducto = Long.valueOf(tb_productos.getValueAt(fila, columna).toString());
-                Producto p = lista_productos.stream().filter(x -> Objects.equals(x.getIdProducto(), idProducto)).findFirst().orElse(null);
-                tf_precio.setText(p.getPrecioUnitario() + "");
-                tf_id_producto.setText(p.getIdProducto() + "");
+                if (validarCliente()) {
+                    int fila = tb_productos.rowAtPoint(e.getPoint());
+                    int columna = 0;
+                    Long idProducto = Long.valueOf(tb_productos.getValueAt(fila, columna).toString());
+                    Producto p = lista_productos.stream().filter(x -> Objects.equals(x.getIdProducto(), idProducto)).findFirst().orElse(null);
+                    tf_precio.setText(p.getPrecioUnitario() + "");
+                    tf_id_producto.setText(p.getIdProducto() + "");
+                    cantidad_maxima = p.getStock();
+                } else {
+                    Utilidad.mostrarMensaje("Verique datos del cliente");
+                }
 
             }
 
@@ -112,6 +121,23 @@ public class VentasController extends V_Ventas {
             }
 
         });
+        tf_cantidad.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent e) {
+                calcularTotal();
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent e) {
+                calcularTotal();
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent e) {
+               
+            }
+
+        });
 
         tf_id_producto.setEditable(false);
         tf_precio.setEditable(false);
@@ -120,12 +146,24 @@ public class VentasController extends V_Ventas {
     }
 
     private void calcularTotal() {
-        if (!tf_descuento.getText().isEmpty() && !tf_cantidad.getText().isEmpty()) {
-            double subtotal = Double.parseDouble(tf_cantidad.getText()) * Double.parseDouble(tf_precio.getText());
-            double total = subtotal - ((Double.parseDouble(tf_descuento.getText()) / 100) * subtotal);
-            tf_total.setText(total + "");
-        }else{
-            tf_total.setText("0");
+
+        try {
+            int cantidad = (!tf_cantidad.getText().isEmpty()) ? Integer.parseInt(tf_cantidad.getText()) : 0;
+
+            if (cantidad <= cantidad_maxima) {
+                if (!tf_descuento.getText().isEmpty() && !tf_cantidad.getText().isEmpty()) {
+                    double subtotal = Double.parseDouble(tf_cantidad.getText()) * Double.parseDouble(tf_precio.getText());
+                    double total = subtotal - ((Double.parseDouble(tf_descuento.getText()) / 100) * subtotal);
+                    tf_total.setText(String.format("%.2f", total));
+                } else {
+                    tf_total.setText("0");
+                }
+            } else {
+                Utilidad.mostrarMensaje("Cantidad supera al stock"); 
+                
+            }
+        } catch (NumberFormatException e) {
+            Utilidad.mostrarMensaje("Ingrese datos validos");
         }
 
     }
@@ -226,7 +264,7 @@ public class VentasController extends V_Ventas {
         }
         venta.setIdProducto(Long.valueOf(tf_id_producto.getText()));
         venta.setIdUsuario(Vista_Dashboard.idUsuario);
-        venta.setCantidad(Double.valueOf(tf_cantidad.getText()));
+        venta.setCantidad(Integer.valueOf(tf_cantidad.getText()));
         venta.setPrecioUnitario(Double.valueOf(tf_precio.getText()));
         venta.setMetodoPago(cbx_metodo.getSelectedItem().toString());
 
@@ -235,12 +273,34 @@ public class VentasController extends V_Ventas {
         venta.setSubTotal(subtotal);
         venta.setDescuento(Double.valueOf(tf_descuento.getText()));
         venta.setTotal(Double.valueOf(tf_total.getText()));
-        
-        Service_Ventas svc_ventas = new Service_Ventas();
-        if(svc_ventas.crear(venta)){
-            Utilidad.mostrarMensaje("Venta Creada");
-        }
-        
 
+        Service_Ventas svc_ventas = new Service_Ventas();
+        if (svc_ventas.crear(venta)) {
+            Utilidad.mostrarMensaje("Venta Creada");
+            svc_producto.actualizarStock(venta.getIdProducto(), venta.getCantidad(),cantidad_maxima);
+            System.out.println("Producto actualizado");
+            lista_productos = (List<Producto>) svc_producto.listar();
+            generarTablaProductos();
+            limpiarDatos();
+        }
+    }
+
+    private void limpiarDatos() {
+
+        JTextField textos[] = {tf_apellido, tf_cantidad, tf_descuento, tf_email, tf_id_producto, tf_nombre, tf_precio, tf_telefono, tf_total};
+        Arrays.stream(textos).forEach(x -> x.setText(""));
+    }
+
+    private Boolean validarCliente() {
+        JTextField tfs_cliente[] = {tf_apellido, tf_email, tf_nombre, tf_telefono};
+
+        for (JTextField t : tfs_cliente) {
+
+            if (t.getText().isEmpty()) {
+                return false;
+            }
+
+        }
+        return true;
     }
 }

@@ -19,12 +19,9 @@ public class Table_Cell_Render extends DefaultTableRenderer {
 
     private final Font font_sustom = new Font("Verdana", Font.PLAIN, 12);
 
-
     @Override
     public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
 
-        Border topBorder = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK); // Borde solo en la parte superior
-        
         JLabel label = new TableHeader(String.valueOf(value));
         label.setBackground(Color.WHITE);
         label.setForeground(new Color(51, 51, 51));
@@ -53,8 +50,19 @@ public class Table_Cell_Render extends DefaultTableRenderer {
             }
         }
 
-        label.setBorder(topBorder);
-        
+        if (column == 4) {
+            int dato = Integer.parseInt(value.toString());
+            
+            if (dato == 0) {
+                label.setBackground(new Color(255, 153, 153));
+            } else if (dato < 5) {
+                label.setBackground(new Color(255, 255, 153));
+            } else {
+                label.setBackground(table.getBackground());
+            }
+
+        }
+
         return label;
     }
 

@@ -1,8 +1,14 @@
 package com.dev_team.controllers;
 
+import com.dev_team.models.Cliente;
 import com.dev_team.models.Producto;
+import com.dev_team.models.Venta;
+import com.dev_team.services.Service_Cliente;
 import com.dev_team.services.Service_Producto;
+import com.dev_team.services.Service_Ventas;
 import com.dev_team.tabla.TablePerzonalizado;
+import com.dev_team.utilidades.JXTableRenderer;
+import com.dev_team.utilidades.MultilineaCellRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.V_Dashboard;
@@ -14,16 +20,29 @@ import javax.swing.table.TableColumnModel;
 
 public class DashBoadController extends V_Dashboard {
 
-    List<Producto> productos;
+    private List<Producto> productos;
+    private List<Venta> list_ventas;
+    private List<Cliente> list_clientes;
 
     public DashBoadController() {
 
+        list_clientes = (List<Cliente>) new Service_Cliente().listar();
         productos = (List<Producto>) new Service_Producto().listar();
+        list_ventas = (List<Venta>) new Service_Ventas().listar();
+
+        lb_clientes.setText(list_clientes.size() + "");
+
+        lb_ventas.setText(list_ventas.size() + "");
+
+        double total = list_ventas.stream().mapToDouble(Venta::getTotal).sum();
+        lb_ganancias.setText(total + " Bs");
+
         cbx_opciones.addActionListener(x -> {
             String op = cbx_opciones.getSelectedItem().toString();
             generarTabla(op);
         });
 
+        generarTablaProductos();
     }
 
     private void generarTabla(String s) {
@@ -40,21 +59,8 @@ public class DashBoadController extends V_Dashboard {
 
     private void generarTablaProductos() {
 
-        TablePerzonalizado tb_dashboard = new TablePerzonalizado();
-        tb_dashboard.setBorder(null);
-        tb_dashboard.setRowMargin(0);
-        tb_dashboard.setColumnMargin(0);
-        JScrollPane jScrollPane = new JScrollPane();
-        jScrollPane.setViewportView(tb_dashboard);
-        panelTabla.add(jScrollPane);
-        tb_dashboard.fixTable(jScrollPane);
-        
         Object[] columas = {"CLAVE", "NOMBRE", "CATEGORIA", "PRECIO", "STOCK", "DETALLE", "ESTADO"};
-
         DefaultTableModel model = new DefaultTableModel(columas, 0);
-        tb_dashboard.setModel(model);
-        
-        DefaultTableModel mode = (DefaultTableModel) tb_dashboard.getModel();
 
         for (Producto p : productos) {
             Object[] datos = new Object[columas.length];
@@ -66,25 +72,29 @@ public class DashBoadController extends V_Dashboard {
             datos[4] = p.getStock();
             datos[5] = p.getDetalle();
             datos[6] = p.getDisponibilidad();
-            mode.addRow(datos);
+            model.addRow(datos);
         }
 
-        
+        tb_dashboard.setModel(model);
+
         TableColumnModel columnModel = tb_dashboard.getColumnModel();
-        columnModel.getColumn(0).setPreferredWidth(50);
-        columnModel.getColumn(1).setPreferredWidth(120);
+        columnModel.getColumn(0).setPreferredWidth(70);
+        columnModel.getColumn(1).setPreferredWidth(150);
         columnModel.getColumn(2).setPreferredWidth(100);
-        columnModel.getColumn(3).setPreferredWidth(150);
-        columnModel.getColumn(4).setPreferredWidth(110);
-        columnModel.getColumn(5).setPreferredWidth(100);
-        columnModel.getColumn(6).setPreferredWidth(70);
+        columnModel.getColumn(3).setPreferredWidth(60);
+        columnModel.getColumn(4).setPreferredWidth(60);
+        columnModel.getColumn(5).setPreferredWidth(150);
 
-        tb_dashboard.setRowHeight(30);
-        /*tb_dashboard.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-        tb_dashboard.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
-        tb_dashboard.setDefaultEditor(Object.class, null);*/
+        tb_dashboard.setRowHeight(60);
+        tb_dashboard.setBorder(null);
+        tb_dashboard.setRowMargin(0);
+        tb_dashboard.setColumnMargin(0);
 
-        
+        tb_dashboard.getTableHeader().setDefaultRenderer(new Table_Header_Render());
+        tb_dashboard.setDefaultRenderer(Object.class, new JXTableRenderer()); // Personalizar celdas
+
+        // Asignar el MultiLineCellRenderer a la columna "DETALLE"
+        columnModel.getColumn(5).setCellRenderer(new MultilineaCellRenderer());
 
     }
 

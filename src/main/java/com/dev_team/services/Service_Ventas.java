@@ -4,10 +4,13 @@
  */
 package com.dev_team.services;
 
+import com.dev_team.models.Cliente;
 import com.dev_team.models.Venta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -49,7 +52,37 @@ public class Service_Ventas implements I_Service{
 
     @Override
     public List<?> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        Connection cn = Conexion.conectar();
+        List<Venta> list_ventas = null;
+        try {
+            String sql = String.format("SELECT * FROM %s", TABLA);
+            PreparedStatement pst = cn.prepareStatement(sql);
+
+            ResultSet rst = pst.executeQuery();
+
+            list_ventas = new ArrayList<>();
+            
+            while (rst.next()) {
+                Venta venta = new Venta();
+                venta.setIdVenta(rst.getLong(1));
+                venta.setCantidad(rst.getInt(2));
+                venta.setPrecioUnitario(rst.getDouble(3));
+                venta.setDescuento(rst.getDouble(4));
+                venta.setSubTotal(rst.getDouble(5));
+                venta.setTotal(rst.getDouble(6));
+                venta.setMetodoPago(rst.getString(7));
+                venta.setFecha(rst.getDate(8));
+                venta.setIdCliente(rst.getLong(9));
+                venta.setIdProducto(rst.getLong(10));
+                venta.setIdUsuario(rst.getLong(11));
+                list_ventas.add(venta);
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error listar Ventas: ".concat(e.getMessage()));
+        }
+        return list_ventas;
     }
 
     @Override

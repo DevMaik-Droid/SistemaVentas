@@ -11,7 +11,7 @@ import lombok.Data;
 public class Venta {
 
    private Long idVenta;
-   private Double cantidad;
+   private Integer cantidad;
    private Double precioUnitario;
    private Double descuento;
    private Double subTotal;
@@ -21,7 +21,5 @@ public class Venta {
    private Long idCliente;
    private Long idProducto;
    private Long idUsuario;
-         
 
-    
 }

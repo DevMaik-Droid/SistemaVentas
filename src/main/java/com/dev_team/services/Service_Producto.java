@@ -125,10 +125,21 @@ public class Service_Producto implements I_Service {
         return lista;
     }
     
-    public Boolean actualizarStock(Long id,int cantidad){
+    public Boolean actualizarStock(Long id,int cantidad,int stock){
         
         Connection cn = Conexion.conectar();
-        String sql = String.format("UPDATE %s SET stock=stock-%d WHERE idp = %d", TABLA,cantidad,id);
+        String disponible;
+        int nuevoStock = stock-cantidad;
+        if(nuevoStock >= 5){
+            disponible = "DISPONIBLE";
+        }else if(nuevoStock == 0){
+            disponible = "AGOTADO";
+        }else{
+            disponible = "POR AGOTAR";
+        }
+        
+        
+        String sql = String.format("UPDATE %s SET stock=stock-%d, disponibilidad='%s' WHERE idp = %d", TABLA,cantidad,disponible,id);
         try(PreparedStatement pst = cn.prepareStatement(sql)){
             
             return pst.executeUpdate() > 0;

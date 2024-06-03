@@ -18,9 +18,14 @@ public class MultilineaCellRenderer extends DefaultTableRenderer {
             textArea.setBackground(table.getSelectionBackground());
             textArea.setForeground(table.getSelectionForeground());
         } else {
-            textArea.setBackground(table.getBackground());
-            textArea.setForeground(table.getForeground());
+            if (row % 2 == 0) {
+                textArea.setBackground(new Color(230, 230, 230));  // Color 1
+            } else {
+                textArea.setBackground(new Color(255, 255, 255));  // Color2
+            }
+            textArea.setForeground(new Color(51, 51, 51));
         }
+        
 
         textArea.setFont(table.getFont());
         return textArea;

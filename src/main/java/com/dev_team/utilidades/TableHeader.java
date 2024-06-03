@@ -17,6 +17,7 @@ public class TableHeader extends JLabel {
         setForeground(new Color(255, 255, 255));
         setBorder(topBorder);
         setHorizontalAlignment(JLabel.CENTER);
+        
     }
 
     @Override
