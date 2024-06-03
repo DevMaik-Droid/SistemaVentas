@@ -191,22 +191,22 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 showForm(gestionarProductos);
 
             } else if (index == 7 && indexSubMenu == 1) {
-                try {
-                    Conexion cone = new Conexion();
-                    Connection con = null;
-                    con = cone.conectar();
-                    String nombre = "";
-                    JasperReport reporte = null;
-                    reporte = (JasperReport) JRLoader.loadObjectFromFile(nombre);
-                    JasperPrint jp;
-                    Map parametro = new HashMap();
-                    jp = JasperFillManager.fillReport(reporte, null, con);
+                     try {
+
+                    Connection con = Conexion.conectar();
+                    String url = "src/main/java/com/dev_team/reports/rep_cliente.jasper";
+                    String url_imagen = "src/main/java/com/dev_team/reports";
+
+                    InputStream inputStream = JRLoader.getFileInputStream(url);
+                    Map<String, Object> parametros = new HashMap<>();
+                    parametros.put("IMAGEN_URL", url_imagen);
+
+                    JasperPrint jp = JasperFillManager.fillReport(inputStream, parametros, con);
                     JasperViewer jv = new JasperViewer(jp, false);
                     jv.setTitle("REPORTE DE CLIENTES");
                     jv.setVisible(true);
-
                 } catch (JRException e) {
-                    JOptionPane.showMessageDialog(null, "Error:" + e.getMessage());
+                    JOptionPane.showMessageDialog(null, "Error en generar reporte:" + e.getMessage());
                 }
 
 // reporte 7 2 usuarios
@@ -230,12 +230,36 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 }
 
                 // reporte 7 3 
+                
+                
+            }else if (index == 7 && indexSubMenu == 3){
+                  try {
+
+                    Connection con = Conexion.conectar();
+                    String url = "src/main/java/com/dev_team/reports/rep_proveedores.jasper";
+                    String url_imagen = "src/main/java/com/dev_team/reports";
+
+                    InputStream inputStream = JRLoader.getFileInputStream(url);
+                    Map<String, Object> parametros = new HashMap<>();
+                    parametros.put("IMAGEN_URL", url_imagen);
+
+                    JasperPrint jp = JasperFillManager.fillReport(inputStream, parametros, con);
+                    JasperViewer jv = new JasperViewer(jp, false);
+                    jv.setTitle("REPORTE DE PROVEEDORES");
+                    jv.setVisible(true);
+                } catch (JRException e) {
+                    JOptionPane.showMessageDialog(null, "Error en generar reporte:" + e.getMessage());
+                }
+                                
+                                
             } else if (index == 8 && indexSubMenu == 1) {
                 V_Ventas ventas = new VentasController();
                 showForm(ventas);
             } else {
                 showForm(new Form_Empty(index + " " + indexSubMenu));
             }
+            
+            
         });
         menu.setSelectedIndex(0, 0);
     }
