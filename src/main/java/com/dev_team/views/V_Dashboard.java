@@ -4,7 +4,6 @@
  */
 package com.dev_team.views;
 
-import com.dev_team.tabla.TablePerzonalizado;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.PanelGradient;
 import com.dev_team.utilidades.Panel_Round;
@@ -49,6 +48,7 @@ public class V_Dashboard extends javax.swing.JPanel {
         lb_clientes = new javax.swing.JLabel();
         lb_fecha = new javax.swing.JLabel();
         cbx_opciones = new javax.swing.JComboBox<>();
+        panelInfo = new javax.swing.JPanel();
         panelTabla = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tb_dashboard = new org.jdesktop.swingx.JXTable();
@@ -56,7 +56,7 @@ public class V_Dashboard extends javax.swing.JPanel {
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(new java.awt.Color(51, 153, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 300));
 
         jPanel2.setBackground(new java.awt.Color(102, 255, 102));
 
@@ -75,8 +75,8 @@ public class V_Dashboard extends javax.swing.JPanel {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
-            .addComponent(lb_ganancias, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lb_ganancias, javax.swing.GroupLayout.DEFAULT_SIZE, 212, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,8 +87,6 @@ public class V_Dashboard extends javax.swing.JPanel {
                 .addComponent(lb_ganancias, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 90, -1, -1));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 153));
 
@@ -119,8 +117,6 @@ public class V_Dashboard extends javax.swing.JPanel {
                 .addComponent(lb_ventas, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 90, -1, -1));
 
         jPanel4.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -153,19 +149,53 @@ public class V_Dashboard extends javax.swing.JPanel {
                 .addGap(15, 15, 15))
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
-
         lb_fecha.setBackground(new java.awt.Color(255, 102, 102));
         lb_fecha.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lb_fecha.setForeground(new java.awt.Color(255, 255, 255));
         lb_fecha.setText("Fecha:");
         lb_fecha.setOpaque(true);
-        jPanel1.add(lb_fecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 190, 30));
 
-        cbx_opciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opcion:", "PRODUCTOS", "CLIENTES", "VENTAS" }));
-        jPanel1.add(cbx_opciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 190, 40));
+        cbx_opciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PRODUCTOS", "CLIENTES", "VENTAS" }));
 
-        panelTabla.setOpaque(false);
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(58, 58, 58)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(209, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(100, 100, 100)
+                .addComponent(cbx_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lb_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(lb_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(35, 35, 35)
+                .addComponent(cbx_opciones, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        add(jPanel1, java.awt.BorderLayout.NORTH);
+
+        panelInfo.setBackground(new java.awt.Color(255, 255, 255));
+
+        panelTabla.setBackground(new java.awt.Color(102, 102, 102));
         panelTabla.setLayout(new java.awt.BorderLayout());
 
         tb_dashboard.setModel(new javax.swing.table.DefaultTableModel(
@@ -184,9 +214,24 @@ public class V_Dashboard extends javax.swing.JPanel {
 
         panelTabla.add(jScrollPane1, java.awt.BorderLayout.CENTER);
 
-        jPanel1.add(panelTabla, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 310, 830, 300));
+        javax.swing.GroupLayout panelInfoLayout = new javax.swing.GroupLayout(panelInfo);
+        panelInfo.setLayout(panelInfoLayout);
+        panelInfoLayout.setHorizontalGroup(
+            panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInfoLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(panelTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 951, Short.MAX_VALUE)
+                .addGap(50, 50, 50))
+        );
+        panelInfoLayout.setVerticalGroup(
+            panelInfoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelInfoLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(panelTabla, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
+                .addGap(50, 50, 50))
+        );
 
-        add(jPanel1, java.awt.BorderLayout.CENTER);
+        add(panelInfo, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
 
@@ -204,6 +249,7 @@ public class V_Dashboard extends javax.swing.JPanel {
     private javax.swing.JLabel lb_fecha;
     protected javax.swing.JLabel lb_ganancias;
     protected javax.swing.JLabel lb_ventas;
+    private javax.swing.JPanel panelInfo;
     protected javax.swing.JPanel panelTabla;
     protected org.jdesktop.swingx.JXTable tb_dashboard;
     // End of variables declaration//GEN-END:variables

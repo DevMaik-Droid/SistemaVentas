@@ -6,15 +6,15 @@ import com.dev_team.models.Venta;
 import com.dev_team.services.Service_Cliente;
 import com.dev_team.services.Service_Producto;
 import com.dev_team.services.Service_Ventas;
-import com.dev_team.tabla.TablePerzonalizado;
+
 import com.dev_team.utilidades.JXTableRenderer;
 import com.dev_team.utilidades.MultilineaCellRenderer;
-import com.dev_team.utilidades.Table_Cell_Render;
+
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.V_Dashboard;
-import java.text.SimpleDateFormat;
+
 import java.util.List;
-import javax.swing.JScrollPane;
+
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumnModel;
 
@@ -49,10 +49,10 @@ public class DashBoadController extends V_Dashboard {
         switch (s) {
             case "PRODUCTOS" ->
                 generarTablaProductos();
-            case "Clientes" ->
-                generarTablaProductos();
-            case "Ventas" ->
-                generarTablaProductos();
+            case "CLIENTES" ->
+                generarTablaCliente();
+            case "VENTAS" ->
+                generarTablaVentas();
         }
 
     }
@@ -91,11 +91,85 @@ public class DashBoadController extends V_Dashboard {
         tb_dashboard.setColumnMargin(0);
 
         tb_dashboard.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-        tb_dashboard.setDefaultRenderer(Object.class, new JXTableRenderer()); // Personalizar celdas
+        tb_dashboard.setDefaultRenderer(Object.class, new JXTableRenderer(true)); // Personalizar celdas
 
         // Asignar el MultiLineCellRenderer a la columna "DETALLE"
         columnModel.getColumn(5).setCellRenderer(new MultilineaCellRenderer());
 
+    }
+
+    private void generarTablaCliente() {
+
+        Object[] columas = {"ID", "NOMBRE", "APELLIDO", "EMAIL", "TELEFONO", "DIRECCION", "DEPARTAMENTO"};
+        DefaultTableModel model = new DefaultTableModel(columas, 0);
+
+        for (Cliente c : list_clientes) {
+            Object[] datos = new Object[columas.length];
+
+            datos[0] = c.getIdCliente();
+            datos[1] = c.getNombre();
+            datos[2] = c.getApellido();
+            datos[3] = c.getEmail();
+            datos[4] = c.getTelefono();
+            datos[5] = c.getDireccion();
+            datos[6] = c.getDepartamento();
+            model.addRow(datos);
+        }
+
+        tb_dashboard.setModel(model);
+
+        TableColumnModel columnModel = tb_dashboard.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(70);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(100);
+        columnModel.getColumn(3).setPreferredWidth(200);
+        columnModel.getColumn(4).setPreferredWidth(80);
+        columnModel.getColumn(5).setPreferredWidth(150);
+        columnModel.getColumn(6).setPreferredWidth(100);
+
+        tb_dashboard.setRowHeight(30);
+        tb_dashboard.setBorder(null);
+        tb_dashboard.setRowMargin(0);
+        tb_dashboard.setColumnMargin(0);
+
+        tb_dashboard.getTableHeader().setDefaultRenderer(new Table_Header_Render());
+        tb_dashboard.setDefaultRenderer(Object.class, new JXTableRenderer()); // Personalizar celdas
+    }
+    
+    private void generarTablaVentas() {
+
+        Object[] columas = {"ID", "CANTIDAD","DESCUENTO", "TOTAL", "PAGO"};
+        DefaultTableModel model = new DefaultTableModel(columas, 0);
+
+        for (Venta v : list_ventas) {
+            Object[] datos = new Object[columas.length];
+
+            datos[0] = v.getIdVenta();
+            datos[1] = v.getCantidad();
+            datos[2] = v.getDescuento();
+            datos[3] = v.getTotal();
+            datos[4] = v.getMetodoPago();
+            model.addRow(datos);
+        }
+
+        tb_dashboard.setModel(model);
+
+        /*TableColumnModel columnModel = tb_dashboard.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(70);
+        columnModel.getColumn(1).setPreferredWidth(150);
+        columnModel.getColumn(2).setPreferredWidth(100);
+        columnModel.getColumn(3).setPreferredWidth(200);
+        columnModel.getColumn(4).setPreferredWidth(80);
+        columnModel.getColumn(5).setPreferredWidth(150);
+        columnModel.getColumn(6).setPreferredWidth(100);*/
+
+        tb_dashboard.setRowHeight(30);
+        tb_dashboard.setBorder(null);
+        tb_dashboard.setRowMargin(0);
+        tb_dashboard.setColumnMargin(0);
+
+        tb_dashboard.getTableHeader().setDefaultRenderer(new Table_Header_Render());
+        tb_dashboard.setDefaultRenderer(Object.class, new JXTableRenderer()); // Personalizar celdas
     }
 
 }
