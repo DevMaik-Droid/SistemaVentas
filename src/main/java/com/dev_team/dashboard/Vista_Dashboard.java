@@ -190,7 +190,17 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 V_GestionarProductos gestionarProductos = new GestionProductosController();
                 showForm(gestionarProductos);
 
-            } else if (index == 7 && indexSubMenu == 1) {
+            } else if (index == 4 && indexSubMenu == 1) {
+                V_RegistrarProducto producto = new RegistrarProductoController();
+                showForm(producto);
+
+            } else if (index == 4 && indexSubMenu == 2) {
+                V_GestionarProductos gestionarProductos = new GestionProductosController();
+                showForm(gestionarProductos);
+
+            }
+            
+            else if (index == 7 && indexSubMenu == 1) {
                      try {
 
                     Connection con = Conexion.conectar();
