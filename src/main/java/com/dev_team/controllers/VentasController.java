@@ -10,10 +10,12 @@ import com.dev_team.models.Producto;
 import com.dev_team.models.Venta;
 import com.dev_team.services.Service_Cliente;
 import com.dev_team.services.Service_Producto;
+import com.dev_team.services.Service_Ventas;
 import com.dev_team.utilidades.Main_Colores;
 import com.dev_team.utilidades.MultilineaCellRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
+import com.dev_team.utilidades.Utilidad;
 import com.dev_team.views.V_Ventas;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -228,12 +230,17 @@ public class VentasController extends V_Ventas {
         venta.setPrecioUnitario(Double.valueOf(tf_precio.getText()));
         venta.setMetodoPago(cbx_metodo.getSelectedItem().toString());
 
-        double subtotal = venta.getPrecioUnitario() * venta.getPrecioUnitario();
+        double subtotal = venta.getPrecioUnitario() * venta.getCantidad();
 
         venta.setSubTotal(subtotal);
         venta.setDescuento(Double.valueOf(tf_descuento.getText()));
-
         venta.setTotal(Double.valueOf(tf_total.getText()));
+        
+        Service_Ventas svc_ventas = new Service_Ventas();
+        if(svc_ventas.crear(venta)){
+            Utilidad.mostrarMensaje("Venta Creada");
+        }
+        
 
     }
 }
