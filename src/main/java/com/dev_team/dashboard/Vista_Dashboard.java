@@ -239,9 +239,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                     JOptionPane.showMessageDialog(null, "Error en generar reporte:" + e.getMessage());
                 }
 
-                // reporte 7 3 
-                
-                
+                // reporte 7 3 PRROVEEDORES               
             }else if (index == 7 && indexSubMenu == 3){
                   try {
 
@@ -260,7 +258,27 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                 } catch (JRException e) {
                     JOptionPane.showMessageDialog(null, "Error en generar reporte:" + e.getMessage());
                 }
-                                
+ 
+     // reporte 7 3 PRODUCTOS             
+            }else if (index == 7 && indexSubMenu == 4){
+                  try {
+
+                    Connection con = Conexion.conectar();
+                    String url = "src/main/java/com/dev_team/reports/rep_productos.jasper";
+                    String url_imagen = "src/main/java/com/dev_team/reports";
+
+                    InputStream inputStream = JRLoader.getFileInputStream(url);
+                    Map<String, Object> parametros = new HashMap<>();
+                    parametros.put("IMAGEN_URL", url_imagen);
+
+                    JasperPrint jp = JasperFillManager.fillReport(inputStream, parametros, con);
+                    JasperViewer jv = new JasperViewer(jp, false);
+                    jv.setTitle("REPORTE DE PRODUCTOS");
+                    jv.setVisible(true);
+                } catch (JRException e) {
+                    JOptionPane.showMessageDialog(null, "Error en generar reporte:" + e.getMessage());
+                }
+                  
                                 
             } else if (index == 8 && indexSubMenu == 1) {
                 V_Ventas ventas = new VentasController();
