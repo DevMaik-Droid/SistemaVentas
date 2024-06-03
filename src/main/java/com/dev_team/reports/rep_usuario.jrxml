@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 5.5.0  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="06654320-5490-45db-844d-2c079291b4f4">
 	<property name="ireport.zoom" value="2.0"/>
 	<property name="ireport.x" value="0"/>
@@ -7,6 +8,9 @@
 	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
 	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
 	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="URL_IMAGEN" class="java.lang.String">
+		<defaultValueExpression><![CDATA[URL_IMAGEN]]></defaultValueExpression>
+	</parameter>
 	<queryString language="SQL">
 		<![CDATA[Select * from tb_usuario]]>
 	</queryString>
@@ -40,15 +44,15 @@
 	<pageHeader>
 		<band height="71" splitType="Stretch">
 			<staticText>
-				<reportElement style="Title" x="131" y="13" width="316" height="43" uuid="1416e333-6ab9-495e-84e0-cf127ec7c5f3"/>
+				<reportElement style="Title" x="120" y="14" width="316" height="43" uuid="1416e333-6ab9-495e-84e0-cf127ec7c5f3"/>
 				<textElement verticalAlignment="Middle">
 					<font fontName="Constantia" size="30"/>
 				</textElement>
 				<text><![CDATA[REPORTE USUARIOS]]></text>
 			</staticText>
-			<image>
+			<image hAlign="Center" vAlign="Middle">
 				<reportElement x="492" y="0" width="74" height="70" uuid="bba37870-cf7a-4981-884c-fded4ff51fb1"/>
-				<imageExpression><![CDATA["C:\\Users\\Personal\\Documents\\GitHub\\SistemaVentas\\src\\main\\java\\com\\dev_team\\reports\\logo.jpeg"]]></imageExpression>
+				<imageExpression><![CDATA[$P{URL_IMAGEN} + "/logo.jpeg"]]></imageExpression>
 			</image>
 		</band>
 	</pageHeader>
@@ -61,7 +65,7 @@
 				</graphicElement>
 			</line>
 			<staticText>
-				<reportElement style="Column header" x="11" y="21" width="79" height="15" uuid="6d086adf-7cfe-4a40-b367-4c96af16f2d1"/>
+				<reportElement style="Column header" x="11" y="21" width="79" height="15" backcolor="#2E81C9" uuid="6d086adf-7cfe-4a40-b367-4c96af16f2d1"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>
@@ -73,7 +77,7 @@
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="90" y="21" width="79" height="15" uuid="19dba9f8-1548-416f-b935-f4408286b79c"/>
+				<reportElement style="Column header" x="90" y="21" width="79" height="15" backcolor="#2E81C9" uuid="19dba9f8-1548-416f-b935-f4408286b79c"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>
@@ -85,7 +89,7 @@
 				<text><![CDATA[NOMBRE]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="169" y="21" width="79" height="15" uuid="8f43a802-5c4e-4f13-ba6f-6fdd699a9098"/>
+				<reportElement style="Column header" x="169" y="21" width="79" height="15" backcolor="#2E81C9" uuid="8f43a802-5c4e-4f13-ba6f-6fdd699a9098"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>
@@ -97,7 +101,7 @@
 				<text><![CDATA[APELLIDO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="248" y="21" width="79" height="15" uuid="7d525596-d926-4ea9-ae3f-3c6935d76c81"/>
+				<reportElement style="Column header" x="248" y="21" width="79" height="15" backcolor="#2E81C9" uuid="7d525596-d926-4ea9-ae3f-3c6935d76c81"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>
@@ -109,7 +113,7 @@
 				<text><![CDATA[CI]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="327" y="21" width="79" height="15" uuid="52d87477-6939-4c86-aba3-aeec0130937b"/>
+				<reportElement style="Column header" x="327" y="21" width="79" height="15" backcolor="#2E81C9" uuid="52d87477-6939-4c86-aba3-aeec0130937b"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>
@@ -121,7 +125,7 @@
 				<text><![CDATA[TELEFONO]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="406" y="21" width="79" height="15" uuid="1442de4d-87ec-4ba9-b105-af8b3f5d7601"/>
+				<reportElement style="Column header" x="406" y="21" width="79" height="15" backcolor="#2E81C9" uuid="1442de4d-87ec-4ba9-b105-af8b3f5d7601"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>
@@ -133,7 +137,7 @@
 				<text><![CDATA[DIRECCION]]></text>
 			</staticText>
 			<staticText>
-				<reportElement style="Column header" x="485" y="21" width="79" height="15" uuid="9ee08e90-51a0-4be6-bf00-595626b16803"/>
+				<reportElement style="Column header" x="485" y="21" width="79" height="15" backcolor="#2E81C9" uuid="9ee08e90-51a0-4be6-bf00-595626b16803"/>
 				<box>
 					<pen lineWidth="0.75" lineColor="#000000"/>
 					<topPen lineWidth="0.75" lineColor="#000000"/>

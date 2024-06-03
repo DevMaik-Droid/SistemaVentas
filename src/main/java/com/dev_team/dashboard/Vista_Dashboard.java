@@ -86,12 +86,12 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         }
 
         setIconImage(new ImageIcon(getClass().getResource("/images/icono.png")).getImage());
-        
+
         maximizar.setText("");
         maximizar.setIcon(ponerIcono("/images/iconoMinimizar.png", maximizar));
-        
+
         jButton1.setText("[-]");
-       
+
         setResizable(true);
         setLocationRelativeTo(null);
         setSize(1280, 800);
@@ -204,7 +204,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
                     JasperViewer jv = new JasperViewer(jp, false);
                     jv.setTitle("REPORTE DE CLIENTES");
                     jv.setVisible(true);
-                    
+
                 } catch (JRException e) {
                     JOptionPane.showMessageDialog(null, "Error:" + e.getMessage());
                 }
@@ -212,12 +212,16 @@ public class Vista_Dashboard extends javax.swing.JFrame {
 // reporte 7 2 usuarios
             } else if (index == 7 && indexSubMenu == 2) {
                 try {
-                    
+
                     Connection con = Conexion.conectar();
                     String url = "src/main/java/com/dev_team/reports/rep_usuario.jasper";
+                    String url_imagen = "src/main/java/com/dev_team/reports";
+
                     InputStream inputStream = JRLoader.getFileInputStream(url);
-                    
-                    JasperPrint jp = JasperFillManager.fillReport(inputStream, null, con);
+                    Map<String, Object> parametros = new HashMap<>();
+                    parametros.put("URL_IMAGEN", url_imagen);
+
+                    JasperPrint jp = JasperFillManager.fillReport(inputStream, parametros, con);
                     JasperViewer jv = new JasperViewer(jp, false);
                     jv.setTitle("REPORTE DE USUARIOS");
                     jv.setVisible(true);
