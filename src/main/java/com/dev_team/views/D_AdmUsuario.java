@@ -44,7 +44,7 @@ public class D_AdmUsuario extends GradientDialog {
 
     private void iniciarComponentes() {
         tf_clave.setText(us.getClave());
-        tf_usuario.setText(us.getUsuario());
+        tf_nivel.setText(us.getUsuario());
         pf_password.setText(us.getPassword());
         pf_confirmar.setText(us.getPassword());
         tf_nombre.setText(us.getNombre());
@@ -79,7 +79,7 @@ public class D_AdmUsuario extends GradientDialog {
                     usuario.setFechaNacimiento(dc_fechaNac.getDate());
                     usuario.setTelefono(tf_telefono.getText().trim());
                     usuario.setDireccion(tf_direccion.getText().trim());
-                    usuario.setUsuario(tf_usuario.getText().trim());
+                    usuario.setUsuario(tf_nivel.getText().trim());
                     usuario.setPassword(pf_confirmar.getText());
 
                     if (input_image == null) {
@@ -111,7 +111,7 @@ public class D_AdmUsuario extends GradientDialog {
 
     private Boolean verificarCampos() {
         boolean bandera = true;
-        JTextField[] tfs = {tf_nombre, tf_apellido, tf_ci, tf_direccion, tf_telefono, tf_usuario};
+        JTextField[] tfs = {tf_nombre, tf_apellido, tf_ci, tf_direccion, tf_telefono, tf_nivel};
         JPasswordField[] pfs = {pf_password, pf_confirmar};
         for (JTextField f : tfs) {
             if (f.getText().isBlank()) {
@@ -179,7 +179,7 @@ public class D_AdmUsuario extends GradientDialog {
         tf_ci = new javax.swing.JTextField();
         tf_telefono = new javax.swing.JTextField();
         tf_direccion = new javax.swing.JTextField();
-        tf_usuario = new javax.swing.JTextField();
+        tf_nivel = new javax.swing.JTextField();
         pf_password = new javax.swing.JPasswordField();
         tf_clave = new javax.swing.JTextField();
         pf_confirmar = new javax.swing.JPasswordField();
@@ -189,6 +189,8 @@ public class D_AdmUsuario extends GradientDialog {
         btn_guardar = new JButtonRound("ELIMINAR",30);
         cbx_estado = new javax.swing.JComboBox<>();
         btn_guardar1 = new JButtonRound("REGISTRAR",30);
+        jLabel15 = new javax.swing.JLabel();
+        tf_usuario1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(null);
@@ -203,7 +205,7 @@ public class D_AdmUsuario extends GradientDialog {
         jLabel2.setForeground(Main_Colores.C_100);
         jLabel2.setText("Clave: ");
         getContentPane().add(jLabel2);
-        jLabel2.setBounds(30, 69, 60, 20);
+        jLabel2.setBounds(60, 70, 60, 20);
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel3.setForeground(Main_Colores.C_100);
@@ -245,13 +247,13 @@ public class D_AdmUsuario extends GradientDialog {
         jLabel9.setForeground(Main_Colores.C_100);
         jLabel9.setText("Usuario:");
         getContentPane().add(jLabel9);
-        jLabel9.setBounds(150, 69, 70, 20);
+        jLabel9.setBounds(200, 70, 70, 20);
 
         jLabel10.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel10.setForeground(Main_Colores.C_100);
         jLabel10.setText("Contraseña:");
         getContentPane().add(jLabel10);
-        jLabel10.setBounds(310, 69, 88, 20);
+        jLabel10.setBounds(360, 70, 88, 20);
 
         jLabel11.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel11.setForeground(Main_Colores.C_100);
@@ -269,13 +271,13 @@ public class D_AdmUsuario extends GradientDialog {
         jLabel13.setForeground(new java.awt.Color(204, 204, 204));
         jLabel13.setText("Contraseña:");
         getContentPane().add(jLabel13);
-        jLabel13.setBounds(310, 69, 88, 20);
+        jLabel13.setBounds(360, 70, 88, 20);
 
         jLabel14.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
         jLabel14.setForeground(Main_Colores.C_100);
         jLabel14.setText("Confirmar");
         getContentPane().add(jLabel14);
-        jLabel14.setBounds(490, 69, 74, 20);
+        jLabel14.setBounds(520, 70, 74, 20);
 
         tf_nombre.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_nombre.setForeground(Main_Colores.Fondo);
@@ -302,10 +304,15 @@ public class D_AdmUsuario extends GradientDialog {
         getContentPane().add(tf_direccion);
         tf_direccion.setBounds(250, 324, 170, 30);
 
-        tf_usuario.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        tf_usuario.setForeground(Main_Colores.Fondo);
-        getContentPane().add(tf_usuario);
-        tf_usuario.setBounds(150, 90, 120, 20);
+        tf_nivel.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_nivel.setForeground(Main_Colores.Fondo);
+        tf_nivel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_nivelActionPerformed(evt);
+            }
+        });
+        getContentPane().add(tf_nivel);
+        tf_nivel.setBounds(260, 400, 110, 20);
 
         pf_password.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         pf_password.setForeground(Main_Colores.Fondo);
@@ -315,18 +322,18 @@ public class D_AdmUsuario extends GradientDialog {
             }
         });
         getContentPane().add(pf_password);
-        pf_password.setBounds(310, 90, 140, 20);
+        pf_password.setBounds(360, 90, 140, 20);
 
         tf_clave.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         tf_clave.setForeground(Main_Colores.Fondo);
         tf_clave.setEnabled(false);
         getContentPane().add(tf_clave);
-        tf_clave.setBounds(30, 90, 90, 20);
+        tf_clave.setBounds(60, 90, 90, 20);
 
         pf_confirmar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         pf_confirmar.setForeground(Main_Colores.Fondo);
         getContentPane().add(pf_confirmar);
-        pf_confirmar.setBounds(490, 90, 140, 20);
+        pf_confirmar.setBounds(520, 90, 140, 20);
 
         dc_fechaNac.setBackground(new java.awt.Color(6, 18, 52));
         dc_fechaNac.setForeground(Main_Colores.Fondo);
@@ -364,7 +371,7 @@ public class D_AdmUsuario extends GradientDialog {
             }
         });
         getContentPane().add(btn_guardar);
-        btn_guardar.setBounds(450, 430, 130, 40);
+        btn_guardar.setBounds(500, 430, 130, 40);
 
         cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_estado.setForeground(Main_Colores.Fondo);
@@ -382,7 +389,18 @@ public class D_AdmUsuario extends GradientDialog {
             }
         });
         getContentPane().add(btn_guardar1);
-        btn_guardar1.setBounds(280, 430, 130, 40);
+        btn_guardar1.setBounds(500, 380, 130, 40);
+
+        jLabel15.setFont(new java.awt.Font("Bahnschrift", 0, 16)); // NOI18N
+        jLabel15.setForeground(Main_Colores.C_100);
+        jLabel15.setText("Nivel:");
+        getContentPane().add(jLabel15);
+        jLabel15.setBounds(260, 380, 60, 20);
+
+        tf_usuario1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        tf_usuario1.setForeground(Main_Colores.Fondo);
+        getContentPane().add(tf_usuario1);
+        tf_usuario1.setBounds(200, 90, 130, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -404,6 +422,10 @@ public class D_AdmUsuario extends GradientDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_pf_passwordActionPerformed
 
+    private void tf_nivelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_nivelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_nivelActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_actualizarIMG;
@@ -417,6 +439,7 @@ public class D_AdmUsuario extends GradientDialog {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -432,8 +455,9 @@ public class D_AdmUsuario extends GradientDialog {
     private javax.swing.JTextField tf_ci;
     private javax.swing.JTextField tf_clave;
     private javax.swing.JTextField tf_direccion;
+    private javax.swing.JTextField tf_nivel;
     private javax.swing.JTextField tf_nombre;
     private javax.swing.JTextField tf_telefono;
-    private javax.swing.JTextField tf_usuario;
+    private javax.swing.JTextField tf_usuario1;
     // End of variables declaration//GEN-END:variables
 }
