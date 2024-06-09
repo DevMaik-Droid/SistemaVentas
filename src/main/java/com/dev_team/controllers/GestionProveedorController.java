@@ -2,6 +2,7 @@ package com.dev_team.controllers;
 
 import com.dev_team.models.Proveedor;
 import com.dev_team.services.Service_Proveedor;
+import com.dev_team.utilidades.JXTableRenderer;
 import com.dev_team.utilidades.Table_Cell_Render;
 import com.dev_team.utilidades.Table_Header_Render;
 import com.dev_team.views.D_AdmProveedor;
@@ -69,6 +70,7 @@ public class GestionProveedorController extends V_GestionarProveedores {
             filtrarProveedor(cbx_filtrar.getSelectedItem().toString(), tf_filtrar.getText());
         });
 
+        repaint();
     }
 
     // logica para filtrar usuarios
@@ -123,7 +125,7 @@ public class GestionProveedorController extends V_GestionarProveedores {
         tabla_proveedores.setModel(model);
         
         TableColumnModel columnModel = tabla_proveedores.getColumnModel();
-        columnModel.getColumn(0).setPreferredWidth(50);
+        columnModel.getColumn(0).setPreferredWidth(30);
         columnModel.getColumn(1).setPreferredWidth(120);
         columnModel.getColumn(2).setPreferredWidth(100);
         columnModel.getColumn(3).setPreferredWidth(150);
@@ -131,9 +133,11 @@ public class GestionProveedorController extends V_GestionarProveedores {
         columnModel.getColumn(5).setPreferredWidth(100);
         columnModel.getColumn(6).setPreferredWidth(70);
         
+        tabla_proveedores.setRowMargin(0);
+        tabla_proveedores.setColumnMargin(0);
         tabla_proveedores.setRowHeight(30);
         tabla_proveedores.getTableHeader().setDefaultRenderer(new Table_Header_Render());
-        tabla_proveedores.setDefaultRenderer(Object.class, new Table_Cell_Render()); // Personalizar celdas
+        tabla_proveedores.setDefaultRenderer(Object.class, new JXTableRenderer()); // Personalizar celdas
         tabla_proveedores.setDefaultEditor(Object.class, null);
     }
 
