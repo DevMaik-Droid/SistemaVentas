@@ -507,7 +507,7 @@ public class Vista_Dashboard extends javax.swing.JFrame {
         lb_cerrar.setForeground(new Color(73, 181, 172));
 
         lb_barra.setBackground(Main_Colores.C_900);
-        lb_barra.setText("\t Dashboard - Bienvenido Miguel Angel");
+        lb_barra.setText("\t Nivel - " + usuario.getNivel());
         lb_barra.setForeground(Color.WHITE);
     }//GEN-LAST:event_lb_cerrarMouseExited
 
