@@ -98,13 +98,7 @@ public class Service_Usuario implements I_Service {
     }
 
 
-
-
-    /**
-     * **************************************************
-     * metodo para eliminar un usuario
-     * **************************************************
-     */
+    @Override
     public boolean eliminar(Long idUsuario) {
         boolean respuesta = false;
         Connection cn = Conexion.conectar();
