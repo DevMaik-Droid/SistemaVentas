@@ -1,6 +1,7 @@
 package com.dev_team.services;
 
 import com.dev_team.models.Usuario;
+import java.sql.CallableStatement;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -25,7 +26,7 @@ public class Service_Usuario implements I_Service {
         Usuario usuario = (Usuario) objeto;
         Connection cn = Conexion.conectar();
         try {
-            PreparedStatement consulta = cn.prepareStatement("insert into tb_usuario values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+            PreparedStatement consulta = cn.prepareStatement("insert into tb_usuario values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
             consulta.setInt(1, 0);//id
             consulta.setString(2, usuario.getNombre());
             consulta.setString(3, usuario.getApellido());
@@ -37,9 +38,9 @@ public class Service_Usuario implements I_Service {
             consulta.setString(9, usuario.getPassword());
             consulta.setBinaryStream(10, usuario.getFoto());
             consulta.setString(11, usuario.getClave());
-            consulta.setString(12, usuario.getEstado());
+            consulta.setString(12, usuario.getEstado().toUpperCase());
             consulta.setString(13, usuario.getObservaciones());
-            
+            consulta.setString(14, usuario.getNivel());
             if (consulta.executeUpdate() > 0) {
                 respuesta = true;
             }
@@ -100,21 +101,20 @@ public class Service_Usuario implements I_Service {
 
     @Override
     public boolean eliminar(Long idUsuario) {
-        boolean respuesta = false;
         Connection cn = Conexion.conectar();
+        String sql = "CALL ELIMINAR_USUARIO(?)";
+        
         try {
-            PreparedStatement consulta = cn.prepareStatement(
-                    "delete from tb_usuario where idUsuario ='" + idUsuario + "'");
-            consulta.executeUpdate();
-
-            if (consulta.executeUpdate() > 0) {
-                respuesta = true;
-            }
+            CallableStatement cst = cn.prepareCall(sql);
+            cst.setLong(1, idUsuario);
+            
+            cst.executeUpdate();
             cn.close();
+            return true;
         } catch (SQLException e) {
             System.out.println("Error al eliminar usuario: " + e);
         }
-        return respuesta;
+        return false;
     }
 
     

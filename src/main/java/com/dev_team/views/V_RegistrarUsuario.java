@@ -55,6 +55,8 @@ public class V_RegistrarUsuario extends JPanel{
         btn_registrar = new JButtonRound("Registrar",20);
         btn_buscarFoto = new JButtonRound("Buscar",20);
         dc_fechaNac = new com.toedter.calendar.JDateChooser();
+        jLabel10 = new javax.swing.JLabel();
+        cbx_nivel = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(51, 51, 51));
         setPreferredSize(new java.awt.Dimension(980, 730));
@@ -173,7 +175,7 @@ public class V_RegistrarUsuario extends JPanel{
         ta_observaciones.setBorder(null);
         jScrollPane1.setViewportView(ta_observaciones);
 
-        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 630, 90));
+        panel_form.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 530, 90));
 
         pf_password.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         pf_password.setForeground(Main_Colores.Fondo);
@@ -205,6 +207,12 @@ public class V_RegistrarUsuario extends JPanel{
         dc_fechaNac.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         panel_form.add(dc_fechaNac, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 220, 30));
 
+        jLabel10.setText("Nivel");
+        panel_form.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 370, -1, -1));
+
+        cbx_nivel.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONE NIVEL", "GERENTE", "ADMINISTRATIVO", "VENDEDOR" }));
+        panel_form.add(cbx_nivel, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 400, 190, -1));
+
         panel_main.add(panel_form, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -229,8 +237,10 @@ public class V_RegistrarUsuario extends JPanel{
     // Variables declaration - do not modify//GEN-BEGIN:variables
     protected javax.swing.JButton btn_buscarFoto;
     protected javax.swing.JButton btn_registrar;
+    protected javax.swing.JComboBox<String> cbx_nivel;
     protected com.toedter.calendar.JDateChooser dc_fechaNac;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel14;

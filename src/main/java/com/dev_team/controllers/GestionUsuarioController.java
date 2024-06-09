@@ -34,8 +34,13 @@ public class GestionUsuarioController extends V_GestionarUsuario {
         GenerarTabla(lista_usuario);
 
         btn_buscaUS.addActionListener(ev -> {
-            List<Usuario> lists = lista_usuario.stream().filter(us -> us.getClave().equals(tf_clave.getText())).collect(Collectors.toList());
-            GenerarTabla(lists);
+            if (!tf_clave.getText().isEmpty()) {
+                List<Usuario> lists = lista_usuario.stream().filter(us -> us.getClave().equals(tf_clave.getText())).collect(Collectors.toList());
+                GenerarTabla(lists);
+            }else{
+                GenerarTabla(lista_usuario);
+            }
+
         });
 
         tabla_usuarios.addMouseListener(new MouseAdapter() {
@@ -55,7 +60,7 @@ public class GestionUsuarioController extends V_GestionarUsuario {
             }
 
         });
-        
+
         tf_filtrar.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {

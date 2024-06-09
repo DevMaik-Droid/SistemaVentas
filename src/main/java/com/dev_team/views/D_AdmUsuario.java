@@ -5,6 +5,7 @@ import com.dev_team.services.Service_Usuario;
 import com.dev_team.utilidades.GradientDialog;
 import com.dev_team.utilidades.JButtonRound;
 import com.dev_team.utilidades.Main_Colores;
+import com.dev_team.utilidades.Utilidad;
 import java.awt.Dimension;
 import java.awt.HeadlessException;
 import java.awt.Image;
@@ -65,6 +66,22 @@ public class D_AdmUsuario extends GradientDialog {
         return new ImageIcon(img);
     }
 
+    private void eliminarUsuario(){
+        
+        
+        int opcion = JOptionPane.showConfirmDialog(null, "Esta seguro de elimnar al usuario.");
+
+        if(opcion == 0){
+            Service_Usuario svc = new Service_Usuario();
+            if(svc.eliminar(us.getIdUsuario())){
+                Utilidad.mostrarMensaje("Usuario Eliminado");
+                this.dispose();
+                
+            }
+            
+        }
+        
+    }
     private void actualizarUsuario() {
 
         try {
@@ -186,7 +203,7 @@ public class D_AdmUsuario extends GradientDialog {
         dc_fechaNac = new com.toedter.calendar.JDateChooser();
         lb_foto = new javax.swing.JLabel();
         btn_actualizarIMG = new JButtonRound("Actualizar Imagen",30);
-        btn_guardar = new JButtonRound("ELIMINAR",30);
+        btn_eliminar = new JButtonRound("ELIMINAR",30);
         cbx_estado = new javax.swing.JComboBox<>();
         btn_guardar1 = new JButtonRound("REGISTRAR",30);
         jLabel15 = new javax.swing.JLabel();
@@ -361,17 +378,17 @@ public class D_AdmUsuario extends GradientDialog {
         getContentPane().add(btn_actualizarIMG);
         btn_actualizarIMG.setBounds(500, 340, 150, 30);
 
-        btn_guardar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        btn_guardar.setForeground(Main_Colores.Fondo);
-        btn_guardar.setText("ELIMINAR");
-        btn_guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btn_guardar.addActionListener(new java.awt.event.ActionListener() {
+        btn_eliminar.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        btn_eliminar.setForeground(Main_Colores.Fondo);
+        btn_eliminar.setText("ELIMINAR");
+        btn_eliminar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btn_eliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_guardarActionPerformed(evt);
+                btn_eliminarActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_guardar);
-        btn_guardar.setBounds(500, 430, 130, 40);
+        getContentPane().add(btn_eliminar);
+        btn_eliminar.setBounds(500, 430, 130, 40);
 
         cbx_estado.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
         cbx_estado.setForeground(Main_Colores.Fondo);
@@ -414,9 +431,9 @@ public class D_AdmUsuario extends GradientDialog {
         this.dispose();
     }//GEN-LAST:event_btn_guardar1ActionPerformed
 
-    private void btn_guardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_guardarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btn_guardarActionPerformed
+    private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
+       eliminarUsuario();
+    }//GEN-LAST:event_btn_eliminarActionPerformed
 
     private void pf_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pf_passwordActionPerformed
         // TODO add your handling code here:
@@ -429,7 +446,7 @@ public class D_AdmUsuario extends GradientDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_actualizarIMG;
-    private javax.swing.JButton btn_guardar;
+    private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_guardar1;
     private javax.swing.JComboBox<String> cbx_estado;
     protected com.toedter.calendar.JDateChooser dc_fechaNac;

@@ -53,6 +53,7 @@ public class UsuarioController extends V_RegistrarUsuario {
                     usuario.setFoto(input_image);
                     usuario.setEstado("Activo");
                     usuario.setObservaciones(ta_observaciones.getText());
+                    usuario.setNivel(cbx_nivel.getSelectedItem().toString());
                     if(service_Usuario.crear(usuario)){
                         JOptionPane.showMessageDialog(null, "Usuario Registrado");
                     }else{
