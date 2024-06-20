@@ -95,7 +95,7 @@ public class DashBoadController extends V_Dashboard {
 
         // Asignar el MultiLineCellRenderer a la columna "DETALLE"
         columnModel.getColumn(5).setCellRenderer(new MultilineaCellRenderer());
-
+//dddd
     }
 
     private void generarTablaCliente() {
