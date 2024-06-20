@@ -1,8 +1,45 @@
--- Active: 1714257401294@@127.0.0.1@3306@bd_sistema_ventas
+-- Active: 1718856057277@@127.0.0.1@3306
+-- crear nuestra base de datos
+
+create database bd_sistema_ventas;
+-- usamos la base de datos
+use bd_sistema_ventas;
+
+-- tabla usuarios
+CREATE TABLE tb_usuario (
+    idUsuario BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(30) NOT NULL,
+    apellido VARCHAR(30) NOT NULL,
+    ci VARCHAR(20) NOT NULL,  -- Se aumentó la longitud para contemplar diferentes formatos de CI
+    fecha_nacimiento DATE NOT NULL,
+    telefono VARCHAR(15) NOT NULL,
+    direccion VARCHAR(100) NOT NULL,
+    usuario VARCHAR(15) NOT NULL,
+    contrasenia VARCHAR(255) NOT NULL,  -- Se aumentó la longitud de la contraseña
+    foto BLOB NOT NULL,
+    clave VARCHAR(10) NOT NULL,
+    estado VARCHAR(20) NOT NULL, 
+    observaciones TEXT,
+		nivel VARCHAR(15)
+);
+
+-- TABLA PROVEEDOR
+CREATE TABLE tb_proveedor(
+	idProveedor BIGINT AUTO_INCREMENT PRIMARY KEY,
+  empresa VARCHAR(100),
+	proveedor VARCHAR(100),
+	telefono VARCHAR(20),
+	direccion VARCHAR(100),
+	email VARCHAR(100),
+	productoSum VARCHAR(50),
+	estado VARCHAR(10),
+	observaciones TEXT,
+  fechaRegistro TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
 
 -- DDL COMPONENTES:
-
-
 CREATE TABLE tb_componente(
 	idc int auto_increment PRIMARY KEY,
 	claveComponente VARCHAR(10),
@@ -15,6 +52,7 @@ CREATE TABLE tb_componente(
 	descripcion TEXT,
 	fechaCreacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 CREATE TABLE tb_laptop(
 	idLaptop int auto_increment PRIMARY KEY,
 	claveLaptop VARCHAR(10),
@@ -49,16 +87,16 @@ CREATE TABLE tb_computadora(
     idComputadora INT AUTO_INCREMENT PRIMARY KEY,
     claveComputadora VARCHAR(10),
     nombre VARCHAR(100),
-    procesador VARCHAR(10),
-    placaMadre VARCHAR(10),
-    memoriaRam VARCHAR(10),
-    almacenamiento VARCHAR(10),
-    tarjetaGrafica VARCHAR(10),
-    fuente VARCHAR(10),
-    ccase VARCHAR(10),
-    monitor VARCHAR(10),
-    disipadores VARCHAR(10),
-    ventiladores VARCHAR(10),
+    procesador VARCHAR(50),
+    placaMadre VARCHAR(50),
+    memoriaRam VARCHAR(50),
+    almacenamiento VARCHAR(50),
+    tarjetaGrafica VARCHAR(50),
+    fuente VARCHAR(50),
+    ccase VARCHAR(50),
+    monitor VARCHAR(50),
+    disipadores VARCHAR(50),
+    ventiladores VARCHAR(50),
     imagen BLOB,
     precioReal DECIMAL(10, 2),
     descripcion TEXT,
@@ -111,4 +149,50 @@ CREATE TABLE tb_transacciones(
 	CONSTRAINT fk_TUsuario FOREIGN KEY(id_Usuario) REFERENCES tb_usuario(idUsuario)
 );
 
-SELECT * FROM tb_accesorios;
+
+CREATE TABLE tb_cliente (
+    idCliente BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    apellido VARCHAR(100) NOT NULL,
+    correoElectronico VARCHAR(100) NOT NULL UNIQUE,
+    telefono VARCHAR(20),
+    departamento VARCHAR(50),
+    direccion VARCHAR(100),
+    estado VARCHAR(10)
+);
+
+CREATE TABLE tb_ventas (
+    idVenta BIGINT AUTO_INCREMENT PRIMARY KEY,
+    cantidad DECIMAL(10, 2) NOT NULL,
+    precioUnitario DECIMAL(10, 2) NOT NULL,
+    descuento DECIMAL(10, 2) NOT NULL,
+    subtotal DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    metodoPago VARCHAR(50),
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    idCliente BIGINT,
+    idProducto BIGINT,
+    idUsuario BIGINT,
+    CONSTRAINT fk_Vcliente FOREIGN KEY (idCliente) REFERENCES tb_cliente(idCliente),
+    CONSTRAINT fk_Vproducto FOREIGN KEY (idProducto) REFERENCES tb_productos(idp),
+    CONSTRAINT fk_Vusuario FOREIGN KEY (idUsuario) REFERENCES tb_usuario(idUsuario)
+);
+
+CREATE TABLE tb_factura (
+    idFactura INT AUTO_INCREMENT PRIMARY KEY,
+    idVenta BIGINT,
+    subTotal DECIMAL(10, 2) NOT NULL,
+    impuestos DECIMAL(10, 2) NOT NULL,
+    total DECIMAL(10, 2) NOT NULL,
+    numeroFactura VARCHAR(50) UNIQUE NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_Fventa  FOREIGN KEY (idVenta) REFERENCES tb_ventas(idVenta)
+);
+
+
+
+
+-- mostrar todas las tablas de mi base de datos
+show tables;
+
+
