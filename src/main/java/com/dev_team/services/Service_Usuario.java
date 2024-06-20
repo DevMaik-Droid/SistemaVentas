@@ -52,12 +52,6 @@ public class Service_Usuario implements I_Service {
     }
 
 
-
-    /**
-     * ********************************************************************
-     * metodo para consultar si el producto ya esta registrado en la BBDD
-     * ********************************************************************
-     */
     public boolean existeUsuario(String usuario) {
         boolean respuesta = false;
         String sql = "select usuario from tb_usuario where usuario = '" + usuario + "';";
@@ -71,29 +65,6 @@ public class Service_Usuario implements I_Service {
             }
         } catch (SQLException e) {
             System.out.println("Error al consultar usuario: " + e);
-        }
-        return respuesta;
-    }
-
-    /**
-     * **************************************************
-     * metodo para Iniciar Sesion
-     * **************************************************
-     */
-    public boolean loginUser(Usuario objeto) {
-        boolean respuesta = false;
-        Connection cn = Conexion.conectar();
-        String sql = "select  usuario, password from tb_usuario where usuario = '" + objeto.getUsuario() + "' and password = '" + objeto.getPassword() + "'";
-        Statement st;
-        try {
-            st = cn.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            while (rs.next()) {
-                respuesta = true;
-            }
-        } catch (SQLException e) {
-            System.out.println("Error al Iniciar Sesion");
-            JOptionPane.showMessageDialog(null, "Error al Iniciar Sesion");
         }
         return respuesta;
     }

@@ -107,6 +107,14 @@
             <version>3.0.2</version>
         </dependency>
         
+        <!-- https://mvnrepository.com/artifact/com.formdev/flatlaf -->
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+
     </dependencies>
     
 </project>
